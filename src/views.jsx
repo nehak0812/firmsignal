@@ -175,8 +175,9 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
   const renderLead = (item) => {
     if (!item) return null;
     const dateStr = new Date(item.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    const targetUrl = item.url && item.url.startsWith('http') ? item.url : `https://news.google.com/search?q=${encodeURIComponent(item.title)}`;
     return (
-      <div className="lead-story" onClick={() => item.url && window.open(item.url, '_blank')}>
+      <div className="lead-story" onClick={() => window.open(targetUrl, '_blank')} style={{ cursor: 'pointer' }}>
         <div className="lead-tag">Lead story · {item.signal}</div>
         <div className="lead-headline">{item.title}</div>
         {item.takeaway && <div className="lead-takeaway">{item.takeaway}</div>}
@@ -194,8 +195,9 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
   const renderSec = (item) => {
     if (!item) return null;
     const dateStr = new Date(item.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    const targetUrl = item.url && item.url.startsWith('http') ? item.url : `https://news.google.com/search?q=${encodeURIComponent(item.title)}`;
     return (
-      <div key={item.id} className="secondary-card" onClick={() => item.url && window.open(item.url, '_blank')}>
+      <div key={item.id} className="secondary-card" onClick={() => window.open(targetUrl, '_blank')} style={{ cursor: 'pointer' }}>
         <div className="sec-top">
           <FirmPill firm={item.firm} ALL_FIRMS={ALL_FIRMS} />
           <span className="signal-tag" style={{ background: SIGNAL_COLORS[item.signal]?.bg, color: SIGNAL_COLORS[item.signal]?.color }}>{item.signal}</span>
@@ -378,7 +380,12 @@ export function CompareView({ data, onToggleSave, savedIds, ALL_FIRMS = [], CONS
           const impCls = `imp-${item.importance || 2}`;
           const dateStr = new Date(item.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
           return (
-            <div key={item.id} className={`compare-item ${impCls}`}>
+            <div 
+              key={item.id} 
+              className={`compare-item ${impCls}`} 
+              onClick={() => window.open(item.url && item.url.startsWith('http') ? item.url : `https://news.google.com/search?q=${encodeURIComponent(item.title)}`, '_blank')} 
+              style={{ cursor: 'pointer' }}
+            >
               <div className="ci-meta">{item.signal} · {dateStr} · {item.source}</div>
               <div className="ci-title">{item.title}</div>
               {item.takeaway && <div className="ci-take">{item.takeaway}</div>}
@@ -591,7 +598,11 @@ export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = []
         <div className="aw-list">
           {aiSignals.map(item => (
             <article key={item.id} className={`aw-signal imp-${item.importance || 3}`}>
-              <div className="aw-sig-body">
+              <div 
+                className="aw-sig-body"
+                onClick={() => window.open(item.url && item.url.startsWith('http') ? item.url : `https://news.google.com/search?q=${encodeURIComponent(item.title)}`, '_blank')}
+                style={{ cursor: 'pointer' }}
+              >
                 <div className="aw-sig-top">
                   <div className="aw-sig-firm">
                     <FirmPill firm={item.firm} ALL_FIRMS={ALL_FIRMS} />
@@ -604,8 +615,8 @@ export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = []
                 <div className="aw-sig-body-text">{item.summary}</div>
                 <div className="aw-sig-meta">
                   <span>{item.date ? new Date(item.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : ''}</span>
-                  {item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer">↗ {item.source}</a> : <span>{item.source}</span>}
-                  <button className={`save-btn ${savedIds.has(item.id) ? 'on' : ''}`} onClick={() => onToggleSave(item.id)} style={{ marginLeft: 'auto', fontSize: 13 }} title={savedIds.has(item.id) ? 'Unsave' : 'Save'}>
+                  {item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>↗ {item.source}</a> : <span onClick={(e) => e.stopPropagation()}>{item.source}</span>}
+                  <button className={`save-btn ${savedIds.has(item.id) ? 'on' : ''}`} onClick={(e) => { e.preventDefault(); e.stopPropagation(); onToggleSave(item.id); }} style={{ marginLeft: 'auto', fontSize: 13 }} title={savedIds.has(item.id) ? 'Unsave' : 'Save'}>
                     {savedIds.has(item.id) ? '★ Saved' : '☆ Save'}
                   </button>
                 </div>

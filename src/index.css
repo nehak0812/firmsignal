@@ -273,7 +273,8 @@ body[data-theme="ivory"] .card:hover { box-shadow: 0 8px 24px rgba(28, 25, 20, 0
 .compare-stat .val { font-family: var(--serif-disp); font-size: 22px; color: var(--ink); line-height: 1.1; }
 .compare-feed { display: flex; flex-direction: column; gap: 10px; max-height: 480px; overflow-y: auto; padding-right: 4px; }
 .compare-feed::-webkit-scrollbar { width: 4px; } .compare-feed::-webkit-scrollbar-thumb { background: var(--bg-4); border-radius: 2px; }
-.compare-item { padding: 10px 12px; border-left: 2px solid var(--line-2); background: var(--bg-3); border-radius: 0 var(--r) var(--r) 0; }
+.compare-item { padding: 10px 12px; border-left: 2px solid var(--line-2); background: var(--bg-3); border-radius: 0 var(--r) var(--r) 0; transition: background 0.12s, transform 0.12s; }
+.compare-item:hover { background: var(--bg-4); transform: translateX(2px); }
 .compare-item.imp-5 { border-left-color: var(--crit); }
 .compare-item.imp-4 { border-left-color: var(--accent); }
 .compare-item .ci-meta { font-family: var(--mono); font-size: 9px; color: var(--ink-3); letter-spacing: 0.08em; margin-bottom: 4px; text-transform: uppercase; }
@@ -302,7 +303,8 @@ body[data-theme="ivory"] .card:hover { box-shadow: 0 8px 24px rgba(28, 25, 20, 0
 .aw-signal.imp-5::before { background: var(--crit); }
 .aw-signal.imp-3::before { background: var(--info); }
 .aw-signal:hover { border-color: var(--line-2); }
-.aw-sig-body { padding: 22px 26px; }
+.aw-sig-body { padding: 22px 26px; transition: background 0.12s; }
+.aw-sig-body:hover { background: var(--bg-3); }
 .aw-sig-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 12px; }
 .aw-sig-firm { display: flex; align-items: center; gap: 10px; }
 .aw-sig-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 3px; text-transform: uppercase; }
