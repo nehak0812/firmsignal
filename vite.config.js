@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
-    emptyOutDir: false, // Ensure we don't accidentally wipe dist if it contains static assets we want to preserve, or set to true if appropriate.
+    emptyOutDir: true,
   },
   server: {
     port: 5173,

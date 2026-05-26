@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
 import { 
   ALL_FIRMS, CONSULTING_FIRMS, TECH_FIRMS, AI_FIRST_FIRMS, 
   SIGNALS, SIGNAL_COLORS, DEMO_SIGNALS, 

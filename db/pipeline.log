@@ -4,3 +4,5 @@
 [2026-05-26T12:39:29.142Z] Compiled Knowledge Graph containing 81 nodes and 100 relationships.
 [2026-05-26T12:39:40.603Z] GET /api/signals hit.
 [2026-05-26T12:39:58.053Z] GET /api/signals hit.
+[2026-05-26T12:46:11.788Z] FirmSignal Backend running on port 3000
+[2026-05-26T12:46:12.598Z] GET /api/signals hit.
