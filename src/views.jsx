@@ -109,8 +109,8 @@ export function SignalCard({ item, isSaved, onToggleSave, index, ALL_FIRMS = [],
   const hasUrl = item.url && item.url.startsWith('http');
   const impCls = `imp-${item.importance || 2}`;
   
-  const targetUrl = hasUrl ? item.url : `https://news.google.com/search?q=${encodeURIComponent(item.title)}`;
-  const domain = hasUrl ? new URL(item.url).hostname.replace('www.', '') : 'Google News';
+  const targetUrl = hasUrl ? item.url : `https://www.google.com/search?q=${encodeURIComponent(item.title)}`;
+  const domain = hasUrl ? new URL(item.url).hostname.replace('www.', '') : 'Google Search';
 
   const getSentimentBadge = () => {
     const sig = item.signal.toLowerCase();
@@ -175,7 +175,7 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
   const renderLead = (item) => {
     if (!item) return null;
     const dateStr = new Date(item.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-    const targetUrl = item.url && item.url.startsWith('http') ? item.url : `https://news.google.com/search?q=${encodeURIComponent(item.title)}`;
+    const targetUrl = item.url && item.url.startsWith('http') ? item.url : `https://www.google.com/search?q=${encodeURIComponent(item.title)}`;
     return (
       <div className="lead-story" onClick={() => window.open(targetUrl, '_blank')} style={{ cursor: 'pointer' }}>
         <div className="lead-tag">Lead story · {item.signal}</div>
@@ -195,7 +195,7 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
   const renderSec = (item) => {
     if (!item) return null;
     const dateStr = new Date(item.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-    const targetUrl = item.url && item.url.startsWith('http') ? item.url : `https://news.google.com/search?q=${encodeURIComponent(item.title)}`;
+    const targetUrl = item.url && item.url.startsWith('http') ? item.url : `https://www.google.com/search?q=${encodeURIComponent(item.title)}`;
     return (
       <div key={item.id} className="secondary-card" onClick={() => window.open(targetUrl, '_blank')} style={{ cursor: 'pointer' }}>
         <div className="sec-top">
@@ -383,7 +383,7 @@ export function CompareView({ data, onToggleSave, savedIds, ALL_FIRMS = [], CONS
             <div 
               key={item.id} 
               className={`compare-item ${impCls}`} 
-              onClick={() => window.open(item.url && item.url.startsWith('http') ? item.url : `https://news.google.com/search?q=${encodeURIComponent(item.title)}`, '_blank')} 
+              onClick={() => window.open(item.url && item.url.startsWith('http') ? item.url : `https://www.google.com/search?q=${encodeURIComponent(item.title)}`, '_blank')} 
               style={{ cursor: 'pointer' }}
             >
               <div className="ci-meta">{item.signal} · {dateStr} · {item.source}</div>
@@ -600,7 +600,7 @@ export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = []
             <article key={item.id} className={`aw-signal imp-${item.importance || 3}`}>
               <div 
                 className="aw-sig-body"
-                onClick={() => window.open(item.url && item.url.startsWith('http') ? item.url : `https://news.google.com/search?q=${encodeURIComponent(item.title)}`, '_blank')}
+                onClick={() => window.open(item.url && item.url.startsWith('http') ? item.url : `https://www.google.com/search?q=${encodeURIComponent(item.title)}`, '_blank')}
                 style={{ cursor: 'pointer' }}
               >
                 <div className="aw-sig-top">
