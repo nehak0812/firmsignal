@@ -33,7 +33,6 @@ export const AI_FIRST_FIRMS = [
   { id: 'Mistral AI',   dot: '#fa520f', type: 'ai-first' },
   { id: 'Cohere',       dot: '#d2785a', type: 'ai-first' },
   { id: 'xAI',          dot: '#aaaaaa', type: 'ai-first' },
-  { id: 'Hugging Face', dot: '#ffd21e', type: 'ai-first' },
   { id: 'DeepSeek',     dot: '#4d6bfe', type: 'ai-first' },
 ];
 
@@ -306,18 +305,6 @@ export const DEMO_SIGNALS = [
       threat: 'CIOs will ask "why are we paying OpenAI/Anthropic prices when DeepSeek is free?" — by next budget cycle, in every account. Implementation-fee leverage built on closed-model premiums is at risk.',
       competitors: 'McKinsey and BCG will write cost-rationalisation POVs within 30 days. Accenture and Capgemini will need to update their pricing approach for AI build engagements.',
       action: 'Refresh AI TCO models with DeepSeek-class assumptions across all live proposals. Build a "model arbitrage" advisory offer — there is real fee revenue in helping clients move workloads.',
-    },
-  },
-  {
-    id: 'a6', firm: 'Hugging Face', type: 'ai-first', signal: 'Partnership', importance: 3,
-    title: 'Hugging Face Enterprise Hub adds SOC 2 Type II + EU AI Act compliance',
-    takeaway: 'Open-source AI is now enterprise-procurable. The build vs buy debate just got harder for proprietary platforms.',
-    summary: 'Hugging Face Enterprise Hub achieved SOC 2 Type II certification and published EU AI Act conformity documentation, removing the last major procurement blocker for regulated industries.',
-    date: '2026-05-16', source: 'Reuters', url: '',
-    contextCorner: {
-      threat: 'Open-model build engagements are now feasible for regulated clients. Big 4 "safe choice" Azure OpenAI talk track is less defensible than 12 months ago.',
-      competitors: 'IBM Consulting (open-source heritage) and Capgemini (Hugging Face partnership) are best positioned. Pure-play Microsoft alliance firms have the weakest answer.',
-      action: 'Train at least 200 practitioners on Hugging Face open-model deployment patterns this year. Build one reference architecture for a regulated client — use it in next 3 RFPs.',
     },
   },
   {

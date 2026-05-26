@@ -8,11 +8,16 @@ echo.
 :: Check for Node.js
 where node >nul 2>nul
 if %errorlevel% neq 0 (
-    echo [ERROR] Node.js is not installed or not in your PATH.
-    echo Please install Node.js from https://nodejs.org/ to run the FirmSignal server.
-    echo.
-    pause
-    exit /b 1
+    if exist "C:\Program Files\nodejs\node.exe" (
+        echo [INFO] Detected Node.js in C:\Program Files\nodejs. Adding to PATH...
+        set "PATH=%PATH%;C:\Program Files\nodejs"
+    ) else (
+        echo [ERROR] Node.js is not installed or not in your PATH.
+        echo Please install Node.js from https://nodejs.org/ to run the FirmSignal server.
+        echo.
+        pause
+        exit /b 1
+    )
 )
 
 echo [INFO] Node.js detected:

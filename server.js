@@ -302,9 +302,35 @@ async function readDb() {
     const data = await fs.readFile(DB_FILE, 'utf8');
     return JSON.parse(data);
   } catch (err) {
-    // If database doesn't exist, create it with defaults
-    await logActivity('Database file missing or corrupted. Rebuilding with default demo signals.');
     const initialDb = {
+      firms: [
+        { id: "Deloitte", dot: "#4a90e2", type: "consulting" },
+        { id: "PwC", dot: "#d4a04a", type: "consulting" },
+        { id: "EY", dot: "#f5a623", type: "consulting" },
+        { id: "KPMG", dot: "#b294d4", type: "consulting" },
+        { id: "McKinsey", dot: "#e07a6a", type: "consulting" },
+        { id: "BCG", dot: "#7aa6d6", type: "consulting" },
+        { id: "Bain", dot: "#e0a06b", type: "consulting" },
+        { id: "Accenture", dot: "#a86fc7", type: "consulting" },
+        { id: "IBM Consulting", dot: "#88c089", type: "consulting" },
+        { id: "Capgemini", dot: "#6cc4b3", type: "consulting" },
+        { id: "Microsoft", dot: "#00a4ef", type: "tech" },
+        { id: "SAP", dot: "#0070f2", type: "tech" },
+        { id: "ServiceNow", dot: "#62d84e", type: "tech" },
+        { id: "Google", dot: "#ea4335", type: "tech" },
+        { id: "AuditBoard", dot: "#5c6bc0", type: "tech" },
+        { id: "Salesforce", dot: "#00a1e0", type: "tech" },
+        { id: "AWS", dot: "#ff9900", type: "tech" },
+        { id: "Workday", dot: "#f68b1f", type: "tech" },
+        { id: "Palantir", dot: "#7b68ee", type: "tech" },
+        { id: "OpenAI", dot: "#10a37f", type: "ai-first" },
+        { id: "Anthropic", dot: "#c77b58", type: "ai-first" },
+        { id: "Perplexity", dot: "#20808d", type: "ai-first" },
+        { id: "Mistral AI", dot: "#fa520f", type: "ai-first" },
+        { id: "Cohere", dot: "#d2785a", type: "ai-first" },
+        { id: "xAI", dot: "#aaaaaa", type: "ai-first" },
+        { id: "DeepSeek", dot: "#4d6bfe", type: "ai-first" }
+      ],
       signals: DEFAULT_DEMO_SIGNALS,
       chatLogs: [],
       readArticles: {},
@@ -437,6 +463,84 @@ app.get('/api/status', (req, res) => {
     success: true,
     hasApiKey: !!process.env.ANTHROPIC_API_KEY
   });
+});
+
+// GET /api/firms
+app.get('/api/firms', async (req, res) => {
+  try {
+    const db = await readDb();
+    return res.json({ success: true, firms: db.firms || [] });
+  } catch (err) {
+    return res.status(500).json({ error: err.message || 'Failed to fetch firms.' });
+  }
+});
+
+// POST /api/firms
+app.post('/api/firms', async (req, res) => {
+  const { id, type, dot } = req.body;
+  if (!id || !type) return res.status(400).json({ error: 'id and type are required.' });
+  try {
+    const db = await readDb();
+    if (!db.firms) db.firms = [];
+    if (db.firms.some(f => f.id.toLowerCase() === id.toLowerCase())) {
+      return res.status(400).json({ error: `Firm "${id}" already exists.` });
+    }
+    const newFirm = { id, type, dot: dot || '#f5a623' };
+    db.firms.push(newFirm);
+    
+    // Synced immediately to D3 Knowledge Graph company nodes
+    if (db.graph && db.graph.nodes) {
+      if (!db.graph.nodes.some(n => n.id.toLowerCase() === id.toLowerCase())) {
+        db.graph.nodes.push({ id, label: id, type: 'company' });
+      }
+    }
+    
+    await writeDb(db);
+    await logActivity(`Competitor added successfully: "${id}" (${type})`);
+    return res.json({ success: true, firm: newFirm });
+  } catch (err) {
+    return res.status(500).json({ error: err.message || 'Failed to create firm.' });
+  }
+});
+
+// DELETE /api/firms/:id
+app.delete('/api/firms/:id', async (req, res) => {
+  const firmId = req.params.id;
+  try {
+    const db = await readDb();
+    if (!db.firms) db.firms = [];
+    
+    const initialCount = db.firms.length;
+    db.firms = db.firms.filter(f => f.id.toLowerCase() !== firmId.toLowerCase());
+    
+    if (db.firms.length === initialCount) {
+      return res.status(404).json({ error: `Firm "${firmId}" not found.` });
+    }
+    
+    // Cascade cleanup associated signals
+    if (db.signals) {
+      db.signals = db.signals.filter(s => s.firm.toLowerCase() !== firmId.toLowerCase());
+    }
+    
+    // Also clean up from Knowledge Graph nodes and links
+    if (db.graph) {
+      if (db.graph.nodes) {
+        db.graph.nodes = db.graph.nodes.filter(n => n.id.toLowerCase() !== firmId.toLowerCase());
+      }
+      if (db.graph.links) {
+        db.graph.links = db.graph.links.filter(l => 
+          l.source.toLowerCase() !== firmId.toLowerCase() && 
+          l.target.toLowerCase() !== firmId.toLowerCase()
+        );
+      }
+    }
+    
+    await writeDb(db);
+    await logActivity(`Competitor deleted successfully: "${firmId}" and cascade signals cleared.`);
+    return res.json({ success: true, deletedId: firmId });
+  } catch (err) {
+    return res.status(500).json({ error: err.message || 'Failed to delete firm.' });
+  }
 });
 
 // GET /api/signals
@@ -606,16 +710,16 @@ ${s.contextCorner ? `Context Corner:\n  Threat: ${s.contextCorner.threat}\n  Com
     // Set Personas
     let systemPrompt = "";
     if (agent === 'advisor') {
-      systemPrompt = `You are the Lead Executive Advisor for FirmSignal. Your role is to provide strategic, high-level guidance to C-suite leaders. 
-Synthesize the provided business intelligence into actionable advice, focusing heavily on competitive advantages, "so-what" business impact, and concrete quarterly moves. 
-Speak with precision, authority, and deep strategic insight. Avoid generic statements. Use professional markdown formatting in your response.
+      systemPrompt = `You are the Lead competitive intelligence advisor for EY's global executive leadership. Your role is to provide strategic guidance to EY C-suite leaders. 
+Analyze the provided business intelligence specifically from EY's competitive perspective. Focus heavily on threats/opportunities for EY, rival moves (by Deloitte, PwC, KPMG, McKinsey, BCG, Bain, Accenture), and concrete action plans for EY leadership to win and protect its margins.
+Speak with extreme precision, authority, and deep strategic C-suite insight. Avoid generic statements. Use professional markdown formatting.
 
 RAG INTEL CONTEXT FROM LOCAL DATABASE:
 =======================================
 ${ragContextString}
 =======================================
 
-Using the context above, address the user's query with executive focus. Include concrete "action points" and strategic justifications.`;
+Using the context above, address the user's query with a strict focus on EY's strategy and competitive advantage. Include concrete "Action items for EY leadership" and strategic justifications.`;
     } else if (agent === 'researcher') {
       systemPrompt = `You are the Head of Research for FirmSignal. Your role is to perform thorough factual synthesis, timelines, and comparisons. 
 Utilize the provided context to present highly structured, evidence-backed answers with exact dates, names, figures, and sources.
@@ -724,24 +828,19 @@ app.get('/api/kg', async (req, res) => {
     const links = [];
     const addedNodeIds = new Set();
 
-    // Static firm definitions mapping for coloring
-    const firmMap = new Map();
-    db.signals.forEach(s => {
-      firmMap.set(s.firm, { type: s.type });
-    });
-
-    // 1. Core firms nodes
-    for (const [firmId, details] of firmMap.entries()) {
-      const nodeId = `firm_${firmId}`;
+    // 1. Core firms nodes from dynamic database
+    const dynamicFirms = db.firms || [];
+    dynamicFirms.forEach(f => {
+      const nodeId = `firm_${f.id}`;
       nodes.push({
         id: nodeId,
-        label: firmId,
+        label: f.id,
         group: 'firm',
-        type: details.type,
-        color: details.type === 'tech' ? '#0070f2' : details.type === 'ai-first' ? '#10a37f' : '#f5a623'
+        type: f.type,
+        color: f.type === 'tech' ? '#0070f2' : f.type === 'ai-first' ? '#10a37f' : '#f5a623'
       });
       addedNodeIds.add(nodeId);
-    }
+    });
 
     // 2. Signal Types nodes
     const signalTypes = [...new Set(db.signals.map(s => s.signal))];
@@ -822,6 +921,34 @@ app.get('/api/kg', async (req, res) => {
       });
     });
 
+    // 6. Direct Dynamic Firm-to-Firm Alliance Linkages
+    db.signals.forEach(s => {
+      if (s.signal === 'Partnership') {
+        const sourceFirmNodeId = `firm_${s.firm}`;
+        if (addedNodeIds.has(sourceFirmNodeId)) {
+          const fullText = `${s.title} ${s.summary} ${s.takeaway}`.toLowerCase();
+          
+          dynamicFirms.forEach(otherFirm => {
+            if (otherFirm.id.toLowerCase() !== s.firm.toLowerCase()) {
+              if (fullText.includes(otherFirm.id.toLowerCase())) {
+                const targetFirmNodeId = `firm_${otherFirm.id}`;
+                if (addedNodeIds.has(targetFirmNodeId)) {
+                  // Connect consulting-to-ai or consulting-to-tech direct alliance links!
+                  links.push({
+                    source: sourceFirmNodeId,
+                    target: targetFirmNodeId,
+                    relation: 'ALLIANCE',
+                    value: 5,
+                    isAlliance: true
+                  });
+                }
+              }
+            }
+          });
+        }
+      }
+    });
+
     await logActivity(`Compiled Knowledge Graph containing ${nodes.length} nodes and ${links.length} relationships.`);
     return res.json({ nodes, links });
 
@@ -891,6 +1018,73 @@ app.post('/api/articles/read', async (req, res) => {
   }
 });
 
+// Endpoints for Dynamic Firms
+app.get('/api/firms', async (req, res) => {
+  try {
+    const db = await readDb();
+    return res.json(db.firms || []);
+  } catch (err) {
+    await logActivity(`Error in GET /api/firms: ${err.message}`);
+    return res.status(500).json({ error: 'Failed to fetch firms.' });
+  }
+});
+
+app.post('/api/firms', async (req, res) => {
+  const { id, type, dot } = req.body;
+  if (!id || !type) {
+    return res.status(400).json({ error: 'id and type are required.' });
+  }
+  try {
+    const db = await readDb();
+    if (!db.firms) db.firms = [];
+    if (db.firms.some(f => f.id.toLowerCase() === id.toLowerCase())) {
+      return res.status(400).json({ error: 'Firm already exists.' });
+    }
+    const newFirm = {
+      id,
+      type,
+      dot: dot || '#aaaaaa'
+    };
+    db.firms.push(newFirm);
+    await writeDb(db);
+    await logActivity(`Added firm: ${id} (${type})`);
+    return res.json({ success: true, firm: newFirm });
+  } catch (err) {
+    await logActivity(`Error in POST /api/firms: ${err.message}`);
+    return res.status(500).json({ error: 'Failed to save firm.' });
+  }
+});
+
+app.delete('/api/firms/:id', async (req, res) => {
+  const firmId = req.params.id;
+  if (!firmId) {
+    return res.status(400).json({ error: 'id is required.' });
+  }
+  try {
+    const db = await readDb();
+    if (!db.firms) db.firms = [];
+    
+    const initialCount = db.firms.length;
+    db.firms = db.firms.filter(f => f.id.toLowerCase() !== firmId.toLowerCase());
+    
+    if (db.firms.length === initialCount) {
+      return res.status(404).json({ error: 'Firm not found.' });
+    }
+
+    // Cascade clean: remove associated signals
+    const signalsCountBefore = db.signals.length;
+    db.signals = db.signals.filter(s => s.firm.toLowerCase() !== firmId.toLowerCase());
+    const signalsRemoved = signalsCountBefore - db.signals.length;
+
+    await writeDb(db);
+    await logActivity(`Deleted firm: ${firmId}. Cascade removed ${signalsRemoved} signals.`);
+    return res.json({ success: true, message: `Firm ${firmId} deleted.`, signalsRemoved });
+  } catch (err) {
+    await logActivity(`Error in DELETE /api/firms/:id: ${err.message}`);
+    return res.status(500).json({ error: 'Failed to delete firm.' });
+  }
+});
+
 // 5. POST /api/db/reset
 // Database rollbacks to default demo signals.
 app.post('/api/db/reset', async (req, res) => {
@@ -898,6 +1092,34 @@ app.post('/api/db/reset', async (req, res) => {
 
   try {
     const defaultDb = {
+      firms: [
+        { id: "Deloitte", dot: "#4a90e2", type: "consulting" },
+        { id: "PwC", dot: "#d4a04a", type: "consulting" },
+        { id: "EY", dot: "#f5a623", type: "consulting" },
+        { id: "KPMG", dot: "#b294d4", type: "consulting" },
+        { id: "McKinsey", dot: "#e07a6a", type: "consulting" },
+        { id: "BCG", dot: "#7aa6d6", type: "consulting" },
+        { id: "Bain", dot: "#e0a06b", type: "consulting" },
+        { id: "Accenture", dot: "#a86fc7", type: "consulting" },
+        { id: "IBM Consulting", dot: "#88c089", type: "consulting" },
+        { id: "Capgemini", dot: "#6cc4b3", type: "consulting" },
+        { id: "Microsoft", dot: "#00a4ef", type: "tech" },
+        { id: "SAP", dot: "#0070f2", type: "tech" },
+        { id: "ServiceNow", dot: "#62d84e", type: "tech" },
+        { id: "Google", dot: "#ea4335", type: "tech" },
+        { id: "AuditBoard", dot: "#5c6bc0", type: "tech" },
+        { id: "Salesforce", dot: "#00a1e0", type: "tech" },
+        { id: "AWS", dot: "#ff9900", type: "tech" },
+        { id: "Workday", dot: "#f68b1f", type: "tech" },
+        { id: "Palantir", dot: "#7b68ee", type: "tech" },
+        { id: "OpenAI", dot: "#10a37f", type: "ai-first" },
+        { id: "Anthropic", dot: "#c77b58", type: "ai-first" },
+        { id: "Perplexity", dot: "#20808d", type: "ai-first" },
+        { id: "Mistral AI", dot: "#fa520f", type: "ai-first" },
+        { id: "Cohere", dot: "#d2785a", type: "ai-first" },
+        { id: "xAI", dot: "#aaaaaa", type: "ai-first" },
+        { id: "DeepSeek", dot: "#4d6bfe", type: "ai-first" }
+      ],
       signals: DEFAULT_DEMO_SIGNALS,
       chatLogs: [],
       readArticles: {},

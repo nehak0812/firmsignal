@@ -115,3 +115,6 @@
 [2026-05-26T13:17:38.662Z] Initiating Claude proxy web search for: "DeepSeek strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
 [2026-05-26T13:17:39.010Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRFAkjzn8Ejs2FqhevF9"}
 [2026-05-26T13:17:39.013Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T19:10:26.018Z] FirmSignal Backend running on port 3000
+[2026-05-26T19:11:12.642Z] GET /api/signals hit.
+[2026-05-26T19:14:33.809Z] GET /api/signals hit.

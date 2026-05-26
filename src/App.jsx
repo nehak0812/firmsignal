@@ -13,10 +13,14 @@ import {
 import { TweaksPanel, TweakSection, TweakRadio, TweakToggle, useTweaks } from './tweaks.jsx';
 
 // ============== SIDEBAR FILTER COMPONENT ==============
-function Sidebar({ data, activeFirms, toggleFirm, activeSignals, toggleSignal, view, setView }) {
+function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, toggleSignal, view, setView, handleAddFirm, handleDeleteFirm }) {
   const consCount = data.filter(d => d.type === 'consulting').length;
   const techCount = data.filter(d => d.type === 'tech').length;
   const aiCount = data.filter(d => d.type === 'ai-first').length;
+
+  const consultingList = firms.filter(f => f.type === 'consulting');
+  const aiList = firms.filter(f => f.type === 'ai-first');
+  const techList = firms.filter(f => f.type === 'tech');
 
   const firmRow = (f) => {
     const cnt = data.filter(d => d.firm === f.id).length;
@@ -24,7 +28,7 @@ function Sidebar({ data, activeFirms, toggleFirm, activeSignals, toggleSignal, v
     return (
       <button 
         key={f.id} 
-        className={`sb-row ${isActive ? (f.type === 'tech' ? 'active tech' : 'active') : ''}`} 
+        className={`sb-row ${isActive ? (f.type === 'tech' ? 'active tech' : 'active') : ''}`}
         onClick={() => toggleFirm(f.id)}
       >
         <span className="sb-dot" style={{ background: f.dot }} />
@@ -36,6 +40,26 @@ function Sidebar({ data, activeFirms, toggleFirm, activeSignals, toggleSignal, v
 
   return (
     <aside className="sidebar">
+  
+      {/* Add/Delete Firm Controls */}
+      <div className="sb-section">
+        <button className="sb-row" onClick={() => {
+          const id = prompt('Enter new firm ID');
+          if (!id) return;
+          const type = prompt('Enter firm type (consulting, tech, ai-first)');
+          const dot = prompt('Enter dot color (e.g., #ff0000)');
+          if (id && type && dot) {
+            handleAddFirm({ id, type, dot });
+          }
+        }}>Add Firm</button>
+        <button className="sb-row" onClick={() => {
+          const id = prompt('Enter firm ID to delete');
+          if (id) {
+            handleDeleteFirm(id);
+          }
+        }}>Delete Firm</button>
+      </div>
+
       <div className="sb-section">
         <div className="sb-label">View Feed</div>
         <button className={`sb-row ${view === 'all' ? 'active' : ''}`} onClick={() => setView('all')}>All active signals</button>
@@ -44,18 +68,18 @@ function Sidebar({ data, activeFirms, toggleFirm, activeSignals, toggleSignal, v
       </div>
 
       <div className="sb-section">
-        <div className="sb-label">Consulting <span className="sb-count">{consCount}</span></div>
-        {CONSULTING_FIRMS.map(firmRow)}
+        <div className="sb-label">Compete <span className="sb-count">{consCount}</span></div>
+        {consultingList.map(firmRow)}
       </div>
 
       <div className="sb-section">
         <div className="sb-label">AI-first labs <span className="sb-count">{aiCount}</span></div>
-        {AI_FIRST_FIRMS.map(firmRow)}
+        {aiList.map(firmRow)}
       </div>
 
       <div className="sb-section">
         <div className="sb-label">Tech &amp; AI partners <span className="sb-count">{techCount}</span></div>
-        {TECH_FIRMS.map(firmRow)}
+        {techList.map(firmRow)}
       </div>
 
       <div className="sb-section">
@@ -77,16 +101,16 @@ function Sidebar({ data, activeFirms, toggleFirm, activeSignals, toggleSignal, v
 }
 
 // ============== INTEL NEWS FETCH COMPONENT ==============
-function FetchPanel({ apiKey, serverHasKey, onOpenApiModal, onAddItems, onShowToast }) {
+function FetchPanel({ firms = [], apiKey, serverHasKey, onOpenApiModal, onAddItems, onShowToast }) {
   const [mode, setMode] = useState('sweep-consulting');
   const [firm, setFirm] = useState('Deloitte');
   const [customQ, setCustomQ] = useState('');
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState(null);
 
-  const CONSULTING_SWEEP = ['Deloitte', 'PwC', 'EY', 'KPMG', 'McKinsey', 'BCG', 'Bain', 'Accenture', 'IBM Consulting', 'Capgemini'];
-  const TECH_SWEEP = ['Microsoft', 'SAP', 'ServiceNow', 'Google', 'AuditBoard', 'Salesforce', 'AWS', 'Workday', 'Palantir'];
-  const AI_SWEEP = ['OpenAI', 'Anthropic', 'Perplexity', 'Mistral AI', 'Cohere', 'xAI', 'Hugging Face', 'DeepSeek'];
+  const CONSULTING_SWEEP = firms.filter(f => f.type === 'consulting').map(f => f.id);
+  const TECH_SWEEP = firms.filter(f => f.type === 'tech').map(f => f.id);
+  const AI_SWEEP = firms.filter(f => f.type === 'ai-first').map(f => f.id);
 
   const btnLabel = {
     'sweep-consulting': 'Sweep consulting firms',
@@ -97,14 +121,14 @@ function FetchPanel({ apiKey, serverHasKey, onOpenApiModal, onAddItems, onShowTo
     'custom':           'Query Claude',
   }[mode];
 
-  const runSweep = async (firms, label) => {
+  const runSweep = async (firmsToSweep, label) => {
     const today = new Date().toISOString().slice(0, 10);
     let totalAdded = 0;
     const log = [];
-    setProgress({ current: 0, total: firms.length, label: `Starting ${label}…`, log: [] });
+    setProgress({ current: 0, total: firmsToSweep.length, label: `Starting ${label}…`, log: [] });
     
-    for (let i = 0; i < firms.length; i++) {
-      const f = firms[i];
+    for (let i = 0; i < firmsToSweep.length; i++) {
+      const f = firmsToSweep[i];
       setProgress(p => ({ ...p, current: i, label: `Polling live ${f} news…` }));
       try {
         const results = await callClaude(`${f} strategic news this week ${today} site:reuters.com OR site:ft.com OR site:bloomberg.com`, apiKey);
@@ -116,9 +140,9 @@ function FetchPanel({ apiKey, serverHasKey, onOpenApiModal, onAddItems, onShowTo
         log.unshift(`${f} — error loading`);
         setProgress(p => ({ ...p, log: [...log] }));
       }
-      if (i < firms.length - 1) await new Promise(r => setTimeout(r, 700));
+      if (i < firmsToSweep.length - 1) await new Promise(r => setTimeout(r, 700));
     }
-    setProgress({ current: firms.length, total: firms.length, label: 'Sweep completed', log });
+    setProgress({ current: firmsToSweep.length, total: firmsToSweep.length, label: 'Sweep completed', log });
     onShowToast(`✓ ${label} done — ${totalAdded} new signals indexed`);
     setTimeout(() => setProgress(null), 9000);
   };
@@ -171,14 +195,14 @@ function FetchPanel({ apiKey, serverHasKey, onOpenApiModal, onAddItems, onShowTo
         
         {mode === 'firm' && (
           <select className="select" value={firm} onChange={e => setFirm(e.target.value)}>
-            <optgroup label="Consulting">
-              {CONSULTING_FIRMS.map(f => <option key={f.id} value={f.id}>{f.id}</option>)}
+            <optgroup label="Compete">
+              {firms.filter(f => f.type === 'consulting').map(f => <option key={f.id} value={f.id}>{f.id}</option>)}
             </optgroup>
             <optgroup label="AI-first labs">
-              {AI_FIRST_FIRMS.map(f => <option key={f.id} value={f.id}>{f.id}</option>)}
+              {firms.filter(f => f.type === 'ai-first').map(f => <option key={f.id} value={f.id}>{f.id}</option>)}
             </optgroup>
             <optgroup label="Tech Partners">
-              {TECH_FIRMS.map(f => <option key={f.id} value={f.id}>{f.id}</option>)}
+              {firms.filter(f => f.type === 'tech').map(f => <option key={f.id} value={f.id}>{f.id}</option>)}
             </optgroup>
           </select>
         )}
@@ -264,8 +288,10 @@ function AdvisoryChatDrawer({ open, onClose, data, apiKey, serverHasKey }) {
 
   // Scroll to bottom on updates
   useEffect(() => {
-    messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [histories, activeAgent]);
+    if (open) {
+      messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [histories, activeAgent, open]);
 
   const activeHistory = histories[activeAgent];
 
@@ -387,7 +413,7 @@ function AdvisoryChatDrawer({ open, onClose, data, apiKey, serverHasKey }) {
       if (q.includes('threat') || q.includes('risk') || q.includes('competitor') || q.includes('stat')) {
         return `### **[Lead Researcher Log: Quantitative Overview]**\n\nScanning indexed database payloads. Found **${stats.length} high-impact** signals (importance score >= 4).\n\n**Raw Records Index:**\n` +
           stats.slice(0, 4).map(c => `* [${c.date}] **${c.firm}** — *${c.title}* (Impact: ${c.importance}/5)`).join('\n') +
-          `\n\n*Telemetry State*: API pipelines healthy. Sync with backend running on port 3000.`;
+          `\n\n`;
       }
       return `### **[Lead Researcher Fact-Finder]**\n\nProcessed query: *"${text}"*.\n\n**Operational Database Telemetry:**\n* **Active Database Nodes**: ${db.length} records mapped.\n* **Firms tracked**: ${Array.from(new Set(db.map(d => d.firm))).length} entities.\n* **Latest Event**: *${db[0]?.title}* by ${db[0]?.firm} on ${db[0]?.date}.\n\nFor complete JSON payload audits, trigger the **Download DB JSON Backup** in the Data Pipeline dashboard.`;
     } 
@@ -478,7 +504,7 @@ function AdvisoryChatDrawer({ open, onClose, data, apiKey, serverHasKey }) {
 // ============== TWEAKS CORE WIDGET ==============
 function FSTweaks() {
   const TWEAK_DEFAULTS = {
-    "theme": "warm",
+    "theme": "ivory",
     "density": "balanced",
     "showTicker": true,
     "showPulse": true
@@ -537,6 +563,7 @@ function FSTweaks() {
 // ============== PRIMARY APP COMPONENT ==============
 function App() {
   const [data, setData] = useState(DEMO_SIGNALS);
+  const [firms, setFirms] = useState(ALL_FIRMS);
   const [activeNav, setActiveNav] = useState('brief');
   const [view, setView] = useState('all');
   const [activeFirms, setActiveFirms] = useState(new Set());
@@ -560,35 +587,52 @@ function App() {
   const [showPulse, setShowPulse] = useState(true);
 
   // Sync index from server on mount
+  const loadSignals = async () => {
+    try {
+      const resp = await fetch('/api/signals');
+      if (resp.ok) {
+        const db = await resp.json();
+        const list = Array.isArray(db) ? db : db.signals;
+        if (list && list.length > 0) {
+          setData(list);
+        }
+      }
+    } catch (err) {
+      console.warn('[FirmSignal] API backend port offline. Falling back to local data.');
+    }
+  };
+
+  const loadFirms = async () => {
+    try {
+      const resp = await fetch('/api/firms');
+      if (resp.ok) {
+        const list = await resp.json();
+        if (Array.isArray(list) && list.length > 0) {
+          setFirms(list);
+        }
+      }
+    } catch (err) {
+      console.warn('[FirmSignal] Could not fetch dynamic firms from backend.');
+    }
+  };
+
+  const checkServerStatus = async () => {
+    try {
+      const resp = await fetch('/api/status');
+      if (resp.ok) {
+        const resJson = await resp.json();
+        if (resJson.success && resJson.hasApiKey) {
+          setServerHasKey(true);
+        }
+      }
+    } catch (err) {
+      console.warn('[FirmSignal] Could not fetch server API status.');
+    }
+  };
+
   useEffect(() => {
-    const loadSignals = async () => {
-      try {
-        const resp = await fetch('/api/signals');
-        if (resp.ok) {
-          const db = await resp.json();
-          const list = Array.isArray(db) ? db : db.signals;
-          if (list && list.length > 0) {
-            setData(list);
-          }
-        }
-      } catch (err) {
-        console.warn('[FirmSignal] API backend port offline. Falling back to local data.');
-      }
-    };
-    const checkServerStatus = async () => {
-      try {
-        const resp = await fetch('/api/status');
-        if (resp.ok) {
-          const resJson = await resp.json();
-          if (resJson.success && resJson.hasApiKey) {
-            setServerHasKey(true);
-          }
-        }
-      } catch (err) {
-        console.warn('[FirmSignal] Could not fetch server API status.');
-      }
-    };
     loadSignals();
+    loadFirms();
     checkServerStatus();
   }, []);
 
@@ -722,8 +766,62 @@ function App() {
     showToast('Demo data loaded. Connect keys to unlock scanning.');
   };
 
-  const onResetDb = () => {
-    setData(DEMO_SIGNALS);
+  const handleAddFirm = async (firmObj) => {
+    try {
+      const resp = await fetch('/api/firms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(firmObj)
+      });
+      if (resp.ok) {
+        const json = await resp.json();
+        if (json.success) {
+          setFirms(prev => [...prev, json.firm]);
+          showToast(`✓ Firm ${json.firm.id} added successfully`);
+          return true;
+        }
+      } else {
+        const err = await resp.json();
+        showToast(`Error: ${err.error || 'Failed to add firm'}`);
+      }
+    } catch (err) {
+      showToast('Connection error adding firm');
+    }
+    return false;
+  };
+
+  const handleDeleteFirm = async (firmId) => {
+    try {
+      const resp = await fetch(`/api/firms/${encodeURIComponent(firmId)}`, {
+        method: 'DELETE'
+      });
+      if (resp.ok) {
+        const json = await resp.json();
+        if (json.success) {
+          setFirms(prev => prev.filter(f => f.id !== firmId));
+          setData(prev => prev.filter(s => s.firm.toLowerCase() !== firmId.toLowerCase()));
+          showToast(`✓ Firm ${firmId} and ${json.signalsRemoved} signals cascade deleted`);
+          return true;
+        }
+      } else {
+        const err = await resp.json();
+        showToast(`Error: ${err.error || 'Failed to delete firm'}`);
+      }
+    } catch (err) {
+      showToast('Connection error deleting firm');
+    }
+    return false;
+  };
+
+  const onResetDb = async () => {
+    try {
+      const resp = await fetch('/api/db/reset', { method: 'POST' });
+      if (resp.ok) {
+        showToast('✓ Database rollbacked successfully');
+      }
+    } catch (e) {}
+    await loadSignals();
+    await loadFirms();
     setActiveFirms(new Set());
     setActiveSignals(new Set());
     setSearch('');
@@ -789,7 +887,7 @@ function App() {
           ))}
         </div>
         <div className="topbar-right">
-          <span className="date-stamp">Telemetry <strong>{dateShort}</strong></span>
+          <span className="date-stamp"><strong>{dateShort}</strong></span>
           <span className={`live-indicator ${(apiKey || serverHasKey) ? '' : 'disconnected'}`}>
             <span className="live-dot" />
             {(apiKey || serverHasKey) ? 'LIVE' : 'DEMO'}
@@ -803,6 +901,7 @@ function App() {
 
       <div className={`shell ${chatOpen ? 'has-chat' : ''}`}>
         <Sidebar
+          firms={firms}
           data={data}
           activeFirms={activeFirms} toggleFirm={toggleFirm}
           activeSignals={activeSignals} toggleSignal={toggleSignal}
@@ -811,19 +910,19 @@ function App() {
         
         <main className="main">
           {activeNav === 'signals' && (
-            <FetchPanel apiKey={apiKey} serverHasKey={serverHasKey} onOpenApiModal={() => setApiModalOpen(true)} onAddItems={onAddItems} onShowToast={showToast} />
+            <FetchPanel firms={firms} apiKey={apiKey} serverHasKey={serverHasKey} onOpenApiModal={() => setApiModalOpen(true)} onAddItems={onAddItems} onShowToast={showToast} />
           )}
 
           {activeNav === 'brief' && (
-            <BriefView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={ALL_FIRMS} SIGNAL_COLORS={SIGNAL_COLORS} getBrief={getBrief} />
+            <BriefView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={firms} SIGNAL_COLORS={SIGNAL_COLORS} getBrief={getBrief} />
           )}
           
           {activeNav === 'context' && (
-            <ContextCornerView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={ALL_FIRMS} AI_FIRST_FIRMS={AI_FIRST_FIRMS} SIGNAL_COLORS={SIGNAL_COLORS} />
+            <ContextCornerView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={firms} AI_FIRST_FIRMS={firms.filter(f => f.type === 'ai-first')} SIGNAL_COLORS={SIGNAL_COLORS} />
           )}
 
           {activeNav === 'graph' && (
-            <KnowledgeGraph data={data} ALL_FIRMS={ALL_FIRMS} SIGNALS={SIGNALS} SIGNAL_COLORS={SIGNAL_COLORS} onNodeSelected={handleGraphNodeSelected} />
+            <KnowledgeGraph data={data} ALL_FIRMS={firms} SIGNALS={SIGNALS} SIGNAL_COLORS={SIGNAL_COLORS} onNodeSelected={handleGraphNodeSelected} />
           )}
 
           {activeNav === 'signals' && (
@@ -834,25 +933,25 @@ function App() {
               search={search} setSearch={setSearch}
               sort={sort} setSort={setSort}
               density={density}
-              ALL_FIRMS={ALL_FIRMS}
+              ALL_FIRMS={firms}
               SIGNAL_COLORS={SIGNAL_COLORS}
             />
           )}
 
           {activeNav === 'heatmap' && (
-            <HeatmapView data={filtered} onCellClick={onHeatCellClick} ALL_FIRMS={ALL_FIRMS} SIGNALS={SIGNALS} buildHeatmap={buildHeatmap} />
+            <HeatmapView data={filtered} onCellClick={onHeatCellClick} ALL_FIRMS={firms} SIGNALS={SIGNALS} buildHeatmap={buildHeatmap} />
           )}
 
           {activeNav === 'compare' && (
-            <CompareView data={data} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={ALL_FIRMS} CONSULTING_FIRMS={CONSULTING_FIRMS} AI_FIRST_FIRMS={AI_FIRST_FIRMS} TECH_FIRMS={TECH_FIRMS} />
+            <CompareView data={data} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={firms} CONSULTING_FIRMS={firms.filter(f => f.type === 'consulting')} AI_FIRST_FIRMS={firms.filter(f => f.type === 'ai-first')} TECH_FIRMS={firms.filter(f => f.type === 'tech')} />
           )}
 
           {activeNav === 'watchlist' && (
-            <WatchlistView data={data} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={ALL_FIRMS} SIGNAL_COLORS={SIGNAL_COLORS} />
+            <WatchlistView data={data} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={firms} SIGNAL_COLORS={SIGNAL_COLORS} />
           )}
 
           {activeNav === 'pipeline' && (
-            <DataPipelineAuditView data={data} apiKey={apiKey} onResetDb={onResetDb} onShowToast={showToast} />
+            <DataPipelineAuditView data={data} firms={firms} onAddFirm={handleAddFirm} onDeleteFirm={handleDeleteFirm} apiKey={apiKey} onResetDb={onResetDb} onShowToast={showToast} />
           )}
         </main>
 

@@ -108,14 +108,37 @@ export function SignalCard({ item, isSaved, onToggleSave, index, ALL_FIRMS = [],
   const dateStr = item.date ? new Date(item.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
   const hasUrl = item.url && item.url.startsWith('http');
   const impCls = `imp-${item.importance || 2}`;
-  let domain = '';
-  if (hasUrl) { try { domain = new URL(item.url).hostname.replace('www.', ''); } catch (e) {} }
+  
+  const targetUrl = hasUrl ? item.url : `https://news.google.com/search?q=${encodeURIComponent(item.title)}`;
+  const domain = hasUrl ? new URL(item.url).hostname.replace('www.', '') : 'Google News';
 
-  const inner = (
-    <>
+  const getSentimentBadge = () => {
+    const sig = item.signal.toLowerCase();
+    const title = item.title.toLowerCase();
+    const summary = item.summary.toLowerCase();
+    const isNegative = sig === 'restructure' || sig === 'regulatory' || 
+                       title.includes('cut') || title.includes('layoff') || title.includes('disappointment') ||
+                       summary.includes('anxiety') || title.includes('oppose');
+    if (isNegative) {
+      return <span className="sentiment-badge neg">🔴 Risk Profile</span>;
+    }
+    return <span className="sentiment-badge pos">🟢 Growth Driver</span>;
+  };
+
+  return (
+    <a 
+      href={targetUrl} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className={`card ${impCls}`} 
+      style={{ animationDelay: `${index * 0.03}s`, textDecoration: 'none' }}
+    >
       <div className="card-meta-row">
         <FirmPill firm={item.firm} ALL_FIRMS={ALL_FIRMS} />
-        <span className="signal-tag" style={{ background: sc.bg, color: sc.color }}>{item.signal}</span>
+        <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+          {getSentimentBadge()}
+          <span className="signal-tag" style={{ background: sc.bg, color: sc.color }}>{item.signal}</span>
+        </div>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
         <ImportanceBar value={item.importance || 2} />
@@ -129,25 +152,14 @@ export function SignalCard({ item, isSaved, onToggleSave, index, ALL_FIRMS = [],
       <div className="card-foot">
         <span>{dateStr}</span>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          {hasUrl ? (
-            <a href={item.url} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
-              {domain || item.source}
-            </a>
-          ) : (
-            <span style={{ color: 'var(--ink-4)' }}>{item.source || 'demo'}</span>
-          )}
+          <span style={{ color: 'var(--ink-3)', textDecoration: 'underline' }}>{domain}</span>
           <button className={`save-btn ${isSaved ? 'on' : ''}`} onClick={e => { e.preventDefault(); e.stopPropagation(); onToggleSave(item.id); }} title={isSaved ? 'Unsave' : 'Save'}>
             {isSaved ? '★' : '☆'}
           </button>
         </div>
       </div>
-    </>
+    </a>
   );
-
-  if (hasUrl) {
-    return <a href={item.url} target="_blank" rel="noopener noreferrer" className={`card ${impCls}`} style={{ animationDelay: `${index * 0.03}s` }}>{inner}</a>;
-  }
-  return <div className={`card ${impCls}`} style={{ animationDelay: `${index * 0.03}s` }}>{inner}</div>;
 }
 
 // ============== BRIEF VIEW ==============
@@ -341,9 +353,7 @@ export function CompareView({ data, onToggleSave, savedIds, ALL_FIRMS = [], CONS
   const renderCol = (firmId, setFirm, items) => (
     <div className="compare-col">
       <select className="compare-firm-select" value={firmId} onChange={e => setFirm(e.target.value)}>
-        <optgroup label="Consulting">
-          {CONSULTING_FIRMS.map(f => <option key={f.id} value={f.id}>{f.id}</option>)}
-        </optgroup>
+        <optgroup label="Compete">{CONSULTING_FIRMS.map(f => <option key={f.id} value={f.id}>{f.id}</option>)}</optgroup>
         <optgroup label="AI-first labs">
           {AI_FIRST_FIRMS.map(f => <option key={f.id} value={f.id}>{f.id}</option>)}
         </optgroup>
@@ -427,6 +437,39 @@ export function WatchlistView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SI
 // (Replaces generic Strategic Risk tab, rendering AI-first signal cards showing Threats, Competitor Moves, Action blocks)
 export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = [], AI_FIRST_FIRMS = [], SIGNAL_COLORS = {} }) {
   const [firmFilter, setFirmFilter] = useState('all');
+  const [activeForum, setActiveForum] = useState('glassdoor');
+
+  const forumData = {
+    glassdoor: {
+      title: "Glassdoor Employee Index",
+      desc: "Inside perspective on junior developer and senior manager sentiment across consulting practices.",
+      metrics: [
+        { label: "EY Rating", val: "4.1 ★", desc: "Up 0.2 YoY, driven by NVIDIA AI Factory sovereign practices.", trend: "+4%" },
+        { label: "PwC Rating", val: "3.9 ★", desc: "Slight dip after US restructuring. AI pivots praised.", trend: "-2%" },
+        { label: "Deloitte Rating", val: "4.0 ★", desc: "Steady. Tech consulting growth offset by audit margin worries.", trend: "flat" },
+        { label: "McKinsey Rating", val: "3.9 ★", desc: "Back-office cuts created anxiety; consultants praise upskilling.", trend: "-1%" }
+      ],
+      quotes: [
+        { firm: "EY", role: "Senior Consultant", quote: "The Dell-NVIDIA Factory play is a huge GTM asset with banking clients who refuse public cloud. Feel like we actually have a distinct story compared to just building Copilots.", rating: 5 },
+        { firm: "PwC", role: "Manager", quote: "ChatPwC has automated a lot of our slide drafting. Junior leverage is shifting; we are hiring fewer analyst roles and upskilling managers faster.", rating: 4 }
+      ]
+    },
+    fishbowl: {
+      title: "Fishbowl Professional Gossip Feed",
+      desc: "Uncensored professional discussions on partner GTM alignment, alliance politics, and career trajectories.",
+      metrics: [
+        { label: "AI Pipeline Mentions", val: "4,210", desc: "EY NVIDIA Factory and OpenAI Frontier Alliance dominating.", trend: "+24%" },
+        { label: "Morale Index", val: "Balanced", desc: "Consultants enthusiastic about GTM GAI, support teams nervous.", trend: "flat" },
+        { label: "Career Pivot Activity", val: "High", desc: "Massive shift in practitioners trying to escape generic tax/audit to AI Advisory.", trend: "+12%" }
+      ],
+      quotes: [
+        { firm: "Deloitte", role: "Manager", quote: "OpenAI Frontier is a distribution deal. If you are not BCG/McKinsey/Accenture/Capgemini, you are an outsider on the GTM roadmap. We are pivoting to Azure OpenAI, but clients notice the lack of alliance badge.", rating: 3 },
+        { firm: "EY", role: "Senior Manager", quote: "Everyone on my team is talking about the sovereign-AI Dell/NVIDIA play. Regulated defense and banking accounts won't let public AI touch their code. This is our winning card against PwC and McKinsey right now.", rating: 5 }
+      ]
+    }
+  };
+
+  const forum = forumData[activeForum];
 
   // Filter signals to ai-first type only
   const aiSignals = data
@@ -454,6 +497,80 @@ export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = []
           <div><span className="num">{total}</span>AI signals</div>
           <div style={{ marginTop: 10 }}><span className="num">{highImp}</span>high impact</div>
           <div style={{ marginTop: 10 }}><span className="num">{firmsCovered}</span>/{AI_FIRST_FIRMS.length} labs</div>
+        </div>
+      </div>
+
+      {/* Forum Sentiment Hub */}
+      <div className="forum-hub-card" style={{ marginBottom: 28, background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 'var(--r-lg)', padding: '20px 24px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 14 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span style={{ fontSize: 16 }}>📊</span>
+            <h3 style={{ margin: 0, fontFamily: 'var(--serif-disp)', fontSize: 22, color: 'var(--ink)' }}>Forum Sentiment Hub</h3>
+          </div>
+          <div className="forum-hub-tabs" style={{ display: 'flex', gap: 6 }}>
+            {Object.keys(forumData).map(key => (
+              <button
+                key={key}
+                className={`forum-hub-tab-btn ${activeForum === key ? 'active' : ''}`}
+                style={{
+                  background: activeForum === key ? 'var(--accent-bg)' : 'transparent',
+                  border: '1px solid ' + (activeForum === key ? 'var(--accent-2)' : 'var(--line)'),
+                  color: activeForum === key ? 'var(--accent)' : 'var(--ink-2)',
+                  fontFamily: 'var(--mono)',
+                  fontSize: 10,
+                  padding: '4px 10px',
+                  borderRadius: 4,
+                  cursor: 'pointer',
+                  fontWeight: 600
+                }}
+                onClick={() => setActiveForum(key)}
+              >
+                {key.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        </div>
+        <p style={{ margin: '8px 0 16px 0', fontSize: 13, color: 'var(--ink-3)', fontFamily: 'var(--serif)', fontStyle: 'italic' }}>
+          {forum.desc}
+        </p>
+        <div className="forum-hub-content" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+          <div>
+            <h4 style={{ margin: '0 0 10px 0', fontSize: 10, fontFamily: 'var(--mono)', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--ink-4)' }}>Indices &amp; Metrics</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {forum.metrics.map((m, idx) => (
+                <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: 'var(--bg-3)', borderRadius: 6, border: '1px solid var(--line)' }}>
+                  <div>
+                    <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--ink)' }}>{m.label}</div>
+                    <div style={{ fontSize: 10, color: 'var(--ink-3)', marginTop: 2 }}>{m.desc}</div>
+                  </div>
+                  <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ fontSize: 15, fontWeight: 700, fontFamily: 'var(--mono)', color: 'var(--accent)' }}>{m.val}</div>
+                    {m.trend !== 'flat' && (
+                      <span style={{ fontSize: 10, fontFamily: 'var(--mono)', color: m.trend.startsWith('+') ? 'var(--pos)' : 'var(--crit)' }}>
+                        {m.trend}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h4 style={{ margin: '0 0 10px 0', fontSize: 10, fontFamily: 'var(--mono)', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--ink-4)' }}>Community Quotes</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {forum.quotes.map((q, idx) => (
+                <div key={idx} className="forum-quote-card" style={{ padding: 12, background: 'var(--bg-3)', borderRadius: 6, border: '1px solid var(--line)' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
+                    <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--accent)' }}>{q.firm} — {q.role}</span>
+                    <span style={{ fontSize: 10, color: 'var(--accent)' }}>{"★".repeat(q.rating)}</span>
+                  </div>
+                  <p style={{ margin: 0, fontSize: 12.5, color: 'var(--ink-2)', lineHeight: 1.45, fontStyle: 'italic', fontFamily: 'var(--serif)' }}>
+                    "{q.quote}"
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -494,19 +611,19 @@ export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = []
                 </div>
               </div>
               <div className="context-corner">
-                <div className="cc-title">Context Corner · impact on consulting firms <span className="cc-rule" /></div>
+                <div className="cc-title">Context Corner · EY Competitive Standing Analysis <span className="cc-rule" /></div>
                 {item.contextCorner ? (
                   <div className="cc-grid">
                     <div className="cc-block threat">
-                      <h4>Threats / Opportunities</h4>
+                      <h4>Threats / Opportunities for EY</h4>
                       <p>{item.contextCorner.threat}</p>
                     </div>
                     <div className="cc-block competitors">
-                      <h4>Competitor Moves</h4>
+                      <h4>Rival Competitor Moves</h4>
                       <p>{item.contextCorner.competitors}</p>
                     </div>
                     <div className="cc-block action">
-                      <h4>Quarterly Actions</h4>
+                      <h4>Action Plan for EY Leadership</h4>
                       <p>{item.contextCorner.action}</p>
                     </div>
                   </div>

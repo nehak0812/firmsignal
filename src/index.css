@@ -90,7 +90,7 @@ body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-
 .ticker-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; padding: 0 14px; border-right: 1px solid var(--line); flex-shrink: 0; }
 .ticker-tag::before { content: ''; display: inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 8px; vertical-align: middle; animation: pulse 1.6s infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-.ticker-track { display: flex; gap: 36px; animation: tickerScroll 80s linear infinite; white-space: nowrap; padding-left: 36px; }
+.ticker-track { display: flex; gap: 36px; animation: tickerScroll 200s linear infinite; white-space: nowrap; padding-left: 36px; }
 .ticker-item { font-family: var(--mono); font-size: 11px; color: var(--ink-2); }
 .ticker-item .tick-firm { color: var(--ink); font-weight: 500; }
 .ticker-item .tick-sig { color: var(--accent); margin-right: 8px; }
@@ -624,34 +624,37 @@ body[data-theme="ivory"] .context-corner { background: linear-gradient(to bottom
 
 /* ===== DYNAMIC KNOWLEDGE GRAPH ===== */
 .graph-container {
-  background: var(--bg-2);
-  border: 1px solid var(--line);
+  background: #090807; /* Velvet black canvas */
+  border: 1px solid rgba(243, 239, 231, 0.08);
   border-radius: var(--r-lg);
   padding: 16px;
   position: relative;
   overflow: hidden;
-  height: 480px;
+  height: 520px;
   margin-bottom: 28px;
+  box-shadow: inset 0 20px 50px rgba(0,0,0,0.8), 0 10px 30px rgba(0,0,0,0.5);
 }
 .graph-title {
   position: absolute;
-  top: 16px;
-  left: 20px;
+  top: 20px;
+  left: 24px;
   pointer-events: none;
   z-index: 5;
 }
 .graph-title h3 {
   font-family: var(--serif-disp);
-  font-size: 20px;
-  color: var(--ink);
+  font-size: 22px;
+  color: #f3efe7;
   font-weight: 400;
+  letter-spacing: -0.01em;
 }
 .graph-title p {
-  font-size: 11px;
+  font-size: 10px;
   font-family: var(--mono);
-  color: var(--ink-3);
+  color: #8a857a;
   text-transform: uppercase;
-  margin-top: 2px;
+  letter-spacing: 0.16em;
+  margin-top: 4px;
 }
 .graph-svg {
   width: 100%;
@@ -660,76 +663,113 @@ body[data-theme="ivory"] .context-corner { background: linear-gradient(to bottom
 }
 .graph-node {
   cursor: pointer;
-  transition: filter 0.15s, stroke-width 0.15s;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+  filter: drop-shadow(0 0 6px var(--node-glow-color, rgba(212,160,74,0.3)));
 }
 .graph-node:hover {
-  filter: brightness(1.25);
-}
-.graph-node.highlighted {
-  stroke-width: 2.5px;
-  stroke: var(--accent) !important;
+  filter: drop-shadow(0 0 12px var(--node-glow-color, rgba(212,160,74,0.6))) brightness(1.2);
 }
 .graph-node.dimmed {
   opacity: 0.15;
 }
-.graph-link {
-  stroke: var(--line-2);
-  stroke-opacity: 0.4;
+.graph-outer-ring {
+  fill: none;
   stroke-width: 1px;
-  transition: stroke 0.15s, stroke-width 0.15s, opacity 0.15s;
+  stroke-dasharray: 2 1;
+  opacity: 0.55;
+  animation: rotateRing 20s linear infinite;
+  transform-origin: center;
+}
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.graph-link {
+  fill: none;
+  stroke: rgba(243, 239, 231, 0.09);
+  stroke-width: 1.5px;
+  transition: stroke 0.25s, stroke-width 0.25s, opacity 0.25s;
+}
+.graph-link.alliance {
+  stroke: var(--accent);
+  stroke-width: 2.2px;
+  stroke-dasharray: 4 2;
+  stroke-opacity: 0.75;
+  animation: linkFlow 2s linear infinite;
+}
+@keyframes linkFlow {
+  from { stroke-dashoffset: 6; }
+  to { stroke-dashoffset: 0; }
 }
 .graph-link.highlighted {
   stroke: var(--accent);
-  stroke-width: 2px;
+  stroke-width: 2.5px;
   stroke-opacity: 0.9;
 }
 .graph-link.dimmed {
   opacity: 0.05;
 }
 .graph-label {
-  font-family: var(--mono);
-  font-size: 9px;
-  fill: var(--ink-2);
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 400;
+  fill: #c2bdb1;
   pointer-events: none;
   user-select: none;
-  transition: opacity 0.15s, fill 0.15s;
+  text-anchor: middle;
+  transition: opacity 0.25s, fill 0.25s;
+  text-shadow: 0 1.5px 3px rgba(0,0,0,0.95);
 }
 .graph-label.highlighted {
-  fill: var(--ink);
+  fill: #ffffff;
   font-weight: 500;
+  font-size: 11px;
 }
 .graph-label.dimmed {
   opacity: 0.15;
 }
-.graph-tooltip {
-  position: absolute;
-  bottom: 16px;
-  left: 20px;
-  background: rgba(19, 18, 16, 0.94);
-  border: 1px solid var(--line-2);
-  padding: 10px 14px;
-  border-radius: var(--r);
+.graph-tooltip-floating {
+  position: fixed;
   pointer-events: none;
-  max-width: 280px;
-  font-size: 12px;
-  backdrop-filter: blur(10px);
-  z-index: 5;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  background: rgba(13, 12, 10, 0.88);
+  border: 1px solid var(--tooltip-glow-color, var(--line-2));
+  padding: 12px 16px;
+  border-radius: 10px;
+  max-width: 310px;
+  font-size: 12.5px;
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  backdrop-filter: blur(14px) saturate(120%);
+  z-index: 2000;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.06);
+  color: #f3efe7;
+  transition: opacity 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(14px, 14px);
 }
-.graph-tooltip h4 {
+.graph-tooltip-floating h4 {
   font-family: var(--serif-disp);
-  font-size: 16px;
+  font-size: 17px;
   color: var(--accent);
-  margin-bottom: 4px;
+  margin-bottom: 5px;
+  font-weight: 400;
+  letter-spacing: -0.005em;
 }
-.graph-tooltip p {
-  color: var(--ink-2);
-  line-height: 1.4;
+.graph-tooltip-floating p {
+  color: #c2bdb1;
+  line-height: 1.45;
+  font-size: 11.5px;
+}
+.graph-tooltip-floating .meta-lbl {
+  font-family: var(--mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #8a857a;
+  margin-top: 6px;
+  display: block;
 }
 .graph-controls {
   position: absolute;
-  top: 16px;
-  right: 20px;
+  top: 20px;
+  right: 24px;
   display: flex;
   gap: 6px;
   z-index: 5;
