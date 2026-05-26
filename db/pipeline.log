@@ -1,0 +1,6 @@
+[2026-05-26T12:39:10.289Z] FirmSignal Backend running on port 3000
+[2026-05-26T12:39:28.969Z] GET /api/signals hit.
+[2026-05-26T12:39:29.138Z] GET /api/kg hit. Compiling dynamic Knowledge Graph.
+[2026-05-26T12:39:29.142Z] Compiled Knowledge Graph containing 81 nodes and 100 relationships.
+[2026-05-26T12:39:40.603Z] GET /api/signals hit.
+[2026-05-26T12:39:58.053Z] GET /api/signals hit.

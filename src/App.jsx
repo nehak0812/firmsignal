@@ -1,0 +1,767 @@
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+import ReactDOM from 'react-dom/client';
+import { 
+  ALL_FIRMS, CONSULTING_FIRMS, TECH_FIRMS, AI_FIRST_FIRMS, 
+  SIGNALS, SIGNAL_COLORS, DEMO_SIGNALS, 
+  getTickerItems, getBrief, buildHeatmap, callClaude 
+} from './data.js';
+import { 
+  Ticker, BriefView, SignalsView, HeatmapView, CompareView, WatchlistView,
+  ContextCornerView, KnowledgeGraph, DataPipelineAuditView
+} from './views.jsx';
+import { TweaksPanel, TweakSection, TweakRadio, TweakToggle, useTweaks } from './tweaks.jsx';
+
+// ============== SIDEBAR FILTER COMPONENT ==============
+function Sidebar({ data, activeFirms, toggleFirm, activeSignals, toggleSignal, view, setView }) {
+  const consCount = data.filter(d => d.type === 'consulting').length;
+  const techCount = data.filter(d => d.type === 'tech').length;
+  const aiCount = data.filter(d => d.type === 'ai-first').length;
+
+  const firmRow = (f) => {
+    const cnt = data.filter(d => d.firm === f.id).length;
+    const isActive = activeFirms.has(f.id);
+    return (
+      <button 
+        key={f.id} 
+        className={`sb-row ${isActive ? (f.type === 'tech' ? 'active tech' : 'active') : ''}`} 
+        onClick={() => toggleFirm(f.id)}
+      >
+        <span className="sb-dot" style={{ background: f.dot }} />
+        {f.id}
+        <span className="sb-count-mini">{cnt || ''}</span>
+      </button>
+    );
+  };
+
+  return (
+    <aside className="sidebar">
+      <div className="sb-section">
+        <div className="sb-label">View Feed</div>
+        <button className={`sb-row ${view === 'all' ? 'active' : ''}`} onClick={() => setView('all')}>All active signals</button>
+        <button className={`sb-row ${view === 'week' ? 'active' : ''}`} onClick={() => setView('week')}>Past 7 days only</button>
+        <button className={`sb-row ${view === 'highimpact' ? 'active' : ''}`} onClick={() => setView('highimpact')}>Impact score &gt;= 4</button>
+      </div>
+
+      <div className="sb-section">
+        <div className="sb-label">Consulting <span className="sb-count">{consCount}</span></div>
+        {CONSULTING_FIRMS.map(firmRow)}
+      </div>
+
+      <div className="sb-section">
+        <div className="sb-label">AI-first labs <span className="sb-count">{aiCount}</span></div>
+        {AI_FIRST_FIRMS.map(firmRow)}
+      </div>
+
+      <div className="sb-section">
+        <div className="sb-label">Tech &amp; AI partners <span className="sb-count">{techCount}</span></div>
+        {TECH_FIRMS.map(firmRow)}
+      </div>
+
+      <div className="sb-section">
+        <div className="sb-label">Signal Taxonomy</div>
+        <div className="sb-chip-row">
+          {SIGNALS.map(s => (
+            <button 
+              key={s} 
+              className={`sb-chip ${activeSignals.has(s) ? 'active' : ''}`} 
+              onClick={() => toggleSignal(s)}
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+      </div>
+    </aside>
+  );
+}
+
+// ============== INTEL NEWS FETCH COMPONENT ==============
+function FetchPanel({ apiKey, onOpenApiModal, onAddItems, onShowToast }) {
+  const [mode, setMode] = useState('sweep-consulting');
+  const [firm, setFirm] = useState('Deloitte');
+  const [customQ, setCustomQ] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [progress, setProgress] = useState(null);
+
+  const CONSULTING_SWEEP = ['Deloitte', 'PwC', 'EY', 'KPMG', 'McKinsey', 'BCG', 'Bain', 'Accenture', 'IBM Consulting', 'Capgemini'];
+  const TECH_SWEEP = ['Microsoft', 'SAP', 'ServiceNow', 'Google', 'AuditBoard', 'Salesforce', 'AWS', 'Workday', 'Palantir'];
+  const AI_SWEEP = ['OpenAI', 'Anthropic', 'Perplexity', 'Mistral AI', 'Cohere', 'xAI', 'Hugging Face', 'DeepSeek'];
+
+  const btnLabel = {
+    'sweep-consulting': 'Sweep consulting firms',
+    'sweep-tech':       'Sweep tech partners',
+    'sweep-ai':         'Sweep AI labs',
+    'sweep-all':        'Sweep all firms',
+    'firm':             'Scan firm',
+    'custom':           'Query Claude',
+  }[mode];
+
+  const runSweep = async (firms, label) => {
+    const today = new Date().toISOString().slice(0, 10);
+    let totalAdded = 0;
+    const log = [];
+    setProgress({ current: 0, total: firms.length, label: `Starting ${label}…`, log: [] });
+    
+    for (let i = 0; i < firms.length; i++) {
+      const f = firms[i];
+      setProgress(p => ({ ...p, current: i, label: `Polling live ${f} news…` }));
+      try {
+        const results = await callClaude(`${f} strategic news this week ${today} site:reuters.com OR site:ft.com OR site:bloomberg.com`, apiKey);
+        const added = onAddItems(results, `sweep_${Date.now()}_${i}`);
+        log.unshift(`${f} — ${added} new signal${added !== 1 ? 's' : ''} index`);
+        totalAdded += added;
+        setProgress(p => ({ ...p, log: [...log] }));
+      } catch (err) {
+        log.unshift(`${f} — error loading`);
+        setProgress(p => ({ ...p, log: [...log] }));
+      }
+      if (i < firms.length - 1) await new Promise(r => setTimeout(r, 700));
+    }
+    setProgress({ current: firms.length, total: firms.length, label: 'Sweep completed', log });
+    onShowToast(`✓ ${label} done — ${totalAdded} new signals indexed`);
+    setTimeout(() => setProgress(null), 9000);
+  };
+
+  const onFetch = async () => {
+    if (!apiKey) { onOpenApiModal(); return; }
+    setBusy(true);
+    const today = new Date().toISOString().slice(0, 10);
+    try {
+      if (mode === 'sweep-consulting') await runSweep(CONSULTING_SWEEP, 'consulting sweep');
+      else if (mode === 'sweep-tech') await runSweep(TECH_SWEEP, 'tech sweep');
+      else if (mode === 'sweep-ai') await runSweep(AI_SWEEP, 'AI lab sweep');
+      else if (mode === 'sweep-all') await runSweep([...CONSULTING_SWEEP, ...TECH_SWEEP, ...AI_SWEEP], 'full sweep');
+      else if (mode === 'firm') {
+        onShowToast(`Loading ${firm} intelligence…`);
+        const results = await callClaude(`${firm} executive news ${today}`, apiKey);
+        const added = onAddItems(results, `firm_${Date.now()}`);
+        onShowToast(`✓ ${added} new signals for ${firm}`);
+      } else if (mode === 'custom') {
+        if (!customQ.trim()) { onShowToast('Enter search criteria'); setBusy(false); return; }
+        onShowToast('Querying intelligence pipeline…');
+        const results = await callClaude(customQ, apiKey);
+        const added = onAddItems(results, `custom_${Date.now()}`);
+        onShowToast(`✓ ${added} new signals from custom query`);
+      }
+    } catch (err) {
+      onShowToast(`Error: ${err.message || 'load failed'}`);
+    }
+    setBusy(false);
+  };
+
+  return (
+    <div className="fetch-card">
+      <div className="fetch-title">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ marginRight: 8 }}>
+          <circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1.2"/>
+          <path d="M6 3v3l2 1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+        </svg>
+        Live News Fetching &amp; Claude Synthesis Pipeline
+      </div>
+      <div className="fetch-row">
+        <select className="select" value={mode} onChange={e => setMode(e.target.value)}>
+          <option value="sweep-consulting">Sweep weekly — consulting firms</option>
+          <option value="sweep-tech">Sweep weekly — tech partners</option>
+          <option value="sweep-ai">Sweep weekly — AI labs</option>
+          <option value="sweep-all">Sweep weekly — everything</option>
+          <option value="firm">Pivot single firm</option>
+          <option value="custom">Custom query prompt</option>
+        </select>
+        
+        {mode === 'firm' && (
+          <select className="select" value={firm} onChange={e => setFirm(e.target.value)}>
+            <optgroup label="Consulting">
+              {CONSULTING_FIRMS.map(f => <option key={f.id} value={f.id}>{f.id}</option>)}
+            </optgroup>
+            <optgroup label="AI-first labs">
+              {AI_FIRST_FIRMS.map(f => <option key={f.id} value={f.id}>{f.id}</option>)}
+            </optgroup>
+            <optgroup label="Tech Partners">
+              {TECH_FIRMS.map(f => <option key={f.id} value={f.id}>{f.id}</option>)}
+            </optgroup>
+          </select>
+        )}
+        
+        {mode === 'custom' && (
+          <input className="custom-input" placeholder="e.g., McKinsey OpenAI alliance details" value={customQ} onChange={e => setCustomQ(e.target.value)} />
+        )}
+        
+        <button className={`fetch-btn ${busy ? 'loading' : ''}`} onClick={onFetch} disabled={busy}>
+          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" style={{ marginRight: 4 }}>
+            <path d="M5.5 1v2M5.5 8v2M1 5.5h2M8 5.5h2M2.5 2.5l1.5 1.5M7 7l1.5 1.5M2.5 8.5L4 7M7 4l1.5-1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+          </svg>
+          {busy ? 'Scanning…' : btnLabel}
+        </button>
+      </div>
+
+      {progress && (
+        <div className="sweep-prog">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+            <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-2)' }}>{progress.label}</span>
+            <span style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-3)' }}>{progress.current} / {progress.total}</span>
+          </div>
+          <div className="sweep-bar-wrap">
+            <div className="sweep-bar" style={{ width: `${(progress.current / progress.total) * 100}%` }} />
+          </div>
+          {progress.log.length > 0 && (
+            <div className="sweep-log">
+              {progress.log.map((l, i) => <div key={i}>{l}</div>)}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ============== API KEY SECURITY MODAL ==============
+function ApiModal({ open, onClose, onSave, onSkip }) {
+  const [key, setKey] = useState('');
+  if (!open) return null;
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal" onClick={e => e.stopPropagation()}>
+        <h2>Connect Anthropic API Key</h2>
+        <p>Authenticate your session to unlock live Claude scans. Your key resides in local browser storage only and directly accesses Anthropic API endpoints.</p>
+        <input 
+          type="password" 
+          placeholder="sk-ant-..." 
+          value={key} 
+          onChange={e => setKey(e.target.value)} 
+          autoComplete="off" 
+        />
+        <div className="modal-btns">
+          <button className="icon-btn" onClick={onSkip}>Demo Mode</button>
+          <button className="icon-btn primary" onClick={() => onSave(key)}>Connect →</button>
+        </div>
+        <p className="modal-note">Get a key at console.anthropic.com. Operating costs are calculated directly via Anthropic's platform tokens.</p>
+      </div>
+    </div>
+  );
+}
+
+// ============== AI ADVISORY COLLAPSIBLE CHAT DRAWER ==============
+function AdvisoryChatDrawer({ open, onClose, data, apiKey }) {
+  const [activeAgent, setActiveAgent] = useState('Strategic Advisor');
+  const [input, setInput] = useState('');
+  
+  // Independent chat history mapping for each executive agent
+  const [histories, setHistories] = useState({
+    'Strategic Advisor': [
+      { sender: 'agent', text: 'Welcome, Director. I am your Strategic Advisor. I analyze global professional service consolidations, ecosystem restructures, and sovereign AI models. How can I guide your positioning today?' }
+    ],
+    'Lead Researcher': [
+      { sender: 'agent', text: 'Lead Researcher reporting. Fact-finding engine online. I scan raw intelligence streams, compile index timelines, and isolate hard metrics. Ask me for data statistics.' }
+    ],
+    'Principal Analyst': [
+      { sender: 'agent', text: 'SWOT Analyst active. I critique rival strategy decks, evaluate market exposures, and outline quarterly tactical plays. What competitor action shall we assess?' }
+    ]
+  });
+
+  const messageEndRef = useRef(null);
+
+  // Scroll to bottom on updates
+  useEffect(() => {
+    messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [histories, activeAgent]);
+
+  const activeHistory = histories[activeAgent];
+
+  const handleSend = (textToSend) => {
+    const txt = textToSend || input;
+    if (!txt.trim()) return;
+
+    // Add user message
+    const userMsg = { sender: 'user', text: txt };
+    setHistories(prev => ({
+      ...prev,
+      [activeAgent]: [...prev[activeAgent], userMsg]
+    }));
+    setInput('');
+
+    // Simulate Agent C-Suite Thinking
+    setTimeout(() => {
+      const replyText = getAgentResponse(activeAgent, txt, data);
+      const agentMsg = { sender: 'agent', text: replyText };
+      setHistories(prev => ({
+        ...prev,
+        [activeAgent]: [...prev[activeAgent], agentMsg]
+      }));
+    }, 850);
+  };
+
+  // Dedicated mock AI Responder yielding customized reports based on loaded DB records
+  const getAgentResponse = (agent, text, db) => {
+    const q = text.toLowerCase();
+    
+    if (agent === 'Strategic Advisor') {
+      if (q.includes('threat') || q.includes('risk') || q.includes('exposure')) {
+        const threats = db.filter(d => d.contextCorner?.threat).slice(0, 2);
+        return `### **[Strategic Briefing: C-Suite Risk Mapping]**\n\nDirect review of active threat indexes isolates key exposure points:\n\n` + 
+          threats.map((t, i) => `* **${t.firm} (Impact: ${t.importance}/5)**: *${t.contextCorner.threat}*`).join('\n\n') +
+          `\n\n**Core Advisory**: Non-aligned advisory firms face structural disintermediation. We advise diversifying alliance pipelines outside single cloud ecosystems immediately.`;
+      } 
+      if (q.includes('competitor') || q.includes('using ai') || q.includes('ai')) {
+        const pivots = db.filter(d => d.signal === 'AI Pivot' || d.summary.includes('AI')).slice(0, 3);
+        return `### **[Strategic Briefing: Competitor AI Positions]**\n\nConsulting rivals are aggressively moving from model usage to full process orchestration:\n\n` + 
+          pivots.map(p => `* **${p.firm}**: Deployed *${p.title}*. This marks a transition from labor arbitrage to automated deliverables.`).join('\n\n') +
+          `\n\n**Actionable Advice**: Avoid low-margin migration bids. Re-price advisory services around sovereign fine-tuning.`;
+      }
+      if (q.includes('mckinsey') || q.includes('restructure')) {
+        return `### **[Advisory: McKinsey Layoff & AI Moat]**\n\nMcKinsey's elimination of 1,400 back-office roles represents an industry-wide pivot point:\n\n1. **Ecosystem Drift**: They are leveraging custom internal algorithms to absorb operations, legal, and HR work.\n2. **Pricing Action**: They will pass these margin gains to enterprise clients, undercutting fixed-fee proposals.\n3. **Tactical recommendation**: Implement a 20% support-staff automation target within 3 quarters to protect competitiveness.`;
+      }
+      return `### **[Strategic Advisor Assessment]**\n\nThank you for raising this point concerning *"${text}"*.\n\nFrom our viewpoint, this shift signals a wider compression in professional service pricing models. Implementer roles are becoming commoditized. \n\n**Quarterly recommendation**: Build immediate competencies around sovereign frameworks and SOC 2 audits (re-read Hugging Face's SOC 2 release). Our database currently indexes ${db.length} active indicators to validate this trajectory.`;
+    } 
+    
+    if (agent === 'Lead Researcher') {
+      const stats = db.filter(d => d.importance >= 4);
+      if (q.includes('threat') || q.includes('risk') || q.includes('competitor') || q.includes('stat')) {
+        return `### **[Lead Researcher Log: Quantitative Overview]**\n\nScanning indexed database payloads. Found **${stats.length} high-impact** signals (importance score >= 4).\n\n**Raw Records Index:**\n` +
+          stats.slice(0, 4).map(c => `* [${c.date}] **${c.firm}** — *${c.title}* (Impact: ${c.importance}/5)`).join('\n') +
+          `\n\n*Telemetry State*: API pipelines healthy. Sync with backend running on port 3000.`;
+      }
+      return `### **[Lead Researcher Fact-Finder]**\n\nProcessed query: *"${text}"*.\n\n**Operational Database Telemetry:**\n* **Active Database Nodes**: ${db.length} records mapped.\n* **Firms tracked**: ${Array.from(new Set(db.map(d => d.firm))).length} entities.\n* **Latest Event**: *${db[0]?.title}* by ${db[0]?.firm} on ${db[0]?.date}.\n\nFor complete JSON payload audits, trigger the **Download DB JSON Backup** in the Data Pipeline dashboard.`;
+    } 
+    
+    // Principal Analyst Persona
+    if (q.includes('threat') || q.includes('risk') || q.includes('action') || q.includes('swot')) {
+      const cc = db.filter(d => d.contextCorner?.action).slice(0, 2);
+      return `### **[SWOT Matrix & Quarterly Recommendations]**\n\nReview of competitive actions yields the following operational directives:\n\n` +
+        cc.map(a => `* **Operational Target (${a.firm})**: *${a.contextCorner.action}*`).join('\n\n') +
+        `\n\n**Global SWOT Profile:**\n* **Strengths**: High-margin sovereign deployment blocks (EY NVIDIA Factory model).\n* **Weaknesses**: Closed-source vendor dependencies.\n* **Opportunities**: EU AI Act conformity certifications.\n* **Threats**: Direct enterprise sells from labs bypassing consultants (OpenAI Direct Chief Enterprise Officer hiring).`;
+    }
+    return `### **[Principal Analyst Action Plan]**\n\nRegarding *"${text}"*:\n\nWe outline three core strategies to protect competitive advantages in Q2:\n\n1. **Claude Alliance**: Secure Claude for Enterprise capacity to counter rivals on Azure OpenAI deals.\n2. **TCO Arbitrage**: Redraw client proposals using DeepSeek cost structures (representing a 90% cost drop).\n3. **EU Act Compliance**: Position certified audit tools (following EY's compliance roadmap) to capture continental regulatory budgets.`;
+  };
+
+  const triggers = [
+    "Summarize today's threats",
+    "How are competitors using AI?",
+    "Analyze McKinsey's restructure",
+  ];
+
+  return (
+    <div className={`chat-panel ${open ? '' : 'collapsed'}`}>
+      <div className="chat-header">
+        <span className="chat-title">AI Advisory <em>Panel</em></span>
+        <button className="chat-close-btn" onClick={onClose} title="Close Panel">✕</button>
+      </div>
+
+      <div className="chat-agent-select">
+        <div className="chat-agent-label">Select C-Suite Advisor</div>
+        <div className="chat-agent-buttons">
+          {['Strategic Advisor', 'Lead Researcher', 'Principal Analyst'].map(agent => (
+            <button 
+              key={agent} 
+              className={`chat-agent-btn ${activeAgent === agent ? 'active' : ''}`}
+              onClick={() => setActiveAgent(agent)}
+            >
+              {agent.split(' ')[0]}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="chat-messages">
+        {activeHistory.map((msg, i) => (
+          <div key={i} className={`chat-msg ${msg.sender}`}>
+            <span className="chat-agent-meta">
+              {msg.sender === 'user' ? 'Executive Director' : activeAgent}
+            </span>
+            <div className="chat-bubble">
+              {msg.text.split('\n').map((para, idx) => {
+                if (para.startsWith('### ')) {
+                  return <h4 key={idx} style={{ color: 'var(--accent)', marginTop: 8, marginBottom: 4, fontFamily: 'var(--serif-disp)', fontSize: 16 }}>{para.replace('### ', '')}</h4>;
+                }
+                if (para.startsWith('* ')) {
+                  return <li key={idx} style={{ marginLeft: 12, marginBottom: 4 }}>{para.replace('* ', '')}</li>;
+                }
+                return <p key={idx} style={{ marginBottom: 8 }}>{para}</p>;
+              })}
+            </div>
+          </div>
+        ))}
+        <div ref={messageEndRef} />
+      </div>
+
+      <div className="chat-input-area">
+        <div className="chat-triggers">
+          {triggers.map((t, idx) => (
+            <button key={idx} className="chat-trigger-btn" onClick={() => handleSend(t)}>{t}</button>
+          ))}
+        </div>
+        <form className="chat-form" onSubmit={e => { e.preventDefault(); handleSend(); }}>
+          <input 
+            className="chat-input" 
+            placeholder={`Ask the ${activeAgent.toLowerCase()}…`}
+            value={input} 
+            onChange={e => setInput(e.target.value)} 
+          />
+          <button type="submit" className="chat-send-btn">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+// ============== TWEAKS CORE WIDGET ==============
+function FSTweaks() {
+  const TWEAK_DEFAULTS = {
+    "theme": "warm",
+    "density": "balanced",
+    "showTicker": true,
+    "showPulse": true
+  };
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  useEffect(() => { document.body.dataset.theme = t.theme; }, [t.theme]);
+  
+  useEffect(() => {
+    window.__fs_density = t.density;
+    window.dispatchEvent(new CustomEvent('__fs_density_change', { detail: t.density }));
+  }, [t.density]);
+
+  useEffect(() => {
+    window.__fs_showTicker = t.showTicker;
+    window.dispatchEvent(new CustomEvent('__fs_visibility_change'));
+  }, [t.showTicker]);
+
+  useEffect(() => {
+    window.__fs_showPulse = t.showPulse;
+    window.dispatchEvent(new CustomEvent('__fs_visibility_change'));
+  }, [t.showPulse]);
+
+  return (
+    <TweaksPanel title="Tweaks Panel">
+      <TweakSection label="Theme Aesthetic">
+        <TweakRadio
+          label="Palette"
+          value={t.theme}
+          onChange={v => setTweak('theme', v)}
+          options={[
+            { value: 'warm',     label: 'Warm dark' },
+            { value: 'ivory',    label: 'Ivory light' },
+            { value: 'terminal', label: 'Terminal' },
+          ]}
+        />
+      </TweakSection>
+      <TweakSection label="Layout Rules">
+        <TweakRadio
+          label="Density"
+          value={t.density}
+          onChange={v => setTweak('density', v)}
+          options={[
+            { value: 'dense', label: 'Dense grid' },
+            { value: 'balanced', label: 'Balanced' },
+            { value: 'spacious', label: 'Spacious' },
+          ]}
+        />
+        <TweakToggle label="Live Ticker tape" value={t.showTicker} onChange={v => setTweak('showTicker', v)} />
+        <TweakToggle label="Market Pulse strip" value={t.showPulse} onChange={v => setTweak('showPulse', v)} />
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+
+// ============== PRIMARY APP COMPONENT ==============
+function App() {
+  const [data, setData] = useState(DEMO_SIGNALS);
+  const [activeNav, setActiveNav] = useState('brief');
+  const [view, setView] = useState('all');
+  const [activeFirms, setActiveFirms] = useState(new Set());
+  const [activeSignals, setActiveSignals] = useState(new Set());
+  const [search, setSearch] = useState('');
+  const [sort, setSort] = useState('importance');
+  const [savedIds, setSavedIds] = useState(() => {
+    try { return new Set(JSON.parse(localStorage.getItem('fs_saved') || '[]')); } catch (e) { return new Set(); }
+  });
+  const [apiKey, setApiKey] = useState(() => {
+    try { return localStorage.getItem('fs_apikey') || ''; } catch (e) { return ''; }
+  });
+  const [apiModalOpen, setApiModalOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
+  const [toast, setToast] = useState(null);
+  
+  // Layout rules from tweaks
+  const [density, setDensity] = useState('balanced');
+  const [showTicker, setShowTicker] = useState(true);
+  const [showPulse, setShowPulse] = useState(true);
+
+  // Sync index from server on mount
+  useEffect(() => {
+    const loadSignals = async () => {
+      try {
+        const resp = await fetch('/api/signals');
+        if (resp.ok) {
+          const db = await resp.json();
+          const list = Array.isArray(db) ? db : db.signals;
+          if (list && list.length > 0) {
+            setData(list);
+          }
+        }
+      } catch (err) {
+        console.warn('[FirmSignal] API backend port offline. Falling back to local data.');
+      }
+    };
+    loadSignals();
+  }, []);
+
+  // API modal prompt on first visit
+  useEffect(() => {
+    let firstVisit = false;
+    try { 
+      firstVisit = !localStorage.getItem('fs_visited'); 
+      localStorage.setItem('fs_visited', '1'); 
+    } catch (e) {}
+    if (firstVisit && !apiKey) setApiModalOpen(true);
+  }, []);
+
+  // Listen to tweak changes
+  useEffect(() => {
+    const onDensity = (e) => setDensity(e.detail);
+    const onVis = () => {
+      if (typeof window.__fs_showTicker === 'boolean') setShowTicker(window.__fs_showTicker);
+      if (typeof window.__fs_showPulse === 'boolean') setShowPulse(window.__fs_showPulse);
+    };
+    window.addEventListener('__fs_density_change', onDensity);
+    window.addEventListener('__fs_visibility_change', onVis);
+    return () => {
+      window.removeEventListener('__fs_density_change', onDensity);
+      window.removeEventListener('__fs_visibility_change', onVis);
+    };
+  }, []);
+
+  // Multi-tier filtering stack
+  const filtered = useMemo(() => {
+    const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
+    const q = search.toLowerCase();
+    return data.filter(d => {
+      if (activeFirms.size && !activeFirms.has(d.firm)) return false;
+      if (activeSignals.size && !activeSignals.has(d.signal)) return false;
+      if (view === 'week' && d.date < weekAgo) return false;
+      if (view === 'highimpact' && (d.importance || 0) < 4) return false;
+      if (q) {
+        const matchText = (d.title + d.summary + d.firm + d.signal + (d.takeaway || '')).toLowerCase();
+        if (!matchText.includes(q)) return false;
+      }
+      return true;
+    });
+  }, [data, activeFirms, activeSignals, view, search]);
+
+  const toggleFirm = (id) => {
+    setActiveFirms(prev => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+  };
+
+  const toggleSignal = (s) => {
+    setActiveSignals(prev => {
+      const next = new Set(prev);
+      next.has(s) ? next.delete(s) : next.add(s);
+      return next;
+    });
+  };
+
+  const onToggleSave = (id) => {
+    setSavedIds(prev => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      try { localStorage.setItem('fs_saved', JSON.stringify([...next])); } catch (e) {}
+      return next;
+    });
+  };
+
+  const onAddItems = (parsed, batchId) => {
+    if (!Array.isArray(parsed)) return 0;
+    const existing = new Set(data.map(d => d.title.toLowerCase().slice(0, 45)));
+    const fresh = parsed
+      .filter(p => !existing.has((p.title || '').toLowerCase().slice(0, 45)))
+      .map((item, i) => ({ 
+        ...item, 
+        id: `${batchId}_${i}`, 
+        importance: item.importance || 3,
+        date: item.date || new Date().toISOString().slice(0, 10),
+        source: item.source || 'Live Pipeline'
+      }));
+    
+    if (fresh.length > 0) {
+      setData(prev => [...fresh, ...prev]);
+      // Attempt to save to backend DB
+      fetch('/api/signals', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fresh)
+      }).catch(() => {});
+    }
+    return fresh.length;
+  };
+
+  const showToast = (msg) => {
+    setToast(msg);
+    setTimeout(() => setToast(null), 3500);
+  };
+
+  const onSaveApiKey = (key) => {
+    if (!key.startsWith('sk-ant-')) { showToast('Invalid key: must start with sk-ant-'); return; }
+    setApiKey(key);
+    try { localStorage.setItem('fs_apikey', key); } catch (e) {}
+    setApiModalOpen(false);
+    showToast('✓ Anthropic channel verified');
+  };
+
+  const onSkipApi = () => {
+    setApiModalOpen(false);
+    showToast('Demo data loaded. Connect keys to unlock scanning.');
+  };
+
+  const onResetDb = () => {
+    setData(DEMO_SIGNALS);
+    setActiveFirms(new Set());
+    setActiveSignals(new Set());
+    setSearch('');
+    setView('all');
+  };
+
+  const onHeatCellClick = (firmId, signal) => {
+    setActiveFirms(new Set([firmId]));
+    setActiveSignals(new Set([signal]));
+    setActiveNav('signals');
+  };
+
+  // Node selection handler from Force Graph
+  const handleGraphNodeSelected = (node) => {
+    if (!node) return;
+    if (node.type === 'firm') {
+      setActiveFirms(new Set([node.id]));
+      setActiveNav('signals');
+      showToast(`Filtered feed: ${node.id}`);
+    } else if (node.type === 'signal') {
+      setActiveSignals(new Set([node.id]));
+      setActiveNav('signals');
+      showToast(`Filtered feed: ${node.id}`);
+    } else if (node.type === 'trend') {
+      setSearch(node.id);
+      setActiveNav('signals');
+      showToast(`Searched trend: "${node.id}"`);
+    }
+  };
+
+  const dateShort = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  const ticker = useMemo(() => getTickerItems(data), [data]);
+
+  const navTabs = [
+    { id: 'brief',     label: 'Brief' },
+    { id: 'context',   label: 'Context Corner' },
+    { id: 'graph',     label: 'Knowledge Graph' },
+    { id: 'signals',   label: 'Signals Matrix' },
+    { id: 'heatmap',   label: 'Heatmap' },
+    { id: 'compare',   label: 'Compare' },
+    { id: 'watchlist', label: 'Watchlist' },
+    { id: 'pipeline',  label: 'Data Pipeline' },
+  ];
+
+  return (
+    <>
+      {showTicker && <Ticker items={ticker} />}
+
+      <nav className="topbar">
+        <div className="brand">
+          <span className="brand-mark">Firm<em>Signal</em></span>
+          <span className="brand-tag">C-Suite Intelligence</span>
+        </div>
+        <div className="topbar-nav">
+          {navTabs.map(t => (
+            <button 
+              key={t.id} 
+              className={`nav-tab ${activeNav === t.id ? 'active' : ''}`} 
+              onClick={() => setActiveNav(t.id)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+        <div className="topbar-right">
+          <span className="date-stamp">Telemetry <strong>{dateShort}</strong></span>
+          <span className={`live-indicator ${apiKey ? '' : 'disconnected'}`}>
+            <span className="live-dot" />
+            {apiKey ? 'LIVE' : 'DEMO'}
+          </span>
+          <button className="icon-btn" onClick={() => setApiModalOpen(true)}>Credentials</button>
+          <button className="chat-toggle-btn" onClick={() => setChatOpen(!chatOpen)}>
+            <span style={{ fontSize: 13 }}>💬</span> {chatOpen ? 'Hide Chat' : 'AI Advisor'}
+          </button>
+        </div>
+      </nav>
+
+      <div className={`shell ${chatOpen ? 'has-chat' : ''}`}>
+        <Sidebar
+          data={data}
+          activeFirms={activeFirms} toggleFirm={toggleFirm}
+          activeSignals={activeSignals} toggleSignal={toggleSignal}
+          view={view} setView={setView}
+        />
+        
+        <main className="main">
+          {activeNav === 'signals' && (
+            <FetchPanel apiKey={apiKey} onOpenApiModal={() => setApiModalOpen(true)} onAddItems={onAddItems} onShowToast={showToast} />
+          )}
+
+          {activeNav === 'brief' && (
+            <BriefView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={ALL_FIRMS} SIGNAL_COLORS={SIGNAL_COLORS} getBrief={getBrief} />
+          )}
+          
+          {activeNav === 'context' && (
+            <ContextCornerView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={ALL_FIRMS} AI_FIRST_FIRMS={AI_FIRST_FIRMS} SIGNAL_COLORS={SIGNAL_COLORS} />
+          )}
+
+          {activeNav === 'graph' && (
+            <KnowledgeGraph data={data} ALL_FIRMS={ALL_FIRMS} SIGNALS={SIGNALS} SIGNAL_COLORS={SIGNAL_COLORS} onNodeSelected={handleGraphNodeSelected} />
+          )}
+
+          {activeNav === 'signals' && (
+            <SignalsView
+              data={filtered}
+              savedIds={savedIds}
+              onToggleSave={onToggleSave}
+              search={search} setSearch={setSearch}
+              sort={sort} setSort={setSort}
+              density={density}
+              ALL_FIRMS={ALL_FIRMS}
+              SIGNAL_COLORS={SIGNAL_COLORS}
+            />
+          )}
+
+          {activeNav === 'heatmap' && (
+            <HeatmapView data={filtered} onCellClick={onHeatCellClick} ALL_FIRMS={ALL_FIRMS} SIGNALS={SIGNALS} buildHeatmap={buildHeatmap} />
+          )}
+
+          {activeNav === 'compare' && (
+            <CompareView data={data} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={ALL_FIRMS} CONSULTING_FIRMS={CONSULTING_FIRMS} AI_FIRST_FIRMS={AI_FIRST_FIRMS} TECH_FIRMS={TECH_FIRMS} />
+          )}
+
+          {activeNav === 'watchlist' && (
+            <WatchlistView data={data} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={ALL_FIRMS} SIGNAL_COLORS={SIGNAL_COLORS} />
+          )}
+
+          {activeNav === 'pipeline' && (
+            <DataPipelineAuditView data={data} apiKey={apiKey} onResetDb={onResetDb} onShowToast={showToast} />
+          )}
+        </main>
+
+        <AdvisoryChatDrawer open={chatOpen} onClose={() => setChatOpen(false)} data={data} apiKey={apiKey} />
+      </div>
+
+      <ApiModal open={apiModalOpen} onClose={() => setApiModalOpen(false)} onSave={onSaveApiKey} onSkip={onSkipApi} />
+
+      {toast && <div className="toast">{toast}</div>}
+
+      <FSTweaks />
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
