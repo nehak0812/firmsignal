@@ -77,7 +77,7 @@ function Sidebar({ data, activeFirms, toggleFirm, activeSignals, toggleSignal, v
 }
 
 // ============== INTEL NEWS FETCH COMPONENT ==============
-function FetchPanel({ apiKey, onOpenApiModal, onAddItems, onShowToast }) {
+function FetchPanel({ apiKey, serverHasKey, onOpenApiModal, onAddItems, onShowToast }) {
   const [mode, setMode] = useState('sweep-consulting');
   const [firm, setFirm] = useState('Deloitte');
   const [customQ, setCustomQ] = useState('');
@@ -124,7 +124,7 @@ function FetchPanel({ apiKey, onOpenApiModal, onAddItems, onShowToast }) {
   };
 
   const onFetch = async () => {
-    if (!apiKey) { onOpenApiModal(); return; }
+    if (!apiKey && !serverHasKey) { onOpenApiModal(); return; }
     setBusy(true);
     const today = new Date().toISOString().slice(0, 10);
     try {
@@ -242,9 +242,10 @@ function ApiModal({ open, onClose, onSave, onSkip }) {
 }
 
 // ============== AI ADVISORY COLLAPSIBLE CHAT DRAWER ==============
-function AdvisoryChatDrawer({ open, onClose, data, apiKey }) {
+function AdvisoryChatDrawer({ open, onClose, data, apiKey, serverHasKey }) {
   const [activeAgent, setActiveAgent] = useState('Strategic Advisor');
   const [input, setInput] = useState('');
+  const [isThinking, setIsThinking] = useState(false);
   
   // Independent chat history mapping for each executive agent
   const [histories, setHistories] = useState({
@@ -268,7 +269,7 @@ function AdvisoryChatDrawer({ open, onClose, data, apiKey }) {
 
   const activeHistory = histories[activeAgent];
 
-  const handleSend = (textToSend) => {
+  const handleSend = async (textToSend) => {
     const txt = textToSend || input;
     if (!txt.trim()) return;
 
@@ -280,14 +281,81 @@ function AdvisoryChatDrawer({ open, onClose, data, apiKey }) {
     }));
     setInput('');
 
-    // Simulate Agent C-Suite Thinking
-    setTimeout(() => {
-      const replyText = getAgentResponse(activeAgent, txt, data);
-      const agentMsg = { sender: 'agent', text: replyText };
+    // If live (API key available on client or server), call backend RAG Chat API
+    if (apiKey || serverHasKey) {
+      setIsThinking(true);
+      
+      const thinkingMsg = { sender: 'agent', text: 'Thinking...', isThinkingPlaceholder: true };
       setHistories(prev => ({
         ...prev,
-        [activeAgent]: [...prev[activeAgent], agentMsg]
+        [activeAgent]: [...prev[activeAgent], thinkingMsg]
       }));
+
+      try {
+        const agentMap = {
+          'Strategic Advisor': 'advisor',
+          'Lead Researcher': 'researcher',
+          'Principal Analyst': 'analyst'
+        };
+        const backendAgentName = agentMap[activeAgent] || 'advisor';
+        const backendHistory = activeHistory.filter(h => !h.isThinkingPlaceholder).map(h => ({
+          role: h.sender === 'user' ? 'user' : 'assistant',
+          content: h.text
+        }));
+
+        const resp = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: txt,
+            agent: backendAgentName,
+            history: backendHistory,
+            apiKey
+          })
+        });
+
+        if (resp.ok) {
+          const resData = await resp.json();
+          if (resData.success && resData.response) {
+            setHistories(prev => {
+              const currentHistory = prev[activeAgent].filter(h => !h.isThinkingPlaceholder);
+              return {
+                ...prev,
+                [activeAgent]: [...currentHistory, { sender: 'agent', text: resData.response }]
+              };
+            });
+            setIsThinking(false);
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('[FirmSignal] Chat API request failed. Falling back to local responder.', err);
+      }
+      
+      // Clean up placeholder if failed
+      setHistories(prev => ({
+        ...prev,
+        [activeAgent]: prev[activeAgent].filter(h => !h.isThinkingPlaceholder)
+      }));
+      setIsThinking(false);
+    }
+
+    // Fallback simulated responder (Offline Mode)
+    const thinkingMsgFallback = { sender: 'agent', text: 'Thinking...', isThinkingPlaceholder: true };
+    setHistories(prev => ({
+      ...prev,
+      [activeAgent]: [...prev[activeAgent], thinkingMsgFallback]
+    }));
+
+    setTimeout(() => {
+      const replyText = getAgentResponse(activeAgent, txt, data);
+      setHistories(prev => {
+        const currentHistory = prev[activeAgent].filter(h => !h.isThinkingPlaceholder);
+        return {
+          ...prev,
+          [activeAgent]: [...currentHistory, { sender: 'agent', text: replyText }]
+        };
+      });
     }, 850);
   };
 
@@ -387,17 +455,18 @@ function AdvisoryChatDrawer({ open, onClose, data, apiKey }) {
       <div className="chat-input-area">
         <div className="chat-triggers">
           {triggers.map((t, idx) => (
-            <button key={idx} className="chat-trigger-btn" onClick={() => handleSend(t)}>{t}</button>
+            <button key={idx} className="chat-trigger-btn" onClick={() => handleSend(t)} disabled={isThinking}>{t}</button>
           ))}
         </div>
         <form className="chat-form" onSubmit={e => { e.preventDefault(); handleSend(); }}>
           <input 
             className="chat-input" 
-            placeholder={`Ask the ${activeAgent.toLowerCase()}…`}
+            placeholder={isThinking ? "Thinking..." : `Ask the ${activeAgent.toLowerCase()}…`}
             value={input} 
             onChange={e => setInput(e.target.value)} 
+            disabled={isThinking}
           />
-          <button type="submit" className="chat-send-btn">
+          <button type="submit" className="chat-send-btn" disabled={isThinking}>
             Send
           </button>
         </form>
@@ -480,6 +549,7 @@ function App() {
   const [apiKey, setApiKey] = useState(() => {
     try { return localStorage.getItem('fs_apikey') || ''; } catch (e) { return ''; }
   });
+  const [serverHasKey, setServerHasKey] = useState(false);
   const [apiModalOpen, setApiModalOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
   const [toast, setToast] = useState(null);
@@ -505,17 +575,51 @@ function App() {
         console.warn('[FirmSignal] API backend port offline. Falling back to local data.');
       }
     };
+    const checkServerStatus = async () => {
+      try {
+        const resp = await fetch('/api/status');
+        if (resp.ok) {
+          const resJson = await resp.json();
+          if (resJson.success && resJson.hasApiKey) {
+            setServerHasKey(true);
+          }
+        }
+      } catch (err) {
+        console.warn('[FirmSignal] Could not fetch server API status.');
+      }
+    };
     loadSignals();
+    checkServerStatus();
   }, []);
 
   // API modal prompt on first visit
   useEffect(() => {
-    let firstVisit = false;
-    try { 
-      firstVisit = !localStorage.getItem('fs_visited'); 
-      localStorage.setItem('fs_visited', '1'); 
-    } catch (e) {}
-    if (firstVisit && !apiKey) setApiModalOpen(true);
+    const checkFirstVisit = async () => {
+      let isFirst = false;
+      try {
+        isFirst = !localStorage.getItem('fs_visited');
+      } catch (e) {}
+
+      if (isFirst) {
+        try {
+          const resp = await fetch('/api/status');
+          if (resp.ok) {
+            const resJson = await resp.json();
+            if (resJson.success && resJson.hasApiKey) {
+              setServerHasKey(true);
+              localStorage.setItem('fs_visited', '1');
+              return;
+            }
+          }
+        } catch (e) {}
+
+        if (!apiKey) {
+          setApiModalOpen(true);
+        }
+        try { localStorage.setItem('fs_visited', '1'); } catch (e) {}
+      }
+    };
+    checkFirstVisit();
   }, []);
 
   // Listen to tweak changes
@@ -686,9 +790,9 @@ function App() {
         </div>
         <div className="topbar-right">
           <span className="date-stamp">Telemetry <strong>{dateShort}</strong></span>
-          <span className={`live-indicator ${apiKey ? '' : 'disconnected'}`}>
+          <span className={`live-indicator ${(apiKey || serverHasKey) ? '' : 'disconnected'}`}>
             <span className="live-dot" />
-            {apiKey ? 'LIVE' : 'DEMO'}
+            {(apiKey || serverHasKey) ? 'LIVE' : 'DEMO'}
           </span>
           <button className="icon-btn" onClick={() => setApiModalOpen(true)}>Credentials</button>
           <button className="chat-toggle-btn" onClick={() => setChatOpen(!chatOpen)}>
@@ -707,7 +811,7 @@ function App() {
         
         <main className="main">
           {activeNav === 'signals' && (
-            <FetchPanel apiKey={apiKey} onOpenApiModal={() => setApiModalOpen(true)} onAddItems={onAddItems} onShowToast={showToast} />
+            <FetchPanel apiKey={apiKey} serverHasKey={serverHasKey} onOpenApiModal={() => setApiModalOpen(true)} onAddItems={onAddItems} onShowToast={showToast} />
           )}
 
           {activeNav === 'brief' && (
@@ -752,7 +856,7 @@ function App() {
           )}
         </main>
 
-        <AdvisoryChatDrawer open={chatOpen} onClose={() => setChatOpen(false)} data={data} apiKey={apiKey} />
+        <AdvisoryChatDrawer open={chatOpen} onClose={() => setChatOpen(false)} data={data} apiKey={apiKey} serverHasKey={serverHasKey} />
       </div>
 
       <ApiModal open={apiModalOpen} onClose={() => setApiModalOpen(false)} onSave={onSaveApiKey} onSkip={onSkipApi} />

@@ -431,6 +431,14 @@ app.use(express.json());
 // Serving static files from ./dist
 app.use(express.static(path.join(__dirname, 'dist')));
 
+// GET /api/status
+app.get('/api/status', (req, res) => {
+  return res.json({
+    success: true,
+    hasApiKey: !!process.env.ANTHROPIC_API_KEY
+  });
+});
+
 // GET /api/signals
 app.get('/api/signals', async (req, res) => {
   await logActivity('GET /api/signals hit.');

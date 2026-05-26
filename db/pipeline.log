@@ -6,3 +6,112 @@
 [2026-05-26T12:39:58.053Z] GET /api/signals hit.
 [2026-05-26T12:46:11.788Z] FirmSignal Backend running on port 3000
 [2026-05-26T12:46:12.598Z] GET /api/signals hit.
+[2026-05-26T12:49:59.926Z] GET /api/signals hit.
+[2026-05-26T13:16:47.001Z] POST /api/intel hit. Query: "Deloitte strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:16:47.005Z] Initiating Claude proxy web search for: "Deloitte strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:16:47.713Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF6y3JfGKfdCbK8AFZW"}
+[2026-05-26T13:16:47.716Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:16:48.431Z] POST /api/intel hit. Query: "PwC strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:16:48.435Z] Initiating Claude proxy web search for: "PwC strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:16:48.865Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF741xForVy39wCCdeS"}
+[2026-05-26T13:16:48.867Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:16:49.580Z] POST /api/intel hit. Query: "EY strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:16:49.583Z] Initiating Claude proxy web search for: "EY strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:16:50.140Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF78z6XoR4NrotyzmEe"}
+[2026-05-26T13:16:50.154Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:16:51.653Z] POST /api/intel hit. Query: "KPMG strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:16:51.656Z] Initiating Claude proxy web search for: "KPMG strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:16:52.034Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF7HnRi9E4zZZX9pyfZ"}
+[2026-05-26T13:16:52.038Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:16:53.737Z] POST /api/intel hit. Query: "McKinsey strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:16:53.740Z] Initiating Claude proxy web search for: "McKinsey strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:16:54.169Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF7SnfcJP5zKgJhSJJV"}
+[2026-05-26T13:16:54.172Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:16:55.657Z] POST /api/intel hit. Query: "BCG strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:16:55.663Z] Initiating Claude proxy web search for: "BCG strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:16:56.028Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF7aw4PbwgAkL9cgyLj"}
+[2026-05-26T13:16:56.031Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:16:57.651Z] POST /api/intel hit. Query: "Bain strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:16:57.654Z] Initiating Claude proxy web search for: "Bain strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:16:58.021Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF7jSXLP8aCSEofD428"}
+[2026-05-26T13:16:58.023Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:16:59.695Z] POST /api/intel hit. Query: "Accenture strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:16:59.700Z] Initiating Claude proxy web search for: "Accenture strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:01.785Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF81Y9djL7fuDe5VLNW"}
+[2026-05-26T13:17:01.788Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:02.649Z] POST /api/intel hit. Query: "IBM Consulting strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:02.653Z] Initiating Claude proxy web search for: "IBM Consulting strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:03.096Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF86qeFo8RwJdg7UgC9"}
+[2026-05-26T13:17:03.100Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:04.647Z] POST /api/intel hit. Query: "Capgemini strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:04.653Z] Initiating Claude proxy web search for: "Capgemini strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:05.039Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF8FLchYuxvMwmEMPMM"}
+[2026-05-26T13:17:05.041Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:06.649Z] POST /api/intel hit. Query: "Microsoft strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:06.655Z] Initiating Claude proxy web search for: "Microsoft strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:07.089Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF8PvoJmbWqTatRocf8"}
+[2026-05-26T13:17:07.094Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:08.650Z] POST /api/intel hit. Query: "SAP strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:08.657Z] Initiating Claude proxy web search for: "SAP strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:09.061Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF8YZTMemTozpE3jNJV"}
+[2026-05-26T13:17:09.064Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:10.656Z] POST /api/intel hit. Query: "ServiceNow strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:10.670Z] Initiating Claude proxy web search for: "ServiceNow strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:11.083Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF8h8QJshrwi6Edv8Fi"}
+[2026-05-26T13:17:11.086Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:12.644Z] POST /api/intel hit. Query: "Google strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:12.649Z] Initiating Claude proxy web search for: "Google strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:13.014Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF8qYAaqbyKPMbbjTTC"}
+[2026-05-26T13:17:13.021Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:14.645Z] POST /api/intel hit. Query: "AuditBoard strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:14.649Z] Initiating Claude proxy web search for: "AuditBoard strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:15.074Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF8z581CEsvnjAv7Ui2"}
+[2026-05-26T13:17:15.077Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:16.647Z] POST /api/intel hit. Query: "Salesforce strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:16.652Z] Initiating Claude proxy web search for: "Salesforce strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:17.020Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF98fZHFN7K7ZRKsRNf"}
+[2026-05-26T13:17:17.022Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:18.643Z] POST /api/intel hit. Query: "AWS strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:18.648Z] Initiating Claude proxy web search for: "AWS strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:19.092Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF9HMgzt8gSsBq3Vmfj"}
+[2026-05-26T13:17:19.096Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:20.661Z] POST /api/intel hit. Query: "Workday strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:20.666Z] Initiating Claude proxy web search for: "Workday strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:21.116Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF9RrAZFTKwJuympLqM"}
+[2026-05-26T13:17:21.120Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:22.651Z] POST /api/intel hit. Query: "Palantir strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:22.657Z] Initiating Claude proxy web search for: "Palantir strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:23.128Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF9aoRaF1titsS793Q7"}
+[2026-05-26T13:17:23.131Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:24.650Z] POST /api/intel hit. Query: "OpenAI strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:24.655Z] Initiating Claude proxy web search for: "OpenAI strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:25.011Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF9iq7rMnfWmM9gbnFd"}
+[2026-05-26T13:17:25.013Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:26.643Z] POST /api/intel hit. Query: "Anthropic strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:26.646Z] Initiating Claude proxy web search for: "Anthropic strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:26.990Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRF9sMax1hkaPkArntbY"}
+[2026-05-26T13:17:26.992Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:28.642Z] POST /api/intel hit. Query: "Perplexity strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:28.647Z] Initiating Claude proxy web search for: "Perplexity strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:29.097Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRFA1x1u39j4nVJC9aAL"}
+[2026-05-26T13:17:29.099Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:30.655Z] POST /api/intel hit. Query: "Mistral AI strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:30.658Z] Initiating Claude proxy web search for: "Mistral AI strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:31.046Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRFAAcf9Pe5EeuTSBTGn"}
+[2026-05-26T13:17:31.049Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:32.644Z] POST /api/intel hit. Query: "Cohere strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:32.648Z] Initiating Claude proxy web search for: "Cohere strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:33.199Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRFAK9ruHXEvXJsbycM4"}
+[2026-05-26T13:17:33.202Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:34.655Z] POST /api/intel hit. Query: "xAI strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:34.658Z] Initiating Claude proxy web search for: "xAI strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:35.023Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRFATfpypqy7CozQHMeC"}
+[2026-05-26T13:17:35.026Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:36.648Z] POST /api/intel hit. Query: "Hugging Face strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:36.653Z] Initiating Claude proxy web search for: "Hugging Face strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:36.994Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRFAc9ZtFpfoWU3oDucm"}
+[2026-05-26T13:17:36.996Z] Error in /api/intel: Anthropic API returned: 404 Not Found
+[2026-05-26T13:17:38.655Z] POST /api/intel hit. Query: "DeepSeek strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com" | Custom Signals: none
+[2026-05-26T13:17:38.662Z] Initiating Claude proxy web search for: "DeepSeek strategic news this week 2026-05-26 site:reuters.com OR site:ft.com OR site:bloomberg.com"
+[2026-05-26T13:17:39.010Z] Claude API scan failed: 404 Not Found - {"type":"error","error":{"type":"not_found_error","message":"model: claude-3-5-sonnet-20241022"},"request_id":"req_011CbRFAkjzn8Ejs2FqhevF9"}
+[2026-05-26T13:17:39.013Z] Error in /api/intel: Anthropic API returned: 404 Not Found
