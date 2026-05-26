@@ -1171,6 +1171,90 @@ app.get('/FirmSignal.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'FirmSignal.html'));
 });
 
+// Background Auto-Scan (every hour)
+const AUTO_SCAN_INTERVAL = 60 * 60 * 1000; // 1 hour
+
+async function runAutoScan() {
+  const apiKeyToUse = process.env.ANTHROPIC_API_KEY;
+  if (!apiKeyToUse) {
+    await logActivity('AUTO-SCAN STATUS: Inactive. Connect ANTHROPIC_API_KEY in your Railway environment variables to unlock automated hourly background intelligence sweeps.');
+    return;
+  }
+
+  await logActivity('AUTO-SCAN: Initiating automatic hourly background scan for consulting and tech news...');
+  try {
+    const db = await readDb();
+    
+    // Formulate search query for today's news
+    const today = new Date().toISOString().slice(0, 10);
+    const searchPrompt = `consulting and tech firm news this week ${today}`;
+    
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKeyToUse,
+        'anthropic-version': '2023-06-01'
+      },
+      body: JSON.stringify({
+        model: 'claude-3-5-sonnet-20241022',
+        max_tokens: 2400,
+        tools: [{ type: 'web_search_20250305', name: 'web_search' }],
+        system: SYSTEM_PROMPT,
+        messages: [{ role: 'user', content: `Search for news about: ${searchPrompt}\n\nReturn only a JSON array of results.` }]
+      })
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      await logActivity(`AUTO-SCAN FAILED: Claude API returned ${response.status} ${response.statusText} - ${errorText}`);
+      return;
+    }
+
+    const data = await response.json();
+    const text = data.content.filter(b => b.type === 'text').map(b => b.text).join('');
+    const clean = text.replace(/```json|```/g, '').trim();
+    const match = clean.match(/\[[\s\S]*\]/);
+    
+    if (!match) {
+      await logActivity('AUTO-SCAN COMPLETED: No signals array found in response.');
+      return;
+    }
+
+    const parsed = JSON.parse(match[0]);
+    const existingTitles = new Set(db.signals.map(s => s.title.toLowerCase().slice(0, 45)));
+    const addedSignals = [];
+
+    for (const item of parsed) {
+      if (!item.title) continue;
+      const normalizedTitle = item.title.toLowerCase().slice(0, 45);
+      if (!existingTitles.has(normalizedTitle)) {
+        const newSignal = {
+          ...item,
+          id: item.id || `claude_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
+          importance: item.importance || 3
+        };
+        db.signals.unshift(newSignal);
+        addedSignals.push(newSignal);
+      }
+    }
+
+    if (addedSignals.length > 0) {
+      await writeDb(db);
+      await logActivity(`AUTO-SCAN SUCCESS: Added ${addedSignals.length} new signals.`);
+    } else {
+      await logActivity('AUTO-SCAN COMPLETED: 0 new signals found (all matched existing).');
+    }
+  } catch (err) {
+    await logActivity(`AUTO-SCAN ERROR: ${err.message}`);
+  }
+}
+
+// Start auto-scan scheduler
+setInterval(runAutoScan, AUTO_SCAN_INTERVAL);
+// Trigger initial scan shortly after boot
+setTimeout(runAutoScan, 15000);
+
 // Catch-all route to serve the main HTML file
 app.get('*', (req, res, next) => {
   if (req.path.startsWith('/api/')) return next();
