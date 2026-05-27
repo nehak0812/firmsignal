@@ -305,7 +305,7 @@ const DEFAULT_DEMO_REPORTS = [
     takeaway: 'The competitive moat is shifting from \'building models\' to \'orchestrating workflows\'. Advisory firms relying on basic prompt engineering will face immediate fee compression as clients purchase automated processes directly.',
     date: '2026-05-15',
     source: 'McKinsey Global Institute',
-    url: 'https://www.mckinsey.com/mgi/our-research/the-state-of-generative-ai-in-2026',
+    url: '',
     topics: ['AI & Automation', 'Market Strategy'],
     actionItems: [
       'EY must transition client POCs from single-prompt assistants to multi-agent state machines immediately.',
@@ -320,7 +320,7 @@ const DEFAULT_DEMO_REPORTS = [
     takeaway: 'Sovereign AI is the ultimate defensive moat for regulated industries. Firms that cannot deliver secure, on-premise AI clusters will lose global banking and government market share.',
     date: '2026-05-10',
     source: 'BCG Henderson Institute',
-    url: 'https://www.bcg.com/publications/2026/sovereign-ai-infrastructure-enterprise-security',
+    url: '',
     topics: ['Market Strategy', 'Tech Alliances'],
     actionItems: [
       'Position EY\'s NVIDIA AI Factory and Dell alliance as the premiere sovereign alternative for banks.',
@@ -335,7 +335,7 @@ const DEFAULT_DEMO_REPORTS = [
     takeaway: 'The pyramid consulting model is dead. Leveraging junior headcount for manual labor is no longer profitable; firms must structure around senior directors managing agent swarms.',
     date: '2026-05-08',
     source: 'Strategy&',
-    url: 'https://www.strategyand.pwc.com/gp/en/insights/genai-labor-arbitrage-professional-services',
+    url: '',
     topics: ['ESG & Operations', 'Strategic Advisory'],
     actionItems: [
       'Aggressively automate internal slide drafting, code generation, and audit document synthesis.',
@@ -350,7 +350,7 @@ const DEFAULT_DEMO_REPORTS = [
     takeaway: 'AI governance is the highest-margin consulting opportunity of the decade. Corporate boards are terrified of compliance penalties and will pay premium fees for certified security frameworks.',
     date: '2026-05-05',
     source: 'Deloitte Insights',
-    url: 'https://www2.deloitte.com/us/en/insights/focus/cognitive-technologies/trustworthy-ai-governance-eu-act',
+    url: '',
     topics: ['AI & Automation', 'Market Strategy'],
     actionItems: [
       'Leverage EY\'s early EU AI Act compliance status to launch a certified AI Audit service line.',
@@ -758,7 +758,7 @@ app.post('/api/reports/scan', async (req, res) => {
           takeaway: 'Resilience and capital flexibility are the defining moats during abrupt macroeconomic shifts.',
           date: '2026-05-18',
           source: 'McKinsey Global Institute',
-          url: 'https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/mckinsey-on-finance-91',
+          url: '',
           topics: ['Market Strategy', 'Strategic Advisory'],
           actionItems: [
             'Advise EY advisory lines to structure disruptive stress-testing models for corporate finance clients.',
@@ -773,7 +773,7 @@ app.post('/api/reports/scan', async (req, res) => {
           takeaway: 'Enterprise software M&A is shifting from pure cloud SaaS to buying ready-to-run autonomous agent stacks.',
           date: '2026-05-15',
           source: 'McKinsey Global Institute',
-          url: 'https://www.mckinsey.com/capabilities/m-and-a/our-insights/global-m-and-a-trends',
+          url: '',
           topics: ['AI & Automation', 'Market Strategy'],
           actionItems: [
             'Structure EY post-merger integration offerings around multi-agent software consolidation practices.',
@@ -788,7 +788,7 @@ app.post('/api/reports/scan', async (req, res) => {
           takeaway: 'Traditional pyramid workforce hierarchies are compressing; companies must transition to hybrid human-agent structures.',
           date: '2026-05-10',
           source: 'McKinsey Global Institute',
-          url: 'https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/state-of-organizations-2026',
+          url: '',
           topics: ['ESG & Operations', 'AI & Automation'],
           actionItems: [
             'Advise EY change-management teams to design transition frameworks for hybrid workforce optimization.',
@@ -803,7 +803,7 @@ app.post('/api/reports/scan', async (req, res) => {
           takeaway: 'Regulated sovereign AI integration is the highest margin consulting growth driver this decade.',
           date: '2026-05-08',
           source: 'EY Global Insights',
-          url: 'https://www.ey.com/en_gl/insights/sovereign-ai-adoption-index',
+          url: '',
           topics: ['AI & Automation', 'Tech Alliances'],
           actionItems: [
             'Position EY NVIDIA Factory Dell clusters as the premiere sovereign banking alternative immediately.',

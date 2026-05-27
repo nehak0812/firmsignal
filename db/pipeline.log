@@ -131,3 +131,5 @@
 [2026-05-27T05:08:29.974Z] FirmSignal Backend running on port 3000
 [2026-05-27T05:08:44.983Z] AUTO-SCAN STATUS: Inactive. Connect ANTHROPIC_API_KEY in your Railway environment variables to unlock automated hourly background intelligence sweeps.
 [2026-05-27T05:13:16.258Z] FirmSignal Backend running on port 3000
+[2026-05-27T05:13:31.264Z] AUTO-SCAN STATUS: Inactive. Connect ANTHROPIC_API_KEY in your Railway environment variables to unlock automated hourly background intelligence sweeps.
+[2026-05-27T05:17:58.038Z] FirmSignal Backend running on port 3000
