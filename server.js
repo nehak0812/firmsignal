@@ -752,32 +752,62 @@ app.post('/api/reports/scan', async (req, res) => {
       parsed = [
         {
           id: `rep_scanned_${Date.now()}_1`,
+          firm: 'McKinsey',
+          title: 'McKinsey on Finance (May 2026): Resilient Dealmaking in Sudden Disruptions',
+          summary: 'McKinsey & Company\'s Number 91 financial quarterly report focuses on strategic moves during sudden disruptions, corporate valuations, and building financial moats. The research highlights corporate resilience patterns across high-performing enterprises.',
+          takeaway: 'Resilience and capital flexibility are the defining moats during abrupt macroeconomic shifts.',
+          date: '2026-05-18',
+          source: 'McKinsey Global Institute',
+          url: 'https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/mckinsey-on-finance-91',
+          topics: ['Market Strategy', 'Strategic Advisory'],
+          actionItems: [
+            'Advise EY advisory lines to structure disruptive stress-testing models for corporate finance clients.',
+            'Help capital-market clients re-evaluate valuations under high-interest, AI-disrupted moats.'
+          ]
+        },
+        {
+          id: `rep_scanned_${Date.now()}_2`,
+          firm: 'McKinsey',
+          title: '2026 Global M&A Trends: Directing Investments Toward High-Tech and AI Architectures',
+          summary: 'McKinsey\'s executive focus on global dealmaking shows a rapidly rebounding M&A market. Deal structures are pivoting heavily toward technology acquisitions, software consolidation, and enterprise AI agent architectures.',
+          takeaway: 'Enterprise software M&A is shifting from pure cloud SaaS to buying ready-to-run autonomous agent stacks.',
+          date: '2026-05-15',
+          source: 'McKinsey Global Institute',
+          url: 'https://www.mckinsey.com/capabilities/m-and-a/our-insights/global-m-and-a-trends',
+          topics: ['AI & Automation', 'Market Strategy'],
+          actionItems: [
+            'Structure EY post-merger integration offerings around multi-agent software consolidation practices.',
+            'Target mid-market private equity funds with dedicated AI tech due-diligence practices.'
+          ]
+        },
+        {
+          id: `rep_scanned_${Date.now()}_3`,
+          firm: 'McKinsey',
+          title: 'The State of Organizations 2026: Technological Innovation & workforce structures',
+          summary: 'McKinsey\'s annual state-of-organization research details a massive structural shift in corporate workforce hierarchies. Generative AI tools and agentic automation are absorbing up to 40% of middle-management logistics workloads.',
+          takeaway: 'Traditional pyramid workforce hierarchies are compressing; companies must transition to hybrid human-agent structures.',
+          date: '2026-05-10',
+          source: 'McKinsey Global Institute',
+          url: 'https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/state-of-organizations-2026',
+          topics: ['ESG & Operations', 'AI & Automation'],
+          actionItems: [
+            'Advise EY change-management teams to design transition frameworks for hybrid workforce optimization.',
+            'Introduce outcome-based metrics to replace hourly billing parameters across client accounts.'
+          ]
+        },
+        {
+          id: `rep_scanned_${Date.now()}_4`,
           firm: 'EY',
           title: 'Sovereign AI Adoption Index: Navigating Regulatory Moats in European Enterprise',
           summary: 'EY Global Advisory outlines how 78% of regulated institutions in Europe are shifting to on-premises AI factory operations to align with EU AI Act data governance policies. Hyperscaler cloud instances are facing high board friction.',
           takeaway: 'Regulated sovereign AI integration is the highest margin consulting growth driver this decade.',
-          date: today,
+          date: '2026-05-08',
           source: 'EY Global Insights',
           url: 'https://www.ey.com/en_gl/insights/sovereign-ai-adoption-index',
           topics: ['AI & Automation', 'Tech Alliances'],
           actionItems: [
             'Position EY NVIDIA Factory Dell clusters as the premiere sovereign banking alternative immediately.',
             'Deliver compliance readiness assessments to all Top-20 sovereign account pipelines.'
-          ]
-        },
-        {
-          id: `rep_scanned_${Date.now()}_2`,
-          firm: 'McKinsey',
-          title: 'Orchestrating Autonomous Agent Workflows: The H2 2026 Enterprise Agenda',
-          summary: 'McKinsey & Co. details how multi-agent state machines are rapidly replacing simple copilots. Up to 35% of back-office office roles are projected to transition toward autonomous routing systems by H2 2027.',
-          takeaway: 'Moats are shifting from model building to direct autonomous system integration.',
-          date: today,
-          source: 'McKinsey Global Institute',
-          url: 'https://www.mckinsey.com/mgi/our-research/orchestrating-autonomous-agent-workflows',
-          topics: ['AI & Automation', 'Market Strategy'],
-          actionItems: [
-            'Upskill all advisory managers in multi-agent orchestration frameworks immediately.',
-            'Shift fixed T&M pricing architectures to value-delivered or software throughput indexes.'
           ]
         }
       ];
