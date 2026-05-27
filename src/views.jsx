@@ -257,7 +257,12 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
           <FirmPill firm={item.firm} ALL_FIRMS={ALL_FIRMS} />
           <span>· {dateStr}</span>
           <span>· {item.source}</span>
-          <ImportanceBar value={item.importance || 4} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <ImportanceBar value={item.importance || 4} />
+            <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: 'var(--ink-3)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              {item.importance >= 5 ? 'Market-moving' : item.importance >= 4 ? 'High impact' : item.importance >= 3 ? 'Notable' : 'Background'}
+            </span>
+          </div>
         </div>
       </div>
     );
@@ -278,7 +283,12 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
         <div className="sec-meta">
           <span>{dateStr}</span>
           <span>· {item.source}</span>
-          <ImportanceBar value={item.importance || 3} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginLeft: 'auto' }}>
+            <ImportanceBar value={item.importance || 3} />
+            <span style={{ fontFamily: 'var(--mono)', fontSize: 8, color: 'var(--ink-3)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              {item.importance >= 5 ? 'Market-moving' : item.importance >= 4 ? 'High impact' : item.importance >= 3 ? 'Notable' : 'Background'}
+            </span>
+          </div>
         </div>
       </div>
     );
@@ -291,6 +301,13 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
           <div className="brief-eyebrow">{dateLong} · Executive Brief</div>
           <h1 className="brief-title">What's moving in <em>consulting</em> &amp; tech, in five minutes.</h1>
           <p className="brief-sub">Curated signals on Big 4, MBB, and the tech alliance partners they live and die with. Ranked by what should actually concern you.</p>
+          <div style={{ display: 'flex', gap: 14, marginTop: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+            <span style={{ fontSize: 10, color: 'var(--ink-3)', fontFamily: 'var(--mono)', letterSpacing: '0.08em', textTransform: 'uppercase', marginRight: 4 }}>Impact Key:</span>
+            <span style={{ fontSize: 11, color: 'var(--crit)', display: 'flex', alignItems: 'center', gap: 4, fontFamily: 'var(--mono)' }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--crit)' }} /> 5/5 Market-moving</span>
+            <span style={{ fontSize: 11, color: 'var(--accent)', display: 'flex', alignItems: 'center', gap: 4, fontFamily: 'var(--mono)' }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent)' }} /> 4/5 High impact</span>
+            <span style={{ fontSize: 11, color: 'var(--info)', display: 'flex', alignItems: 'center', gap: 4, fontFamily: 'var(--mono)' }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--info)' }} /> 3/5 Notable</span>
+            <span style={{ fontSize: 11, color: 'var(--ink-3)', display: 'flex', alignItems: 'center', gap: 4, fontFamily: 'var(--mono)' }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--line-3)' }} /> 1-2/5 Background</span>
+          </div>
         </div>
         <div className="brief-meta">
           <div><span className="num">{data.length}</span>signals tracked</div>
@@ -554,8 +571,8 @@ export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = []
         { label: "Audience Sentiment", val: "92% Pos", desc: "Clients expressing strong interest in sovereign enterprise-tier AI solutions.", trend: "+5%" }
       ],
       quotes: [
-        { firm: "EY", role: "Global Vice Chair, Technology (1,240 👍)", quote: "Our collaboration with Dell and NVIDIA is setting a new standard for sovereign AI. Enterprises can now run secure LLMs within their own regulatory boundaries.", rating: 5 },
-        { firm: "McKinsey", role: "Senior Partner (856 👍)", quote: "Orchestrating autonomous workflows is the define-or-be-defined enterprise agenda for H2 2026. Firms leveraging agentic platforms are unlocking 40% efficiency gains.", rating: 5 }
+        { firm: "EY", role: "Global Vice Chair, Technology", quote: "Our collaboration with Dell and NVIDIA is setting a new standard for sovereign AI. Enterprises can now run secure LLMs within their own regulatory boundaries.", rating: 5, likes: "1,240", topic: "NVIDIA AI Factory" },
+        { firm: "McKinsey", role: "Senior Partner", quote: "Orchestrating autonomous workflows is the define-or-be-defined enterprise agenda for H2 2026. Firms leveraging agentic platforms are unlocking 40% efficiency gains.", rating: 5, likes: "856", topic: "Autonomous Agent Workflows" }
       ]
     }
   };
@@ -647,17 +664,47 @@ export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = []
             </div>
           </div>
           <div>
-            <h4 style={{ margin: '0 0 10px 0', fontSize: 10, fontFamily: 'var(--mono)', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--ink-4)' }}>Community Quotes</h4>
+            <h4 style={{ margin: '0 0 10px 0', fontSize: 10, fontFamily: 'var(--mono)', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--ink-4)' }}>
+              {activeForum === 'linkedin' ? 'Top LinkedIn Posts' : 'Community Quotes'}
+            </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {forum.quotes.map((q, idx) => (
-                <div key={idx} className="forum-quote-card" style={{ padding: 12, background: 'var(--bg-3)', borderRadius: 6, border: '1px solid var(--line)' }}>
+                <div key={idx} className="forum-quote-card" style={{ padding: 12, background: 'var(--bg-3)', borderRadius: 6, border: '1px solid var(--line)', position: 'relative' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                     <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--accent)' }}>{q.firm} — {q.role}</span>
-                    <span style={{ fontSize: 10, color: 'var(--accent)' }}>{"★".repeat(q.rating)}</span>
+                    {activeForum === 'linkedin' ? (
+                      <span style={{ fontSize: 10, color: 'var(--pos)', fontFamily: 'var(--mono)', display: 'flex', alignItems: 'center', gap: 4 }}>👍 {q.likes || '500+'}</span>
+                    ) : (
+                      <span style={{ fontSize: 10, color: 'var(--accent)' }}>{"★".repeat(q.rating)}</span>
+                    )}
                   </div>
-                  <p style={{ margin: 0, fontSize: 12.5, color: 'var(--ink-2)', lineHeight: 1.45, fontStyle: 'italic', fontFamily: 'var(--serif)' }}>
+                  <p style={{ margin: 0, fontSize: 12.5, color: 'var(--ink-2)', lineHeight: 1.45, fontStyle: 'italic', fontFamily: 'var(--serif)', marginBottom: activeForum === 'linkedin' ? 8 : 0 }}>
                     "{q.quote}"
                   </p>
+                  {activeForum === 'linkedin' && (
+                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                      <a 
+                        href={`https://www.linkedin.com/search/results/content/?keywords=${encodeURIComponent(q.firm + ' ' + (q.topic || 'AI'))}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontSize: 9.5,
+                          color: 'var(--accent)',
+                          textDecoration: 'none',
+                          fontFamily: 'var(--mono)',
+                          border: '1px dashed var(--line-2)',
+                          padding: '2px 6px',
+                          borderRadius: 3,
+                          background: 'var(--bg)',
+                          transition: 'all 0.15s ease'
+                        }}
+                        onMouseOver={e => { e.target.style.borderColor = 'var(--accent)'; e.target.style.background = 'var(--accent-bg)'; }}
+                        onMouseOut={e => { e.target.style.borderColor = 'var(--line-2)'; e.target.style.background = 'var(--bg)'; }}
+                      >
+                        View Post on LinkedIn ↗
+                      </a>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
