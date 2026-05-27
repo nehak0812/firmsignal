@@ -1,6 +1,77 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
+// ============== OPTIMIZED URL RESOLVERS ==============
+export function getOptimizedNewsUrl(title, source) {
+  const t = encodeURIComponent(title);
+  const src = (source || '').toLowerCase();
+  
+  if (src.includes('reuters')) {
+    return `https://www.reuters.com/search/news?blob=${t}`;
+  }
+  if (src.includes('bloomberg')) {
+    return `https://www.bloomberg.com/search?query=${t}`;
+  }
+  if (src.includes('financial times') || src.includes('ft')) {
+    return `https://www.ft.com/search?q=${t}`;
+  }
+  if (src.includes('wsj') || src.includes('wall street')) {
+    return `https://www.wsj.com/search?query=${t}`;
+  }
+  if (src.includes('the information')) {
+    return `https://theinformation.com/search?q=${t}`;
+  }
+  if (src.includes('globe & mail') || src.includes('globe and mail')) {
+    return `https://www.theglobeandmail.com/search/?q=${t}`;
+  }
+  if (src.includes('forbes')) {
+    return `https://www.forbes.com/search/?q=${t}`;
+  }
+  if (src.includes('techcrunch')) {
+    return `https://techcrunch.com/search/${t}`;
+  }
+  if (src.includes('cnbc')) {
+    return `https://www.cnbc.com/search/?query=${t}`;
+  }
+  
+  return `https://news.google.com/search?q=${t}`;
+}
+
+export function getOptimizedReportUrl(title, firm) {
+  const t = encodeURIComponent(title);
+  const f = (firm || '').toLowerCase();
+  
+  if (f.includes('mckinsey')) {
+    return `https://www.mckinsey.com/search?q=${t}`;
+  }
+  if (f.includes('bcg') || f.includes('boston consulting')) {
+    return `https://www.bcg.com/search?q=${t}`;
+  }
+  if (f.includes('ey') || f.includes('ernst')) {
+    return `https://www.ey.com/en_gl/search?q=${t}`;
+  }
+  if (f.includes('pwc') || f.includes('pricewaterhouse')) {
+    return `https://www.pwc.com/gx/en/search-results.html?search-text=${t}`;
+  }
+  if (f.includes('deloitte')) {
+    return `https://www2.deloitte.com/global/en/pages/search.html?q=${t}`;
+  }
+  if (f.includes('kpmg')) {
+    return `https://kpmg.com/xx/en/home/search.html?q=${t}`;
+  }
+  if (f.includes('accenture')) {
+    return `https://www.accenture.com/us-en/search/results?searchtype=all&q=${t}`;
+  }
+  if (f.includes('ibm')) {
+    return `https://www.ibm.com/search?q=${t}`;
+  }
+  if (f.includes('capgemini')) {
+    return `https://www.capgemini.com/?s=${t}`;
+  }
+  
+  return `https://news.google.com/search?q=${encodeURIComponent(firm + ' ' + title)}`;
+}
+
 // ============== TICKER ==============
 export function Ticker({ items }) {
   // Duplicate items for seamless scroll
@@ -109,8 +180,8 @@ export function SignalCard({ item, isSaved, onToggleSave, index, ALL_FIRMS = [],
   const hasUrl = item.url && item.url.startsWith('http');
   const impCls = `imp-${item.importance || 2}`;
   
-  const targetUrl = hasUrl ? item.url : `https://www.google.com/search?q=${encodeURIComponent(item.title)}`;
-  const domain = hasUrl ? new URL(item.url).hostname.replace('www.', '') : 'Google Search';
+  const targetUrl = hasUrl ? item.url : getOptimizedNewsUrl(item.title, item.source);
+  const domain = hasUrl ? new URL(item.url).hostname.replace('www.', '') : `Search ${item.source || 'News'}`;
 
   const getSentimentBadge = () => {
     const sig = item.signal.toLowerCase();
@@ -175,7 +246,7 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
   const renderLead = (item) => {
     if (!item) return null;
     const dateStr = new Date(item.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-    const targetUrl = item.url && item.url.startsWith('http') ? item.url : `https://www.google.com/search?q=${encodeURIComponent(item.title)}`;
+    const targetUrl = item.url && item.url.startsWith('http') ? item.url : getOptimizedNewsUrl(item.title, item.source);
     return (
       <div className="lead-story" onClick={() => window.open(targetUrl, '_blank')} style={{ cursor: 'pointer' }}>
         <div className="lead-tag">Lead story · {item.signal}</div>
@@ -195,7 +266,7 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
   const renderSec = (item) => {
     if (!item) return null;
     const dateStr = new Date(item.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-    const targetUrl = item.url && item.url.startsWith('http') ? item.url : `https://www.google.com/search?q=${encodeURIComponent(item.title)}`;
+    const targetUrl = item.url && item.url.startsWith('http') ? item.url : getOptimizedNewsUrl(item.title, item.source);
     return (
       <div key={item.id} className="secondary-card" onClick={() => window.open(targetUrl, '_blank')} style={{ cursor: 'pointer' }}>
         <div className="sec-top">
@@ -383,7 +454,7 @@ export function CompareView({ data, onToggleSave, savedIds, ALL_FIRMS = [], CONS
             <div 
               key={item.id} 
               className={`compare-item ${impCls}`} 
-              onClick={() => window.open(item.url && item.url.startsWith('http') ? item.url : `https://www.google.com/search?q=${encodeURIComponent(item.title)}`, '_blank')} 
+              onClick={() => window.open(item.url && item.url.startsWith('http') ? item.url : getOptimizedNewsUrl(item.title, item.source), '_blank')} 
               style={{ cursor: 'pointer' }}
             >
               <div className="ci-meta">{item.signal} · {dateStr} · {item.source}</div>
@@ -613,7 +684,7 @@ export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = []
             <article key={item.id} className={`aw-signal imp-${item.importance || 3}`}>
               <div 
                 className="aw-sig-body"
-                onClick={() => window.open(item.url && item.url.startsWith('http') ? item.url : `https://www.google.com/search?q=${encodeURIComponent(item.title)}`, '_blank')}
+                onClick={() => window.open(item.url && item.url.startsWith('http') ? item.url : getOptimizedNewsUrl(item.title, item.source), '_blank')}
                 style={{ cursor: 'pointer' }}
               >
                 <div className="aw-sig-top">
@@ -1356,7 +1427,7 @@ export function ThoughtLeadershipView({
           {filteredReports.map((report, idx) => {
             const dot = getFirmDotColor(report.firm);
             const dateStr = report.date ? new Date(report.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
-            const fallbackSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(report.firm + ' ' + report.title)}`;
+            const fallbackSearchUrl = getOptimizedReportUrl(report.title, report.firm);
             const clickUrl = report.url || fallbackSearchUrl;
 
             return (
