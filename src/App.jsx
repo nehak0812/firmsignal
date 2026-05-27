@@ -13,7 +13,7 @@ import {
 import { TweaksPanel, TweakSection, TweakRadio, TweakToggle, useTweaks } from './tweaks.jsx';
 
 // ============== SIDEBAR FILTER COMPONENT ==============
-function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, toggleSignal, view, setView, handleAddFirm, handleDeleteFirm }) {
+function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, toggleSignal, view, setView, handleAddFirm, handleDeleteFirm, onOpenApiModal }) {
   const consCount = data.filter(d => d.type === 'consulting').length;
   const techCount = data.filter(d => d.type === 'tech').length;
   const aiCount = data.filter(d => d.type === 'ai-first').length;
@@ -95,6 +95,26 @@ function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, tog
             </button>
           ))}
         </div>
+      </div>
+      <div className="sb-section" style={{ marginTop: 'auto', paddingTop: 20 }}>
+        <button 
+          className="sb-row" 
+          onClick={onOpenApiModal}
+          style={{ 
+            opacity: 0.65, 
+            fontSize: 11, 
+            fontFamily: 'var(--mono)', 
+            border: '1px dashed var(--line)', 
+            borderRadius: 4, 
+            textAlign: 'center', 
+            justifyContent: 'center',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 6
+          }}
+        >
+          <span>🔑</span> API Credentials
+        </button>
       </div>
     </aside>
   );
@@ -950,7 +970,6 @@ function App() {
             <span className="live-dot" />
             {(apiKey || serverHasKey) ? 'LIVE' : 'DEMO'}
           </span>
-          <button className="icon-btn" onClick={() => setApiModalOpen(true)}>Credentials</button>
           <button className="chat-toggle-btn" onClick={() => setChatOpen(!chatOpen)}>
             <span style={{ fontSize: 13 }}>💬</span> {chatOpen ? 'Hide Chat' : 'AI Advisor'}
           </button>
@@ -964,6 +983,7 @@ function App() {
           activeFirms={activeFirms} toggleFirm={toggleFirm}
           activeSignals={activeSignals} toggleSignal={toggleSignal}
           view={view} setView={setView}
+          onOpenApiModal={() => setApiModalOpen(true)}
         />
         
         <main className="main">
