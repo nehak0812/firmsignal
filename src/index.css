@@ -1119,3 +1119,54 @@ body[data-theme="ivory"] .context-corner { background: linear-gradient(to bottom
   border-color: var(--accent) transparent transparent transparent;
 }
 
+/* Brief Impact Key Hover Tooltip styles */
+.impact-key-item {
+  position: relative;
+  cursor: help;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.impact-key-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: 130%;
+  transform: translateX(-50%) translateY(8px);
+  width: 260px;
+  background: rgba(28, 28, 26, 0.98);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #fbfbf9;
+  font-size: 11.5px;
+  font-family: var(--serif);
+  line-height: 1.45;
+  text-align: left;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+
+.impact-key-item:hover .impact-key-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.impact-key-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--accent) transparent transparent transparent;
+}
+
+

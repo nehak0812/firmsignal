@@ -318,10 +318,50 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
           <p className="brief-sub">Curated signals on Big 4, MBB, and the tech alliance partners they live and die with. Ranked by what should actually concern you.</p>
           <div style={{ display: 'flex', gap: 14, marginTop: 12, flexWrap: 'wrap', alignItems: 'center' }}>
             <span style={{ fontSize: 10, color: 'var(--ink-3)', fontFamily: 'var(--mono)', letterSpacing: '0.08em', textTransform: 'uppercase', marginRight: 4 }}>Impact Key:</span>
-            <span style={{ fontSize: 11, color: 'var(--crit)', display: 'flex', alignItems: 'center', gap: 4, fontFamily: 'var(--mono)' }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--crit)' }} /> 5/5 Market-moving</span>
-            <span style={{ fontSize: 11, color: 'var(--accent)', display: 'flex', alignItems: 'center', gap: 4, fontFamily: 'var(--mono)' }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent)' }} /> 4/5 High impact</span>
-            <span style={{ fontSize: 11, color: 'var(--info)', display: 'flex', alignItems: 'center', gap: 4, fontFamily: 'var(--mono)' }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--info)' }} /> 3/5 Notable</span>
-            <span style={{ fontSize: 11, color: 'var(--ink-3)', display: 'flex', alignItems: 'center', gap: 4, fontFamily: 'var(--mono)' }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--line-3)' }} /> 1-2/5 Background</span>
+            
+            <div className="impact-key-item" style={{ fontSize: 11, color: 'var(--crit)', fontFamily: 'var(--mono)', borderBottom: '1px dashed rgba(224, 122, 106, 0.4)' }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--crit)' }} /> 
+              5/5 Market-moving
+              <div className="impact-key-tooltip">
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 9, textTransform: 'uppercase', color: 'var(--crit)', marginBottom: 4, letterSpacing: '0.05em', fontWeight: 600 }}>5/5 · Market-Moving</div>
+                <div style={{ fontSize: 11.5, color: '#fbfbf9', fontFamily: 'var(--serif)', lineHeight: 1.45 }}>
+                  Major restructuring, corporate acquisitions, multi-billion dollar alliances, or critical structural shifts that immediately disrupt standard operating models and force board-level pivots.
+                </div>
+              </div>
+            </div>
+
+            <div className="impact-key-item" style={{ fontSize: 11, color: 'var(--accent)', fontFamily: 'var(--mono)', borderBottom: '1px dashed rgba(212, 160, 74, 0.4)' }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent)' }} /> 
+              4/5 High impact
+              <div className="impact-key-tooltip">
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 9, textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 4, letterSpacing: '0.05em', fontWeight: 600 }}>4/5 · High Impact</div>
+                <div style={{ fontSize: 11.5, color: '#fbfbf9', fontFamily: 'var(--serif)', lineHeight: 1.45 }}>
+                  Significant announcements, product launches, enterprise earnings, or regulatory audit benchmarks (e.g., EU AI Act) directly affecting top-tier client pipelines.
+                </div>
+              </div>
+            </div>
+
+            <div className="impact-key-item" style={{ fontSize: 11, color: 'var(--info)', fontFamily: 'var(--mono)', borderBottom: '1px dashed rgba(74, 144, 226, 0.4)' }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--info)' }} /> 
+              3/5 Notable
+              <div className="impact-key-tooltip">
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 9, textTransform: 'uppercase', color: 'var(--info)', marginBottom: 4, letterSpacing: '0.05em', fontWeight: 600 }}>3/5 · Notable</div>
+                <div style={{ fontSize: 11.5, color: '#fbfbf9', fontFamily: 'var(--serif)', lineHeight: 1.45 }}>
+                  Tacit updates, regional integrations, developer tool enhancements, or client POC releases demonstrating steady competitor activity.
+                </div>
+              </div>
+            </div>
+
+            <div className="impact-key-item" style={{ fontSize: 11, color: 'var(--ink-3)', fontFamily: 'var(--mono)', borderBottom: '1px dashed rgba(160, 160, 160, 0.4)' }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--line-3)' }} /> 
+              1-2/5 Background
+              <div className="impact-key-tooltip">
+                <div style={{ fontFamily: 'var(--mono)', fontSize: 9, textTransform: 'uppercase', color: 'var(--ink-3)', marginBottom: 4, letterSpacing: '0.05em', fontWeight: 600 }}>1-2/5 · Background</div>
+                <div style={{ fontSize: 11.5, color: '#fbfbf9', fontFamily: 'var(--serif)', lineHeight: 1.45 }}>
+                  Routine corporate press releases, minor leadership appointments, general technological reports, or passive industry context requiring no immediate action.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="brief-meta">
