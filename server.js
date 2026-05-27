@@ -673,7 +673,8 @@ app.post('/api/reports/scan', async (req, res) => {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': apiKeyToUse,
-        'anthropic-version': '2023-06-01'
+        'anthropic-version': '2023-06-01',
+        'anthropic-beta': 'web-search-2025-03-05'
       },
       body: JSON.stringify({
         model: 'claude-3-5-sonnet-20241022',
@@ -797,7 +798,8 @@ app.post('/api/intel', async (req, res) => {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': apiKeyToUse,
-        'anthropic-version': '2023-06-01'
+        'anthropic-version': '2023-06-01',
+        'anthropic-beta': 'web-search-2025-03-05'
       },
       body: JSON.stringify({
         model: 'claude-3-5-sonnet-20241022',
@@ -1398,7 +1400,8 @@ async function runAutoScan() {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': apiKeyToUse,
-        'anthropic-version': '2023-06-01'
+        'anthropic-version': '2023-06-01',
+        'anthropic-beta': 'web-search-2025-03-05'
       },
       body: JSON.stringify({
         model: 'claude-3-5-sonnet-20241022',
@@ -1458,7 +1461,8 @@ async function runAutoScan() {
         headers: {
           'Content-Type': 'application/json',
           'x-api-key': apiKeyToUse,
-          'anthropic-version': '2023-06-01'
+          'anthropic-version': '2023-06-01',
+          'anthropic-beta': 'web-search-2025-03-05'
         },
         body: JSON.stringify({
           model: 'claude-3-5-sonnet-20241022',
