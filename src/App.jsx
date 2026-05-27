@@ -626,7 +626,7 @@ function App() {
   const [firms, setFirms] = useState(ALL_FIRMS);
   const [reports, setReports] = useState([]);
   const [activeNav, setActiveNav] = useState('brief');
-  const [view, setView] = useState('all');
+  const [view, setView] = useState('week');
   const [activeFirms, setActiveFirms] = useState(new Set());
   const [activeSignals, setActiveSignals] = useState(new Set());
   const [search, setSearch] = useState('');

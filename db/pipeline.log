@@ -141,3 +141,30 @@
 [2026-05-27T06:42:57.073Z] AUTO-SCAN STATUS: Inactive. Connect ANTHROPIC_API_KEY in your Railway environment variables to unlock automated hourly background intelligence sweeps.
 [2026-05-27T07:48:18.278Z] AUTO-SCAN STATUS: Inactive. Connect ANTHROPIC_API_KEY in your Railway environment variables to unlock automated hourly background intelligence sweeps.
 [2026-05-27T08:48:18.211Z] AUTO-SCAN STATUS: Inactive. Connect ANTHROPIC_API_KEY in your Railway environment variables to unlock automated hourly background intelligence sweeps.
+[2026-05-27T09:33:23.479Z] FirmSignal Backend running on port 3000
+[2026-05-27T09:33:38.483Z] AUTO-SCAN: Initiating automatic hourly background scan for consulting and tech news...
+[2026-05-27T09:33:38.490Z] RSS CRAWLER: Fetching Google News RSS feed for query: "("Deloitte" OR "PwC" OR "EY" OR "KPMG" OR "McKinsey" OR "BCG" OR "Bain" OR "Accenture" OR "IBM Consulting" OR "Capgemini" OR "Microsoft" OR "SAP" OR "ServiceNow" OR "Google" OR "AuditBoard" OR "Salesforce" OR "AWS" OR "Workday" OR "Palantir" OR "OpenAI" OR "Anthropic" OR "Perplexity" OR "Mistral AI" OR "Cohere" OR "xAI" OR "DeepSeek") AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-27T09:33:39.902Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-05-27T09:33:39.904Z] AUTO-SCAN: Local RSS Parser fallback — Mapping 15 live articles...
+[2026-05-27T09:33:39.905Z] AUTO-SCAN: Local RSS parsing successful.
+[2026-05-27T09:33:39.908Z] AUTO-SCAN SUCCESS: Added 15 new signals.
+[2026-05-27T09:33:39.908Z] AUTO-SCAN: Initiating automatic hourly background scan for thought leadership reports...
+[2026-05-27T09:33:39.909Z] AUTO-SCAN REPORTS ERROR: today is not defined
+[2026-05-27T09:34:19.583Z] FirmSignal Backend running on port 3000
+[2026-05-27T09:34:34.587Z] AUTO-SCAN: Initiating automatic hourly background scan for consulting and tech news...
+[2026-05-27T09:34:34.591Z] RSS CRAWLER: Fetching Google News RSS feed for query: "("Deloitte" OR "PwC" OR "EY" OR "KPMG" OR "McKinsey" OR "BCG" OR "Bain" OR "Accenture" OR "IBM Consulting" OR "Capgemini" OR "Microsoft" OR "SAP" OR "ServiceNow" OR "Google" OR "AuditBoard" OR "Salesforce" OR "AWS" OR "Workday" OR "Palantir" OR "OpenAI" OR "Anthropic" OR "Perplexity" OR "Mistral AI" OR "Cohere" OR "xAI" OR "DeepSeek") AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-27T09:34:35.090Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-05-27T09:34:35.092Z] AUTO-SCAN: Local RSS Parser fallback — Mapping 15 live articles...
+[2026-05-27T09:34:35.093Z] AUTO-SCAN: Local RSS parsing successful.
+[2026-05-27T09:34:35.095Z] AUTO-SCAN COMPLETED: 0 new signals found (all matched existing).
+[2026-05-27T09:34:35.096Z] AUTO-SCAN: Initiating automatic hourly background scan for thought leadership reports...
+[2026-05-27T09:34:35.595Z] AUTO-SCAN REPORTS FAILED: Claude API returned 401 - {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"},"request_id":"req_011CbSqy6FzmmAfe5aAFBumq"}
+[2026-05-27T09:37:38.719Z] FirmSignal Backend running on port 3000
+[2026-05-27T09:37:39.731Z] AUTO-SCAN: Initiating automatic hourly background scan for consulting and tech news...
+[2026-05-27T09:37:39.736Z] RSS CRAWLER: Fetching Google News RSS feed for query: "("Deloitte" OR "PwC" OR "EY" OR "KPMG" OR "McKinsey" OR "BCG" OR "Bain" OR "Accenture" OR "IBM Consulting" OR "Capgemini" OR "Microsoft" OR "SAP" OR "ServiceNow" OR "Google" OR "AuditBoard" OR "Salesforce" OR "AWS" OR "Workday" OR "Palantir" OR "OpenAI" OR "Anthropic" OR "Perplexity" OR "Mistral AI" OR "Cohere" OR "xAI" OR "DeepSeek") AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-27T09:37:41.252Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-05-27T09:37:41.253Z] AUTO-SCAN: Local RSS Parser fallback — Mapping 15 live articles...
+[2026-05-27T09:37:41.254Z] AUTO-SCAN: Local RSS parsing successful.
+[2026-05-27T09:37:41.256Z] AUTO-SCAN SUCCESS: Added 15 new signals.
+[2026-05-27T09:37:41.257Z] AUTO-SCAN: Initiating automatic hourly background scan for thought leadership reports...
+[2026-05-27T09:37:41.735Z] AUTO-SCAN REPORTS FAILED: Claude API returned 401 - {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"},"request_id":"req_011CbSrCp7Xn2e4UQ6rea6Nk"}
