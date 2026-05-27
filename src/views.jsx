@@ -1119,3 +1119,371 @@ export function DataPipelineAuditView({ data, apiKey, onResetDb, onClearMock, on
     </div>
   );
 }
+
+// ============== THOUGHT LEADERSHIP CORNER ==============
+export function ThoughtLeadershipView({ 
+  reports = [], 
+  onScanReports, 
+  apiKey, 
+  serverHasKey, 
+  onOpenApiModal, 
+  onShowToast 
+}) {
+  const [firmFilter, setFirmFilter] = useState('all');
+  const [topicFilter, setTopicFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [customScanQuery, setCustomScanQuery] = useState('');
+  const [isScanning, setIsScanning] = useState(false);
+
+  // Get active publishers count
+  const publishersCount = useMemo(() => {
+    return new Set(reports.map(r => r.firm)).size;
+  }, [reports]);
+
+  // Extract all unique topics or use standard ones
+  const availableTopics = ['All Themes', 'AI & Automation', 'Market Strategy', 'ESG & Operations', 'Tech Alliances'];
+
+  // Filter logic
+  const filteredReports = useMemo(() => {
+    return reports.filter(r => {
+      const matchesFirm = firmFilter === 'all' || r.firm.toLowerCase() === firmFilter.toLowerCase();
+      
+      const matchesTopic = topicFilter === 'all' || (r.topics && r.topics.some(t => t.toLowerCase() === topicFilter.toLowerCase()));
+      
+      const matchesSearch = !searchQuery ? true : (
+        r.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        r.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        r.takeaway.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        r.firm.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      
+      return matchesFirm && matchesTopic && matchesSearch;
+    });
+  }, [reports, firmFilter, topicFilter, searchQuery]);
+
+  const handleScan = async (e) => {
+    e.preventDefault();
+    if (!apiKey && !serverHasKey) {
+      onOpenApiModal();
+      return;
+    }
+    setIsScanning(true);
+    try {
+      await onScanReports(customScanQuery);
+      setCustomScanQuery('');
+    } catch (err) {
+      onShowToast(`Scan failed: ${err.message || 'error'}`);
+    }
+    setIsScanning(false);
+  };
+
+  const getFirmDotColor = (firmName) => {
+    const map = {
+      McKinsey: '#e07a6a',
+      BCG: '#7aa6d6',
+      Deloitte: '#4a90e2',
+      PwC: '#d4a04a',
+      'Strategy&': '#d4a04a',
+      EY: '#f5a623',
+      KPMG: '#b294d4',
+      Accenture: '#a86fc7',
+      'IBM Consulting': '#88c089',
+      Capgemini: '#6cc4b3'
+    };
+    return map[firmName] || '#aaaaaa';
+  };
+
+  return (
+    <div className="thought-leadership-corner">
+      {/* Header Banner */}
+      <div className="aw-head" style={{ marginBottom: 20 }}>
+        <div>
+          <div className="aw-eyebrow">Thought Leadership Corner</div>
+          <h1 className="aw-title" style={{ fontFamily: 'var(--serif-disp)' }}>
+            Elite C-Suite <em>Research</em> &amp; Strategic Advisory.
+          </h1>
+          <p className="aw-sub">
+            Scanning and synthesizing whitepapers, research briefings, and global reports from top firms over the past month.
+          </p>
+        </div>
+        <div className="aw-meta">
+          <div><span className="num">{reports.length}</span>Reports</div>
+          <div style={{ marginTop: 10 }}><span className="num">{publishersCount}</span>Firms</div>
+          <div style={{ marginTop: 10 }}><span className="num">5</span>Themes</div>
+        </div>
+      </div>
+
+      {/* Scraper / Scan Bar */}
+      <div className="fetch-card" style={{ marginBottom: 24, padding: '16px 20px' }}>
+        <div className="fetch-title" style={{ color: 'var(--accent)', fontWeight: 600 }}>
+          <span style={{ marginRight: 8 }}>🔍</span>
+          Thought Leadership Live Scraper Engine
+        </div>
+        <form onSubmit={handleScan} className="fetch-row" style={{ marginTop: 10, display: 'flex', gap: 12 }}>
+          <input
+            className="custom-input"
+            style={{ flex: 1 }}
+            placeholder="Search prompt (e.g. 'McKinsey GenAI', leave blank to scan past 30 days)"
+            value={customScanQuery}
+            onChange={e => setCustomScanQuery(e.target.value)}
+            disabled={isScanning}
+          />
+          <button 
+            type="submit" 
+            className={`fetch-btn ${isScanning ? 'loading' : ''}`}
+            disabled={isScanning}
+            style={{
+              borderColor: 'var(--accent)',
+              color: 'var(--accent)',
+              background: 'transparent',
+              minWidth: 160
+            }}
+          >
+            {isScanning ? 'Scanning Web...' : 'Scan Live Reports'}
+          </button>
+        </form>
+        {isScanning && (
+          <div className="sweep-prog" style={{ marginTop: 12 }}>
+            <div className="sweep-bar-wrap" style={{ height: 4, background: 'rgba(212,160,74,0.1)' }}>
+              <div 
+                className="sweep-bar animate-pulse" 
+                style={{ 
+                  width: '100%', 
+                  background: 'var(--accent)', 
+                  height: '100%', 
+                  animation: 'pulse 1.5s infinite ease-in-out' 
+                }} 
+              />
+            </div>
+            <p style={{ fontSize: 10, fontFamily: 'var(--mono)', color: 'var(--ink-3)', marginTop: 6, textAlign: 'center' }}>
+              Claude is searching the live web via Anthropic SDK, reading whitepapers, and extracting structured takeaways...
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Real-time filters and Search */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 16, marginBottom: 20 }}>
+        {/* Topic Filters */}
+        <div className="forum-hub-tabs" style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+          {availableTopics.map(topic => {
+            const id = topic === 'All Themes' ? 'all' : topic;
+            const isActive = topicFilter === id;
+            return (
+              <button
+                key={topic}
+                onClick={() => setTopicFilter(id)}
+                style={{
+                  background: isActive ? 'var(--accent-bg)' : 'var(--bg-2)',
+                  border: '1px solid ' + (isActive ? 'var(--accent)' : 'var(--line)'),
+                  color: isActive ? 'var(--accent)' : 'var(--ink-2)',
+                  fontFamily: 'var(--mono)',
+                  fontSize: 10,
+                  padding: '6px 12px',
+                  borderRadius: 4,
+                  cursor: 'pointer',
+                  fontWeight: 600,
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                {topic}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Text Search */}
+        <div className="search-wrap" style={{ minWidth: 260 }}>
+          <svg className="search-icon" width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <circle cx="5.5" cy="5.5" r="4" stroke="currentColor" strokeWidth="1.3"/>
+            <path d="M9 9l2.5 2.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+          </svg>
+          <input
+            className="search-input"
+            placeholder="Search indexed reports..."
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+          />
+        </div>
+      </div>
+
+      {/* Brand Chips Filtering Row */}
+      <div className="aw-filter-row" style={{ marginBottom: 28 }}>
+        <span className="aw-fl-lbl" style={{ fontFamily: 'var(--mono)' }}>Firm:</span>
+        <button 
+          className={`aw-firm-chip ${firmFilter === 'all' ? 'active' : ''}`} 
+          onClick={() => setFirmFilter('all')}
+        >
+          All Publishers
+        </button>
+        {['McKinsey', 'BCG', 'Deloitte', 'PwC', 'EY', 'KPMG', 'Accenture', 'IBM Consulting', 'Capgemini'].map(f => {
+          const hasReports = reports.some(r => r.firm.toLowerCase() === f.toLowerCase());
+          return (
+            <button 
+              key={f} 
+              className={`aw-firm-chip ${firmFilter.toLowerCase() === f.toLowerCase() ? 'active' : ''}`}
+              onClick={() => setFirmFilter(f)}
+              style={{ opacity: hasReports ? 1 : 0.55 }}
+            >
+              <span className="aw-fc-dot" style={{ background: getFirmDotColor(f) }} />
+              {f}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Grid List Feed */}
+      {filteredReports.length === 0 ? (
+        <div className="empty" style={{ background: 'var(--bg-2)', padding: 40, border: '1px dashed var(--line)' }}>
+          <h3>No research briefings match your criteria</h3>
+          <p>Click 'Scan Live Reports' above to execute Claude's crawler for live whitepapers.</p>
+        </div>
+      ) : (
+        <div className="brief-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+          {filteredReports.map((report, idx) => {
+            const dot = getFirmDotColor(report.firm);
+            const dateStr = report.date ? new Date(report.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
+            const fallbackSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(report.firm + ' ' + report.title)}`;
+            const clickUrl = report.url || fallbackSearchUrl;
+
+            return (
+              <div 
+                key={report.id} 
+                className="report-card premium-editorial-card"
+                style={{
+                  background: 'var(--bg)',
+                  border: '1px solid var(--line)',
+                  borderRadius: 'var(--r-lg)',
+                  padding: 24,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 16,
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                  position: 'relative'
+                }}
+              >
+                {/* Header elements */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <span style={{ width: 8, height: 8, background: dot, borderRadius: '50%' }} />
+                    <span style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, letterSpacing: '0.05em' }}>
+                      {report.firm.toUpperCase()}
+                    </span>
+                    <span style={{ color: 'var(--ink-4)', fontSize: 10 }}>· {report.source}</span>
+                  </div>
+                  <span style={{ fontFamily: 'var(--mono)', fontSize: 9, color: 'var(--ink-3)' }}>
+                    {dateStr}
+                  </span>
+                </div>
+
+                {/* Report Title */}
+                <h3 
+                  className="report-title"
+                  style={{
+                    fontFamily: 'var(--serif-disp)',
+                    fontSize: 20,
+                    margin: 0,
+                    lineHeight: 1.35,
+                    color: 'var(--ink)'
+                  }}
+                >
+                  {report.title}
+                </h3>
+
+                {/* Substantive Summary */}
+                <p 
+                  className="report-summary"
+                  style={{
+                    margin: 0,
+                    fontSize: 13,
+                    color: 'var(--ink-2)',
+                    lineHeight: 1.5,
+                    fontFamily: 'var(--serif)'
+                  }}
+                >
+                  {report.summary}
+                </p>
+
+                {/* Gold Takeaway box */}
+                <div 
+                  className="takeaway-box"
+                  style={{
+                    borderLeft: '3px solid var(--accent)',
+                    background: 'var(--bg-3)',
+                    padding: '12px 16px',
+                    borderRadius: '0 8px 8px 0',
+                    fontSize: 12.5,
+                    fontStyle: 'italic',
+                    fontFamily: 'var(--serif)',
+                    color: 'var(--ink-2)',
+                    lineHeight: 1.45
+                  }}
+                >
+                  <strong style={{ display: 'block', fontStyle: 'normal', fontFamily: 'var(--mono)', fontSize: 10, textTransform: 'uppercase', color: 'var(--accent)', letterSpacing: '0.1em', marginBottom: 4 }}>
+                    Executive Takeaway
+                  </strong>
+                  "{report.takeaway}"
+                </div>
+
+                {/* Actionable recommendations customized for EY */}
+                <div className="ey-actions-block" style={{ marginTop: 'auto' }}>
+                  <h4 style={{ margin: '0 0 8px 0', fontFamily: 'var(--mono)', fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--accent)' }}>
+                    Action Items for EY
+                  </h4>
+                  <ul style={{ margin: 0, paddingLeft: 16, fontSize: 12.5, color: 'var(--ink-2)', lineHeight: 1.5, fontFamily: 'var(--serif)' }}>
+                    {report.actionItems && report.actionItems.map((item, i) => (
+                      <li key={i} style={{ marginBottom: 6 }}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Foot element */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 12, borderTop: '1px solid var(--line)' }}>
+                  {/* Topic Badges */}
+                  <div style={{ display: 'flex', gap: 6 }}>
+                    {report.topics && report.topics.map(topic => (
+                      <span 
+                        key={topic} 
+                        style={{ 
+                          fontSize: 9, 
+                          fontFamily: 'var(--mono)', 
+                          background: 'var(--bg-2)', 
+                          color: 'var(--ink-3)', 
+                          padding: '2px 6px', 
+                          borderRadius: 4,
+                          border: '1px solid var(--line)'
+                        }}
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a 
+                    href={clickUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="read-report-btn"
+                    style={{
+                      fontFamily: 'var(--mono)',
+                      fontSize: 10,
+                      fontWeight: 600,
+                      color: 'var(--accent)',
+                      textDecoration: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 4
+                    }}
+                  >
+                    Read Full Report ↗
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+

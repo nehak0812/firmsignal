@@ -8,7 +8,7 @@ import {
 } from './data.js';
 import { 
   Ticker, BriefView, SignalsView, HeatmapView, CompareView, WatchlistView,
-  ContextCornerView, KnowledgeGraph, DataPipelineAuditView
+  ContextCornerView, KnowledgeGraph, DataPipelineAuditView, ThoughtLeadershipView
 } from './views.jsx';
 import { TweaksPanel, TweakSection, TweakRadio, TweakToggle, useTweaks } from './tweaks.jsx';
 
@@ -564,6 +564,7 @@ function FSTweaks() {
 function App() {
   const [data, setData] = useState(DEMO_SIGNALS);
   const [firms, setFirms] = useState(ALL_FIRMS);
+  const [reports, setReports] = useState([]);
   const [activeNav, setActiveNav] = useState('brief');
   const [view, setView] = useState('all');
   const [activeFirms, setActiveFirms] = useState(new Set());
@@ -602,6 +603,21 @@ function App() {
     }
   };
 
+  const loadReports = async () => {
+    try {
+      const resp = await fetch('/api/reports');
+      if (resp.ok) {
+        const db = await resp.json();
+        const list = db.reports;
+        if (list && list.length > 0) {
+          setReports(list);
+        }
+      }
+    } catch (err) {
+      console.warn('[FirmSignal] Could not fetch reports from backend.');
+    }
+  };
+
   const loadFirms = async () => {
     try {
       const resp = await fetch('/api/firms');
@@ -633,6 +649,7 @@ function App() {
   useEffect(() => {
     loadSignals();
     loadFirms();
+    loadReports();
     checkServerStatus();
   }, []);
 
@@ -813,6 +830,31 @@ function App() {
     return false;
   };
 
+  const handleScanReports = async (customQuery) => {
+    try {
+      showToast('Initiating Live Scan for Thought Leadership Reports...');
+      const resp = await fetch('/api/reports/scan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: customQuery, apiKey })
+      });
+      if (resp.ok) {
+        const json = await resp.json();
+        if (json.success) {
+          setReports(json.reports);
+          showToast(`✓ Scanned and loaded ${json.count} new reports`);
+          return json.count;
+        }
+      } else {
+        const err = await resp.json();
+        showToast(`Error: ${err.error || 'Failed to scan reports'}`);
+      }
+    } catch (err) {
+      showToast('Connection error scanning reports');
+    }
+    return 0;
+  };
+
   const onResetDb = async () => {
     try {
       const resp = await fetch('/api/db/reset', { method: 'POST' });
@@ -822,6 +864,7 @@ function App() {
     } catch (e) {}
     await loadSignals();
     await loadFirms();
+    await loadReports();
     setActiveFirms(new Set());
     setActiveSignals(new Set());
     setSearch('');
@@ -839,6 +882,7 @@ function App() {
       }
     } catch (e) {}
     await loadSignals();
+    await loadReports();
   };
 
   const onHeatCellClick = (firmId, signal) => {
@@ -871,6 +915,7 @@ function App() {
   const navTabs = [
     { id: 'brief',     label: 'Brief' },
     { id: 'context',   label: 'Context Corner' },
+    { id: 'reports',   label: 'Thought Leadership' },
     { id: 'graph',     label: 'Knowledge Graph' },
     { id: 'signals',   label: 'Signals Matrix' },
     { id: 'heatmap',   label: 'Heatmap' },
@@ -932,6 +977,17 @@ function App() {
           
           {activeNav === 'context' && (
             <ContextCornerView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={firms} AI_FIRST_FIRMS={firms.filter(f => f.type === 'ai-first')} SIGNAL_COLORS={SIGNAL_COLORS} />
+          )}
+
+          {activeNav === 'reports' && (
+            <ThoughtLeadershipView 
+              reports={reports} 
+              onScanReports={handleScanReports} 
+              apiKey={apiKey}
+              serverHasKey={serverHasKey}
+              onOpenApiModal={() => setApiModalOpen(true)}
+              onShowToast={showToast}
+            />
           )}
 
           {activeNav === 'graph' && (

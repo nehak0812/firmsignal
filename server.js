@@ -296,6 +296,69 @@ const DEFAULT_DEMO_SIGNALS = [
   }
 ];
 
+const DEFAULT_DEMO_REPORTS = [
+  {
+    id: 'rep_mckinsey_genai2026',
+    firm: 'McKinsey',
+    title: 'The State of Generative AI in 2026: From Copilots to Autonomous Agents',
+    summary: 'McKinsey Global Institute\'s latest quarterly research highlights that 72% of surveyed enterprises have moved beyond simple chat assistants into multi-agent systems. The research projects that autonomous agent workflows will absorb up to 25% of current office roles by 2029, driving a massive reallocation of corporate budgets toward infrastructure and integration practices.',
+    takeaway: 'The competitive moat is shifting from \'building models\' to \'orchestrating workflows\'. Advisory firms relying on basic prompt engineering will face immediate fee compression as clients purchase automated processes directly.',
+    date: '2026-05-15',
+    source: 'McKinsey Global Institute',
+    url: 'https://www.mckinsey.com/mgi/our-research/the-state-of-generative-ai-in-2026',
+    topics: ['AI & Automation', 'Market Strategy'],
+    actionItems: [
+      'EY must transition client POCs from single-prompt assistants to multi-agent state machines immediately.',
+      'Reprice IT advisory offerings away from developer head-count and toward automated workflow throughput metrics.'
+    ]
+  },
+  {
+    id: 'rep_bcg_sovereign2026',
+    firm: 'BCG',
+    title: 'Sovereign AI Infrastructure: The Next Frontier of Enterprise Security',
+    summary: 'BCG\'s study on enterprise AI adoption reveals a sharp increase in sovereign cloud requirements, with 64% of financial services and defense companies refusing to route sensitive data through public hyper-scaler models. The report details the emerging market for private, localized on-premise AI deployments.',
+    takeaway: 'Sovereign AI is the ultimate defensive moat for regulated industries. Firms that cannot deliver secure, on-premise AI clusters will lose global banking and government market share.',
+    date: '2026-05-10',
+    source: 'BCG Henderson Institute',
+    url: 'https://www.bcg.com/publications/2026/sovereign-ai-infrastructure-enterprise-security',
+    topics: ['Market Strategy', 'Tech Alliances'],
+    actionItems: [
+      'Position EY\'s NVIDIA AI Factory and Dell alliance as the premiere sovereign alternative for banks.',
+      'Conduct security and privacy readiness workshops for Top-20 regulated clients within 60 days.'
+    ]
+  },
+  {
+    id: 'rep_pwc_labor2026',
+    firm: 'PwC',
+    title: 'The GenAI Labor Arbitrage: Restructuring the Modern Professional Services Firm',
+    summary: 'Strategy& reports on the structural shift in talent models across professional services. GenAI tools are projected to absorb up to 40% of standard junior consultant deliverables (research, decks, code) by 2027. This forces consulting firms to shift from traditional hourly billing to outcome-based pricing.',
+    takeaway: 'The pyramid consulting model is dead. Leveraging junior headcount for manual labor is no longer profitable; firms must structure around senior directors managing agent swarms.',
+    date: '2026-05-08',
+    source: 'Strategy&',
+    url: 'https://www.strategyand.pwc.com/gp/en/insights/genai-labor-arbitrage-professional-services',
+    topics: ['ESG & Operations', 'Strategic Advisory'],
+    actionItems: [
+      'Aggressively automate internal slide drafting, code generation, and audit document synthesis.',
+      'Shift client contracts from \'Time and Materials\' (T&M) to value-delivered or software-as-a-service models.'
+    ]
+  },
+  {
+    id: 'rep_deloitte_trust2026',
+    firm: 'Deloitte',
+    title: 'Scaling Trustworthy AI: Governance and Compliance under the EU AI Act',
+    summary: 'Deloitte\'s compliance index reports that 81% of global multinational firms are unprepared for the high-risk requirements of the EU AI Act. The report maps the critical demand for independent AI conformity assessments, model audits, and algorithmic risk mitigation.',
+    takeaway: 'AI governance is the highest-margin consulting opportunity of the decade. Corporate boards are terrified of compliance penalties and will pay premium fees for certified security frameworks.',
+    date: '2026-05-05',
+    source: 'Deloitte Insights',
+    url: 'https://www2.deloitte.com/us/en/insights/focus/cognitive-technologies/trustworthy-ai-governance-eu-act',
+    topics: ['AI & Automation', 'Market Strategy'],
+    actionItems: [
+      'Leverage EY\'s early EU AI Act compliance status to launch a certified AI Audit service line.',
+      'Train all risk advisory personnel on the algorithmic audit framework and assessment standards.'
+    ]
+  }
+];
+
 // Helper to read database
 async function readDb() {
   try {
@@ -332,6 +395,7 @@ async function readDb() {
         { id: "DeepSeek", dot: "#4d6bfe", type: "ai-first" }
       ],
       signals: DEFAULT_DEMO_SIGNALS,
+      reports: DEFAULT_DEMO_REPORTS,
       chatLogs: [],
       readArticles: {},
       graphCoordinates: {}
@@ -449,6 +513,26 @@ Each item must include:
 
 Return up to 5 distinct items. Quality over quantity.`;
 
+const REPORTS_SYSTEM_PROMPT = `You are an intelligence analyst extracting executive-grade thought leadership reports, whitepapers, and market research from top consulting and tech firms for C-suite leaders. Use web search to find real, recent publications from the past 30 days.
+
+CRITICAL:
+- Only reports from the past 30 days. Real URLs only — never fabricate.
+- Return ONLY a valid JSON array — no markdown, no preamble.
+
+Each item must include:
+- id: unique string starting with "rep_scanned_"
+- firm: exact firm name (McKinsey, BCG, Bain, Deloitte, PwC, EY, KPMG, Accenture, IBM Consulting, Capgemini)
+- title: concise report headline
+- summary: 2-3 sentences on the substance
+- takeaway: ONE sentence explaining the critical "so what" for a senior executive.
+- date: YYYY-MM-DD
+- source: exact division or source (e.g., McKinsey Global Institute, BCG Henderson Institute)
+- url: full https:// URL of the publication
+- topics: array of 1-2 categories (e.g. "AI & Automation", "Market Strategy", "ESG & Operations", "Tech Alliances")
+- actionItems: array of 2 bulleted strategic recommendation action items specifically customized for EY and C-suite leaders on how to respond.
+
+Return up to 5 distinct reports. Quality and accuracy are paramount.`;
+
 const app = express();
 
 app.use(cors());
@@ -554,6 +638,101 @@ app.get('/api/signals', async (req, res) => {
     return res.status(500).json({ error: err.message || 'Failed to fetch signals.' });
   }
 });
+
+// GET /api/reports
+app.get('/api/reports', async (req, res) => {
+  await logActivity('GET /api/reports hit.');
+  try {
+    const db = await readDb();
+    return res.json({ success: true, reports: db.reports || [] });
+  } catch (err) {
+    await logActivity(`Error in GET /api/reports: ${err.message}`);
+    return res.status(500).json({ error: err.message || 'Failed to fetch reports.' });
+  }
+});
+
+// POST /api/reports/scan
+app.post('/api/reports/scan', async (req, res) => {
+  const { query, apiKey } = req.body;
+  await logActivity(`POST /api/reports/scan hit. Query: ${query ? `"${query}"` : 'none'}`);
+
+  try {
+    const db = await readDb();
+    const apiKeyToUse = apiKey || process.env.ANTHROPIC_API_KEY;
+    if (!apiKeyToUse) {
+      await logActivity('REPORTS SCAN FAILURE: Anthropic API Key not provided or configured.');
+      return res.status(400).json({ error: 'Anthropic API key is required to scan live reports.' });
+    }
+
+    await logActivity(`Initiating Claude proxy web search for reports: "${query}"`);
+    const today = new Date().toISOString().slice(0, 10);
+    const searchPrompt = query || `recent thought leadership reports whitepapers McKinsey BCG Strategy& PwC Deloitte past month ${today}`;
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKeyToUse,
+        'anthropic-version': '2023-06-01'
+      },
+      body: JSON.stringify({
+        model: 'claude-3-5-sonnet-20241022',
+        max_tokens: 3000,
+        tools: [{ type: 'web_search_20250305', name: 'web_search' }],
+        system: REPORTS_SYSTEM_PROMPT,
+        messages: [{ role: 'user', content: `Search for thought leadership reports about: ${searchPrompt}\n\nReturn only a JSON array of results.` }]
+      })
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      await logActivity(`Claude API reports scan failed: ${response.status} ${response.statusText} - ${errorText}`);
+      throw new Error(`Anthropic API returned: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    const text = data.content.filter(b => b.type === 'text').map(b => b.text).join('');
+    const clean = text.replace(/```json|```/g, '').trim();
+    const match = clean.match(/\[[\s\S]*\]/);
+
+    if (!match) {
+      await logActivity('Claude reports scan completed, but no reports array was found in response.');
+      return res.json({ success: true, count: 0, added: [] });
+    }
+
+    const parsed = JSON.parse(match[0]);
+    if (!db.reports) db.reports = [];
+    const existingTitles = new Set(db.reports.map(r => r.title.toLowerCase().slice(0, 45)));
+    const addedReports = [];
+
+    for (const item of parsed) {
+      if (!item.title) continue;
+      const normalizedTitle = item.title.toLowerCase().slice(0, 45);
+      if (!existingTitles.has(normalizedTitle)) {
+        const newReport = {
+          ...item,
+          id: item.id || `rep_scanned_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`
+        };
+        db.reports.unshift(newReport);
+        addedReports.push(newReport);
+      }
+    }
+
+    if (addedReports.length > 0) {
+      await writeDb(db);
+      await logActivity(`Claude reports scan added ${addedReports.length} new reports.`);
+    } else {
+      await logActivity('Claude reports scan completed. 0 new reports added (all matched existing).');
+    }
+
+    return res.json({ success: true, count: addedReports.length, added: addedReports, reports: db.reports });
+
+  } catch (err) {
+    await logActivity(`Error in /api/reports/scan: ${err.message}`);
+    return res.status(500).json({ error: err.message || 'Internal proxy reports scanning failed.' });
+  }
+});
+
 
 // 1. POST /api/intel
 // Ingestion proxy that reads/writes signals from/to the JSON database and coordinates Claude-extracted digests.
@@ -1121,6 +1300,7 @@ app.post('/api/db/reset', async (req, res) => {
         { id: "DeepSeek", dot: "#4d6bfe", type: "ai-first" }
       ],
       signals: DEFAULT_DEMO_SIGNALS,
+      reports: DEFAULT_DEMO_REPORTS,
       chatLogs: [],
       readArticles: {},
       graphCoordinates: {}
@@ -1128,7 +1308,7 @@ app.post('/api/db/reset', async (req, res) => {
 
     await writeDb(defaultDb);
     await logActivity('Database successfully rollback to factory defaults.');
-    return res.json({ success: true, message: 'Database rolled back to default demo signals.' });
+    return res.json({ success: true, message: 'Database rolled back to default demo signals and reports.' });
   } catch (err) {
     await logActivity(`Error in /api/db/reset: ${err.message}`);
     return res.status(500).json({ error: err.message || 'Failed to reset database.' });
@@ -1145,8 +1325,14 @@ app.post('/api/db/clear-mock', async (req, res) => {
     // Filter out signals with demo IDs (e.g. d1, a1, etc.)
     db.signals = db.signals.filter(s => !/^[da]\d+$/.test(s.id));
     const clearedCount = countBefore - db.signals.length;
+    
+    // Also clear mock reports whose id starts with 'rep_'
+    if (db.reports) {
+      db.reports = db.reports.filter(r => !/^rep_/.test(r.id));
+    }
+    
     await writeDb(db);
-    await logActivity(`Cleared ${clearedCount} mock/demo signals from database.`);
+    await logActivity(`Cleared ${clearedCount} mock/demo signals and preloaded reports from database.`);
     return res.json({ success: true, clearedCount, remainingCount: db.signals.length });
   } catch (err) {
     return res.status(500).json({ error: err.message || 'Failed to clear mock signals.' });
@@ -1236,33 +1422,95 @@ async function runAutoScan() {
     
     if (!match) {
       await logActivity('AUTO-SCAN COMPLETED: No signals array found in response.');
-      return;
-    }
+    } else {
+      const parsed = JSON.parse(match[0]);
+      const existingTitles = new Set(db.signals.map(s => s.title.toLowerCase().slice(0, 45)));
+      const addedSignals = [];
 
-    const parsed = JSON.parse(match[0]);
-    const existingTitles = new Set(db.signals.map(s => s.title.toLowerCase().slice(0, 45)));
-    const addedSignals = [];
+      for (const item of parsed) {
+        if (!item.title) continue;
+        const normalizedTitle = item.title.toLowerCase().slice(0, 45);
+        if (!existingTitles.has(normalizedTitle)) {
+          const newSignal = {
+            ...item,
+            id: item.id || `claude_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
+            importance: item.importance || 3
+          };
+          db.signals.unshift(newSignal);
+          addedSignals.push(newSignal);
+        }
+      }
 
-    for (const item of parsed) {
-      if (!item.title) continue;
-      const normalizedTitle = item.title.toLowerCase().slice(0, 45);
-      if (!existingTitles.has(normalizedTitle)) {
-        const newSignal = {
-          ...item,
-          id: item.id || `claude_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
-          importance: item.importance || 3
-        };
-        db.signals.unshift(newSignal);
-        addedSignals.push(newSignal);
+      if (addedSignals.length > 0) {
+        await writeDb(db);
+        await logActivity(`AUTO-SCAN SUCCESS: Added ${addedSignals.length} new signals.`);
+      } else {
+        await logActivity('AUTO-SCAN COMPLETED: 0 new signals found (all matched existing).');
       }
     }
 
-    if (addedSignals.length > 0) {
-      await writeDb(db);
-      await logActivity(`AUTO-SCAN SUCCESS: Added ${addedSignals.length} new signals.`);
-    } else {
-      await logActivity('AUTO-SCAN COMPLETED: 0 new signals found (all matched existing).');
+    // Now trigger the auto reports scan
+    await logActivity('AUTO-SCAN: Initiating automatic hourly background scan for thought leadership reports...');
+    try {
+      const reportsPrompt = `recent thought leadership reports whitepapers McKinsey BCG Strategy& PwC Deloitte past month ${today}`;
+      const reportsResponse = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKeyToUse,
+          'anthropic-version': '2023-06-01'
+        },
+        body: JSON.stringify({
+          model: 'claude-3-5-sonnet-20241022',
+          max_tokens: 3000,
+          tools: [{ type: 'web_search_20250305', name: 'web_search' }],
+          system: REPORTS_SYSTEM_PROMPT,
+          messages: [{ role: 'user', content: `Search for thought leadership reports about: ${reportsPrompt}\n\nReturn only a JSON array of results.` }]
+        })
+      });
+
+      if (reportsResponse.ok) {
+        const repData = await reportsResponse.json();
+        const repText = repData.content.filter(b => b.type === 'text').map(b => b.text).join('');
+        const repClean = repText.replace(/```json|```/g, '').trim();
+        const repMatch = repClean.match(/\[[\s\S]*\]/);
+        
+        if (repMatch) {
+          const repParsed = JSON.parse(repMatch[0]);
+          if (!db.reports) db.reports = [];
+          const existingRepTitles = new Set(db.reports.map(r => r.title.toLowerCase().slice(0, 45)));
+          const addedReports = [];
+
+          for (const item of repParsed) {
+            if (!item.title) continue;
+            const normalizedTitle = item.title.toLowerCase().slice(0, 45);
+            if (!existingRepTitles.has(normalizedTitle)) {
+              const newReport = {
+                ...item,
+                id: item.id || `rep_scanned_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`
+              };
+              db.reports.unshift(newReport);
+              addedReports.push(newReport);
+            }
+          }
+
+          if (addedReports.length > 0) {
+            await writeDb(db);
+            await logActivity(`AUTO-SCAN REPORTS SUCCESS: Added ${addedReports.length} new reports.`);
+          } else {
+            await logActivity('AUTO-SCAN REPORTS COMPLETED: 0 new reports found (all matched existing).');
+          }
+        } else {
+          await logActivity('AUTO-SCAN REPORTS: No reports array found in response.');
+        }
+      } else {
+        const errText = await reportsResponse.text();
+        await logActivity(`AUTO-SCAN REPORTS FAILED: Claude API returned ${reportsResponse.status} - ${errText}`);
+      }
+    } catch (repErr) {
+      await logActivity(`AUTO-SCAN REPORTS ERROR: ${repErr.message}`);
     }
+
   } catch (err) {
     await logActivity(`AUTO-SCAN ERROR: ${err.message}`);
   }
