@@ -473,6 +473,19 @@ export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = []
         { firm: "Deloitte", role: "Manager", quote: "OpenAI Frontier is a distribution deal. If you are not BCG/McKinsey/Accenture/Capgemini, you are an outsider on the GTM roadmap. We are pivoting to Azure OpenAI, but clients notice the lack of alliance badge.", rating: 3 },
         { firm: "EY", role: "Senior Manager", quote: "Everyone on my team is talking about the sovereign-AI Dell/NVIDIA play. Regulated defense and banking accounts won't let public AI touch their code. This is our winning card against PwC and McKinsey right now.", rating: 5 }
       ]
+    },
+    linkedin: {
+      title: "LinkedIn Executive Sentiment & Corporate Posts",
+      desc: "Top corporate announcements, thought leadership updates, and engagement trends shared directly by firm executives.",
+      metrics: [
+        { label: "Executive Engagement", val: "High (78%)", desc: "Consulting leaders posting actively about model integration and client GTM benefits.", trend: "+15%" },
+        { label: "Publishing Volume", val: "148 posts/wk", desc: "McKinsey and EY leading the weekly AI-centric post counts.", trend: "+8%" },
+        { label: "Audience Sentiment", val: "92% Pos", desc: "Clients expressing strong interest in sovereign enterprise-tier AI solutions.", trend: "+5%" }
+      ],
+      quotes: [
+        { firm: "EY", role: "Global Vice Chair, Technology (1,240 👍)", quote: "Our collaboration with Dell and NVIDIA is setting a new standard for sovereign AI. Enterprises can now run secure LLMs within their own regulatory boundaries.", rating: 5 },
+        { firm: "McKinsey", role: "Senior Partner (856 👍)", quote: "Orchestrating autonomous workflows is the define-or-be-defined enterprise agenda for H2 2026. Firms leveraging agentic platforms are unlocking 40% efficiency gains.", rating: 5 }
+      ]
     }
   };
 
