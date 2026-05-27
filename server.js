@@ -69,6 +69,30 @@ async function fetchGoogleNewsRSS(query) {
   }
 }
 
+// Helper to perform strict, boundary-safe competitor firm name matching
+function matchFirm(title, url, firm) {
+  const firmName = firm.id;
+  const escaped = firmName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  
+  // 1. Title match using word boundaries (case insensitive)
+  const regex = new RegExp(`\\b${escaped}\\b`, 'i');
+  if (regex.test(title)) {
+    return true;
+  }
+  
+  // 2. URL match using domain/path boundaries (only if not a Google News base64 string)
+  if (url) {
+    const lowerUrl = url.toLowerCase();
+    if (!lowerUrl.includes('news.google.com/rss/articles/') && !lowerUrl.includes('news.google.com/articles/')) {
+      const urlRegex = new RegExp(`[/.@_-]${escaped}[/.@_-]`, 'i');
+      if (urlRegex.test(lowerUrl) || lowerUrl.includes(firmName.toLowerCase())) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
 // Local dynamic parser to map real RSS articles to executive-level competitive signals in Demo Mode
 function parseSignalLocally(article, firmsList) {
   const title = article.title;
@@ -77,20 +101,12 @@ function parseSignalLocally(article, firmsList) {
   const url = article.link;
   
   // 1. Match against dynamic firms
-  let matchedFirm = null;
   const lowerTitle = title.toLowerCase();
+  let matchedFirm = null;
   for (const firm of firmsList) {
-    if (lowerTitle.includes(firm.id.toLowerCase())) {
+    if (matchFirm(title, url, firm)) {
       matchedFirm = firm;
       break;
-    }
-  }
-  if (!matchedFirm) {
-    for (const firm of firmsList) {
-      if (url.toLowerCase().includes(firm.id.toLowerCase())) {
-        matchedFirm = firm;
-        break;
-      }
     }
   }
   
@@ -207,20 +223,10 @@ async function verifyArticle(article, firmsList) {
   
   // 3. Dynamic Firm Relevance Check
   let matchedFirm = null;
-  const lowerTitle = title.toLowerCase();
   for (const firm of firmsList) {
-    if (lowerTitle.includes(firm.id.toLowerCase())) {
+    if (matchFirm(title, urlStr, firm)) {
       matchedFirm = firm;
       break;
-    }
-  }
-  if (!matchedFirm && urlStr) {
-    const lowerUrl = urlStr.toLowerCase();
-    for (const firm of firmsList) {
-      if (lowerUrl.includes(firm.id.toLowerCase())) {
-        matchedFirm = firm;
-        break;
-      }
     }
   }
   if (!matchedFirm) {
@@ -1920,17 +1926,46 @@ async function runAutoScan() {
       return;
     }
     
-    // Construct dynamic RSS search query covering all active firms
-    const queryTerms = firmsList.map(f => `"${f.id}"`);
-    const combinedQuery = `(${queryTerms.join(' OR ')}) AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)`;
-    
-    // Phase 1: Sweep the web using Google News RSS
+    // Phase 1: Sweep the web using targeted Google News RSS feeds for EACH tracked firm
     let rssArticles = [];
-    try {
-      rssArticles = await fetchGoogleNewsRSS(combinedQuery);
-    } catch (rssErr) {
-      await logActivity(`AUTO-SCAN RSS Error: ${rssErr.message}`);
+    const sweepCountPerFirm = 3; // Get top 3 articles per firm
+    
+    await logActivity(`AUTO-SCAN: Initiating parallel RSS sweeps across all ${firmsList.length} active competitor watchlists...`);
+    
+    // Fetch RSS feeds in parallel batches of 5 to be polite but fast
+    const batchSize = 5;
+    for (let i = 0; i < firmsList.length; i += batchSize) {
+      const batch = firmsList.slice(i, i + batchSize);
+      const batchPromises = batch.map(async (firm) => {
+        try {
+          const firmQuery = `"${firm.id}" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)`;
+          const results = await fetchGoogleNewsRSS(firmQuery);
+          // Limit to top few results to keep the feed high-quality
+          return results.slice(0, sweepCountPerFirm);
+        } catch (err) {
+          return [];
+        }
+      });
+      const batchResults = await Promise.all(batchPromises);
+      for (const results of batchResults) {
+        rssArticles.push(...results);
+      }
+      // Brief sleep between batches
+      if (i + batchSize < firmsList.length) {
+        await new Promise(resolve => setTimeout(resolve, 300));
+      }
     }
+    
+    // De-duplicate rssArticles by URL
+    const uniqueUrls = new Set();
+    rssArticles = rssArticles.filter(art => {
+      const uniqueKey = art.link || art.url;
+      if (!uniqueKey || uniqueUrls.has(uniqueKey)) return false;
+      uniqueUrls.add(uniqueKey);
+      return true;
+    });
+    
+    await logActivity(`AUTO-SCAN CRAWLER: Successfully aggregated ${rssArticles.length} unique live news articles across all firms.`);
 
     let parsed = null;
     let scanSuccess = false;

@@ -133,6 +133,926 @@
   ],
   "signals": [
     {
+      "id": "sig_rss_1779876398509_g2rpn",
+      "firm": "DeepSeek",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "DeepSeek Is Now Running Three AI Races at Once",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, DeepSeek is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Bloomberg.com tracks the deployment of new AI capabilities at DeepSeek. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-26",
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQOF8yOHFLa0J3ZnJDZmNkNE5QTHlaT2N1S2RnbEk5TGZtOERLMHAxeEVJbzhmUm5kbWhBand2QTNOZEVDY3JDeWU3Nmx1eGtZdklvb1dnbHVpeDhaTjlrellBLUhERGw3WExyQ3VjRG5kMmVHX2EyaE9RdzdRY0xya2lFRWxyTkdHQVB4V3lSdWlaa05NYXAyX0p5eTVQbXExalE?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:07.522Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_ao1x2",
+      "firm": "DeepSeek",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "China bans overseas travel for top AI execs from DeepSeek, Alibaba and other AI companies",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, DeepSeek is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by India Today tracks the deployment of new AI capabilities at DeepSeek. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "India Today",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQMDNJbVVIZVhOUDFsY0EwSUpQeWtVTmlIWmdsenFqX0JwNXMyUXNrZ1NDRFRXUFFsWjVCTExIdUotRXd4X2JUMnBzZnVhMlo2bzdTVURyaDY1YVVaeDJKSjJNdlpyY2h2c1UzbmRTZEl1V0IzSHVoZXJCb1NPZTZfM3NoMVI1WklwMFFFUnFMdTY1R2xpaXZyWkU3MllvVU1JSURfano3Wjg5S0cwdmxBMFlaMVNpRGw3YjlJams3djJMY0QwcDhfS3JaNTNmWkFqcDZKcDlIQkVaeEXSAeABQVVfeXFMTml5QTBzckhhYktULUxtRC0yWDhrdTBpeGVhbTNKaWVIWlh5VXNUVkRpR1pSbnVQdEpXdVMzVWVaeHAwRi1xM3pYYm9PUXFQaDh2YUNrRXJ1ZGtHOWd1T0syUlBsVmk2aU9Gc2lJSFhINVo1YnNEa09RNEw2Wkg3UmRPN2dKdlZXZ2dtVldGMEVlVjJFc3NaSHM1MjRhMFVUVWw0VHBaMlpxLUE5OW5HbThDNVE3ZjVfcjhEZW5ZWklNQ0FoWjJiWGdQRXNtVHZ6b0lsNWdRNUpSNURxamMzVHM?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:07.269Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_gwev7",
+      "firm": "DeepSeek",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Licensable picture: Deepseek AI Logo Photo Ilustrations",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, DeepSeek is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by reutersconnect.com tracks the deployment of new AI capabilities at DeepSeek. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "reutersconnect.com",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNcS1tNXJXdzA0S0x0VE54NUxYVlNFTFpWNVBPWDlUMzZ6RUs4M3dybG9RUUw4bFUwNzk2YUNIb0c3Uk53U2lsWU9MV1hhZ0lnM0NvVlBTVi02NW9LTExCTFV3SWZJUmZIemZGTnpUTnFaYmJLWWx2ZnNPNGpmOVpLLXRKWHozTUpCUkNwc1FaZks4eGphdEtSa3VsNV91Y0FDZVF1aEFobF9uM1ZoZXlFeVBHNElSQWd4MThnSlEyQkp1VllLbG0taEFZUQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:06.680Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_d932i",
+      "firm": "xAI",
+      "type": "ai-first",
+      "signal": "Regulatory",
+      "importance": 4,
+      "title": "xAI warns employees: limit contact with Cursor",
+      "takeaway": "This major shift by xAI signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from Techzine Global reports that xAI has made a strategic move. \"xAI warns employees: limit contact with Cursor\" represents a key development in the professional services ecosystem.",
+      "date": "2026-05-26",
+      "source": "Techzine Global",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOQk9iOHZYX3JRS1gxMUNFZ0pEOXlxc2tBSEhxUHR3QzAyRzZDSEFsdzlzRm15X3o1Z0VLeTlDR1M1eGJ5NV9TbXN4U3FlNEVGcG5VWE1WT2VIVmQ3eFhGYVBNbmlWZDhiTTZQUFJVQXdxTWY4R2xVMjFBcnBQMTNCUUxsNjBkcDNtTzE4UzBzbEI3dTg?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:05.788Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_fvyyw",
+      "firm": "xAI",
+      "type": "ai-first",
+      "signal": "M&A",
+      "importance": 4,
+      "title": "Elon Musk's xAI: $500M ARR, $1B Burn, $1.25T SpaceX Merger",
+      "takeaway": "This major shift by xAI signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from StartupHub.ai reports that xAI has made a strategic move. \"Elon Musk's xAI: $500M ARR, $1B Burn, $1.25T SpaceX Merger\" represents a key development in the professional services ecosystem.",
+      "date": "2026-05-26",
+      "source": "StartupHub.ai",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNaF9QMk1FNmhzNDlvcnA0aU9tallzUW9LNHNIOUcyRGdXNDRodVVIQk1xREhEQ3FzUC10LUNLUk5aUUxKOFllcTN4bTZVVV95WjF1YUlnT0pyZlpMMUYxSGxIZUl0bXMwdm16bWtIYWdpbk1UeW5MNENCSnVaRi1hSGVlMkJ5MktyQnBwcThheEllUGtTdjNCUTlOLXloTGoybENWSmxXSEluZWJONXc?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:05.214Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_terul",
+      "firm": "Cohere",
+      "type": "ai-first",
+      "signal": "M&A",
+      "importance": 4,
+      "title": "Canada AI firm Cohere expands further with biomedical acquisition",
+      "takeaway": "This major shift by Cohere signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from Indiatimes reports that Cohere has made a strategic move. \"Canada AI firm Cohere expands further with biomedical acquisition\" represents a key development in the professional services ecosystem.",
+      "date": "2026-05-20",
+      "source": "Indiatimes",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQbUw5SXA3ZzMtc2pFRUV0Zkk2Y2NRU0M5ck0xZGtRbG8zMzdLQUhIS0trY3dNLTN3cU1qZThlREJYYU95QkNnazJReC1vVTNPa0NwVmtZUmFnb2pDS2pTc28xVTZhYjd2YUFWdzFld2JEVlMzMWk0VkNNWGJpeWlLdF9SVVV5R3BZQ285dDhrUEJja1JLRVpWTVV3Njg4VmlvbmVQc1ppdGlOWXFyZlpZMGRUQ3JoNE5CbzdVc2ZCYkc5eEw3Q2RRa2V5aWhfMTJLU0xETk1R0gHbAUFVX3lxTFBPSV9raG1yYmtsbG5lQi1aUDJQRUpYYXlSaWdzVkhIakZUV2ZpbUFGY2paaGFCZWF1VUJXTEhWdGJTSU5obXV3WGFEUy0ydjBmSlh2aGpnQm9ZVU1udHNBVDFMSnVCWjUtWmFIYkh3YjFfZFBwaFlISXZJV2hCbXNrTzlQMWU3X3g0M3V0TV9qQ2RVUWxNejhxdTROSTZIUUptUWZzZ2Etb01Rc3JtRDhLQ1FZNC1nVFlBb3AtYVNYMzVQVV8zdHFIR3QzN3BQdHlhSmM1MlJUel9xaw?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:04.632Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_rjydb",
+      "firm": "Cohere",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Canada’s AI champion Cohere is standing up the load-bearing walls of our economy",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Cohere is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by BetaKit tracks the deployment of new AI capabilities at Cohere. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-26",
+      "source": "BetaKit",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQnd4cG1jRTgzSGhWWmpWUV9pOGYyYmpGckMzcnIwalRNYXV1MktCRmU3eGhsT1NhY1loR25hYWhiaGJMVEZfY0J5Tkc3RldLNzEwcVdWeFRRTWZRMFkyd2hncG11aW5IXzZhZVNqRllQTHB0Y2dEWDd0SFhsTjg0bXFhbnNmblRiV2ozVWU1YmJGLXJWLXFXaXlKZ1J0WE11bnc?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:04.069Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_u8fyf",
+      "firm": "Mistral AI",
+      "type": "ai-first",
+      "signal": "Partnership",
+      "importance": 4,
+      "title": "BNP Paribas and Mistral AI extend their partnership to support the next phase of genera...",
+      "takeaway": "This alliance positions Mistral AI directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to group.bnpparibas, Mistral AI has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-26",
+      "source": "group.bnpparibas",
+      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQcVdza1ZhVm03SnAwTE1qekgzUWlxbWRwbldJdno3NWo0d3Z5S2FVVWdIaVR3QXhTd2tWOFBEbThxbDRreXkwQ2pJRDhCSUtndTJkNG5LdWw1RkpsbGpJT2dXQzNpRnQ0alhFZTBPQ2lNSFhHclMwckNkSEhoWWZsak1QR09MN0VJSGVWOXU4M3l0Yjg4M2tmWG92YzNoV0drWFBld1BiTEM0eUtOZVhrQ01ROFBTeHRVZk5yOUNoajA3WGtKX3dMdUNMOXo1UjBVbWNSSEtMS1ZSb0ZyREhkeDkxZ21aUERGeENlOVh2cnRKbHhxQUdr?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:03.517Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_u1n2l",
+      "firm": "Mistral AI",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "BNP Paribas expands ties with Mistral AI to boost generative AI capabilities",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Mistral AI is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Retail Banker International tracks the deployment of new AI capabilities at Mistral AI. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-26",
+      "source": "Retail Banker International",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOU0tpTWsyM1Fqck55QlVqdnVKcVR0SjllWklZQmdCRG9ud0hDd3IzTXROU3ZLNXdTTWEyYkt3ZkFrVmxEdmlEQlY0M1FUemFuRVp4ODZaVEJBSU9wZFpZdi1TUUpxQ3hLdUNvSXJOSU1CWFV1Mzh6S1pUQWpUWGk5Rg?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:02.624Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_26elr",
+      "firm": "Perplexity",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Which AI chatbot is the most reliable? New study ranks Perplexity above ChatGPT",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Perplexity is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Firstpost tracks the deployment of new AI capabilities at Perplexity. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "Firstpost",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPWVBVWWlwN1pvSVNBMVhlTFJNNVhlLTYxcUdTVE1TMFhMUU1rR0ZUd2RKNUlVZkZxb1k4Z2ZScTRCMDRRN0RRTWdKMkNQWWhHc3F5VDhxM3NzNkVTRkY3YTdxNko3aXdVNjg1c01jaEtyUkplVlNMamdEV2xCWFJ5aVBiTDZHRGp5Q2hxNzA4di1NLUdraGtkUEF2bE42aXJVMjFsTTRycmJwVDBzWnBVMlBwTGVCRE9kakw5ckc2SjnSAcYBQVVfeXFMTnIwM216SzFtYTB4RG1lUTAxM01DcXl4dGdCY01xcEhBM0FKeE56LV9vcklnU3FFQW9ET3pjSWotR3d2bXdWOGktREdnbVNudFBTRXE2cTJJMEpRLWwyZXJTMkQ0ZE5SclpUaks0azFyTGd5RDBCVkpPQ01QTU0ta3hHbWRlTHVLSzBzR3ZjTmJJZFByekUtOExRWWZfV3VPV2ZTa3FNaHd6RlloOUVwUXdJQ2ZIOTRkek52cTI4THJ4ZXdDMy1R?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:02.061Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_eupnz",
+      "firm": "Perplexity",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Perplexity most reliable AI chatbot for work tasks, ChatGPT ranks sixth: Report",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Perplexity is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by The Indian Express tracks the deployment of new AI capabilities at Perplexity. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "The Indian Express",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQOHFMYjNOTmNHWllucHVGZlRMak9FeUhnUWlDWm1VY0tFM2R0d2NZTmZPbEFTUU5ueGtnbDFNZjc3c2ZWdVJvaUdnMF80RDhQOUpqYm5DS0oxT0t1U3ZRY0ZsY3dhWWt5bEJQMHNjZUV3bEhQcmtOejR4UmNiZi1DdE55WHB3TEllSTR4Y2tuLU9LdzNUaFNNaWkxMExMdmRDRkU3NFBnVFlDdUFGZ0I0eDh3Mi03YW9oSUtzeGJnaDBSblV3aTN2SjZWdVFIOGt4Q2tQR3d2UXp1VFhqYVlrOEhmVVdLYUw0anFKZNIB8wFBVV95cUxOOVpFTmNnLUFKTE5FakxMdFlaSEktRFV0c25UN1dvaG9pbHU1czVDOHJ4Wl91WWU1VHRPUTFHOHgzUkpGSHg5aF9iZmViRlZpSzNSZXRhU2ZJSTB1TEJzZVZqUHlYZEp5UTN6Y193aEs5dVdDRzdFa0pvXzkySGRNMU05dUlUMWdOaUxhZmdpc2hsYVJUemVIOFVidkJvOUYtYkxPRWo3SF82dE5hM29JRkN3MzlKM1FFek5Gc29OLUdBUEprUzJ6TFB0cTItUXFGNDJDQml5RVFfdEN1WWxNUUVZRjQwS3JZMzY0RTdSQThobG8?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:01.458Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_n4iro",
+      "firm": "Perplexity",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Perplexity Tops AI Reliability Rankings, ChatGPT Slips to Sixth in Workplace Performanc...",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Perplexity is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by CXO Digitalpulse tracks the deployment of new AI capabilities at Perplexity. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "CXO Digitalpulse",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNeHl5VVdScmY4blVqSDN1aG9oRTRTRGtzTFV1ZHdoek5ic3RJbmthNUY2S0FrMXZmOVRyVlpLSGd5Wl9oNmdIazVwR3pkaS1fQU1IYTdCbGRGNVFLcVk2X0oweERfRTdsYlFVei14WFB2RnRSdXFVT0ZYN1o2Sm1ZeGVnWWdFajQyZXY5LTN2MG41TVJUUXV6T2c0Y2c1NXB4MG9oSW5sd3JzSVNpckFvNWtNUV9TSW1iWWRtMHdVZTlXMFRMYkE?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:01.197Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_5l651",
+      "firm": "Anthropic",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Anthropic asks religious thinkers to help shape Claude as pope warns about AI",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Anthropic is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Scientific American tracks the deployment of new AI capabilities at Anthropic. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-26",
+      "source": "Scientific American",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQalBxVWVVOUtFS0tobHRYekxHMFRRcmdYbEUzMTRJVGxmV0ItMnMxS3hYcGRKQXJvU3RhQlZ0SWxzc2hJdVBHN2M5OFVtQmdhZWZuZ3JnUjdWVlVncnRLZXdQWWd0QkNkWmdYS3N0V1hXcFBLcmtnWDdZY2FmSWxMZ0tpYzBpaEhDdDJMVWlDZkg4VHo0bEhucGV5dy04T2d2X0lrSjRsakJjeHNyMjdYOWgxN1d6RkF5OUJDM3VR?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:00.646Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_b44cr",
+      "firm": "Anthropic",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "What happens inside AI's mind is \"mysterious, unsettling\": Anthropic co-founder",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Anthropic is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by NDTV tracks the deployment of new AI capabilities at Anthropic. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "NDTV",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRVRjZF82V0JNVkRaclQ5a0RlR2w4azJLbUNYNWN5d0ROYXB3NVlKWkhNNkRLQlI0Zkcxa1JsOWNZd2NudEk0a2dyLVZrcWV4M3ZlMkV3OFE4UXA3QjZmdldJS244emt4d1gyeGVZaHAyc2hXY0QyZDdzM1p6b1hjejRrRHkybUYtNXpMZHJBOUZMTzdXdjhSdDhRWE5pTlpFLVFuOGZtTG5RcmZJb1JSc3N2dXRfWXl3STlMMjNhb1dpX2llaEpB0gHPAUFVX3lxTFBZRHNfeXVuVlhEQ25xaS1OcUY2R2pDRUhjZDNKQnRTa2ZxMUpDdXk0WDRXNFRNemVDWm52TjQ0RmM2dk9rTlNXWFJtVXdGMGNabmZ5VzZPN3RaVjZuaFF0c0w3U05XcHNDak1yZFVEZkZGTTVGcnMzVVpldGNHS05Jb0VEVWxISWRMSFg3MTdSUlFfSGhIQkRYOFFibU1pLTVqWmJJYVhmcGIwUjRlOFlYcTJMVi1hMWFzOGFKc2xlTTZvLURBbmhZSk1TTHFxRQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:07:00.033Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_kgff5",
+      "firm": "Anthropic",
+      "type": "ai-first",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "Fujitsu signs strategic partnership with Anthropic",
+      "takeaway": "This alliance positions Anthropic directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to Fujitsu Global, Anthropic has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-27",
+      "source": "Fujitsu Global",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5oRGRzeFZPZTM0MktOQnBTNG5CS0ZpSW91U0RSOW1YSU8yRG01NW1NS3RBUVktbDJSX2V6bVRlRU5LOGVGaF9neGhfLU5EajdiUjVCZ2x2eWwxNTVhRFJnN3FneFI?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:59.092Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_n1n5m",
+      "firm": "Google",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Mint Explainer | Google vs OpenAI vs Anthropic: Who is really leading the AI race?",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Google is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Mint tracks the deployment of new AI capabilities at Google. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "Mint",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUzVPaXhSc3lEMTRSOTBnYnZyQUJnWGVwaVMycVZJQlFRenBYYU1FWnRGaDhZVHhJUjFLbU5Za2I1amRfcGFtd01jOHBpeWJKMWUwd0ZUYXpSZWlEeklKV1o0c3ZwSzNGeV9FcEVnTHdEUVVsQ19EMnlyN0FZeGFxTUdaWTJ0X0d1LUxMRGoyN0RkS0NTbEl6dHZpWkRDanBnb05hUVR0VF9QWW5SS1NISdIBtgFBVV95cUxNM0V2Si1VNUlpZmNJNVE4TUNidHR2elJ0UFNfRU1GVDFqNWVTT1BPR2t4eTRPdGlUZFZhNDI4blFBaVVwTEJTQXpOSlF3bjBRZ0p5emVkSEZjU0ItbnoxYVdibEFXOENQVUJhcS0wMHl6SUNKdFR4Qm9NTkRXNkRmNTBySFhpYjJfVmI1bHJieFhyY1liRUl3NWVSeWV3VVVtQXM2dTlaTmVkNjBSUjkweUtOVldaQQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:58.195Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_a1twl",
+      "firm": "Google",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Alibaba AI beats Google and OpenAI in global coding rankings",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Google is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by South China Morning Post tracks the deployment of new AI capabilities at Google. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "South China Morning Post",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQU5hdWFEOTFFZlY1WXNzRkRnQjZ3UDhhUVdSQ3AyVUFnM3Jrb2RMamxtNU5aRVJReW5mTkNfb3ZlZW1PbWx1NGVnQzVGMjdQWmFQcjY4dkdrYW5rM2lqQjJDSWJIY1VDRHNmNmpoR1BJYjJWU3RuYS1sOVBwX24yV09OMlZTUkFha085cDdNVkRSMk9HT1ZhQnQ5VjJFeUNpaDdQRGQ5WkpYRXRFbFhIb1lONXRXMjRLQjhVcGEyck5BZHM?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:57.973Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_g81tr",
+      "firm": "OpenAI",
+      "type": "ai-first",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "K-water partners with OpenAI on AI-driven climate, water management",
+      "takeaway": "This alliance positions OpenAI directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to The Korea Times, OpenAI has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-27",
+      "source": "The Korea Times",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUFFSaWpGS2pGZTFKZFdwMGJ0ZjIxcEV5WWVKS0M3V29Md3pxZ0tyUXlVZmRhaVFFR0RoU1pRQXBzTDRPblEwWGFCYlVQQUxmM3lvQjE0NGtCcXFmSkM1TjNzLUtkdTBnNzJsQTJZRFJvRnBZby1mRjdrbGNhUkc4d1dUNG1VemlodTJrNDdVSmZRamlfRHNtdXdhZkNwVnpjRlpzTnh5QmVJamZBcXdPSUlMbHVobC1VdXdhQThRekzSAcYBQVVfeXFMTTFHVEtxT01GbkFXVmxncE8zblNhSzNqY2xaRlBfSk13VEllSW1ESWxLOTA2cmVMS2JXZXRWZF80Xy11UTA5Q3YtMTVuTXZTWUFiamMyVmhxajYwZUVncGdrZHBySEc5c1N1U1dNd2I5dWZBYzFfTVJzUXYxdmpKQ3FmUmE4bmQyU2RQejJrTFhLRnliRmZJbktTLTVQaVdhczZzbkhFUDV6Y1JQcEdQbm00UXlsNG5HaGhHT0RoZklPVERnc1VR?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:57.096Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398509_2yadw",
+      "firm": "Palantir",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Is It Too Late To Consider Palantir Technologies (PLTR) After Recent AI Stock Reassessm...",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Palantir is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by simplywall.st tracks the deployment of new AI capabilities at Palantir. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNVVlIdlh1YkJZMF9kOEs0UGNDVGdlR3M2Y01ZbVAwdHFLMERiaTVLNFpYSTZ5MTlVa2pmZmJJVktvRE9LM3k3bTljaF9wcDl1cnUwcmVaLThkYnlHRzFvWnl2djBkc3BFMGZpUEFnM3BVUEs1TW9LRkNYdDhhT05PUnphajhjb2lJTzFEX1ZtMjlac1piZ0lVSnhVdUxrTkJTNkJSZi1BVDJvOXNJVGp2T0l4dk1tVDJIekV5V2M3dTBMQm1Qa3I0aGtjWmdpZWV0LXRmRXYyV1fSAd4BQVVfeXFMTWV2MEVZaV9WajZmLWpCNGZQVmxfU3FwR3R4Q1FiS1hLcjFsVGY5bzlXOGJmMnNKb092VEFKS3I5VC1jOW1nc1lsMmFfeTZLa1JtWUZBLURoWFg5VThQN0wxSnNMb0VyTEtES1htcVVmU25VcW1PVnRyUERSclp6RzdHVzduRGpTNHJ6WGFoWXhld1huSE1CWEJ3ZGcySUZKSHlmb1lIQWRLSjNzNjBHN3NPU0dGVlQtdzUxUzdSbWZ6WEtkSUQyWHczWGY1WnJzSlFobXZSOEsyZXNZMkpn?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:56.528Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_s6aw5",
+      "firm": "Palantir",
+      "type": "tech",
+      "signal": "Earnings",
+      "importance": 4,
+      "title": "Exclusive: Ex-Palantir AI execs raise $12 million seed round for Perceptic, a startup a...",
+      "takeaway": "Strong financial metrics at Palantir confirm that technological advisory is now the primary growth engine in professional services.",
+      "summary": "Financial disclosures compiled by Fortune show robust performance at Palantir. The margins reflect high demand for AI implementation services.",
+      "date": "2026-05-26",
+      "source": "Fortune",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNSXMzdW42QXZBY2xuTEo0RnVvLTZHZ0VKSy14eU5wdWNOM3ltZXc1QjN3MDY3bFBLYVBHUVdjRTVScGlxQk1KRzl0NDlReVB5TTh3U211cWVWbllhNEszRk81bDgtdDZWeVA2bllzN3YyTUYwRzJYdUtGckoyb3J6RXpiT0FNZlRhM25uNU5SNHYxRVBsNDh2Y3AxVmxoZHBMTmpVd2lrbjUtZlQ4VW1LZWNydUROQVh6THIwb25BSU9mTzJERHlJNmd1eXZCaHI3YXQzd2dTQU1QNEhJcFlSOWsyX1JfVkxPdXNocFg2aXNET2RCZWRQRGV3?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:55.970Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_fen6j",
+      "firm": "Workday",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Joel Hellermark Taking on the Role of Chief AI Officer at Workday",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Workday is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by hrtoday.in tracks the deployment of new AI capabilities at Workday. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-26",
+      "source": "hrtoday.in",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNbnRiTUl4V3A3UnBGZ0ctRHM0RVZoY2s0Z1p1X3VEcHdiQ1kxS2RVSG5JWko2cXpZYlEzVjQzb1lKLXl4SnZpWWFWXzVWeG9aME1tSi1XYWNLUWdFeEExTFJVMWRTTWJKVmV2clVpMzVSRXp0eXJRalJHT1JmRDZrcGlyLURjNVJLazJjMTBR?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:55.381Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_omv6l",
+      "firm": "Workday",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Can Workday's New Sana AI Solutions for Enterprises Boost Its Shares?",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Workday is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Yahoo Finance Australia tracks the deployment of new AI capabilities at Workday. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-26",
+      "source": "Yahoo Finance Australia",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNVUVaeXRBYjg1ZTBlMHF2bFNHRTJ6cFM0OTFUN2ZPYWxzQ193dm5mUW9TaFRsSHB4blBWT2pDRXJwQUFEYVcwaGRiaTJSYUJJQVVUdktBNEZYd2ZHTUhpa3VQYWI4VkF3Y2xBdFhfa3NQem44cHdmeWp2T0llY1pZWDVFZzJpQVFfOW5WeFBOVWQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:54.390Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_vourf",
+      "firm": "Salesforce",
+      "type": "tech",
+      "signal": "Earnings",
+      "importance": 4,
+      "title": "Earnings Watch: Salesforce, AI Growth, and Corporate Spending Trends",
+      "takeaway": "Strong financial metrics at Salesforce confirm that technological advisory is now the primary growth engine in professional services.",
+      "summary": "Financial disclosures compiled by Investing.com India show robust performance at Salesforce. The margins reflect high demand for AI implementation services.",
+      "date": "2026-05-27",
+      "source": "Investing.com India",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNakxUZE1UTm0tcE13M0NNcmoyOExvbEFvelJLMVUwQkpFNTVnODluNkN5U1dTcG9EZUVjcmJYbmE0dW83SDNsd20wclhjd3l4amRuUEIyQU5fMG12MDgtdGZ2WkdPZ2ZFSDNZSUFnUzl2RFhEVzRQWHY4WDc5RzRJZ2ltTl9oLVlsN0pucmVqZ2NMTy1OTDlJUnZscFduYzlQSkFmd1B3dlJMOENxVTl2WkF0ajFLbVhsY216SVRR?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:53.799Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_dsm5u",
+      "firm": "Salesforce",
+      "type": "tech",
+      "signal": "Earnings",
+      "importance": 4,
+      "title": "Salesforce Earnings Can Put AI Fears to Bed, Give Stock a Lift",
+      "takeaway": "Strong financial metrics at Salesforce confirm that technological advisory is now the primary growth engine in professional services.",
+      "summary": "Financial disclosures compiled by Bloomberg.com show robust performance at Salesforce. The margins reflect high demand for AI implementation services.",
+      "date": "2026-05-27",
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQYVlTNGlLR1dJdm1YSXN3Wk9yOVlVR1J4Q3FwcF80bUhKd2RMcTByTVdQYXloOGpsZ3dNWmtBMWJmaHVsaGU3Uml0Z3FCTnMyalY3dWQ5dWptalRlUzI1N1M5VmdrWTBFQ2JDY21md1lxdUpJUXN0a1ZidXlFSlpWUVh5Q3NJSXE4d0NlM3dEYzRfdmxnRFF0eV9XdlhWMVU1b3JFVVVCZEIxa0V1N01WazJn?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:53.251Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_izlyo",
+      "firm": "Salesforce",
+      "type": "tech",
+      "signal": "Earnings",
+      "importance": 4,
+      "title": "Can Agentforce Save Salesforce? Q1 Earnings Put the AI Bet to the Test",
+      "takeaway": "Strong financial metrics at Salesforce confirm that technological advisory is now the primary growth engine in professional services.",
+      "summary": "Financial disclosures compiled by tastylive show robust performance at Salesforce. The margins reflect high demand for AI implementation services.",
+      "date": "2026-05-26",
+      "source": "tastylive",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPY2xhVUpZbHNnbFA2VHVyd0ZMb0E0Q1Zja0s2RlQzX0h1NzhicDZKaWxIMzFuOS1VUEVvWEV0S0ttMTJMYVZCa2RvRUpiVDdNUG9FVVFRcGdLdGZQbEN1aTVVcGw2bHdCYTRIcGo5OS16aVFTY0c2aGRuckhoNHRyODR0N2E0aEJyWDhHY0hWcl9XX1pmLXJRR2hUOXY3OGJjRE9mNDBUdDBUY2d1dHc?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:53.023Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_ujvky",
+      "firm": "Google",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Google's AI is being manipulated. The search giant is quietly fighting back",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Google is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by BBC tracks the deployment of new AI capabilities at Google. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-21",
+      "source": "BBC",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZldGZjk0clhFb2tRMW1qbmZqUEdwS2RqQWEzOHVpOEkyOHZlMzE0NlpYV0I1RTJvaWZEeHZBQ1ZIWW5rakp0SnpvcGNqV2czejgwekxjT2Nkd21oT0RleFBLN1ZDTXNjT1NibmRzd1paanNac1h0dTcxX2dzZ2JYREZIWFM4a1duVVZ4NERYczJTaGV5?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:52.131Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_dy8k3",
+      "firm": "Google",
+      "type": "tech",
+      "signal": "Earnings",
+      "importance": 4,
+      "title": "Google says AI Mode surpasses one billion monthly users",
+      "takeaway": "Strong financial metrics at Google confirm that technological advisory is now the primary growth engine in professional services.",
+      "summary": "Financial disclosures compiled by Digital Watch Observatory show robust performance at Google. The margins reflect high demand for AI implementation services.",
+      "date": "2026-05-27",
+      "source": "Digital Watch Observatory",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNeUtkOU02QjZGSlptUllNU24tcmVuc3B3WFFKOVZyNGhtSUg1Y045VmZINVROZkdBWjlCZjRNeXhzdFBwNjB5WjFGTlZqV1pBQnd3TVBpaXEtOWw2N1B6RXBPaldTa3NGeDQtd3p2eHN1NUtobTk3TGpsY1R3eHhvOTNyR3Zhalk2?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:51.231Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_k2ys4",
+      "firm": "Google",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "DuckDuckGo installs are up 30% as users reject being ‘force-fed’ Google’s AI Search",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Google is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by TechCrunch tracks the deployment of new AI capabilities at Google. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-26",
+      "source": "TechCrunch",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTWZ6eUwxTWJvM1d1d3BtZXVhM182WjRNcjF2V2V5dy1WeTBZVGwydFFsN0pqVk91TDZwemZNY21zakRVMU41N1VrSU9wRDN5Y1JvQUl6M1BhdFpDX0JjSzdJWHE0Z0NKRjhrM1FLS3l6dlFaOHdSY0V1QWQyWTZHaExmUzY5aTdjYnZiNThqc1VxZG9OTjZWdjF6WjRuRVRwR1VrNkRYX3lLRDBHcWJPa2g4SVI?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:50.671Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_1usse",
+      "firm": "ServiceNow",
+      "type": "tech",
+      "signal": "Leadership",
+      "importance": 3,
+      "title": "OpenAI appoints former ServiceNow CMO Colin Fleming to lead business marketing",
+      "takeaway": "This major shift by ServiceNow signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from Storyboard18 reports that ServiceNow has made a strategic move. \"OpenAI appoints former ServiceNow CMO Colin Fleming to lead business marketing\" represents a key development in the professional services ecosystem.",
+      "date": "2026-05-27",
+      "source": "Storyboard18",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPbk9DQ3dPcjVKZ0Frbm4yYVZUTHB1VFd6MjB4dWd4bklKUXRnYndMY254TGtBTjNQMWtDYjVCUzQ5SVluSmZvNDRmTGdZN2xlc0FXQWZPLS1DMHp0eUpMWmVsdlNBbi15UUthX3ZYRVgwNm1HamFqRmtUWTgyU1VyTF9IaWMxbWhmN0tnVHpnbHhzaTR6S1RwY0Mzek9vUjBJRm90SzRod3VQWnJsZGF4REpvcS1CRVlDXzFsMEdyM3FnS0nSAcgBQVVfeXFMUE9qTTg2N0tERzJsTHQzbFBXY1dsaUxTWE1BNDhSaG5PWXJFUlNITG8yN24wSTlZdkRwTjk2SlpPQjhGTDh6Zmw1aThhSFZJYkc0Z2NwT3pJMHo0UDFCb2xZTWZzdFZTclNHQmlFWHNSNnNCNDFjblk3Mk1kSzJ6MkZTN05sSHVvLUFQR0lUUnVUWTNBcm1ENmdaZ1ZlREQ1SzhyYWlfcHh4TnNOQ25VM3dIekJHZ0JVX19hNXpIazl2UWUzdFZlbTM?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:49.777Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_zsqmi",
+      "firm": "ServiceNow",
+      "type": "tech",
+      "signal": "Regulatory",
+      "importance": 4,
+      "title": "ServiceNow Repositioned Around AI Security and Governance at Knowledge 2026",
+      "takeaway": "This major shift by ServiceNow signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from ERP Today reports that ServiceNow has made a strategic move. \"ServiceNow Repositioned Around AI Security and Governance at Knowledge 2026\" represents a key development in the professional services ecosystem.",
+      "date": "2026-05-27",
+      "source": "ERP Today",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE41SHV3TWRYcWVXcnZGeXZkYnNMdVgzM0FrelNaRWRGN25yX2JmeWNkLVRLX3ZqWi10UmlrR3NTQTFGTGVjSDhkNENfSFhLV2d3LWZLVUxXbXpRb0NOS1dvcXRhOU5hMmlMcGR1N3Nud2M1djlFdGc?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:49.202Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_a7tf4",
+      "firm": "SAP",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "AI always destroys, even SAP",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, SAP is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by E3-Magazin tracks the deployment of new AI capabilities at SAP. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-22",
+      "source": "E3-Magazin",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5lVUlmTldESE1jZW1Sb3IyZG1rWVU4VHRwR2ozUmtqQXpIRUJBRVhuVjZzXzB3dnVJZXg0SkFrSHpqeUpWYkw0cWlBakVTQmRUdmU0eTRCTEJLbEFfbjZsTXNB?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:48.622Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_2r3sa",
+      "firm": "KPMG",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Harness the power of AI with KPMG and SAP",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, KPMG is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by KPMG tracks the deployment of new AI capabilities at KPMG. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-20",
+      "source": "KPMG",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9QRlhoY0w2UXU2X2NXWnFDNzNMbnZZbHpxNmUydDRTVXNzZDlKT2JycFZVYVNxSkxDWnA1bW1wOXlFVWdod3JkM2xCLTRsUEJydTcxS1ViazZFT0RwLTRkV2JaMTBwVXBnOU1rSUE0a01sOEZaNWlKTmZ3?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:47.770Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_1r2rs",
+      "firm": "Microsoft",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Big Tech's AI Cost Panic: Uber, Microsoft And The Burn Problem",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Microsoft is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by NDTV tracks the deployment of new AI capabilities at Microsoft. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "NDTV",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPdGhNNmFtRDdCZ21lYTNSUnJKQUFSMmQ5R3pDaVk5Z2MwTTRIR1NrRU1YRE9yNHNiZzJ3RUtZNlFVWTFMbENoVjBTWnZlcWZ2WHpjMEhMNGZNU3NNSnhWV1l4S2xDZ3QtWHZhcGdFWkVOOS1WZkNzbEdTcHJtRDd3eFczSHM1TWlXb2VORkF5RnFYUnJ3YVVLd19pUjNoNHhDX1lzUkowVWt0bVhFbkdYcWo3MNIBuwFBVV95cUxQWm1GTFdJQTJYWkxIaml6dXNkdm5RT0xiakxXQk51Rkg3V0JpR1d5dm9BMjROTFM5MUk1TlppZlNTYk5SZHNsd2VYOTgxOGZyWGJqblVuNWh6dmdFeGNPVVRXOHE0UVhuQ0d6dDFIczJxTXQxdWxkaHd0VWtPUHV5SEhxb28ybHZ0OUhHVUZrel9TVUJMNzJEUDdHbEUwQkZ3RDFJdnlmcU52aElsdVBrRjk2d0pFSE1OZG9n?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:46.864Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_0dis8",
+      "firm": "Capgemini",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Capgemini’s AI Agent for Knowledge Managers is shaping the future of enterprise knowledge",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Capgemini is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Capgemini tracks the deployment of new AI capabilities at Capgemini. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-25",
+      "source": "Capgemini",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOcWN1ME1SZC1DQnd0d0UxVDgwUjhJOENPVkU4QzY5aXV1S293dUU4Y0lncTFsYlZKUldNdkc3Sng5LWMwb2JRWTQwRXRCR3FfLVJWM1BQdGR4c1M2SVFEN1FtS2U5akVFdXhXUFNYdEhMdW5GXzZiTjdkcEpZZDktQVg1S0RhT2UxekM1bEVFUWFZaHpxZVlUWmJULTVJeXpUOWlGUERlU3ZXbm1xVnJfMXNIN1BFR2xhcVpBRC1fWmhjR1o1cjMxTU9mcWx4NmwtNS1lQjRNZWlyRUEx?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:46.336Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_zjuz0",
+      "firm": "Capgemini",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "2026 Capital Markets Day: Capgemini poised to capture the full value of the Agentic AI ...",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Capgemini is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Capgemini tracks the deployment of new AI capabilities at Capgemini. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "Capgemini",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQc2pZem1Sbk53S2w4ZC1hMUp5WmFxNmNLSnNtZ0RRTlI5S3kxbERxclRBZG04bDhoLWtHdkd1ZFhuTmJZUU14NllKdGktVnAxNEVqdnJTYXdxSURuUzd5Z01MbUZZeEo2M21lay1Wa29qaURoTkVwbXQ0VnMta01TQ3BIcEdDTXpWUVo4VFRRb1B2cFVtVWt0NXJKZFh5WXB4SS0wMHpoOGMxSS1TYmlPd1pVYmZBbDZjdXpXZlduYmltbGNSOHFOR2V2VUdJU1RUWHVnbko1TUVSTkNtWldsd0xkMA?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:45.786Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_nba6m",
+      "firm": "IBM Consulting",
+      "type": "consulting",
+      "signal": "Regulatory",
+      "importance": 4,
+      "title": "Scaling AI from Experimentation to Impact with IBM Consulting",
+      "takeaway": "This major shift by IBM Consulting signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from Constellation Research reports that IBM Consulting has made a strategic move. \"Scaling AI from Experimentation to Impact with IBM Consulting\" represents a key development in the professional services ecosystem.",
+      "date": "2026-05-26",
+      "source": "Constellation Research",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPUjNfV1N1M1k0ZDVKNGV0clY0MTFKQWczalBJckZxZnNvWkxxMUh0cm9NcGxZQ3JCbjNETS1ENXdrTF9rMUwtVEM5dW54b1ZodlJlMkhqNTBCbG9iREdWNl9QYS1tdWtlQ0pqYURCcVF4dWtBRUxpOXhsaVVWalBNSm1JRzlPRzI0d2lrYjZR?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:45.243Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_e19yz",
+      "firm": "Accenture",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Accenture and AWS accelerate data transformation with agentic AI",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Accenture is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Amazon Web Services (AWS) tracks the deployment of new AI capabilities at Accenture. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-26",
+      "source": "Amazon Web Services (AWS)",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQb3JKRmlVQTk3Q3RHS193RnRWQmVSa1QxLVVzaDhNUEFtNXFqa25fa2FzbG1nU0hPWmt0bGJ2Y3Zwa0otN1h1VjNSQ2Z2T1BaOXh5NWZDdHNUb2pYbi15RlVSUHdLYzlHdGUxalZjQjNIbzlhRUJBWlY0VzNuVlg2eXdDc1liLUxrUUExTHhBXzhsbmRFd1N2OUZVUFI3VUhCR0Fj?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:44.695Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_uzl4u",
+      "firm": "Accenture",
+      "type": "consulting",
+      "signal": "Regulatory",
+      "importance": 4,
+      "title": "Stellantis selects Accenture for AI and digital twin manufacturing transformation",
+      "takeaway": "This major shift by Accenture signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from Consultancy.eu reports that Accenture has made a strategic move. \"Stellantis selects Accenture for AI and digital twin manufacturing transformation\" represents a key development in the professional services ecosystem.",
+      "date": "2026-05-22",
+      "source": "Consultancy.eu",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPTVRDd3JnWnVabnhsRVcyWTlPWkplTmI5UmpyUm56UXIwV0JyY3pOZ3QwbmlVRmh5ekYwRXZ5b1BzQXpYREJmZXB6TGhpN05fQjM2TVFGZ1ZpOHZxT2x3NFVMOXNaUXBZODJOTmxSbHA5UGlSaFl4d2QwRXU4dFNoaXBTcU1qUUlicjhQSkNfNzFVc2NPV24yeWhPcUJHSFctTG8xNWxyNHRxZ3BKS1RSODVJTlB0SVllYzB30gHAAUFVX3lxTE5nX1BIeVZjUGtOUl9lN01HQjc4V2ptb3RFYnFoWGhJd1RRZDRkS3FqSFBTSG5yRG94NWFNV3dDNDlaSlBfLVdNTkVFZkNLRlZhLXJaWklhem1nUWY4b3RfdHZURTlZLXhmbUc1Wlk4RnU0b3p5X2c2a0FKaTJ0UnFhQTRFVlM0WFIzc3BJSjdsM3A5NTZvRkZDS3d5czJ6VEV3SWh0WXJucG9OWE5tM2c3U3FoUElQZ1VTU0J4ZC0tdQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:43.774Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_qtugg",
+      "firm": "Bain",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Bain &amp; Company: How AI is Changing Procurement in Finance",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Bain is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Procurement Magazine tracks the deployment of new AI capabilities at Bain. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-26",
+      "source": "Procurement Magazine",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNWldUbko5UXZxZTEyVmhtRm5hUDJXVy16ZmUtMzNZNkZYd0dIU3JtdGFvczBhcDItZW1vdURuYmtZSlRDOW5mZXdrUkZFWG8yRTd6OXBobmN2YkdNM2V1UlNHaklkMkpGcDlWazBmelpReWEybjR5cl9HNWlQSGF4YWhB?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:42.895Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_ihpo5",
+      "firm": "McKinsey",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "How AI is forcing McKinsey and its peers to rethink pricing",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, McKinsey is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Financial Times tracks the deployment of new AI capabilities at McKinsey. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-24",
+      "source": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOMjJrd0NaVFNoMzFrM01vT25NWGEtMWVXUkkydUFCT0pBWkVMMlFDTHBXOW9Ea2JGeVl3WnlrUkFjZjhJWmlKZkl1RTdTbjZ2TUR1Y0szUnhQV2RiNTRZVGhsZkwwcm9sOUp3bG1kMjg0NFA4X05YeDl4bUZJbnBtYkhpVkw?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:41.978Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_5e37y",
+      "firm": "McKinsey",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Customers Now Trust AI for Stock Picks and Savings Advice: McKinsey Report",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, McKinsey is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Open Magazine tracks the deployment of new AI capabilities at McKinsey. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "Open Magazine",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNU1ZiekxQS2wtSUo3T2g5dFVVNmdybUh4NUJ3ZzJoTVJOTWtMWDhUSElqZHh2cEI1VUV2d0hTSWlCcFBtTHFyazk2NlFJNmdoaDlKdXM0ck5IS3JPQ09WQ1prZld0M0g1UkstbWlTY1dVN25mVEF4RXFSeG9FS19zZ0lEVl93UkFCZUJoTnE5UWd6QmFaWXR2MzlWakRRU1JwYnJVSnNqOTBibkdKOGZ3?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:41.743Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_vja89",
+      "firm": "KPMG",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "KPMG hunts Silicon Valley AI disrupters to Big Four model",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, KPMG is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Financial Times tracks the deployment of new AI capabilities at KPMG. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPdFA1TmFFQXpIX2xXdm1IYzlJZlV1OVFWZ3pMQXZrUlJ5VFVRemhRSzg0UWs2V0pPbkotdWZpd25mNUVfNEFhdUR5TVhkMktmbTJIUTN1Q1hkMWZSU0NSS2NnUlRUZUlqa3l0eXdaOS04Zng1OHhhR0pIY251VE9ZUnBCZlo?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:41.181Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_jq5dl",
+      "firm": "EY",
+      "type": "consulting",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "Microsoft’s EY AI Alliance And Airia Deal Deepen Enterprise Cloud Ties",
+      "takeaway": "This alliance positions EY directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to Yahoo Finance, EY has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-26",
+      "source": "Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPclBvdlI0eUJsOERJTE5uNUpMRFpRdktTdHJzZ1pGb00yTHI4ZWl4MWJkVUl0dnBQcHhjTzBUODdMU1FZSFNGeWtOazQ2bWpxUVd3Y1l0d1dvaE9pZTJqYzhpNzByOWNzTnhYcHJNVElQWThKdk85N0JES1YwMnc4aUZrZFA0SWFmRVdvaXlHN0J1S0NwbUhmbTdnTQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:40.579Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398508_inhz4",
+      "firm": "EY",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 4,
+      "title": "EY and Microsoft announce global initiative to help clients scale AI enterprisewide val...",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, EY is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Microsoft Source tracks the deployment of new AI capabilities at EY. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-21",
+      "source": "Microsoft Source",
+      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOZjI0dzlfdDNSa3RqRldvZDRqb2tWZFRkRzZ4ZXR1UVBybzc4X243Mm1uc3NXWXFFYjRLTDlRcWZMYnpKcDlkWVNvd1ctVWxkbzYtMl85ZHBKR0ZiUG14UFF2ODdpekY5cEQ0ckJZZUt6SlV1bnRaOG1uN0tPT1hGbVlDakNHcXo0THM4ZUxnZ3NQekc2SmVuVDNNR3V5TXNIOEVBZ0FUb0FRMGhZLWNkT3lDVTVZdF9DV0V6SXRpcU42a1pQSEhzVktibk91TnJRcnFMTUlNQkZqOFdBS3dlN2tQYjE3MkJMalp3UlJod0VibUhmZ2t3ZXY1QWlsZG9ZaFdiV05Ccw?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:40.035Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398507_rgid4",
+      "firm": "PwC",
+      "type": "consulting",
+      "signal": "Restructure",
+      "importance": 5,
+      "title": "PwC China’s Wilson Chow puts emphasis on execution, trust, and measurable impact in the...",
+      "takeaway": "Operational restructuring at PwC highlights the urgent necessity of adopting automated delivery models to maintain pricing margins.",
+      "summary": "Recent reporting from Asian Business Review outlines organizational changes at PwC. The firm is streamlining back-office roles and scaling technical competencies.",
+      "date": "2026-05-26",
+      "source": "Asian Business Review",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOdkF3N3g5VlBKaHROWmhZVzhKQ0VoTFotdnVmMXZmenpQbjk0YlI2NURsd0JtaUg0NlpVbEI2VG50MmhKQkdOQzkzUDkwdzRaS1RrRUdWUHM2cmhsdkU1dXQ4VVlVaHhia0g5ck5jbmFaajh1bGRLQTJyLWZ2OXZrMnc1YkxaS2lXX1pwbnhZSE1sWERreUlteUdsdzl4NW1keE5qSVM4SXBjWmEwT1hTbkhTS2c0dWIwZU15aWEybXJMaUM4MjdmWnV1S0RNY3I5MElTVzMtbmxPNEdrcEJB?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:39.172Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779876398507_cq258",
+      "firm": "Deloitte",
+      "type": "consulting",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "Optimizely and Deloitte Digital collaborate to help accelerate AI-powered marketing tra...",
+      "takeaway": "This alliance positions Deloitte directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to PR Newswire, Deloitte has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-26",
+      "source": "PR Newswire",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPdktsTmk5X0lRQnlURTAxd0FSVHBzVzN0Vmhha2d6bTVmQ2N0V1g1SDRrMkV2S2NtV0VIOEdwMkN2SDdBM1RKZnhTeGMyNkRfX0NCc1JzUnRkN2JfTjc1UWdxOFFUZWdnMzlqQXphazk4cUxYcmx0Ymg4bGdQX2tyOHBPdjVUWTVFRktBZ2JTOFJ2MFg4enZuRTN4S2JEV0RRRldjOWdhZzVyR2YwalFvWmdsU2ttZ19TQld2WXJVMHdBWWtvbWNsR296RlhhS2tRZEhpd3pwQndNanJIZXgxcjF0bHgxUzZWRXc?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-27T10:06:38.939Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
       "id": "sig_rss_1779874661254_parqj",
       "firm": "EY",
       "type": "consulting",

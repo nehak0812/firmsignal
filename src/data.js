@@ -109,7 +109,7 @@ export async function callClaude(query, apiKey) {
     }
 
     const data = await resp.json();
-    return Array.isArray(data) ? data : (data.signals || []);
+    return Array.isArray(data) ? data : (data.added || data.addedSignals || data.signals || []);
   } catch (error) {
     console.warn("Fallback to client-side simulation due to backend error:", error);
     // Under development proxy or server off, fall back to mock extraction so front remains premium & functional

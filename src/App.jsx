@@ -191,7 +191,7 @@ function FetchPanel({ firms = [], apiKey, serverHasKey, onOpenApiModal, onAddIte
       const f = firmsToSweep[i];
       setProgress(p => ({ ...p, current: i, label: `Polling live ${f} news…` }));
       try {
-        const results = await callClaude(`${f} strategic news this week ${today} site:reuters.com OR site:ft.com OR site:bloomberg.com`, apiKey);
+        const results = await callClaude(`"${f}" AND (site:reuters.com OR site:ft.com OR site:bloomberg.com OR site:nytimes.com OR site:techcrunch.com) AND (AI OR tech OR consulting OR earnings OR partner OR layoff OR alliance)`, apiKey);
         const added = onAddItems(results, `sweep_${Date.now()}_${i}`);
         log.unshift(`${f} — ${added} new signal${added !== 1 ? 's' : ''} index`);
         totalAdded += added;
@@ -218,7 +218,7 @@ function FetchPanel({ firms = [], apiKey, serverHasKey, onOpenApiModal, onAddIte
       else if (mode === 'sweep-all') await runSweep([...CONSULTING_SWEEP, ...TECH_SWEEP, ...AI_SWEEP], 'full sweep');
       else if (mode === 'firm') {
         onShowToast(`Loading ${firm} intelligence…`);
-        const results = await callClaude(`${firm} executive news ${today}`, apiKey);
+        const results = await callClaude(`"${firm}" AND (AI OR tech OR consulting OR earnings OR leadership OR partner OR product OR layoff)`, apiKey);
         const added = onAddItems(results, `firm_${Date.now()}`);
         onShowToast(`✓ ${added} new signals for ${firm}`);
       } else if (mode === 'custom') {
