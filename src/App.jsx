@@ -828,6 +828,19 @@ function App() {
     setView('all');
   };
 
+  const onClearMock = async () => {
+    try {
+      const resp = await fetch('/api/db/clear-mock', { method: 'POST' });
+      if (resp.ok) {
+        const json = await resp.json();
+        showToast(`✓ Cleared ${json.clearedCount} mock signals!`);
+      } else {
+        showToast('Failed to clear mock signals.');
+      }
+    } catch (e) {}
+    await loadSignals();
+  };
+
   const onHeatCellClick = (firmId, signal) => {
     setActiveFirms(new Set([firmId]));
     setActiveSignals(new Set([signal]));
@@ -951,7 +964,7 @@ function App() {
           )}
 
           {activeNav === 'pipeline' && (
-            <DataPipelineAuditView data={data} firms={firms} onAddFirm={handleAddFirm} onDeleteFirm={handleDeleteFirm} apiKey={apiKey} onResetDb={onResetDb} onShowToast={showToast} />
+            <DataPipelineAuditView data={data} firms={firms} onAddFirm={handleAddFirm} onDeleteFirm={handleDeleteFirm} apiKey={apiKey} onResetDb={onResetDb} onClearMock={onClearMock} onShowToast={showToast} />
           )}
         </main>
 

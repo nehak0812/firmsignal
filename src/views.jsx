@@ -945,7 +945,7 @@ export function KnowledgeGraph({ data, ALL_FIRMS = [], SIGNALS = [], SIGNAL_COLO
 }
 
 // ============== DATA PIPELINE AUDIT VIEW ==============
-export function DataPipelineAuditView({ data, apiKey, onResetDb, onShowToast }) {
+export function DataPipelineAuditView({ data, apiKey, onResetDb, onClearMock, onShowToast }) {
   const [logs, setLogs] = useState([
     { time: '18:03:01', type: 'info', content: 'FirmSignal database engine initialized successfully.' },
     { time: '18:03:03', type: 'info', content: 'Pre-loaded 31 legacy core signals in read-only memory.' },
@@ -1006,8 +1006,22 @@ export function DataPipelineAuditView({ data, apiKey, onResetDb, onShowToast }) 
     }
   };
 
+  const handleClearMock = () => {
+    const doubleConfirm = window.confirm("Are you sure you want to clear all pre-seeded demo/mock signals? This will leave ONLY the real news signals you have scanned.");
+    if (!doubleConfirm) return;
+
+    onClearMock();
+
+    const now = new Date();
+    setLogs(prev => [...prev, {
+      time: now.toTimeString().slice(0, 8),
+      type: 'warn',
+      content: 'Database Clean requested. Preloaded mock/demo signals cleared.'
+    }]);
+  };
+
   const handleReset = async () => {
-    const doubleConfirm = window.confirm("Are you sure you want to ROLLBACK the database? This fires a rollback request and resets all live signals to demo files.");
+    const doubleConfirm = window.confirm("Are you sure you want to ROLLBACK the database? This fires a rollback request and resets all active signals to demo files.");
     if (!doubleConfirm) return;
 
     // Send POST rollback to DB backend proxy
@@ -1088,9 +1102,12 @@ export function DataPipelineAuditView({ data, apiKey, onResetDb, onShowToast }) 
       <div className="pipeline-actions-card">
         <div className="pipeline-actions-info">
           <h3>Database Backup &amp; Rollback Actions</h3>
-          <p>Download full JSON databases or revert all active entities to original demo records.</p>
+          <p>Download full JSON databases, clear preloaded mock signals, or revert all active entities to original demo records.</p>
         </div>
         <div className="pipeline-buttons">
+          <button className="pipeline-btn reset" onClick={handleClearMock} style={{ borderColor: 'rgba(212, 160, 74, 0.4)', color: 'var(--accent)', background: 'rgba(212, 160, 74, 0.05)' }}>
+            🧹 Clear Demo Signals
+          </button>
           <button className="pipeline-btn reset" onClick={handleReset}>
             Revert / Rollback DB
           </button>

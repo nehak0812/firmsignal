@@ -1135,6 +1135,24 @@ app.post('/api/db/reset', async (req, res) => {
   }
 });
 
+// POST /api/db/clear-mock
+// Clears preloaded mock/demo signals from the database.
+app.post('/api/db/clear-mock', async (req, res) => {
+  await logActivity('POST /api/db/clear-mock hit. Clearing preloaded mock/demo signals.');
+  try {
+    const db = await readDb();
+    const countBefore = db.signals.length;
+    // Filter out signals with demo IDs (e.g. d1, a1, etc.)
+    db.signals = db.signals.filter(s => !/^[da]\d+$/.test(s.id));
+    const clearedCount = countBefore - db.signals.length;
+    await writeDb(db);
+    await logActivity(`Cleared ${clearedCount} mock/demo signals from database.`);
+    return res.json({ success: true, clearedCount, remainingCount: db.signals.length });
+  } catch (err) {
+    return res.status(500).json({ error: err.message || 'Failed to clear mock signals.' });
+  }
+});
+
 // GET /api/db/export
 // Provides pipeline database backup downloads.
 app.get('/api/db/export', async (req, res) => {

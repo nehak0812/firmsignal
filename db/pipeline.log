@@ -120,3 +120,7 @@
 [2026-05-26T19:14:33.809Z] GET /api/signals hit.
 [2026-05-26T19:31:53.486Z] FirmSignal Backend running on port 3000
 [2026-05-26T19:32:08.492Z] AUTO-SCAN STATUS: Inactive. Connect ANTHROPIC_API_KEY in your Railway environment variables to unlock automated hourly background intelligence sweeps.
+[2026-05-26T20:58:28.723Z] AUTO-SCAN STATUS: Inactive. Connect ANTHROPIC_API_KEY in your Railway environment variables to unlock automated hourly background intelligence sweeps.
+[2026-05-27T04:27:54.601Z] AUTO-SCAN STATUS: Inactive. Connect ANTHROPIC_API_KEY in your Railway environment variables to unlock automated hourly background intelligence sweeps.
+[2026-05-27T04:34:29.781Z] FirmSignal Backend running on port 3000
+[2026-05-27T04:34:44.782Z] AUTO-SCAN STATUS: Inactive. Connect ANTHROPIC_API_KEY in your Railway environment variables to unlock automated hourly background intelligence sweeps.
