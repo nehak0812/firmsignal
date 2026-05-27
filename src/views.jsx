@@ -641,7 +641,7 @@ export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = []
         <p style={{ margin: '8px 0 16px 0', fontSize: 13, color: 'var(--ink-3)', fontFamily: 'var(--serif)', fontStyle: 'italic' }}>
           {forum.desc}
         </p>
-        <div className="forum-hub-content" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+        <div className="forum-hub-content">
           <div>
             <h4 style={{ margin: '0 0 10px 0', fontSize: 10, fontFamily: 'var(--mono)', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--ink-4)' }}>Indices &amp; Metrics</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -1470,7 +1470,7 @@ export function ThoughtLeadershipView({
           <p>Click 'Scan Live Reports' above to execute Claude's crawler for live whitepapers.</p>
         </div>
       ) : (
-        <div className="brief-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+        <div className="reports-grid">
           {filteredReports.map((report, idx) => {
             const dot = getFirmDotColor(report.firm);
             const dateStr = report.date ? new Date(report.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
