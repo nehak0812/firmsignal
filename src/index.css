@@ -1070,3 +1070,52 @@ body[data-theme="ivory"] .context-corner { background: linear-gradient(to bottom
 .pipeline-btn.primary:hover {
   background: rgba(212, 160, 74, 0.18);
 }
+
+/* Rating Hover Tooltip styles */
+.rating-tooltip-container {
+  position: relative;
+  cursor: help;
+  display: inline-block;
+}
+
+.rating-tooltip-box {
+  position: absolute;
+  right: 0;
+  bottom: 125%;
+  width: 240px;
+  background: rgba(28, 28, 26, 0.98);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #fbfbf9;
+  font-size: 11.5px;
+  font-family: var(--serif);
+  line-height: 1.45;
+  text-align: left;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+
+.rating-tooltip-container:hover .rating-tooltip-box {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Tooltip arrow */
+.rating-tooltip-box::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 15px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--accent) transparent transparent transparent;
+}
+

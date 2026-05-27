@@ -667,9 +667,21 @@ export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = []
                     <div style={{ fontSize: 10, color: 'var(--ink-3)', marginTop: 2 }}>{m.desc}</div>
                   </div>
                   <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <div style={{ fontSize: 15, fontWeight: 700, fontFamily: 'var(--mono)', color: 'var(--accent)' }}>{m.val}</div>
+                    <div className="rating-tooltip-container">
+                      <span style={{ fontSize: 15, fontWeight: 700, fontFamily: 'var(--mono)', color: 'var(--accent)', cursor: 'help', borderBottom: '1px dashed rgba(212, 160, 74, 0.4)' }}>
+                        {m.val}
+                      </span>
+                      <div className="rating-tooltip-box">
+                        <div style={{ fontFamily: 'var(--mono)', fontSize: 9, textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 4, letterSpacing: '0.05em', fontWeight: 600 }}>
+                          {m.label} Insights
+                        </div>
+                        <div style={{ fontSize: 11.5, color: '#fbfbf9', fontFamily: 'var(--serif)', lineHeight: 1.45 }}>
+                          {m.desc}
+                        </div>
+                      </div>
+                    </div>
                     {m.trend !== 'flat' && (
-                      <span style={{ fontSize: 10, fontFamily: 'var(--mono)', color: m.trend.startsWith('+') ? 'var(--pos)' : 'var(--crit)' }}>
+                      <span style={{ fontSize: 10, fontFamily: 'var(--mono)', color: m.trend.startsWith('+') ? 'var(--pos)' : 'var(--crit)', marginTop: 2 }}>
                         {m.trend}
                       </span>
                     )}
