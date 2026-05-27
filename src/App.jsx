@@ -13,7 +13,7 @@ import {
 import { TweaksPanel, TweakSection, TweakRadio, TweakToggle, useTweaks } from './tweaks.jsx';
 
 // ============== SIDEBAR FILTER COMPONENT ==============
-function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, toggleSignal, view, setView, handleAddFirm, handleDeleteFirm, onOpenApiModal }) {
+function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, toggleSignal, view, setView, handleAddFirm, handleDeleteFirm, onOpenApiModal, setActiveFirms }) {
   const consCount = data.filter(d => d.type === 'consulting').length;
   const techCount = data.filter(d => d.type === 'tech').length;
   const aiCount = data.filter(d => d.type === 'ai-first').length;
@@ -21,6 +21,22 @@ function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, tog
   const consultingList = firms.filter(f => f.type === 'consulting');
   const aiList = firms.filter(f => f.type === 'ai-first');
   const techList = firms.filter(f => f.type === 'tech');
+
+  const filterByFirmGroup = (groupList) => {
+    const ids = groupList.map(f => f.id);
+    const isCurrentlyFilteredToGroup = activeFirms.size === ids.length && ids.every(id => activeFirms.has(id));
+    setActiveFirms(prev => {
+      if (isCurrentlyFilteredToGroup) {
+        return new Set();
+      } else {
+        return new Set(ids);
+      }
+    });
+  };
+
+  const isConsFiltered = consultingList.length > 0 && activeFirms.size === consultingList.length && consultingList.every(f => activeFirms.has(f.id));
+  const isAiFiltered = aiList.length > 0 && activeFirms.size === aiList.length && aiList.every(f => activeFirms.has(f.id));
+  const isTechFiltered = techList.length > 0 && activeFirms.size === techList.length && techList.every(f => activeFirms.has(f.id));
 
   const firmRow = (f) => {
     const cnt = data.filter(d => d.firm === f.id).length;
@@ -68,17 +84,41 @@ function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, tog
       </div>
 
       <div className="sb-section">
-        <div className="sb-label">Compete <span className="sb-count">{consCount}</span></div>
+        <div 
+          className={`sb-label clickable-header ${isConsFiltered ? 'active' : ''}`} 
+          onClick={() => filterByFirmGroup(consultingList)}
+          style={{ cursor: 'pointer' }}
+          title="Click to filter to only Compete firms"
+        >
+          <span>Compete <span>🔍</span></span>
+          <span className="sb-count">{consCount}</span>
+        </div>
         {consultingList.map(firmRow)}
       </div>
 
       <div className="sb-section">
-        <div className="sb-label">AI-first labs <span className="sb-count">{aiCount}</span></div>
+        <div 
+          className={`sb-label clickable-header ${isAiFiltered ? 'active' : ''}`} 
+          onClick={() => filterByFirmGroup(aiList)}
+          style={{ cursor: 'pointer' }}
+          title="Click to filter to only AI-first labs"
+        >
+          <span>AI-first labs <span>🔍</span></span>
+          <span className="sb-count">{aiCount}</span>
+        </div>
         {aiList.map(firmRow)}
       </div>
 
       <div className="sb-section">
-        <div className="sb-label">Tech &amp; AI partners <span className="sb-count">{techCount}</span></div>
+        <div 
+          className={`sb-label clickable-header ${isTechFiltered ? 'active tech' : ''}`} 
+          onClick={() => filterByFirmGroup(techList)}
+          style={{ cursor: 'pointer' }}
+          title="Click to filter to only Tech &amp; AI partners"
+        >
+          <span>Tech &amp; AI partners <span>🔍</span></span>
+          <span className="sb-count">{techCount}</span>
+        </div>
         {techList.map(firmRow)}
       </div>
 
@@ -984,6 +1024,7 @@ function App() {
           activeSignals={activeSignals} toggleSignal={toggleSignal}
           view={view} setView={setView}
           onOpenApiModal={() => setApiModalOpen(true)}
+          setActiveFirms={setActiveFirms}
         />
         
         <main className="main">

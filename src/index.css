@@ -139,6 +139,34 @@ body[data-theme="terminal"] .topbar { background: rgba(10, 13, 14, 0.92); }
 .sb-section { margin-bottom: 22px; }
 .sb-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; color: var(--ink-3); text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; }
 .sb-label .sb-count { color: var(--ink-4); font-weight: 400; }
+.sb-label.clickable-header {
+  transition: color 0.15s ease, opacity 0.15s ease;
+  user-select: none;
+}
+.sb-label.clickable-header:hover {
+  color: var(--accent);
+  opacity: 0.95;
+}
+.sb-label.clickable-header.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+.sb-label.clickable-header.active.tech {
+  color: var(--teal);
+}
+.sb-label.clickable-header span span {
+  font-size: 8px;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  display: inline-block;
+  transform: translateX(-4px);
+  margin-left: 4px;
+}
+.sb-label.clickable-header:hover span span,
+.sb-label.clickable-header.active span span {
+  opacity: 0.8;
+  transform: none;
+}
 .sb-row { display: flex; align-items: center; gap: 8px; width: 100%; padding: 5px 8px; border-radius: 4px; border: none; background: transparent; color: var(--ink-2); font-family: var(--sans); font-size: 12.5px; cursor: pointer; text-align: left; transition: background 0.12s; }
 .sb-row:hover { background: var(--bg-3); color: var(--ink); }
 .sb-row.active { background: var(--accent-bg); color: var(--accent); }
