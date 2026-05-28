@@ -309,6 +309,13 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
     );
   };
 
+  const isSummitActive = () => {
+    const now = new Date();
+    // Summit is running currently (May 28-30, 2026). Auto-hide on June 1st, 2026.
+    const expiration = new Date('2026-06-01T00:00:00');
+    return now <= expiration;
+  };
+
   return (
     <div>
       <div className="brief-head">
@@ -370,6 +377,61 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
           <div><span className="num">{data.filter(d => d.importance >= 4).length}</span>high-impact</div>
         </div>
       </div>
+
+      {isSummitActive() && (
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(212, 160, 74, 0.1) 0%, rgba(28, 28, 26, 0.1) 100%)',
+          border: '1px solid var(--accent)',
+          borderRadius: '8px',
+          padding: '14px 20px',
+          marginBottom: '24px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: 16,
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.15)'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <span style={{ fontSize: 22 }}>🚀</span>
+            <div>
+              <div style={{ fontFamily: 'var(--mono)', fontSize: 9, textTransform: 'uppercase', color: 'var(--accent)', fontWeight: 600, letterSpacing: '0.08em' }}>
+                Paris Summit Briefing
+              </div>
+              <h4 style={{ margin: '2px 0 0 0', fontFamily: 'var(--serif-disp)', fontSize: 16, color: 'var(--ink)' }}>
+                Mistral AI — AI NOW Summit is currently underway
+              </h4>
+              <p style={{ margin: '4px 0 0 0', fontSize: 12, color: 'var(--ink-3)', fontFamily: 'var(--serif)', fontStyle: 'italic' }}>
+                Follow active panel tracks, alliance announcements, and open-weights model releases live.
+              </p>
+            </div>
+          </div>
+          <a 
+            href="https://ainowsummit.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              background: 'var(--accent)',
+              color: 'var(--bg)',
+              fontFamily: 'var(--mono)',
+              fontSize: 10.5,
+              fontWeight: 700,
+              textDecoration: 'none',
+              padding: '6px 14px',
+              borderRadius: 4,
+              boxShadow: '0 2px 8px rgba(212, 160, 74, 0.25)',
+              transition: 'all 0.15s ease',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 4
+            }}
+            onMouseOver={e => { e.target.style.background = 'var(--accent-2)'; e.target.style.transform = 'translateY(-1px)'; }}
+            onMouseOut={e => { e.target.style.background = 'var(--accent)'; e.target.style.transform = 'translateY(0)'; }}
+          >
+            Enter Summit Hub ↗
+          </a>
+        </div>
+      )}
 
       <PulseStrip data={data} />
 

@@ -223,6 +223,386 @@
   ],
   "signals": [
     {
+      "id": "sig_rss_1779956065601_9jwkg",
+      "firm": "Snorkel AI",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "How Snorkel AI helps enterprises build AI agents they can trust",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Snorkel AI is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by The Official Microsoft Blog tracks the deployment of new AI capabilities at Snorkel AI. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-21",
+      "source": "The Official Microsoft Blog",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPWkhTOXdPd2dFaGczTzBzZEZiMkhyVkVNY3RDeVdxRFZHQXlzVWl3UkhMOUoxZU1sbnpRZm05VUZET09hMnM5NmdmQ2FhbzVRRXU4Rnk4dEdLaUszNkdidTUwZkxDN0E5eGFRMXJsT3NoY2ZVVk5EaFZIcERNYnRibkFxNkFDT3ZubXdVTXREUGNWby1pQkk1RUdUNXpWS3gyNDcwVHdrSFM5Qk5HdVc3Sg?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:11.164Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065601_dt3ky",
+      "firm": "Equinix",
+      "type": "tech",
+      "signal": "Leadership",
+      "importance": 3,
+      "title": "Core Scientific Adds Former Equinix CEO Steve Smith to Board as AI Data Center Expansio...",
+      "takeaway": "This major shift by Equinix signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from citybiz reports that Equinix has made a strategic move. \"Core Scientific Adds Former Equinix CEO Steve Smith to Board as AI Data Center Expansion Accelerates\" represents a key development in the professional services ecosystem.",
+      "date": "2026-05-26",
+      "source": "citybiz",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPWERwU3FUaF95cmFZNzVtenFPck4wb2QtakVWNEZGSS1pUVc0aURCaWVtX1NjeG5aZDJDcUVoNFVvSHFUc2FfLWNSb094VjJBOGxDRVU2czRhUHdhVDFYU0xUVWtlbG9HQU4yNFlDYXZxMU5uQ1ZmOVZIVWFZTXZMSE1xS3A0V0FQUlE3WEk4R2hqZTlkMjFBdWJBa29NSzl1X3dMTUQ2WXBqR0Z0TzcyN08yVWQwR01BUTJWYXpOYWEyWkRxaVNQaDZhUTdZQzFyTVkxR1Bn?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:10.583Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065600_k9stk",
+      "firm": "Equinix",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Equinix opens AI-focused MD5 data centre in Madrid",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Equinix is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Telecompaper tracks the deployment of new AI capabilities at Equinix. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "Telecompaper",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNUzVSMmRwaEI3c2tTU0UyLTRVSWpvX2JGQ3RQQWI4NXNya3hxUnZ6bGoxbzBxNDF5N0lHYjlZckR5T0pOUXpoQ1FHMlBBcTRBbDdseE1tNEs5eEFiRFRFZV8zTkprcUV4cVQ4MG40VWp0R1ktWTdMSS1Ga3cxemVSTDNid0ZhX0JjSnRwUmdaZE9hdURBaXJyYQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:10.008Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065600_zqvfd",
+      "firm": "NVIDIA",
+      "type": "tech",
+      "signal": "Earnings",
+      "importance": 4,
+      "title": "Nvidia to spend $150 billion a year in Taiwan, 'epicentre' of AI revolution, says CEO",
+      "takeaway": "Strong financial metrics at NVIDIA confirm that technological advisory is now the primary growth engine in professional services.",
+      "summary": "Financial disclosures compiled by Reuters show robust performance at NVIDIA. The margins reflect high demand for AI implementation services.",
+      "date": "2026-05-27",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQd2Vra2c2dGNEcGhJcHV4dTRIOFRORXhpdDZvdUg1RzhPYnNxc1IwbGJlaDZoeW56cXhQSWpLTlowc0JtOEhjR0pKQXZGeDQxRGNldnMtRzNpWWpHVElPbkVHVGRzSkFod3VCMVAtOVBwamRNX0FPaVdOTUd0djF1Tk9ldkNKQnBGS183NWRkTXJJTWZIQnBtWFRsRnFmazlTM05nTHBKUQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:08.994Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065600_rczl7",
+      "firm": "NVIDIA",
+      "type": "tech",
+      "signal": "Earnings",
+      "importance": 4,
+      "title": "Nvidia's AI Demand Fuels Earnings Blowout",
+      "takeaway": "Strong financial metrics at NVIDIA confirm that technological advisory is now the primary growth engine in professional services.",
+      "summary": "Financial disclosures compiled by StartupHub.ai show robust performance at NVIDIA. The margins reflect high demand for AI implementation services.",
+      "date": "2026-05-28",
+      "source": "StartupHub.ai",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPSFdTV09KOEdPLXgzakszWmpPckphUFIxNG5BcmZEeUpfVXpMODY2WUJtemJkdl9wR2lObk1idkJueERMSGg0NEE4ZW11N2tjWjBnWFVmcms3VFFhWlhON1hQMm1lNG1OVy1FUnp1cWVJN09jZVBHLUFTX2hDYUZWX2VMd2hnMWtQTjNzM0JVQ19fWVVoN0Z0NERJRmNHUQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:07.976Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065600_pexx1",
+      "firm": "Qualcomm",
+      "type": "tech",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "Qualcomm ByteDance AI Chip Deal Highlights Expanding Data Center Ambitions",
+      "takeaway": "This alliance positions Qualcomm directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to Yahoo Finance, Qualcomm has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-26",
+      "source": "Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNRUdXeDdYUkM4ZnJJX3F0bUE2XzhzM1RGSUhDWjRUYTlfbFUtVlVxdnJEQm5Na2syY3VndTRHcjJOLWhHYlFycXpNN09iLXhwX1JiUC13WjlWem5OVEpmUHp4QnFwUUZjcmRfb3BLOG9YRnN6dHdNeUEzdldIVk1abHE5cHVuVlk5NDV5RDk1SThVaXdfMVVacC03RTZnYkw0Smc?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:07.257Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065600_ct5aa",
+      "firm": "Qualcomm",
+      "type": "tech",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "Qualcomm strikes AI chip deal with TikTok owner ByteDance, Bloomberg News reports",
+      "takeaway": "This alliance positions Qualcomm directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to Reuters, Qualcomm has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-26",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOVlhVSElReFBFQV95UktOb3loME9OTEpXNmFadDdtdXZISk1RTGNBRWRFVktaZXNzNHZVR29PMFVXUFR6NHJGU3dnMHk4dkhCOWFlWTZ1REVDZWticHN0bVlkV1lIb1QyYXpRSTNYMTNGcUxiREtoUjROZFFDS0E0cHhmMEdQdnhmWWlmR3NwVUx1NWowRG1rakFlV0U5cVJUcDIyQ2U1Q2dZTVl0amVLX29RSTllY3FmN1dpX1NLUjFCRDA?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:06.499Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065600_ns0hz",
+      "firm": "Qualcomm",
+      "type": "tech",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "Qualcomm Strikes AI Chip Deal With TikTok Owner ByteDance",
+      "takeaway": "This alliance positions Qualcomm directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to Bloomberg.com, Qualcomm has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-26",
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUVdTeEYtOVpZcWhrcjVIaEpSMHZVdDEwQ3hRbjVUN05CNHRPMGo1TzdtQk12RDA1dmx5S0duQm1mZUQtSHNOU3N2dUhUSWh2NmF0Ynpabzhsd3FISWJabmtvSmZCT2M3aEZYUWIyNk1KSVlIT0djeEVORUZvcGEwalRMamxUYVI3WjY0d2F3aEo1am9OZlNrNGd0d0VNR3VvNjFva1psOUczWEVN?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:05.820Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065600_x7au0",
+      "firm": "Reply",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "On Pakistan expert's 'AI chip' remark, Vaibhav Sooryavanshi gives stunning reply",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Reply is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by MSN tracks the deployment of new AI capabilities at Reply. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-23",
+      "source": "MSN",
+      "url": "https://news.google.com/rss/articles/CBMi3wJBVV95cUxPQkxQaHM3b0N1VzdydW5tQ1dHRm84cWJJOFpPWUxNeE05OGVDbm9pNTNyY3dOUjE1TFRhNXhCcGlJYWdaSklhOFNNU05uQlpyNHpwMUQ1eV9KbmxndG5pTG9QQ0ZHUE1JZXA2b0F6ZkFrck5PRjBxOGF3VXhRQlpRMmVxRWprNWwxN0c0c1pHTWQ2T2dNMzYzdG05WXk5SGRqOThXOE1heUhOVkpONm83b2lqcE1lQUZEY1B0SG5CUy1LajZzZUNMMDd1c0tMeWNaSXdxdnh1YWRsNE42ZXNmT1EzamRIcEgzZ0hHOURmWVU1YmZvV3dqNmhyajBxdk4tbWRDcVUxRlR5R29lUTFvTVdVM2ZtTHRQenpZR2wyZWR3Z05GaGtXQzF5YXVJWEYweG1IbU84SGgxWUFfME1BZkpIeWduVy1vX3hwTEd3NHcyX1pYZlpxNVVlRmFlcUk?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:04.796Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065600_uttp7",
+      "firm": "Reply",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Reply Expands Prebuilt AI Apps With New Production-Ready Applications to Accelerate Ent...",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Reply is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Eagle-Tribune tracks the deployment of new AI capabilities at Reply. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-28",
+      "source": "Eagle-Tribune",
+      "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxNRF9ramt3eHZkckR2MkdJS0M0bUpUb1RjLV80NVJLclRmc0RMV2l0M3hMd2lPV1hDbDVidUk4V05nZ2dBeXdGY01qMVNmcnFncWUxN2VZYzJ4bktPcDFuTlF4QU5aendnOHVMVHBKWUJ6UHliUEpYTDB2eFhGVGpNWV9xdXZqUEloZ0JXNzl4ZC1JUmE5eG1ueDZmX244ZDZOd1pIMzQ3MktPX0M4YjhaU05zZXpTV2xNQnRRNUh2WXQwVlVmOTZXSE8tZ1JkTTJPSG1aZ3NwZlJKNlJLRTAzcGF2TThSTlVXQkdXaUtmLXpWU0VSMnZ6Y2FPclRQZEFrUlFLM1VrbVhLNmpRcDdpU09FVzFIVEZYVEdBZw?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:04.108Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065600_a52ym",
+      "firm": "Reply",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Reply Expands Prebuilt AI Apps With New Production-Ready Applications to Accelerate Ent...",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Reply is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by PA Media tracks the deployment of new AI capabilities at Reply. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-28",
+      "source": "PA Media",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQYVQwMTh1aWpkYnk4RnRoem0zUzhFdG0ySDhYRG1RdzI1aXF6QlVzQ0lmS1NrbzVZRDFMUnlPVVg5eDNZSEM2ZHpJMHlOSWZ5UncwWlVqOEVsSmNycko1VVBhTEFuMHlBdnpPenFneXNtT0lrdFZjNDZMbTlYZER2Wi1GYTFiUEkwOFNqUWx2R3JZQWdrbTNEbEJQQU9DSE9pTmtmc3NSVm8xbmUyQV9taERrME8yOUZIRWpRd28zZkRzcWY4SGFZY3E2MnRzTW8tRVh3ZGhQNjY0eVJOZ3RQZmVUUUdBVHhyMGkyQ1Zoaw?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:03.463Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065599_chcoz",
+      "firm": "TCS",
+      "type": "consulting",
+      "signal": "Regulatory",
+      "importance": 4,
+      "title": "SKF awards global AI-led business transformation contract to TCS",
+      "takeaway": "This major shift by TCS signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from The Hindu reports that TCS has made a strategic move. \"SKF awards global AI-led business transformation contract to TCS\" represents a key development in the professional services ecosystem.",
+      "date": "2026-05-27",
+      "source": "The Hindu",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdVQ2VzhsMU1nMzA0LWhoSGxGa2dRbHAwYV9VazNacnhlVW1OemFES3JWcmtTYTRvRzhfR3IyRHdCR3M3eWt5dk4wNlp4OFgxYnVHUkVFTnUwcF9fVTNLQ3pTaWdROEJWVDYtb0ZPMjJOZWQ0czRQR3JERTZIZjh0ODNOWjVRTkNVS19YX1ZXOVVLSW4wUkJudFNITGtTRkhPYXNSTjc2ZkFhYnhIbXJzUW82RVFJb0VUTHfSAcABQVVfeXFMUGV4ZkNSd2NuQkRJVjlPamNZenRsVzE2a2QzZU9NNTFJVjVLY19maXRqa3FDRkZWZzNvX3lXY0F5MDZNV3d3TTd0MDNpaDFtTnVGUmlSbFltbTBvVjZzZV9QN2xSakFCWU9rYVpaVjZzS0FBNHcwWWNsbEN3ZVc0Z0dSbURScmdOdGg0d09ka3ltOVFkdFljZWRqc3RWRjlnOGk3bVBPTkQzWVMyT2VfUEplaDVJcGFyQkg0VmxDTDEz?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:02.543Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065599_yl1ey",
+      "firm": "TCS",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "SKF Selects TCS for Global AI-Driven Technology Transformation Program",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, TCS is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Machine Maker tracks the deployment of new AI capabilities at TCS. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-28",
+      "source": "Machine Maker",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQLWJZSnd4M0NoeV9kOXE1czVtTzRQVWwzMmlHbjJMTW1UNWFKRUQ4R21id1JRNXQzTGdyVDFwTWNhYXd4M1RnVVlHNm9qRGlvVmNvdUQxM2xYbEVNQnUwNWRRQXYwa3NzVk1aeGRJYkhBbnBaeEJ3NUxmUkNWOHNEeGMtTDlhYzRPd0czUE4ybDJCUWFoUU9sZjBsXzA0SDYtZ1E4T2ltVQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:01.891Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065599_3orxy",
+      "firm": "TCS",
+      "type": "consulting",
+      "signal": "Regulatory",
+      "importance": 4,
+      "title": "SKF awards global AI-led business transformation contract to TCS",
+      "takeaway": "This major shift by TCS signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from Tata Consultancy Services reports that TCS has made a strategic move. \"SKF awards global AI-led business transformation contract to TCS\" represents a key development in the professional services ecosystem.",
+      "date": "2026-05-27",
+      "source": "Tata Consultancy Services",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQYUtENG1EZmZSYm1QYkFjRndoNVYyUmV0bjNKc3RwUDRTTGFJX1dIYkszQkdXcktrZ21Yb0MzOFhtcWYzZno2QlJqckNWZWlsM190OVJrdDNZTEFxOUlCQUlsV2l5T1ZUejAtQ2Ixa0xSY1g3YWstV1Q4cDRRZDVkeGVrb3Z3TjZOb3lDdWpDN2tfZTM0MVctU3BBam9qVEFWdXNadHhhVjJSVG1rQzI4S0VqNDJTQQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:01.315Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065599_w5bhl",
+      "firm": "NTT Data",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "NTT Data invests in Flux to strengthen AI consulting and implementation",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, NTT Data is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Telecompaper tracks the deployment of new AI capabilities at NTT Data. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-28",
+      "source": "Telecompaper",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZXc4M1BUMlBaclFTbDR1VnlKaUstcGtMNUtDWGtQQTE1Q1hGS0RsTUV0X2lQYS1TWTlWN3gxTjZ2UkNOUnBUY2hYU2U3ZGJkM0V2Zk5BaGNvNFA0ZTc1MEl3TUtUTzlkLXNLUnVVYmlWMGtiZW5jUWU1MVBkQ0h2dEVvdVBuVVR6TEh1M2hYVDJReF9WSDg4aE5kak02VmFDR3pTcUt1TVpqemZ5Mmo4Z1NLOWM?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:00.725Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065599_xt4gy",
+      "firm": "NTT Data",
+      "type": "consulting",
+      "signal": "Leadership",
+      "importance": 3,
+      "title": "NTT DATA Selected as a CDP Supplier Engagement Leader for the Fourth Consecutive Year",
+      "takeaway": "This major shift by NTT Data signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from NTT Data reports that NTT Data has made a strategic move. \"NTT DATA Selected as a CDP Supplier Engagement Leader for the Fourth Consecutive Year\" represents a key development in the professional services ecosystem.",
+      "date": "2026-05-27",
+      "source": "NTT Data",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5IXzY0eVVQOFA2UnNhamdDa25sWFRnN3NRUDcxdnBNZ2k2Z1Zlaml4Ry1HbWJLbDNqLVVNa0ZrYTYtWXVkM3c4MEFCRWl1eGU0NkN3Y1A4aVYzeFBNdzRpSE1HdVA5blhfZzExbEN5ZXFmclRSdzBz?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:15:00.496Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065595_8337c",
+      "firm": "Accenture",
+      "type": "consulting",
+      "signal": "Regulatory",
+      "importance": 4,
+      "title": "Key facts: Accenture JV with Mitsubishi; names PowerFleet partner",
+      "takeaway": "This major shift by Accenture signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from TradingView reports that Accenture has made a strategic move. \"Key facts: Accenture JV with Mitsubishi; names PowerFleet partner\" represents a key development in the professional services ecosystem.",
+      "date": "2026-05-28",
+      "source": "TradingView",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPRWJjamFvRFoyZWdNd3lfVGd5TkVranZwNV9UNDJ3Zlk1cFFOeEdfWk5RV2J0eHR3bGZKdDcxTGZ3ZFhsNThjNU53N21VT3BRUFNCaXFJUzQ5VjJ3d3NZcGRuenFuOUpxQzRqWE5mOUJDVmpQX3B4dk03MmhnekZWekJnVFkzeHM2U0xCcHJFci15c2hiVXF2Rkh4OHhDWEJIX3pPM3dYb2RZVHlSYXlSMURtV3pPTUZnTHRqdTRncnNHYVk?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:14:32.328Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065594_crphu",
+      "firm": "EY",
+      "type": "consulting",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "Tech news: EY and Microsoft partner in global initiative",
+      "takeaway": "This alliance positions EY directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to Accounting Today, EY has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-22",
+      "source": "Accounting Today",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNeUJmb1Y0MXI0bzFCOHppWUxIYkpCNmNKYjUwTVI5QUlxUW1hdzZPS2luVVhObzhCUGxzbC1YY3RXcTI4ckhlNjFWYlY0ZTZ1ZDJmQ2toUG9Va0E1NEVidTlRcUFaSGItT0QtUm1wZ1RIa1RsZnJhTFVpYWp2a3JPb1ZKUGFfMTdISGNTOGFZVXByblloMnRF?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:14:27.869Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779956065592_qxk73",
+      "firm": "Deloitte",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Optimizely and Deloitte Digital to boost AI-powered marketing transformation",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Deloitte is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by MarTech Cube tracks the deployment of new AI capabilities at Deloitte. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "MarTech Cube",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVlZSbmZPMWtyN2NmUXE5SmFack5IMVVjLWJpYW12dzZMNDFGX1MyOERrNjNEMlRWSU4tQlVZVVplazlKWm4zdGVMN2hKZUdMRkFRekZGb2t1ZlF3dkV3YmRkb0x2eEFkMUdQbmdHZngtWnpHLUJzTjduUUxtbXVQdl9ZR2l0RWY1cjluVnFKZi00SkFzSkRqUFMyMlNwMFVnanRyc2lQbVA?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T08:14:25.808Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
       "id": "sig_rss_1779954709137_a7np5",
       "firm": "Mistral AI",
       "type": "ai-first",

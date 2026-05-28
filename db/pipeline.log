@@ -757,3 +757,75 @@
 [2026-05-28T08:14:18.889Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
 [2026-05-28T08:14:18.996Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
 [2026-05-28T08:14:19.010Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-05-28T08:14:22.097Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-05-28T08:14:22.408Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""NVIDIA" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-28T08:14:22.409Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Sentry" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-28T08:14:22.409Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Equinix" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-28T08:14:22.409Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Neo4j" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-28T08:14:22.409Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Orange" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-28T08:14:23.145Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-05-28T08:14:23.412Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-05-28T08:14:23.532Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-05-28T08:14:23.600Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-05-28T08:14:23.758Z] RSS CRAWLER SUCCESS: Found 98 real news articles on the web.
+[2026-05-28T08:14:24.064Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Qdrant" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-28T08:14:24.065Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Snorkel AI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-28T08:14:24.066Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Alpic" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-28T08:14:24.066Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Lingo Dev" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-28T08:14:24.066Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Anyformat.ai" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-05-28T08:14:24.492Z] RSS CRAWLER SUCCESS: Found 3 real news articles on the web.
+[2026-05-28T08:14:24.699Z] RSS CRAWLER SUCCESS: Found 5 real news articles on the web.
+[2026-05-28T08:14:24.836Z] RSS CRAWLER SUCCESS: Found 88 real news articles on the web.
+[2026-05-28T08:14:24.920Z] RSS CRAWLER SUCCESS: Found 38 real news articles on the web.
+[2026-05-28T08:14:25.586Z] RSS CRAWLER SUCCESS: Found 10 real news articles on the web.
+[2026-05-28T08:14:25.588Z] AUTO-SCAN CRAWLER: Successfully aggregated 117 unique live news articles across all firms.
+[2026-05-28T08:14:25.589Z] AUTO-SCAN: Local RSS Parser fallback — Mapping 117 live articles...
+[2026-05-28T08:14:25.603Z] AUTO-SCAN: Local RSS parsing successful.
+[2026-05-28T08:14:25.808Z] VERIFIER APPROVED (AUTO): "Optimizely and Deloitte Digital to boost AI-p..." -> Status: Approved & Committed.
+[2026-05-28T08:14:26.389Z] VERIFIER REJECTED (AUTO): "PwC's AI-First Mission: Reimagining the Futur..." -> Reason: Article is older than 7 days (10 days old).
+[2026-05-28T08:14:27.869Z] VERIFIER APPROVED (AUTO): "Tech news: EY and Microsoft partner in global..." -> Status: Approved & Committed.
+[2026-05-28T08:14:29.765Z] VERIFIER REJECTED (AUTO): "BCG Trained an AI Agent on the Worst Things S..." -> Reason: Article is older than 7 days (14 days old).
+[2026-05-28T08:14:31.413Z] VERIFIER REJECTED (AUTO): "Accenture Invests in Aera Technology to Fuel ..." -> Reason: Article is older than 7 days (9 days old).
+[2026-05-28T08:14:32.328Z] VERIFIER APPROVED (AUTO): "Key facts: Accenture JV with Mitsubishi; name..." -> Status: Approved & Committed.
+[2026-05-28T08:14:32.330Z] VERIFIER REJECTED (AUTO): "IBM Consulting Expands AI Capabilities to Acc..." -> Reason: Article is older than 7 days (22 days old).
+[2026-05-28T08:14:38.992Z] VERIFIER REJECTED (AUTO): "AuditBoard, Protiviti introduce new AI-driven..." -> Reason: Article is older than 7 days (219 days old).
+[2026-05-28T08:14:38.994Z] VERIFIER REJECTED (AUTO): "AuditBoard Launches Accelerate, Delivering En..." -> Reason: Article is older than 7 days (218 days old).
+[2026-05-28T08:14:38.997Z] VERIFIER REJECTED (AUTO): "CFOs must hone data interpretation skills in ..." -> Reason: Article is older than 7 days (266 days old).
+[2026-05-28T08:14:47.184Z] VERIFIER REJECTED (AUTO): "Accenture and Palantir Expand Global Strategi..." -> Reason: Article is older than 7 days (163 days old).
+[2026-05-28T08:14:56.626Z] VERIFIER REJECTED (AUTO): "US to safety test new AI models from Google, ..." -> Reason: Article is older than 7 days (23 days old).
+[2026-05-28T08:15:00.497Z] VERIFIER APPROVED (AUTO): "NTT DATA Selected as a CDP Supplier Engagemen..." -> Status: Approved & Committed.
+[2026-05-28T08:15:00.725Z] VERIFIER APPROVED (AUTO): "NTT Data invests in Flux to strengthen AI con..." -> Status: Approved & Committed.
+[2026-05-28T08:15:00.727Z] VERIFIER REJECTED (AUTO): "NTT DATA Announces Intent to Acquire WinWire ..." -> Reason: Article is older than 7 days (13 days old).
+[2026-05-28T08:15:01.315Z] VERIFIER APPROVED (AUTO): "SKF awards global AI-led business transformat..." -> Status: Approved & Committed.
+[2026-05-28T08:15:01.891Z] VERIFIER APPROVED (AUTO): "SKF Selects TCS for Global AI-Driven Technolo..." -> Status: Approved & Committed.
+[2026-05-28T08:15:02.543Z] VERIFIER APPROVED (AUTO): "SKF awards global AI-led business transformat..." -> Status: Approved & Committed.
+[2026-05-28T08:15:03.463Z] VERIFIER APPROVED (AUTO): "Reply Expands Prebuilt AI Apps With New Produ..." -> Status: Approved & Committed.
+[2026-05-28T08:15:04.108Z] VERIFIER APPROVED (AUTO): "Reply Expands Prebuilt AI Apps With New Produ..." -> Status: Approved & Committed.
+[2026-05-28T08:15:04.796Z] VERIFIER APPROVED (AUTO): "On Pakistan expert's 'AI chip' remark, Vaibha..." -> Status: Approved & Committed.
+[2026-05-28T08:15:05.820Z] VERIFIER APPROVED (AUTO): "Qualcomm Strikes AI Chip Deal With TikTok Own..." -> Status: Approved & Committed.
+[2026-05-28T08:15:06.499Z] VERIFIER APPROVED (AUTO): "Qualcomm strikes AI chip deal with TikTok own..." -> Status: Approved & Committed.
+[2026-05-28T08:15:07.257Z] VERIFIER APPROVED (AUTO): "Qualcomm ByteDance AI Chip Deal Highlights Ex..." -> Status: Approved & Committed.
+[2026-05-28T08:15:07.976Z] VERIFIER APPROVED (AUTO): "Nvidia's AI Demand Fuels Earnings Blowout..." -> Status: Approved & Committed.
+[2026-05-28T08:15:08.994Z] VERIFIER APPROVED (AUTO): "Nvidia to spend $150 billion a year in Taiwan..." -> Status: Approved & Committed.
+[2026-05-28T08:15:08.997Z] VERIFIER REJECTED (AUTO): "Nato launches 'Arctic Sentry' as alliance loo..." -> Reason: Article is older than 7 days (106 days old).
+[2026-05-28T08:15:09.002Z] VERIFIER REJECTED (AUTO): "Sentry’s AI Debugger..." -> Reason: Article is older than 7 days (133 days old).
+[2026-05-28T08:15:09.003Z] VERIFIER REJECTED (AUTO): "Sentry Adds Local Development and Code Review..." -> Reason: Article is older than 7 days (121 days old).
+[2026-05-28T08:15:10.008Z] VERIFIER APPROVED (AUTO): "Equinix opens AI-focused MD5 data centre in M..." -> Status: Approved & Committed.
+[2026-05-28T08:15:10.583Z] VERIFIER APPROVED (AUTO): "Core Scientific Adds Former Equinix CEO Steve..." -> Status: Approved & Committed.
+[2026-05-28T08:15:10.585Z] VERIFIER REJECTED (AUTO): "Equinix Launches Purpose-Built IBX Data Cente..." -> Reason: Article is older than 7 days (50 days old).
+[2026-05-28T08:15:10.587Z] VERIFIER REJECTED (AUTO): "Structured AI with Neo4j - Graph Database &am..." -> Reason: Article is older than 7 days (84 days old).
+[2026-05-28T08:15:10.589Z] VERIFIER REJECTED (AUTO): "Graph-Driven AI for All: Neo4j Aura Agent Ent..." -> Reason: Article is older than 7 days (114 days old).
+[2026-05-28T08:15:10.594Z] VERIFIER REJECTED (AUTO): "At MWC, Orange’s AI Brings Networks to Life f..." -> Reason: Article is older than 7 days (87 days old).
+[2026-05-28T08:15:10.596Z] VERIFIER REJECTED (AUTO): "Orange CEO: Telcos must architect trust in th..." -> Reason: Article is older than 7 days (84 days old).
+[2026-05-28T08:15:10.598Z] VERIFIER REJECTED (AUTO): "Nokia and Orange advance AI‑RAN innovation wi..." -> Reason: Article is older than 7 days (43 days old).
+[2026-05-28T08:15:10.600Z] VERIFIER REJECTED (AUTO): "Qdrant Cloud launches high-performance vector..." -> Reason: Article is older than 7 days (30 days old).
+[2026-05-28T08:15:10.603Z] VERIFIER REJECTED (AUTO): "Qdrant Raises $50 Million Series B to Define ..." -> Reason: Article is older than 7 days (77 days old).
+[2026-05-28T08:15:11.164Z] VERIFIER APPROVED (AUTO): "How Snorkel AI helps enterprises build AI age..." -> Status: Approved & Committed.
+[2026-05-28T08:15:11.166Z] VERIFIER REJECTED (AUTO): "Accenture Invests in Snorkel AI to Help Finan..." -> Reason: Article is older than 7 days (295 days old).
+[2026-05-28T08:15:11.170Z] VERIFIER REJECTED (AUTO): "Snorkel AI Revenue 2025: $148M ARR, $6.4B Val..." -> Reason: Article is older than 7 days (181 days old).
+[2026-05-28T08:15:11.172Z] VERIFIER REJECTED (AUTO): "Rail Europe–Alpic tie-up to lead AI-driven tr..." -> Reason: Article is older than 7 days (100 days old).
+[2026-05-28T08:15:11.175Z] VERIFIER REJECTED (AUTO): "€5 million for Paris-based Alpic to build the..." -> Reason: Article is older than 7 days (266 days old).
+[2026-05-28T08:15:11.177Z] VERIFIER REJECTED (AUTO): "Alpic raises $6M to build first MCP-native cl..." -> Reason: Article is older than 7 days (266 days old).
+[2026-05-28T08:15:11.185Z] AUTO-SCAN SUCCESS: Added 19 new signals.
+[2026-05-28T08:15:11.188Z] AUTO-SCAN: Initiating automatic hourly background scan for thought leadership reports...
+[2026-05-28T08:15:11.762Z] AUTO-SCAN REPORTS FAILED: Claude API returned 401 - {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"},"request_id":"req_011CbUdiubWgU16BddGrdHuC"}
