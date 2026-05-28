@@ -1140,7 +1140,7 @@ function App() {
     { id: 'brief',     label: 'In Brief' },
     { id: 'signals',   label: 'All Signals' },
     { id: 'summits',   label: 'AI Summits' },
-    { id: 'linkedin',  label: 'Latest on LinkedIn' },
+    { id: 'linkedin',  label: 'LinkedIn Voices' },
     { id: 'context',   label: 'Context Corner' },
     { id: 'reports',   label: 'Thought Leadership' },
     { id: 'graph',     label: 'Knowledge Graph' },

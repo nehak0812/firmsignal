@@ -223,6 +223,186 @@
   ],
   "signals": [
     {
+      "id": "sig_rss_1779965133275_ylbe7",
+      "firm": "Orange",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "The May Orange Rag Is Here!",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Orange is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Legal IT Insider tracks the deployment of new AI capabilities at Orange. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-27",
+      "source": "Legal IT Insider",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1QcDg3MTVLcXhpTmZxcS1scGVxLTkzMmE0d3R1bFVqYU9tWTRyWUNLRFhSQi1DNUxyV1daa2o4WVR5bUVnLU5PSTg2WUdjVE5sUjdtUlFia2VjMl9pVFRIaUdmeGlPcUVT?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T10:46:23.321Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779965133274_lgjdd",
+      "firm": "Orange",
+      "type": "tech",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "Orange Cote d'Ivoire and UNDP partner to promote digital transformation and inclusion",
+      "takeaway": "This alliance positions Orange directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to Telecompaper, Orange has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-25",
+      "source": "Telecompaper",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNck1NMjJ5czlBRkNxdmktd0pER01DZFlpb1Vib3NwZ2pTWXdlX1o3aUxSczVvb3lwd2lMWjY2REVxVDVoUE5XNnNtdkVIbW9BZFBtWG54TW5NX0xWbG45M0ZoR0Y2LUNiRHpLSm9ZS09HZHp5WmRmbmhQZnZ1OTBKeFNFbzBHLTZjQnhyeFBscjNDSVlpakdsQi1qY0l1RlE5dGdnWk9YaE40c0g3S1g1eWNjODY2WTJFenppbndfY2dUM3BUdHc?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T10:46:22.684Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779965133274_0g4wd",
+      "firm": "Orange",
+      "type": "tech",
+      "signal": "Earnings",
+      "importance": 4,
+      "title": "Orange Seller Saved His Daily Earnings to Build a School That Helped Hundreds of Villag...",
+      "takeaway": "Strong financial metrics at Orange confirm that technological advisory is now the primary growth engine in professional services.",
+      "summary": "Financial disclosures compiled by The Better India show robust performance at Orange. The margins reflect high demand for AI implementation services.",
+      "date": "2026-05-22",
+      "source": "The Better India",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOSEZ0dVM0YjF5S21MVlhvdVFLLWNoS3lNUjRpcEpUVzAxcFhmZXZieTVtdDU4WkpTMjZNekxuWURNTkRHTW45UnZHRXB5NEY1UWE0MDI3Z1FxUEM3UlhRcjBNaE5tQVBfb1VCMGFZdXd0MmFPOUplemdqY0QybUpwTmdfZnN4WjFlN0pUQ3FRd2UzR0FNd1ctalNsNU52eWVjbmJNVG8tWEpQemEycmxuWVpSNzlZLWw3aGV1MFZ6ZmttX1dE?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T10:46:21.803Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779965133274_z9bdw",
+      "firm": "TCS",
+      "type": "consulting",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "TCS partners with Mistral to build custom AI models for enterprises",
+      "takeaway": "This alliance positions TCS directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to BusinessLine, TCS has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-28",
+      "source": "BusinessLine",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOaW9kMTFfQUt0bXg0ZENsaTZ5TnZFYmRQSV9XdUlyTWdBUGFMQ1Fib0t4WFlxMlpDb2Z1eHBKcWNVeFoyNTVBbnl2dFFMcjh4U3dJMlFIajRTb3p0SU9wSlRMTjNvMC1DTWdMTnBGSVhTb1R6MEFqeVpYbmZnemgtTGZjcHRrZ1Z3ZlpGUHBXc2pQNVFnUFpnSXNPV2FrZ2pQSUlhTWpFT3RFYldGWWRYb2xIVFk1WHBxYnhFUmtFdTRvVk5ETVM2RDVqLTh5YlJ4aVZDLXR1OEpzOHgxN0HSAeQBQVVfeXFMUGtMRmVXMGQxOFVEM1ZON28zRHZrX1U1WTVKUm4xSHo0dnR2VC1NUkhvVHdlR2ZaQXJIZER4U1hOOHJrVEowN283RmJpdmJCeGVHQ2UtbmhtNkdPeVJtUl8xaFYzNFVXRWE3Z2JIV01mQkt3S0dJLU1Bak5KNW1veHlSckdLR1p1LXBxa3hSaXRKbWZqd3dfT1FwTzJqZlhUSHpLMGdhYk92MFlKNjhwQ3ZodnpGRnUtOWVxZEtuSUVQd3VVWl92YTdoRVdRanktMHBnSWRBVDNoTzgzQjlzNDFkd2la?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T10:46:13.284Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779965133274_s1dhu",
+      "firm": "TCS",
+      "type": "consulting",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "TCS partners with Mistral to bring enterprise AI platform Forge to global clients",
+      "takeaway": "This alliance positions TCS directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to Techcircle, TCS has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-28",
+      "source": "Techcircle",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSV95cklTWXNMTmN4VS1XRG1oNEdLVHpabU9XUDVRd0ZBaXlYelIwdGc5ZzdQX2h6WDhVZm15Sk0tUmRFZzRGdFEzMWk0TlhkaFNFQzRwZElLTWNUeHlKMV91TUJBcjhPZHViaXJ1cmdpY0lQWWhkVjB2N1FYQnRvSzhXNWNDa3g2eW15T01hOTYxTDk4LWl4dXVkZ3kzUVlERnp1QjRLNldYNjkzZDRUZ0RDN2xoMEt2VUE?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T10:46:13.009Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779965133273_0gmzv",
+      "firm": "Mistral AI",
+      "type": "ai-first",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "Airbus partners with Mistral AI to strengthen the use of artificial intelligence in sov...",
+      "takeaway": "This alliance positions Mistral AI directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to Airbus, Mistral AI has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-28",
+      "source": "Airbus",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPc09ZWEhvR1F6YjRqblB1Q25iWXhENWo1UXZzOXpvYlBHcDFnZmxWYVZWM2pQQ3NYZndZYkh6THF1a2J3Tk5oS3F1eTl6d3l6YVdsaXR6Q3lVYnZlZlJaSkVYaEFCQk9aZlBoOHlQdk5fU1NJSjhVY3lzbWoxaUVaV0pqaFZER1pVWnEtOHE4ZUJWZmY5QmlRQWRRTFVJN3V1NU14bzJycnQySVBSRzhNcUsxbEI1blRHLS1Nb1pTR29Rc3hESzRZalpyOUpKaDA5VnoxeFdCYW5lcGtMUTBrRURGbmF6QQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T10:46:04.930Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779965133273_70j04",
+      "firm": "OpenAI",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "This AI stock is surging after an ex-OpenAI employee's fund disclosed a stake. Here's why",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, OpenAI is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by CNBC tracks the deployment of new AI capabilities at OpenAI. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-28",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMG9qMll6TjdYUmZOWHBXZVBYcGZyMVhYeUJRY0ZNb1hvQVRSMS1MSkFCT1FvcC04OExaOXE1S3JHVjNiUk40Y2hrZGdNRXZBTEU2U0FzTXBoYnQ5M09qVW9wY2toTjFmQ0VJQXFIdWhzMmtYMXFOSTRnX1ZseUhab2NIelNqREhnNE5Nak44aXR3YlZR0gGaAUFVX3lxTE5FRmtJbDVNN3VDZkFNMEdaMWFHd1hNc3A2SWtBRFpETzVUYUxkMFF5c0lHYTk1Q29QbzJ4ZzBsTVU4eW0wa2FmNUJXY0RUX2hULWpWWFBtVE83MUJTUVJhcUVEYk5pNWdsVWN5WlhLclY5WXk2MEJrWEsycFVtQ09JNWE0V3hINDdYSzFYNFhpVi1zSE5kTmRFdUE?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T10:46:00.976Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779965133273_agjas",
+      "firm": "Palantir",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Anthropic, Palantir, and the theology of AI",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Palantir is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by verdict.co.uk tracks the deployment of new AI capabilities at Palantir. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-28",
+      "source": "verdict.co.uk",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBiUUR6TkF3ODFYOGZaaFRpUmt1dk1Db293bkFWSnRVRFhnR2x1NVo0Z3duVDBnZVhsa2FNNWNXNGFleThPekFXelpzSGpXOWZBaElvbmNkNFJ2NXBr?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T10:45:59.188Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779965133272_s81oq",
+      "firm": "Google",
+      "type": "tech",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "Webedia-Elephant Group and Google Cloud Expand Strategic Partnership to Accelerate its ...",
+      "takeaway": "This alliance positions Google directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to PR Newswire, Google has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-28",
+      "source": "PR Newswire",
+      "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxPeWNMQkcyYUtCRzhBbkdPUUpKVjdsYldPaXQyVlZiY0xRcUhMQmdfY3p0NU5BdU52emdIRkFsR2VMMm82aGtiWk1MX1RhX1MxX1F1MjhLdlh6SE9PZGRVdmFWdkk5LWk3QnpmOG1zbTJCZ1g1NHpBWVQtWGhaQV95eUxvdmFvNnctaWFiWUNtUmlNc2J1dzB0Y3ZxYVBiTDBKX0NvQTc2c1lIaXJYRW5Wb0g2MmNtejA0dEdkbVFnSGM4ekRFbXBBT1UyLXVUSk9IcWM3TzQtZ29qbENDYnFQczdQQkQ3eHJxbDU5bzVTZ0xObldmNjIzdjVyN3dTaTYtb3VZOERaRHZiUFRDVHpWV1M5VC1aa2dScmc?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T10:45:47.868Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
       "id": "sig_rss_1779960537365_j9t27",
       "firm": "Reply",
       "type": "consulting",

@@ -2347,7 +2347,7 @@ export function LatestOnLinkedInView({
         <div>
           <div className="aw-eyebrow">LinkedIn Executive Intelligence</div>
           <h1 className="aw-title" style={{ fontFamily: 'var(--serif-disp)' }}>
-            Latest on <em>LinkedIn</em>: CEO Narrative Briefs.
+            LinkedIn <em>Voices</em>: CEO Narrative Briefs.
           </h1>
           <p className="aw-sub">
             Monitoring strategic messages, product announcements, and corporate thought leadership posts made directly by C-Suite leaders in the past 7 days.
