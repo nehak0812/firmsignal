@@ -117,20 +117,64 @@ export function Sparkline({ values, color = 'var(--accent)' }) {
 }
 
 // ============== PULSE STRIP ==============
-export function PulseStrip({ data }) {
+export function PulseStrip({ data, onPulseClick }) {
   const totalSignals = data.length;
   const critCount = data.filter(d => d.importance >= 4).length;
   const aiCount = data.filter(d => d.signal === 'AI Pivot').length;
   const earningsCount = data.filter(d => d.signal === 'Earnings').length;
   const regCount = data.filter(d => d.signal === 'Regulatory').length;
 
-  // Mock sparklines (representing 7-day trend)
   const cells = [
-    { lbl: 'Signals · 7d', val: totalSignals, delta: '+12%', dir: 'up', spark: [4, 6, 5, 8, 7, 10, totalSignals || 12], color: 'var(--accent)' },
-    { lbl: 'High-impact', val: critCount, delta: '+3', dir: 'up', spark: [1, 2, 1, 3, 4, 3, critCount || 5], color: 'var(--crit)' },
-    { lbl: 'AI moves', val: aiCount, delta: '+6', dir: 'up', spark: [2, 3, 3, 5, 4, 6, aiCount || 7], color: 'var(--accent)' },
-    { lbl: 'Earnings', val: earningsCount, delta: 'flat', dir: 'flat', spark: [2, 2, 3, 2, 2, 3, earningsCount || 3], color: 'var(--pos)' },
-    { lbl: 'Regulatory', val: regCount, delta: '+1', dir: 'up', spark: [0, 0, 1, 0, 1, 0, regCount || 2], color: 'var(--crit)' },
+    { 
+      id: 'signals_7d', 
+      lbl: 'Signals · 7d', 
+      val: totalSignals, 
+      delta: '+12%', 
+      dir: 'up', 
+      spark: [4, 6, 5, 8, 7, 10, totalSignals || 12], 
+      color: 'var(--accent)',
+      desc: "Total corporate signals tracked across the competitive index over the past 7 days."
+    },
+    { 
+      id: 'high_impact', 
+      lbl: 'High-impact', 
+      val: critCount, 
+      delta: '+3', 
+      dir: 'up', 
+      spark: [1, 2, 1, 3, 4, 3, critCount || 5], 
+      color: 'var(--crit)',
+      desc: "High-priority intelligence alerts with a severity score of 4 or 5 (market-moving updates)."
+    },
+    { 
+      id: 'ai_moves', 
+      lbl: 'AI moves', 
+      val: aiCount, 
+      delta: '+6', 
+      dir: 'up', 
+      spark: [2, 3, 3, 5, 4, 6, aiCount || 7], 
+      color: 'var(--accent)',
+      desc: "Strategic AI deployments, custom model fine-tuning releases, and platform integrations."
+    },
+    { 
+      id: 'earnings', 
+      lbl: 'Earnings', 
+      val: earningsCount, 
+      delta: 'flat', 
+      dir: 'flat', 
+      spark: [2, 2, 3, 2, 2, 3, earningsCount || 3], 
+      color: 'var(--pos)',
+      desc: "Financial briefings, quarterly results reports, and margin growth disclosures."
+    },
+    { 
+      id: 'regulatory', 
+      lbl: 'Regulatory', 
+      val: regCount, 
+      delta: '+1', 
+      dir: 'up', 
+      spark: [0, 0, 1, 0, 1, 0, regCount || 2], 
+      color: 'var(--crit)',
+      desc: "EU AI Act compliance audits, litigation disclosures, and regulatory security blocks."
+    },
   ];
 
   const arrow = (d) => d === 'up' ? '▲' : d === 'down' ? '▼' : '–';
@@ -138,7 +182,27 @@ export function PulseStrip({ data }) {
   return (
     <div className="pulse">
       {cells.map((c, i) => (
-        <div key={i} className="pulse-cell">
+        <div 
+          key={i} 
+          className="pulse-cell" 
+          title={c.desc}
+          onClick={() => onPulseClick && onPulseClick(c.id)}
+          style={{ 
+            cursor: 'pointer',
+            transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+            userSelect: 'none'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-3px)';
+            e.currentTarget.style.boxShadow = '0 6px 20px rgba(168, 122, 44, 0.08)';
+            e.currentTarget.style.borderColor = 'var(--accent)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'none';
+            e.currentTarget.style.boxShadow = 'none';
+            e.currentTarget.style.borderColor = 'var(--line)';
+          }}
+        >
           <div className="pulse-lbl">{c.lbl}</div>
           <div className="pulse-val">{c.val}</div>
           <Sparkline values={c.spark} color={c.color} />
@@ -249,7 +313,7 @@ export function SignalCard({ item, isSaved, onToggleSave, index, ALL_FIRMS = [],
 }
 
 // ============== BRIEF VIEW ==============
-export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL_COLORS = {}, getBrief = () => ({ lead: null, secondary: [] }) }) {
+export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL_COLORS = {}, getBrief = () => ({ lead: null, secondary: [] }), onPulseClick }) {
   const today = new Date();
   const dateLong = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
   const brief = getBrief(data);
@@ -433,7 +497,7 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
         </div>
       )}
 
-      <PulseStrip data={data} />
+      <PulseStrip data={data} onPulseClick={onPulseClick} />
 
       <div className="brief-grid">
         {renderLead(brief.lead)}

@@ -1115,6 +1115,33 @@ function App() {
     showToast(`Filtered feed: ${sponsorName}`);
   };
 
+  const handlePulseClick = (cellId) => {
+    setActiveFirms(new Set());
+    setSearch('');
+    if (cellId === 'signals_7d') {
+      setView('week');
+      setActiveSignals(new Set());
+      showToast('Filtered All Signals: Past 7 days');
+    } else if (cellId === 'high_impact') {
+      setView('highimpact');
+      setActiveSignals(new Set());
+      showToast('Filtered All Signals: High impact (4+ score)');
+    } else if (cellId === 'ai_moves') {
+      setView('all');
+      setActiveSignals(new Set(['AI Pivot']));
+      showToast('Filtered All Signals: AI Pivots');
+    } else if (cellId === 'earnings') {
+      setView('all');
+      setActiveSignals(new Set(['Earnings']));
+      showToast('Filtered All Signals: Earnings reports');
+    } else if (cellId === 'regulatory') {
+      setView('all');
+      setActiveSignals(new Set(['Regulatory']));
+      showToast('Filtered All Signals: Regulatory Compliance & Audit updates');
+    }
+    setActiveNav('signals');
+  };
+
   // Node selection handler from Force Graph
   const handleGraphNodeSelected = (node) => {
     if (!node) return;
@@ -1201,7 +1228,7 @@ function App() {
           )}
 
           {activeNav === 'brief' && (
-            <BriefView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={firms} SIGNAL_COLORS={SIGNAL_COLORS} getBrief={getBrief} />
+            <BriefView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={firms} SIGNAL_COLORS={SIGNAL_COLORS} getBrief={getBrief} onPulseClick={handlePulseClick} />
           )}
 
           {activeNav === 'summits' && (
