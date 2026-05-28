@@ -4,19 +4,22 @@
 export const CONSULTING_FIRMS = [
   { id: 'Deloitte',       dot: '#4a90e2', type: 'consulting' },
   { id: 'PwC',            dot: '#d4a04a', type: 'consulting' },
-  { id: 'EY',             dot: '#f5a623', type: 'consulting' },
+  { id: 'EY',             dot: '#f5a623', type: 'consulting', aiNowSponsor: true },
   { id: 'KPMG',           dot: '#b294d4', type: 'consulting' },
   { id: 'McKinsey',       dot: '#e07a6a', type: 'consulting' },
   { id: 'BCG',            dot: '#7aa6d6', type: 'consulting' },
   { id: 'Bain',           dot: '#e0a06b', type: 'consulting' },
-  { id: 'Accenture',      dot: '#a86fc7', type: 'consulting' },
+  { id: 'Accenture',      dot: '#a86fc7', type: 'consulting', aiNowSponsor: true },
   { id: 'IBM Consulting', dot: '#88c089', type: 'consulting' },
-  { id: 'Capgemini',      dot: '#6cc4b3', type: 'consulting' },
+  { id: 'Capgemini',      dot: '#6cc4b3', type: 'consulting', aiNowSponsor: true },
+  { id: 'NTT Data',       dot: '#003366', type: 'consulting', aiNowSponsor: true },
+  { id: 'TCS',            dot: '#ff6600', type: 'consulting', aiNowSponsor: true },
+  { id: 'Reply',          dot: '#d81b60', type: 'consulting', aiNowSponsor: true }
 ];
 
 export const TECH_FIRMS = [
-  { id: 'Microsoft',  dot: '#00a4ef', type: 'tech' },
-  { id: 'SAP',        dot: '#0070f2', type: 'tech' },
+  { id: 'Microsoft',  dot: '#00a4ef', type: 'tech', aiNowSponsor: true },
+  { id: 'SAP',        dot: '#0070f2', type: 'tech', aiNowSponsor: true },
   { id: 'ServiceNow', dot: '#62d84e', type: 'tech' },
   { id: 'Google',     dot: '#ea4335', type: 'tech' },
   { id: 'AuditBoard', dot: '#5c6bc0', type: 'tech' },
@@ -24,16 +27,27 @@ export const TECH_FIRMS = [
   { id: 'AWS',        dot: '#ff9900', type: 'tech' },
   { id: 'Workday',    dot: '#f68b1f', type: 'tech' },
   { id: 'Palantir',   dot: '#7b68ee', type: 'tech' },
+  { id: 'Qualcomm',   dot: '#3253dc', type: 'tech', aiNowSponsor: true },
+  { id: 'NVIDIA',     dot: '#76b900', type: 'tech', aiNowSponsor: true },
+  { id: 'Sentry',     dot: '#362d59', type: 'tech', aiNowSponsor: true },
+  { id: 'Equinix',    dot: '#e51c23', type: 'tech', aiNowSponsor: true },
+  { id: 'Neo4j',      dot: '#008cc1', type: 'tech', aiNowSponsor: true },
+  { id: 'Orange',     dot: '#ff6600', type: 'tech', aiNowSponsor: true },
+  { id: 'Qdrant',     dot: '#00bcd4', type: 'tech', aiNowSponsor: true }
 ];
 
 export const AI_FIRST_FIRMS = [
   { id: 'OpenAI',       dot: '#10a37f', type: 'ai-first' },
   { id: 'Anthropic',    dot: '#c77b58', type: 'ai-first' },
   { id: 'Perplexity',   dot: '#20808d', type: 'ai-first' },
-  { id: 'Mistral AI',   dot: '#fa520f', type: 'ai-first' },
+  { id: 'Mistral AI',   dot: '#fa520f', type: 'ai-first', aiNowSponsor: true },
   { id: 'Cohere',       dot: '#d2785a', type: 'ai-first' },
   { id: 'xAI',          dot: '#aaaaaa', type: 'ai-first' },
   { id: 'DeepSeek',     dot: '#4d6bfe', type: 'ai-first' },
+  { id: 'Snorkel AI',   dot: '#009688', type: 'ai-first', aiNowSponsor: true },
+  { id: 'Alpic',        dot: '#673ab7', type: 'ai-first', aiNowSponsor: true },
+  { id: 'Anyformat.ai', dot: '#3f51b5', type: 'ai-first', aiNowSponsor: true },
+  { id: 'Lingo Dev',    dot: '#9c27b0', type: 'ai-first', aiNowSponsor: true }
 ];
 
 export const ALL_FIRMS = [...CONSULTING_FIRMS, ...TECH_FIRMS, ...AI_FIRST_FIRMS];

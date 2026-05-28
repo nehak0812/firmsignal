@@ -48,7 +48,12 @@ function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, tog
         onClick={() => toggleFirm(f.id)}
       >
         <span className="sb-dot" style={{ background: f.dot }} />
-        {f.id}
+        <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+          {f.id}
+          {f.aiNowSponsor && (
+            <span style={{ color: '#d4a04a', fontSize: 11, cursor: 'help' }} title="Currently a sponsor of the AI Now Summit">★</span>
+          )}
+        </span>
         <span className="sb-count-mini">{cnt || ''}</span>
       </button>
     );
@@ -136,7 +141,24 @@ function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, tog
           ))}
         </div>
       </div>
-      <div className="sb-section" style={{ marginTop: 'auto', paddingTop: 20 }}>
+      {/* AI Now Summit Sponsor Legend */}
+      <div style={{
+        marginTop: 'auto',
+        padding: '10px 12px',
+        background: 'rgba(212, 160, 74, 0.05)',
+        border: '1px dashed rgba(212, 160, 74, 0.3)',
+        borderRadius: '6px',
+        fontSize: '11px',
+        color: 'var(--ink-2)',
+        fontFamily: 'var(--serif)',
+        lineHeight: '1.4',
+        margin: '10px 8px'
+      }}>
+        <span style={{ color: '#d4a04a', fontWeight: 'bold', marginRight: '4px' }}>★</span>
+        Currently a sponsor of the <strong>AI Now Summit</strong> organized by Mistral AI.
+      </div>
+
+      <div className="sb-section" style={{ paddingTop: 10 }}>
         <button 
           className="sb-row" 
           onClick={onOpenApiModal}
