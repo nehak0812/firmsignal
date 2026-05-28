@@ -678,19 +678,6 @@ export function ContextCornerView({ data, savedIds, onToggleSave, ALL_FIRMS = []
         { firm: "Deloitte", role: "Manager", quote: "OpenAI Frontier is a distribution deal. If you are not BCG/McKinsey/Accenture/Capgemini, you are an outsider on the GTM roadmap. We are pivoting to Azure OpenAI, but clients notice the lack of alliance badge.", rating: 3 },
         { firm: "EY", role: "Senior Manager", quote: "Everyone on my team is talking about the sovereign-AI Dell/NVIDIA play. Regulated defense and banking accounts won't let public AI touch their code. This is our winning card against PwC and McKinsey right now.", rating: 5 }
       ]
-    },
-    linkedin: {
-      title: "LinkedIn Executive Sentiment & Corporate Posts",
-      desc: "Top corporate announcements, thought leadership updates, and engagement trends shared directly by firm executives.",
-      metrics: [
-        { label: "Executive Engagement", val: "High (78%)", desc: "Consulting leaders posting actively about model integration and client GTM benefits.", trend: "+15%" },
-        { label: "Publishing Volume", val: "148 posts/wk", desc: "McKinsey and EY leading the weekly AI-centric post counts.", trend: "+8%" },
-        { label: "Audience Sentiment", val: "92% Pos", desc: "Clients expressing strong interest in sovereign enterprise-tier AI solutions.", trend: "+5%" }
-      ],
-      quotes: [
-        { firm: "EY", role: "Global Vice Chair, Technology", quote: "Our collaboration with Dell and NVIDIA is setting a new standard for sovereign AI. Enterprises can now run secure LLMs within their own regulatory boundaries.", rating: 5, likes: "1,240", topic: "NVIDIA AI Factory" },
-        { firm: "McKinsey", role: "Senior Partner", quote: "Orchestrating autonomous workflows is the define-or-be-defined enterprise agenda for H2 2026. Firms leveraging agentic platforms are unlocking 40% efficiency gains.", rating: 5, likes: "856", topic: "Autonomous Agent Workflows" }
-      ]
     }
   };
 
@@ -2215,6 +2202,402 @@ export function AiSummitsView({
                       Join Event Hub ↗
                     </a>
                   )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ============== LATEST ON LINKEDIN VIEW ==============
+export function LatestOnLinkedInView({ 
+  posts = [], 
+  onScanLinkedIn, 
+  apiKey, 
+  serverHasKey, 
+  onOpenApiModal, 
+  onShowToast
+}) {
+  const [firmFilter, setFirmFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [customScanQuery, setCustomScanQuery] = useState('');
+  const [isScanning, setIsScanning] = useState(false);
+
+  // Dynamic calculations
+  const totalPosts = posts.length;
+  const totalEngagement = useMemo(() => {
+    return posts.reduce((sum, p) => sum + (p.likes || 0) + (p.comments || 0) + (p.shares || 0), 0);
+  }, [posts]);
+  
+  const leadersCount = useMemo(() => {
+    return new Set(posts.map(p => p.author)).size;
+  }, [posts]);
+
+  // Executive Themes Summary Data
+  const executiveThemes = [
+    {
+      title: "Agentic AI Swarms",
+      desc: "Migrating from basic copilots to multi-agent production systems.",
+      leaders: "Satya Nadella, Bob Sternfels",
+      icon: "🧠"
+    },
+    {
+      title: "Sovereign Cloud & Safety",
+      desc: "Localized on-premises model compliance and regulated data boundaries.",
+      leaders: "Janet Truncale, Christoph Schweizer",
+      icon: "🛡️"
+    },
+    {
+      title: "AI Infrastructure Factories",
+      desc: "Blackwell hardware deployments, physical AI architectures, and custom silicon.",
+      leaders: "Jensen Huang, Arvind Krishna",
+      icon: "⚙️"
+    },
+    {
+      title: "ERP Process Automation",
+      desc: "Integrating GAI pipelines into procurement and automated HR ticketing.",
+      leaders: "Christian Klein, Bill McDermott",
+      icon: "💼"
+    }
+  ];
+
+  // LinkedIn Search URL Resolver
+  const getLinkedInSearchUrl = (author, firm) => {
+    const q = encodeURIComponent(`${author} ${firm}`);
+    return `https://www.linkedin.com/search/results/all/?keywords=${q}`;
+  };
+
+  const getFirmDotColor = (firmName) => {
+    const map = {
+      Deloitte: '#4a90e2',
+      PwC: '#d4a04a',
+      EY: '#f5a623',
+      KPMG: '#b294d4',
+      McKinsey: '#e07a6a',
+      BCG: '#7aa6d6',
+      Bain: '#e0a06b',
+      Accenture: '#a86fc7',
+      'IBM Consulting': '#88c089',
+      IBM: '#88c089',
+      Capgemini: '#6cc4b3',
+      'NTT Data': '#003366',
+      TCS: '#ff6600',
+      Reply: '#d81b60',
+      Microsoft: '#00a4ef',
+      SAP: '#0070f2',
+      ServiceNow: '#62d84e',
+      Google: '#ea4335',
+      OpenAI: '#10a37f',
+      Anthropic: '#c77b58',
+      Perplexity: '#20808d',
+      'Mistral AI': '#fa520f',
+      Cohere: '#d2785a',
+      xAI: '#aaaaaa',
+      DeepSeek: '#4d6bfe',
+      Qualcomm: '#3253dc',
+      NVIDIA: '#76b900'
+    };
+    return map[firmName] || '#aaaaaa';
+  };
+
+  // Filter posts
+  const filteredPosts = useMemo(() => {
+    return posts.filter(p => {
+      const matchesFirm = firmFilter === 'all' || p.firm.toLowerCase() === firmFilter.toLowerCase();
+      
+      const matchesSearch = !searchQuery ? true : (
+        p.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.theme.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.firm.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      
+      return matchesFirm && matchesSearch;
+    });
+  }, [posts, firmFilter, searchQuery]);
+
+  const handleScan = async (e) => {
+    e.preventDefault();
+    if (!apiKey && !serverHasKey) {
+      onOpenApiModal();
+      return;
+    }
+    setIsScanning(true);
+    try {
+      await onScanLinkedIn(customScanQuery);
+      setCustomScanQuery('');
+    } catch (err) {
+      onShowToast(`LinkedIn sweep failed: ${err.message || 'error'}`);
+    }
+    setIsScanning(false);
+  };
+
+  // Get initials for profile avatar
+  const getInitials = (name) => {
+    return name.split(' ').map(n => n[0]).join('').slice(0, 2);
+  };
+
+  return (
+    <div className="thought-leadership-corner">
+      {/* Header Banner */}
+      <div className="aw-head" style={{ marginBottom: 20 }}>
+        <div>
+          <div className="aw-eyebrow">LinkedIn Executive Intelligence</div>
+          <h1 className="aw-title" style={{ fontFamily: 'var(--serif-disp)' }}>
+            Latest on <em>LinkedIn</em>: CEO Narrative Briefs.
+          </h1>
+          <p className="aw-sub">
+            Monitoring strategic messages, product announcements, and corporate thought leadership posts made directly by C-Suite leaders in the past 7 days.
+          </p>
+        </div>
+        <div className="aw-meta" style={{ minWidth: 260 }}>
+          <div><span className="num">{totalPosts}</span>Posts (7d)</div>
+          <div style={{ marginTop: 10 }}><span className="num">{(totalEngagement / 1000).toFixed(1)}k</span>Engagement</div>
+          <div style={{ marginTop: 10 }}><span className="num">{leadersCount}</span>Tracked CEOs</div>
+        </div>
+      </div>
+
+      {/* Visual Themes Summary Grid (Ivory White Aesthetic) */}
+      <div style={{ marginBottom: 24 }}>
+        <h3 style={{ margin: '0 0 12px 0', fontFamily: 'var(--mono)', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--accent)' }}>
+          C-Suite Themes Synthesis
+        </h3>
+        <div className="reports-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+          {executiveThemes.map((th, idx) => (
+            <div 
+              key={idx} 
+              style={{
+                background: 'var(--bg)',
+                border: '1px solid var(--line)',
+                borderRadius: 'var(--r-lg)',
+                padding: '16px 20px',
+                display: 'flex',
+                gap: 12,
+                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.03)'
+              }}
+            >
+              <span style={{ fontSize: 24, alignSelf: 'flex-start' }}>{th.icon}</span>
+              <div>
+                <h4 style={{ margin: 0, fontSize: 14, fontWeight: 700, color: 'var(--ink)' }}>{th.title}</h4>
+                <p style={{ margin: '4px 0 0 0', fontSize: 11.5, color: 'var(--ink-2)', lineHeight: 1.4, fontFamily: 'var(--serif)' }}>
+                  {th.desc}
+                </p>
+                <div style={{ marginTop: 8, fontSize: 9.5, fontFamily: 'var(--mono)', color: 'var(--accent)', fontWeight: 600 }}>
+                  Active: {th.leaders}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Scraper / Ingestion Bar */}
+      <div className="fetch-card" style={{ marginBottom: 24, padding: '16px 20px' }}>
+        <div className="fetch-title" style={{ color: 'var(--accent)', fontWeight: 600 }}>
+          <span style={{ marginRight: 8 }}>🔗</span>
+          LinkedIn C-Suite Scraper Agent
+        </div>
+        <form onSubmit={handleScan} className="fetch-row" style={{ marginTop: 10, display: 'flex', gap: 12 }}>
+          <input
+            className="custom-input"
+            style={{ flex: 1 }}
+            placeholder="Search executive (e.g. 'Julie Sweet', leave blank to scan global tracked CEOs)"
+            value={customScanQuery}
+            onChange={e => setCustomScanQuery(e.target.value)}
+            disabled={isScanning}
+          />
+          <button 
+            type="submit" 
+            className={`fetch-btn ${isScanning ? 'loading' : ''}`}
+            disabled={isScanning}
+            style={{
+              borderColor: 'var(--accent)',
+              color: 'var(--accent)',
+              background: 'transparent',
+              minWidth: 160
+            }}
+          >
+            {isScanning ? 'Scanning Feed...' : 'Scan LinkedIn Feed'}
+          </button>
+        </form>
+        {isScanning && (
+          <div className="sweep-prog" style={{ marginTop: 12 }}>
+            <div className="sweep-bar-wrap" style={{ height: 4, background: 'rgba(212,160,74,0.1)' }}>
+              <div 
+                className="sweep-bar animate-pulse" 
+                style={{ 
+                  width: '100%', 
+                  background: 'var(--accent)', 
+                  height: '100%', 
+                  animation: 'pulse 1.5s infinite ease-in-out' 
+                }} 
+              />
+            </div>
+            <p style={{ fontSize: 10, fontFamily: 'var(--mono)', color: 'var(--ink-3)', marginTop: 6, textAlign: 'center' }}>
+              LinkedIn Intel Scraper is fetching recent posts, checking publishing timelines, and mapping C-suite engagement rates...
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Real-time filters and Search */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 16, marginBottom: 20 }}>
+        {/* Brand Publisher Chips */}
+        <div className="aw-filter-row" style={{ margin: 0, display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+          <span className="aw-fl-lbl" style={{ fontFamily: 'var(--mono)', alignSelf: 'center', marginRight: 4 }}>Firm:</span>
+          <button 
+            className={`aw-firm-chip ${firmFilter === 'all' ? 'active' : ''}`} 
+            onClick={() => setFirmFilter('all')}
+          >
+            All Executives
+          </button>
+          {['Microsoft', 'Accenture', 'EY', 'NVIDIA', 'Google', 'IBM', 'SAP', 'ServiceNow', 'McKinsey', 'BCG'].map(f => {
+            const hasPosts = posts.some(p => p.firm.toLowerCase() === f.toLowerCase());
+            return (
+              <button 
+                key={f} 
+                className={`aw-firm-chip ${firmFilter.toLowerCase() === f.toLowerCase() ? 'active' : ''}`}
+                onClick={() => setFirmFilter(f)}
+                style={{ opacity: hasPosts ? 1 : 0.55 }}
+              >
+                <span className="aw-fc-dot" style={{ background: getFirmDotColor(f) }} />
+                {f}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Text Search */}
+        <div className="search-wrap" style={{ minWidth: 260 }}>
+          <svg className="search-icon" width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <circle cx="5.5" cy="5.5" r="4" stroke="currentColor" strokeWidth="1.3"/>
+            <path d="M9 9l2.5 2.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+          </svg>
+          <input
+            className="search-input"
+            placeholder="Search LinkedIn briefs..."
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+          />
+        </div>
+      </div>
+
+      {/* Elegant Post Feed Grid */}
+      {filteredPosts.length === 0 ? (
+        <div className="empty" style={{ background: 'var(--bg-2)', padding: 40, border: '1px dashed var(--line)' }}>
+          <h3>No executive narratives match your filters</h3>
+          <p>Try searching another term or click "Scan LinkedIn Feed" above to sweep live posts.</p>
+        </div>
+      ) : (
+        <div className="reports-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))' }}>
+          {filteredPosts.map((post) => {
+            const dot = getFirmDotColor(post.firm);
+            const clickUrl = post.url || getLinkedInSearchUrl(post.author, post.firm);
+
+            return (
+              <div 
+                key={post.id} 
+                className="report-card premium-editorial-card"
+                onClick={() => window.open(clickUrl, '_blank')}
+                style={{
+                  background: 'var(--bg)',
+                  border: '1px solid var(--line)',
+                  borderRadius: 'var(--r-lg)',
+                  padding: 24,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 16,
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                  position: 'relative',
+                  cursor: 'pointer',
+                  boxShadow: '0 2px 14px rgba(0,0,0,0.02)'
+                }}
+                onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(212,160,74,0.06)'; }}
+                onMouseOut={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 14px rgba(0,0,0,0.02)'; }}
+              >
+                {/* Profile Header */}
+                <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                  <div style={{
+                    width: 38,
+                    height: 38,
+                    borderRadius: '50%',
+                    background: 'var(--accent-bg)',
+                    color: 'var(--accent)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontFamily: 'var(--mono)',
+                    fontSize: 13,
+                    fontWeight: 700,
+                    border: '1px solid var(--line)'
+                  }}>
+                    {getInitials(post.author)}
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <h4 style={{ margin: 0, fontSize: 14, fontWeight: 700, color: 'var(--ink)' }}>{post.author}</h4>
+                      <span style={{ fontSize: 10, color: 'var(--ink-4)', fontFamily: 'var(--mono)' }}>
+                        {new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                      </span>
+                    </div>
+                    <div style={{ fontSize: 11, color: 'var(--ink-3)', marginTop: 2, display: 'flex', alignItems: 'center', gap: 8 }}>
+                      <span>{post.role}</span>
+                      <span>·</span>
+                      <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                        <span style={{ width: 6, height: 6, borderRadius: '50%', background: dot }} />
+                        <strong>{post.firm}</strong>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Post Content with Premium Editorial Look */}
+                <p 
+                  style={{
+                    margin: 0,
+                    fontSize: 13,
+                    color: 'var(--ink-2)',
+                    lineHeight: 1.5,
+                    fontFamily: 'var(--serif)',
+                    fontStyle: 'italic'
+                  }}
+                >
+                  "{post.content}"
+                </p>
+
+                {/* Theme Tag & Click indicator */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto', paddingTop: 12, borderTop: '1px solid var(--line)' }}>
+                  <span style={{
+                    fontSize: 9.5,
+                    fontFamily: 'var(--mono)',
+                    color: 'var(--accent)',
+                    fontWeight: 700,
+                    letterSpacing: '0.04em'
+                  }}>
+                    #{post.theme.replace(/\s+/g, '')}
+                  </span>
+                  <span style={{ fontSize: 10, color: 'var(--ink-3)', textDecoration: 'underline', fontFamily: 'var(--mono)' }}>
+                    View on LinkedIn ↗
+                  </span>
+                </div>
+
+                {/* Simulated C-Suite Engagement bar */}
+                <div style={{ 
+                  display: 'flex', 
+                  gap: 16, 
+                  background: 'var(--bg-2)', 
+                  padding: '6px 12px', 
+                  borderRadius: 6,
+                  fontSize: 10,
+                  fontFamily: 'var(--mono)',
+                  color: 'var(--ink-3)'
+                }}>
+                  <span>👍 {post.likes}</span>
+                  <span>💬 {post.comments}</span>
+                  <span>🔄 {post.shares}</span>
                 </div>
               </div>
             );

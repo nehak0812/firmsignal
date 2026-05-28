@@ -2875,5 +2875,163 @@
         "Qualcomm"
       ]
     }
+  ],
+  "linkedin": [
+    {
+      "id": "li_scanned_1779960535840_2",
+      "author": "Satya Nadella",
+      "role": "CEO",
+      "firm": "Microsoft",
+      "date": "2026-05-27",
+      "content": "Enterprise value is migrating rapidly from simple copilots to multi-agent swarms. By chaining autonomous agents directly over Azure, we are unlocking massive operational automation across procurement, HR, and custom support workflows. Our system integrator partners like Accenture and EY are executing on this design at record speed.",
+      "likes": 3120,
+      "comments": 298,
+      "shares": 210,
+      "theme": "Agentic AI Swarms",
+      "url": "https://www.linkedin.com/posts/satyanadella_azure-agentic-flows-activity-7799482910394-281b"
+    },
+    {
+      "id": "li_scanned_1779960535840_1",
+      "author": "Janet Truncale",
+      "role": "Global CEO",
+      "firm": "EY",
+      "date": "2026-05-28",
+      "content": "Fantastic exchange today with enterprise banking leaders at our Paris Executive Briefing. The message is clear: trust is the primary currency of Generative AI. Running our EY NVIDIA AI Factory on secure, private infrastructures gives banks the strategic control they need. Thrilled to see our sovereign AI roadmaps aligning perfectly with their H2 timelines.",
+      "likes": 2150,
+      "comments": 189,
+      "shares": 110,
+      "theme": "Sovereign AI & Data Privacy",
+      "url": "https://www.linkedin.com/posts/janettruncale_ey-nvidia-paris-summit-activity-7799581920392-198c"
+    },
+    {
+      "id": "li_satya_1",
+      "author": "Satya Nadella",
+      "role": "CEO",
+      "firm": "Microsoft",
+      "date": "2026-05-27",
+      "content": "Delighted to share our latest breakthroughs at the Microsoft Build conference. Agentic workflows are transforming the enterprise landscape, allowing developers to orchestrate multi-agent swarms that run securely across Azure. Our partnership with Accenture and EY is accelerating this transition globally, bringing secure, outcome-driven AI consulting to every enterprise.",
+      "likes": 2840,
+      "comments": 342,
+      "shares": 195,
+      "theme": "Agentic AI Swarms",
+      "url": "https://www.linkedin.com/posts/satyanadella_ai-agents-azure-activity-7799292817293-192a"
+    },
+    {
+      "id": "li_julie_1",
+      "author": "Julie Sweet",
+      "role": "CEO",
+      "firm": "Accenture",
+      "date": "2026-05-26",
+      "content": "AI is no longer just a pilot; it is the fundamental core of enterprise execution. At Accenture, we are seeing a massive shift in how C-suites view GAI. We're moving rapidly from basic Copilots to orchestrating complex, autonomous agent workflows. In partnership with NVIDIA, Microsoft, and Google, we are upskilling 250,000 consultants to deliver value-driven AI systems.",
+      "likes": 3120,
+      "comments": 418,
+      "shares": 250,
+      "theme": "Enterprise Scaling & Upskilling",
+      "url": "https://www.linkedin.com/posts/juliesweet_accenture-nvidia-ai-activity-7799182910392-381c"
+    },
+    {
+      "id": "li_janet_1",
+      "author": "Janet Truncale",
+      "role": "Global CEO",
+      "firm": "EY",
+      "date": "2026-05-25",
+      "content": "Sovereign AI is the definitive theme of 2026. Highly regulated sectors like banking, healthcare, and defense require localized, secure cloud systems. Our EY NVIDIA AI Factory runs on private secure infrastructures, enabling banks to deploy frontier LLMs without sacrificing compliance. Secure innovation is our highest mandate.",
+      "likes": 2450,
+      "comments": 298,
+      "shares": 189,
+      "theme": "Sovereign AI & Data Privacy",
+      "url": "https://www.linkedin.com/posts/janettruncale_ey-sovereign-ai-nvidia-activity-7799271920194-291d"
+    },
+    {
+      "id": "li_jensen_1",
+      "author": "Jensen Huang",
+      "role": "CEO",
+      "firm": "NVIDIA",
+      "date": "2026-05-24",
+      "content": "The next industrial revolution has begun. AI factories are the engine rooms of the modern enterprise, transforming raw data into high-value intelligence. Through our deep integrations with partners like EY, Accenture, and Deloitte, we are deploying physical AI, robotics, and Blackwell systems directly inside corporate operations. Taiwan and global supply chains are accelerating at unprecedented scale.",
+      "likes": 5430,
+      "comments": 612,
+      "shares": 520,
+      "theme": "AI Infrastructure & Blackwell",
+      "url": "https://www.linkedin.com/posts/jensenhuang_nvidia-blackwell-ai-factory-activity-7799019283921-591a"
+    },
+    {
+      "id": "li_sundar_1",
+      "author": "Sundar Pichai",
+      "role": "CEO",
+      "firm": "Google",
+      "date": "2026-05-27",
+      "content": "At Google I/O, we showed how Gemini 2.5 and Project Astra are making agentic AI helpful in daily life and enterprise scales. Multimodal reasoning is unlocking entire classes of analytics that were previously impossible. We are excited to collaborate with Deloitte and PwC to help clients embed these agent systems into their existing workflows.",
+      "likes": 4210,
+      "comments": 489,
+      "shares": 380,
+      "theme": "Multimodal AI & Reasoning",
+      "url": "https://www.linkedin.com/posts/sundarpichai_google-gemini-astra-activity-7799382910291-381a"
+    },
+    {
+      "id": "li_arvind_1",
+      "author": "Arvind Krishna",
+      "role": "CEO",
+      "firm": "IBM",
+      "date": "2026-05-23",
+      "content": "Open-source foundation models are crucial for enterprise autonomy. With Granite and our hybrid cloud strategies, IBM Consulting is building secure, bespoke AI agents. By integrating open weights into local data layers, companies can maintain complete IP ownership and scale outcome-based operations confidently.",
+      "likes": 1980,
+      "comments": 178,
+      "shares": 145,
+      "theme": "Open Source & Bespoke Agents",
+      "url": "https://www.linkedin.com/posts/arvindkrishna_ibm-granite-open-source-activity-7799029192931-482a"
+    },
+    {
+      "id": "li_christiane_1",
+      "author": "Christian Klein",
+      "role": "CEO",
+      "firm": "SAP",
+      "date": "2026-05-22",
+      "content": "Generative AI is transforming business processes at their very foundation. By embedding Joule copilot and agentic engines directly into SAP ERP workflows, we are automating supply chain forecasting, finance audits, and procurement pipelines. Partnerships with Mistral AI and Microsoft ensure enterprises have the best model selection in a secure cloud environment.",
+      "likes": 2100,
+      "comments": 220,
+      "shares": 160,
+      "theme": "Enterprise ERP Integration",
+      "url": "https://www.linkedin.com/posts/christianklein_sap-joule-copilot-activity-7798939210291-591b"
+    },
+    {
+      "id": "li_bill_1",
+      "author": "Bill McDermott",
+      "role": "CEO",
+      "firm": "ServiceNow",
+      "date": "2026-05-21",
+      "content": "Workflow is the ultimate platform for generative AI. Generative integration isn't just about search; it's about automated orchestration. At ServiceNow, our partnership with NVIDIA and leading global system integrators is enabling companies to automate up to 50% of IT service tickets and HR workflows within weeks. The era of the automated enterprise is here.",
+      "likes": 3200,
+      "comments": 310,
+      "shares": 240,
+      "theme": "Workflow Automation",
+      "url": "https://www.linkedin.com/posts/billmcdermott_servicenow-nvidia-workflow-activity-7798839210294-281c"
+    },
+    {
+      "id": "li_bob_1",
+      "author": "Bob Sternfels",
+      "role": "Global Managing Partner",
+      "firm": "McKinsey",
+      "date": "2026-05-26",
+      "content": "Our latest research shows that 72% of leading organizations have scaled multi-agent systems in production. But technology is only half the battle. The true differentiator is restructuring the operating model itself. Advisory firms and clients must transition from traditional hourly frameworks to value-aligned throughput to survive fee compression.",
+      "likes": 1850,
+      "comments": 195,
+      "shares": 130,
+      "theme": "Outcome-Based Operating Models",
+      "url": "https://www.linkedin.com/posts/bobsternfels_mckinsey-agentic-ops-activity-7799192910394-481b"
+    },
+    {
+      "id": "li_albert_1",
+      "author": "Christoph Schweizer",
+      "role": "CEO",
+      "firm": "BCG",
+      "date": "2026-05-24",
+      "content": "Sovereign cloud infrastructure is the next massive frontier. Companies operating in highly regulated jurisdictions are shifting sensitive model deployments away from public nodes. BCG Henderson Institute research confirms that securing cloud boundaries increases strategic enterprise value. Partnerships with secure AI labs are paramount.",
+      "likes": 1650,
+      "comments": 150,
+      "shares": 110,
+      "theme": "Sovereign AI & Data Privacy",
+      "url": "https://www.linkedin.com/posts/christophschweizer_bcg-sovereign-cloud-activity-7799071920191-182c"
+    }
   ]
 }

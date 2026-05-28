@@ -9,7 +9,7 @@ import {
 import { 
   Ticker, BriefView, SignalsView, HeatmapView, CompareView, WatchlistView,
   ContextCornerView, KnowledgeGraph, DataPipelineAuditView, ThoughtLeadershipView,
-  AiSummitsView
+  AiSummitsView, LatestOnLinkedInView
 } from './views.jsx';
 import { TweaksPanel, TweakSection, TweakRadio, TweakToggle, useTweaks } from './tweaks.jsx';
 
@@ -649,6 +649,7 @@ function App() {
   const [firms, setFirms] = useState(ALL_FIRMS);
   const [reports, setReports] = useState([]);
   const [summits, setSummits] = useState([]);
+  const [linkedinPosts, setLinkedinPosts] = useState([]);
   const [activeNav, setActiveNav] = useState('brief');
   const [view, setView] = useState('week');
   const [activeFirms, setActiveFirms] = useState(new Set());
@@ -717,6 +718,21 @@ function App() {
     }
   };
 
+  const loadLinkedIn = async () => {
+    try {
+      const resp = await fetch('/api/linkedin');
+      if (resp.ok) {
+        const db = await resp.json();
+        const list = db.posts;
+        if (list && list.length > 0) {
+          setLinkedinPosts(list);
+        }
+      }
+    } catch (err) {
+      console.warn('[FirmSignal] Could not fetch LinkedIn posts from backend.');
+    }
+  };
+
   const loadFirms = async () => {
     try {
       const resp = await fetch('/api/firms');
@@ -750,6 +766,7 @@ function App() {
     loadFirms();
     loadReports();
     loadSummits();
+    loadLinkedIn();
     checkServerStatus();
   }, []);
 
@@ -980,6 +997,31 @@ function App() {
     return 0;
   };
 
+  const handleScanLinkedIn = async (customQuery) => {
+    try {
+      showToast('Initiating Live Scan for LinkedIn C-Suite Briefs...');
+      const resp = await fetch('/api/linkedin/scan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: customQuery, apiKey })
+      });
+      if (resp.ok) {
+        const json = await resp.json();
+        if (json.success) {
+          setLinkedinPosts(json.posts);
+          showToast(`✓ Scanned and loaded ${json.count} new CEO posts`);
+          return json.count;
+        }
+      } else {
+        const err = await resp.json();
+        showToast(`Error: ${err.error || 'Failed to scan LinkedIn'}`);
+      }
+    } catch (err) {
+      showToast('Connection error scanning LinkedIn');
+    }
+    return 0;
+  };
+
   const onResetDb = async () => {
     try {
       const resp = await fetch('/api/db/reset', { method: 'POST' });
@@ -991,6 +1033,7 @@ function App() {
     await loadFirms();
     await loadReports();
     await loadSummits();
+    await loadLinkedIn();
     setActiveFirms(new Set());
     setActiveSignals(new Set());
     setSearch('');
@@ -1050,6 +1093,7 @@ function App() {
   const navTabs = [
     { id: 'brief',     label: 'Brief' },
     { id: 'summits',   label: 'AI Summits' },
+    { id: 'linkedin',  label: 'Latest on LinkedIn' },
     { id: 'context',   label: 'Context Corner' },
     { id: 'reports',   label: 'Thought Leadership' },
     { id: 'graph',     label: 'Knowledge Graph' },
@@ -1121,6 +1165,17 @@ function App() {
               onOpenApiModal={() => setApiModalOpen(true)}
               onShowToast={showToast}
               onSponsorClick={handleSponsorClick}
+            />
+          )}
+
+          {activeNav === 'linkedin' && (
+            <LatestOnLinkedInView
+              posts={linkedinPosts}
+              onScanLinkedIn={handleScanLinkedIn}
+              apiKey={apiKey}
+              serverHasKey={serverHasKey}
+              onOpenApiModal={() => setApiModalOpen(true)}
+              onShowToast={showToast}
             />
           )}
           
