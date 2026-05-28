@@ -1052,3 +1052,24 @@
 [2026-05-28T09:29:19.657Z] VERIFIER APPROVED (AUTO): "OpenAI says Indian enterprises are moving fro..." -> Status: Approved & Committed.
 [2026-05-28T09:29:22.801Z] VERIFIER APPROVED (AUTO): "Perplexity AI Open-Sources Unigram Tokenizer ..." -> Status: Approved & Committed.
 [2026-05-28T09:29:25.821Z] VERIFIER REJECTED (AUTO): "Canada AI firm Cohere expands further with bi..." -> Reason: Article is older than 7 days (8 days old).
+[2026-05-28T09:29:27.349Z] VERIFIER REJECTED (AUTO): "US to safety test new AI models from Google, ..." -> Reason: Article is older than 7 days (23 days old).
+[2026-05-28T09:29:34.200Z] VERIFIER APPROVED (AUTO): "Reply Enhances Enterprise AI Adoption with Ne..." -> Status: Approved & Committed.
+[2026-05-28T09:29:38.466Z] VERIFIER REJECTED (AUTO): "Nato launches 'Arctic Sentry' as alliance loo..." -> Reason: Article is older than 7 days (106 days old).
+[2026-05-28T09:29:38.469Z] VERIFIER REJECTED (AUTO): "Sentry’s AI Debugger..." -> Reason: Article is older than 7 days (133 days old).
+[2026-05-28T09:29:38.470Z] VERIFIER REJECTED (AUTO): "Sentry Adds Local Development and Code Review..." -> Reason: Article is older than 7 days (121 days old).
+[2026-05-28T09:29:39.556Z] VERIFIER REJECTED (AUTO): "Equinix Launches Purpose-Built IBX Data Cente..." -> Reason: Article is older than 7 days (50 days old).
+[2026-05-28T09:29:39.557Z] VERIFIER REJECTED (AUTO): "Structured AI with Neo4j - Graph Database &am..." -> Reason: Article is older than 7 days (84 days old).
+[2026-05-28T09:29:39.558Z] VERIFIER REJECTED (AUTO): "Graph-Driven AI for All: Neo4j Aura Agent Ent..." -> Reason: Article is older than 7 days (114 days old).
+[2026-05-28T09:29:39.559Z] VERIFIER REJECTED (AUTO): "At MWC, Orange’s AI Brings Networks to Life f..." -> Reason: Article is older than 7 days (87 days old).
+[2026-05-28T09:29:39.561Z] VERIFIER REJECTED (AUTO): "Orange CEO: Telcos must architect trust in th..." -> Reason: Article is older than 7 days (84 days old).
+[2026-05-28T09:29:39.562Z] VERIFIER REJECTED (AUTO): "Nokia and Orange advance AI‑RAN innovation wi..." -> Reason: Article is older than 7 days (43 days old).
+[2026-05-28T09:29:39.563Z] VERIFIER REJECTED (AUTO): "Qdrant Raises $50 Million Series B to Define ..." -> Reason: Article is older than 7 days (77 days old).
+[2026-05-28T09:29:39.565Z] VERIFIER REJECTED (AUTO): "Qdrant Cloud launches high-performance vector..." -> Reason: Article is older than 7 days (30 days old).
+[2026-05-28T09:29:40.123Z] VERIFIER REJECTED (AUTO): "Accenture Invests in Snorkel AI to Help Finan..." -> Reason: Article is older than 7 days (295 days old).
+[2026-05-28T09:29:40.125Z] VERIFIER REJECTED (AUTO): "Snorkel AI Revenue 2025: $148M ARR, $6.4B Val..." -> Reason: Article is older than 7 days (181 days old).
+[2026-05-28T09:29:40.127Z] VERIFIER REJECTED (AUTO): "Rail Europe–Alpic tie-up to lead AI-driven tr..." -> Reason: Article is older than 7 days (100 days old).
+[2026-05-28T09:29:40.128Z] VERIFIER REJECTED (AUTO): "€5 million for Paris-based Alpic to build the..." -> Reason: Article is older than 7 days (266 days old).
+[2026-05-28T09:29:40.132Z] VERIFIER REJECTED (AUTO): "Alpic raises $6M to build first MCP-native cl..." -> Reason: Article is older than 7 days (266 days old).
+[2026-05-28T09:29:40.138Z] AUTO-SCAN SUCCESS: Added 5 new signals.
+[2026-05-28T09:29:40.140Z] AUTO-SCAN: Initiating automatic hourly background scan for thought leadership reports...
+[2026-05-28T09:29:40.671Z] AUTO-SCAN REPORTS FAILED: Claude API returned 401 - {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"},"request_id":"req_011CbUjQL9ZKn2dpaiDSNALx"}

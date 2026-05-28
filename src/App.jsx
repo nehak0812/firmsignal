@@ -14,7 +14,7 @@ import {
 import { TweaksPanel, TweakSection, TweakRadio, TweakToggle, useTweaks } from './tweaks.jsx';
 
 // ============== SIDEBAR FILTER COMPONENT ==============
-function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, toggleSignal, view, setView, handleAddFirm, handleDeleteFirm, onOpenApiModal, setActiveFirms }) {
+function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, toggleSignal, view, setView, onOpenApiModal, setActiveFirms, excludedFirms = new Set(), toggleExcludeFirm }) {
   const consCount = data.filter(d => d.type === 'consulting').length;
   const techCount = data.filter(d => d.type === 'tech').length;
   const aiCount = data.filter(d => d.type === 'ai-first').length;
@@ -30,57 +30,80 @@ function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, tog
       if (isCurrentlyFilteredToGroup) {
         return new Set();
       } else {
-        return new Set(ids);
+        return new Set(ids.filter(id => !excludedFirms.has(id)));
       }
     });
   };
 
-  const isConsFiltered = consultingList.length > 0 && activeFirms.size === consultingList.length && consultingList.every(f => activeFirms.has(f.id));
-  const isAiFiltered = aiList.length > 0 && activeFirms.size === aiList.length && aiList.every(f => activeFirms.has(f.id));
-  const isTechFiltered = techList.length > 0 && activeFirms.size === techList.length && techList.every(f => activeFirms.has(f.id));
+  const isConsFiltered = consultingList.length > 0 && activeFirms.size === consultingList.filter(f => !excludedFirms.has(f.id)).length && consultingList.filter(f => !excludedFirms.has(f.id)).every(f => activeFirms.has(f.id));
+  const isAiFiltered = aiList.length > 0 && activeFirms.size === aiList.filter(f => !excludedFirms.has(f.id)).length && aiList.filter(f => !excludedFirms.has(f.id)).every(f => activeFirms.has(f.id));
+  const isTechFiltered = techList.length > 0 && activeFirms.size === techList.filter(f => !excludedFirms.has(f.id)).length && techList.filter(f => !excludedFirms.has(f.id)).every(f => activeFirms.has(f.id));
 
   const firmRow = (f) => {
     const cnt = data.filter(d => d.firm === f.id).length;
     const isActive = activeFirms.has(f.id);
+    const isExcluded = excludedFirms.has(f.id);
     return (
-      <button 
+      <div 
         key={f.id} 
-        className={`sb-row ${isActive ? (f.type === 'tech' ? 'active tech' : 'active') : ''}`}
-        onClick={() => toggleFirm(f.id)}
+        style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          width: '100%',
+          position: 'relative'
+        }}
       >
-        <span className="sb-dot" style={{ background: f.dot }} />
-        <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-          {f.id}
-          {f.aiNowSponsor && (
-            <span style={{ color: '#d4a04a', fontSize: 11, cursor: 'help' }} title="Currently a sponsor of the AI Now Summit">★</span>
-          )}
-        </span>
-        <span className="sb-count-mini">{cnt || ''}</span>
-      </button>
+        <button 
+          className={`sb-row ${isActive ? (f.type === 'tech' ? 'active tech' : 'active') : ''}`}
+          onClick={() => !isExcluded && toggleFirm(f.id)}
+          style={{ 
+            flexGrow: 1, 
+            opacity: isExcluded ? 0.35 : 1,
+            textDecoration: isExcluded ? 'line-through' : 'none',
+            pointerEvents: isExcluded ? 'none' : 'auto'
+          }}
+          disabled={isExcluded}
+        >
+          <span className="sb-dot" style={{ background: f.dot }} />
+          <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+            {f.id}
+            {f.aiNowSponsor && (
+              <span style={{ color: '#d4a04a', fontSize: 11, cursor: 'help' }} title="Currently a sponsor of the AI Now Summit">★</span>
+            )}
+          </span>
+          <span className="sb-count-mini">{cnt || ''}</span>
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleExcludeFirm(f.id);
+          }}
+          className="sb-exclude-btn"
+          style={{
+            background: 'none',
+            border: 'none',
+            color: isExcluded ? 'var(--crit)' : 'var(--ink-3)',
+            cursor: 'pointer',
+            padding: '4px 8px',
+            fontSize: '13px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            opacity: isExcluded ? 1 : 0.4,
+            transition: 'all 0.2s ease',
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.opacity = isExcluded ? '1' : '0.4'; }}
+          title={isExcluded ? "Include firm" : "Exclude firm"}
+        >
+          {isExcluded ? '👁️' : '✕'}
+        </button>
+      </div>
     );
   };
 
   return (
     <aside className="sidebar">
-  
-      {/* Add/Delete Firm Controls */}
-      <div className="sb-section">
-        <button className="sb-row" onClick={() => {
-          const id = prompt('Enter new firm ID');
-          if (!id) return;
-          const type = prompt('Enter firm type (consulting, tech, ai-first)');
-          const dot = prompt('Enter dot color (e.g., #ff0000)');
-          if (id && type && dot) {
-            handleAddFirm({ id, type, dot });
-          }
-        }}>Add Firm</button>
-        <button className="sb-row" onClick={() => {
-          const id = prompt('Enter firm ID to delete');
-          if (id) {
-            handleDeleteFirm(id);
-          }
-        }}>Delete Firm</button>
-      </div>
 
       <div className="sb-section">
         <div className="sb-label">View Feed</div>
@@ -654,6 +677,7 @@ function App() {
   const [view, setView] = useState('week');
   const [activeFirms, setActiveFirms] = useState(new Set());
   const [activeSignals, setActiveSignals] = useState(new Set());
+  const [excludedFirms, setExcludedFirms] = useState(new Set());
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('importance');
   const [savedIds, setSavedIds] = useState(() => {
@@ -820,6 +844,7 @@ function App() {
     const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
     const q = search.toLowerCase();
     return data.filter(d => {
+      if (excludedFirms.has(d.firm)) return false;
       if (activeFirms.size && !activeFirms.has(d.firm)) return false;
       if (activeSignals.size && !activeSignals.has(d.signal)) return false;
       if (view === 'week' && d.date < weekAgo) return false;
@@ -830,12 +855,32 @@ function App() {
       }
       return true;
     });
-  }, [data, activeFirms, activeSignals, view, search]);
+  }, [data, activeFirms, activeSignals, view, search, excludedFirms]);
 
   const toggleFirm = (id) => {
     setActiveFirms(prev => {
       const next = new Set(prev);
       next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+  };
+
+  const toggleExcludeFirm = (id) => {
+    setExcludedFirms(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+        setActiveFirms(prevAct => {
+          if (prevAct.has(id)) {
+            const nextAct = new Set(prevAct);
+            nextAct.delete(id);
+            return nextAct;
+          }
+          return prevAct;
+        });
+      }
       return next;
     });
   };
@@ -1036,6 +1081,7 @@ function App() {
     await loadLinkedIn();
     setActiveFirms(new Set());
     setActiveSignals(new Set());
+    setExcludedFirms(new Set());
     setSearch('');
     setView('all');
   };
@@ -1091,13 +1137,13 @@ function App() {
   const ticker = useMemo(() => getTickerItems(data), [data]);
 
   const navTabs = [
-    { id: 'brief',     label: 'Brief' },
+    { id: 'brief',     label: 'In Brief' },
+    { id: 'signals',   label: 'All Signals' },
     { id: 'summits',   label: 'AI Summits' },
     { id: 'linkedin',  label: 'Latest on LinkedIn' },
     { id: 'context',   label: 'Context Corner' },
     { id: 'reports',   label: 'Thought Leadership' },
     { id: 'graph',     label: 'Knowledge Graph' },
-    { id: 'signals',   label: 'Signals Matrix' },
     { id: 'heatmap',   label: 'Heatmap' },
     { id: 'compare',   label: 'Compare' },
     { id: 'watchlist', label: 'Watchlist' },
@@ -1145,6 +1191,8 @@ function App() {
           view={view} setView={setView}
           onOpenApiModal={() => setApiModalOpen(true)}
           setActiveFirms={setActiveFirms}
+          excludedFirms={excludedFirms}
+          toggleExcludeFirm={toggleExcludeFirm}
         />
         
         <main className="main">
