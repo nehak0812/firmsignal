@@ -1797,3 +1797,432 @@ export function ThoughtLeadershipView({
   );
 }
 
+// ============== GLOBAL AI SUMMITS VIEW ==============
+export function AiSummitsView({ 
+  summits = [], 
+  onScanSummits, 
+  apiKey, 
+  serverHasKey, 
+  onOpenApiModal, 
+  onShowToast,
+  onSponsorClick
+}) {
+  const [includeConcluded, setIncludeConcluded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [customScanQuery, setCustomScanQuery] = useState('');
+  const [isScanning, setIsScanning] = useState(false);
+
+  // Status check: ongoing, upcoming, concluded
+  const now = new Date();
+  const getEventStatus = (start, end) => {
+    const sDate = new Date(start + 'T00:00:00');
+    const eDate = new Date(end + 'T23:59:59');
+    if (now >= sDate && now <= eDate) {
+      return { label: '🟢 Ongoing', status: 'ongoing' };
+    } else if (now < sDate) {
+      const diffTime = sDate - now;
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      return { label: `🟡 Upcoming in ${diffDays} day${diffDays !== 1 ? 's' : ''}`, status: 'upcoming', days: diffDays };
+    } else {
+      return { label: '🔴 Concluded', status: 'concluded' };
+    }
+  };
+
+  // Extract totals for metrics
+  const activeCount = summits.filter(s => {
+    const st = getEventStatus(s.startDate, s.endDate);
+    return st.status === 'ongoing';
+  }).length;
+
+  const upcomingCount = summits.filter(s => {
+    const st = getEventStatus(s.startDate, s.endDate);
+    return st.status === 'upcoming';
+  }).length;
+
+  // Intersected Monitored Sponsors across all loaded summits
+  const intersectedSponsors = useMemo(() => {
+    const sponsorsSet = new Set();
+    summits.forEach(s => {
+      if (s.sponsors) {
+        s.sponsors.forEach(sp => sponsorsSet.add(sp));
+      }
+    });
+    return Array.from(sponsorsSet);
+  }, [summits]);
+
+  // Filter summits list based on filters
+  const filteredSummits = useMemo(() => {
+    return summits
+      .filter(s => {
+        const est = getEventStatus(s.startDate, s.endDate);
+        const matchesArchive = includeConcluded ? true : est.status !== 'concluded';
+        
+        const matchesSearch = !searchQuery ? true : (
+          s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          s.organizer.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          s.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          s.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          s.focus.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+
+        return matchesArchive && matchesSearch;
+      })
+      .sort((a, b) => {
+        // Sort: Ongoing first, then upcoming (closest start date), then concluded (latest end date)
+        const estA = getEventStatus(a.startDate, a.endDate);
+        const estB = getEventStatus(b.startDate, b.endDate);
+        
+        const order = { ongoing: 0, upcoming: 1, concluded: 2 };
+        if (order[estA.status] !== order[estB.status]) {
+          return order[estA.status] - order[estB.status];
+        }
+        
+        if (estA.status === 'upcoming') {
+          return a.startDate.localeCompare(b.startDate); // Closest upcoming first
+        }
+        return b.endDate.localeCompare(a.endDate); // Latest concluded first
+      });
+  }, [summits, includeConcluded, searchQuery]);
+
+  const handleScan = async (e) => {
+    e.preventDefault();
+    if (!apiKey && !serverHasKey) {
+      onOpenApiModal();
+      return;
+    }
+    setIsScanning(true);
+    try {
+      await onScanSummits(customScanQuery);
+      setCustomScanQuery('');
+    } catch (err) {
+      onShowToast(`Summit scan failed: ${err.message || 'error'}`);
+    }
+    setIsScanning(false);
+  };
+
+  const getFirmDotColor = (firmName) => {
+    const map = {
+      Deloitte: '#4a90e2',
+      PwC: '#d4a04a',
+      EY: '#f5a623',
+      KPMG: '#b294d4',
+      McKinsey: '#e07a6a',
+      BCG: '#7aa6d6',
+      Bain: '#e0a06b',
+      Accenture: '#a86fc7',
+      'IBM Consulting': '#88c089',
+      Capgemini: '#6cc4b3',
+      'NTT Data': '#003366',
+      TCS: '#ff6600',
+      Reply: '#d81b60',
+      Microsoft: '#00a4ef',
+      SAP: '#0070f2',
+      ServiceNow: '#62d84e',
+      Google: '#ea4335',
+      AuditBoard: '#5c6bc0',
+      Salesforce: '#00a1e0',
+      AWS: '#ff9900',
+      Workday: '#f68b1f',
+      Palantir: '#7b68ee',
+      OpenAI: '#10a37f',
+      Anthropic: '#c77b58',
+      Perplexity: '#20808d',
+      'Mistral AI': '#fa520f',
+      Cohere: '#d2785a',
+      xAI: '#aaaaaa',
+      DeepSeek: '#4d6bfe',
+      Qualcomm: '#3253dc',
+      NVIDIA: '#76b900',
+      Sentry: '#362d59',
+      Equinix: '#e51c23',
+      Neo4j: '#008cc1',
+      Orange: '#ff6600',
+      Qdrant: '#00bcd4',
+      'Snorkel AI': '#009688',
+      Alpic: '#673ab7',
+      'Anyformat.ai': '#3f51b5',
+      'Lingo Dev': '#9c27b0'
+    };
+    return map[firmName] || '#aaaaaa';
+  };
+
+  return (
+    <div className="thought-leadership-corner">
+      {/* Header Banner */}
+      <div className="aw-head" style={{ marginBottom: 20 }}>
+        <div>
+          <div className="aw-eyebrow">Global AI Summits Calendar</div>
+          <h1 className="aw-title" style={{ fontFamily: 'var(--serif-disp)' }}>
+            Ecosystem <em>Summits</em> &amp; Strategic Conferences.
+          </h1>
+          <p className="aw-sub">
+            Monitoring active panel tracks, alliance announcements, and technical releases live around the world in 2026. Concluded summits are automatically archived.
+          </p>
+        </div>
+        <div className="aw-meta" style={{ minWidth: 260 }}>
+          <div><span className="num">{activeCount}</span>Ongoing</div>
+          <div style={{ marginTop: 10 }}><span className="num">{upcomingCount}</span>Upcoming</div>
+          <div style={{ marginTop: 10 }}><span className="num">{intersectedSponsors.length}</span>Sponsors</div>
+        </div>
+      </div>
+
+      {/* Scraper / Scan Bar */}
+      <div className="fetch-card" style={{ marginBottom: 24, padding: '16px 20px' }}>
+        <div className="fetch-title" style={{ color: 'var(--accent)', fontWeight: 600 }}>
+          <span style={{ marginRight: 8 }}>🚀</span>
+          AI Summit Intel Agent Scraper
+        </div>
+        <form onSubmit={handleScan} className="fetch-row" style={{ marginTop: 10, display: 'flex', gap: 12 }}>
+          <input
+            className="custom-input"
+            style={{ flex: 1 }}
+            placeholder="Search prompt (e.g. 'OpenAI DevDay', leave blank to scan global 2026 conferences)"
+            value={customScanQuery}
+            onChange={e => setCustomScanQuery(e.target.value)}
+            disabled={isScanning}
+          />
+          <button 
+            type="submit" 
+            className={`fetch-btn ${isScanning ? 'loading' : ''}`}
+            disabled={isScanning}
+            style={{
+              borderColor: 'var(--accent)',
+              color: 'var(--accent)',
+              background: 'transparent',
+              minWidth: 160
+            }}
+          >
+            {isScanning ? 'Scanning Web...' : 'Scan Summit Calendar'}
+          </button>
+        </form>
+        {isScanning && (
+          <div className="sweep-prog" style={{ marginTop: 12 }}>
+            <div className="sweep-bar-wrap" style={{ height: 4, background: 'rgba(212,160,74,0.1)' }}>
+              <div 
+                className="sweep-bar animate-pulse" 
+                style={{ 
+                  width: '100%', 
+                  background: 'var(--accent)', 
+                  height: '100%', 
+                  animation: 'pulse 1.5s infinite ease-in-out' 
+                }} 
+              />
+            </div>
+            <p style={{ fontSize: 10, fontFamily: 'var(--mono)', color: 'var(--ink-3)', marginTop: 6, textAlign: 'center' }}>
+              Summit Intel Agent is parsing web indexes, gathering developer conference dates, locations, and sponsor ecosystem charts...
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Real-time filters and Search */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 16, marginBottom: 24 }}>
+        {/* Toggle archive */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <label style={{ display: 'inline-flex', alignItems: 'center', gap: 8, cursor: 'pointer', fontSize: 13, fontFamily: 'var(--mono)', color: 'var(--ink-2)' }}>
+            <input 
+              type="checkbox" 
+              checked={includeConcluded} 
+              onChange={e => setIncludeConcluded(e.target.checked)}
+              style={{
+                accentColor: 'var(--accent)',
+                width: 14,
+                height: 14,
+                cursor: 'pointer'
+              }}
+            />
+            Include Concluded Events
+          </label>
+        </div>
+
+        {/* Text Search */}
+        <div className="search-wrap" style={{ minWidth: 260 }}>
+          <svg className="search-icon" width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <circle cx="5.5" cy="5.5" r="4" stroke="currentColor" strokeWidth="1.3"/>
+            <path d="M9 9l2.5 2.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+          </svg>
+          <input
+            className="search-input"
+            placeholder="Search summits calendar..."
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+          />
+        </div>
+      </div>
+
+      {/* Grid List Feed */}
+      {filteredSummits.length === 0 ? (
+        <div className="empty" style={{ background: 'var(--bg-2)', padding: 40, border: '1px dashed var(--line)' }}>
+          <h3>No summits match your filters</h3>
+          <p>Toggle "Include Concluded Events" or click "Scan Summit Calendar" above to pull recent developer updates.</p>
+        </div>
+      ) : (
+        <div className="reports-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))' }}>
+          {filteredSummits.map((summit) => {
+            const evStat = getEventStatus(summit.startDate, summit.endDate);
+            const isConcluded = evStat.status === 'concluded';
+            const isOngoing = evStat.status === 'ongoing';
+            
+            const startStr = new Date(summit.startDate + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            const endStr = new Date(summit.endDate + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+            return (
+              <div 
+                key={summit.id} 
+                className="report-card premium-editorial-card"
+                style={{
+                  background: 'var(--bg)',
+                  border: isOngoing ? '1px solid var(--accent)' : '1px solid var(--line)',
+                  borderRadius: 'var(--r-lg)',
+                  padding: 24,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 16,
+                  transition: 'all 0.2s ease',
+                  position: 'relative',
+                  opacity: isConcluded ? 0.55 : 1,
+                  filter: isConcluded ? 'grayscale(0.35)' : 'none',
+                  boxShadow: isOngoing ? '0 4px 20px rgba(212, 160, 74, 0.12)' : 'none'
+                }}
+              >
+                {/* Header elements */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <span style={{ 
+                      fontSize: 10, 
+                      fontFamily: 'var(--mono)', 
+                      fontWeight: 700, 
+                      background: isOngoing ? 'rgba(212, 160, 74, 0.15)' : 'var(--bg-2)',
+                      color: isOngoing ? 'var(--accent)' : isConcluded ? 'var(--ink-4)' : 'var(--ink-2)',
+                      padding: '2px 8px',
+                      borderRadius: 4,
+                      border: isOngoing ? '1px solid var(--accent-2)' : '1px solid var(--line)'
+                    }}>
+                      {summit.organizer.toUpperCase()}
+                    </span>
+                  </div>
+                  <span style={{ 
+                    fontFamily: 'var(--mono)', 
+                    fontSize: 10, 
+                    fontWeight: 700,
+                    color: isOngoing ? 'var(--accent)' : isConcluded ? 'var(--ink-4)' : 'var(--accent-2)'
+                  }}>
+                    {evStat.label}
+                  </span>
+                </div>
+
+                {/* Event Name */}
+                <h3 
+                  style={{
+                    fontFamily: 'var(--serif-disp)',
+                    fontSize: 21,
+                    margin: 0,
+                    lineHeight: 1.3,
+                    color: 'var(--ink)'
+                  }}
+                >
+                  {summit.name}
+                </h3>
+
+                {/* Date range & Location */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 4, fontSize: 12, fontFamily: 'var(--mono)', color: 'var(--ink-3)' }}>
+                  <div>📅 {startStr} – {endStr}</div>
+                  <div>📍 {summit.location}</div>
+                </div>
+
+                {/* Synopsis */}
+                <p 
+                  style={{
+                    margin: 0,
+                    fontSize: 13,
+                    color: 'var(--ink-2)',
+                    lineHeight: 1.5,
+                    fontFamily: 'var(--serif)'
+                  }}
+                >
+                  {summit.description}
+                </p>
+
+                {/* Monitored Sponsors & Ecosystem row */}
+                {summit.sponsors && summit.sponsors.length > 0 && (
+                  <div style={{ marginTop: 'auto' }}>
+                    <h4 style={{ margin: '0 0 8px 0', fontFamily: 'var(--mono)', fontSize: 9.5, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--ink-3)' }}>
+                      Ecosystem Partners &amp; Sponsors
+                    </h4>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                      {summit.sponsors.map(sponsor => {
+                        const dotColor = getFirmDotColor(sponsor);
+                        return (
+                          <button 
+                            key={sponsor}
+                            onClick={() => onSponsorClick && onSponsorClick(sponsor)}
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: 5,
+                              fontFamily: 'var(--mono)',
+                              fontSize: 10,
+                              background: 'var(--bg-2)',
+                              border: '1px solid var(--line)',
+                              color: 'var(--ink-2)',
+                              padding: '2px 8px',
+                              borderRadius: 4,
+                              cursor: 'pointer',
+                              transition: 'all 0.15s ease'
+                            }}
+                            onMouseOver={e => { e.currentTarget.style.borderColor = dotColor; e.currentTarget.style.background = 'var(--bg-3)'; }}
+                            onMouseOut={e => { e.currentTarget.style.borderColor = 'var(--line)'; e.currentTarget.style.background = 'var(--bg-2)'; }}
+                            title={`Filter database signals for ${sponsor}`}
+                          >
+                            <span style={{ width: 6, height: 6, background: dotColor, borderRadius: '50%', display: 'inline-block' }} />
+                            {sponsor}
+                            <span style={{ color: 'var(--accent)', fontWeight: 'bold' }}>★</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Foot element */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 12, borderTop: '1px solid var(--line)', marginTop: 4 }}>
+                  {/* Focus Topic Badges */}
+                  <span style={{ 
+                    fontSize: 9.5, 
+                    fontFamily: 'var(--mono)', 
+                    color: 'var(--ink-3)',
+                    fontStyle: 'italic'
+                  }}>
+                    🎯 {summit.focus}
+                  </span>
+
+                  {summit.url && (
+                    <a 
+                      href={summit.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      style={{
+                        fontFamily: 'var(--mono)',
+                        fontSize: 10,
+                        fontWeight: 600,
+                        color: 'var(--accent)',
+                        textDecoration: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 4
+                      }}
+                    >
+                      Join Event Hub ↗
+                    </a>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+

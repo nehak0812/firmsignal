@@ -8,7 +8,8 @@ import {
 } from './data.js';
 import { 
   Ticker, BriefView, SignalsView, HeatmapView, CompareView, WatchlistView,
-  ContextCornerView, KnowledgeGraph, DataPipelineAuditView, ThoughtLeadershipView
+  ContextCornerView, KnowledgeGraph, DataPipelineAuditView, ThoughtLeadershipView,
+  AiSummitsView
 } from './views.jsx';
 import { TweaksPanel, TweakSection, TweakRadio, TweakToggle, useTweaks } from './tweaks.jsx';
 
@@ -647,6 +648,7 @@ function App() {
   const [data, setData] = useState(DEMO_SIGNALS);
   const [firms, setFirms] = useState(ALL_FIRMS);
   const [reports, setReports] = useState([]);
+  const [summits, setSummits] = useState([]);
   const [activeNav, setActiveNav] = useState('brief');
   const [view, setView] = useState('week');
   const [activeFirms, setActiveFirms] = useState(new Set());
@@ -700,6 +702,21 @@ function App() {
     }
   };
 
+  const loadSummits = async () => {
+    try {
+      const resp = await fetch('/api/summits');
+      if (resp.ok) {
+        const db = await resp.json();
+        const list = db.summits;
+        if (list && list.length > 0) {
+          setSummits(list);
+        }
+      }
+    } catch (err) {
+      console.warn('[FirmSignal] Could not fetch summits from backend.');
+    }
+  };
+
   const loadFirms = async () => {
     try {
       const resp = await fetch('/api/firms');
@@ -732,6 +749,7 @@ function App() {
     loadSignals();
     loadFirms();
     loadReports();
+    loadSummits();
     checkServerStatus();
   }, []);
 
@@ -937,6 +955,31 @@ function App() {
     return 0;
   };
 
+  const handleScanSummits = async (customQuery) => {
+    try {
+      showToast('Initiating Live Scan for AI Summits Calendar...');
+      const resp = await fetch('/api/summits/scan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: customQuery, apiKey })
+      });
+      if (resp.ok) {
+        const json = await resp.json();
+        if (json.success) {
+          setSummits(json.summits);
+          showToast(`✓ Scanned and loaded ${json.count} new summits`);
+          return json.count;
+        }
+      } else {
+        const err = await resp.json();
+        showToast(`Error: ${err.error || 'Failed to scan summits'}`);
+      }
+    } catch (err) {
+      showToast('Connection error scanning summits');
+    }
+    return 0;
+  };
+
   const onResetDb = async () => {
     try {
       const resp = await fetch('/api/db/reset', { method: 'POST' });
@@ -947,6 +990,7 @@ function App() {
     await loadSignals();
     await loadFirms();
     await loadReports();
+    await loadSummits();
     setActiveFirms(new Set());
     setActiveSignals(new Set());
     setSearch('');
@@ -973,6 +1017,15 @@ function App() {
     setActiveNav('signals');
   };
 
+  const handleSponsorClick = (sponsorName) => {
+    setActiveFirms(new Set([sponsorName]));
+    setActiveSignals(new Set());
+    setSearch('');
+    setView('all');
+    setActiveNav('signals');
+    showToast(`Filtered feed: ${sponsorName}`);
+  };
+
   // Node selection handler from Force Graph
   const handleGraphNodeSelected = (node) => {
     if (!node) return;
@@ -996,6 +1049,7 @@ function App() {
 
   const navTabs = [
     { id: 'brief',     label: 'Brief' },
+    { id: 'summits',   label: 'AI Summits' },
     { id: 'context',   label: 'Context Corner' },
     { id: 'reports',   label: 'Thought Leadership' },
     { id: 'graph',     label: 'Knowledge Graph' },
@@ -1056,6 +1110,18 @@ function App() {
 
           {activeNav === 'brief' && (
             <BriefView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={firms} SIGNAL_COLORS={SIGNAL_COLORS} getBrief={getBrief} />
+          )}
+
+          {activeNav === 'summits' && (
+            <AiSummitsView
+              summits={summits}
+              onScanSummits={handleScanSummits}
+              apiKey={apiKey}
+              serverHasKey={serverHasKey}
+              onOpenApiModal={() => setApiModalOpen(true)}
+              onShowToast={showToast}
+              onSponsorClick={handleSponsorClick}
+            />
           )}
           
           {activeNav === 'context' && (
