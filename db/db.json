@@ -223,6 +223,146 @@
   ],
   "signals": [
     {
+      "id": "sig_rss_1779959337148_6tn55",
+      "firm": "NVIDIA",
+      "type": "tech",
+      "signal": "Earnings",
+      "importance": 4,
+      "title": "“Taiwan is the epicenter”: Jensen Huang says Nvidia will spend $150 billion a year on A...",
+      "takeaway": "Strong financial metrics at NVIDIA confirm that technological advisory is now the primary growth engine in professional services.",
+      "summary": "Financial disclosures compiled by The Times of India show robust performance at NVIDIA. The margins reflect high demand for AI implementation services.",
+      "date": "2026-05-28",
+      "source": "The Times of India",
+      "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQR25wUUp4NTlOcUVNYWVMcHRZc1Rla09rZHlXQjd2V3hBYm92emppaHJRSWpXV09LVERRUXVBa3JwanBydlpuazlDOXZLbFZJYVYzNG9KZFFscjd2NGFmQ2FoNnFlVDV0em5Ba0RBM01kSjYzcHlJT3ZXeWFnRDdaZnUzV1I0V19DWFlxejRBdnZaRUs0OEYwRl8yYUFoQWdfV0w5eWZVSUd3T1MxejQ5Q28yMTNjbGtoVE1Uek5zWG85Zng0NEpGczFBRDRlTlYzbXNuWE1OX1ZPdk9FeEg3TlJNajJ6SWlnWXFTekw3YXk5T2JMX2VfTkVJZVRwQ1pHVUtQZmJXdUhwMEFrdWV5aWt5SE45LUdwc2pQdy12ZTNueGE5WmtxZ2NZcW1iZHNTQWszd0hB0gG7AkFVX3lxTFBNVmhidDMxMW05b2QxZVc2eHNoZFZNVGgtNFMtcWpFZXhuSFZ5NHZ3YXNYZmxCRy1tNkxPSFhyMlpIUGY5eDlqUS1uZm1WZmFWZXVRT3h5VGptNS1FaXVsN0NtbVhDQmdwMnZsMEF4OWVWelVTYUE3ZlJjVGRzeEZWcnJrMDZLVGdRRXRKVTZYLWQxTERWUTI4WFFPWTJmbEptWi03Z2IySkNLNzVBVTd4dU5lMHc4QUYwRlFfbll0Si0zS1BZTEwxUjdEMFdaa3ZPSFAtZE5fWTZEY1h6TzJHeFB0QzVmY2VmckNXb1VkU25GbmRRRWxYdGdkbHpWOWNQUE0wdGFDYm1GWGVXN2xLN3VmMjM4OEh5LThPbWN1QVFsem9zMW9iZWw5cnRTc2M2aklldlFrQl9kUQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T09:09:38.134Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779959337147_urjm3",
+      "firm": "NTT Data",
+      "type": "consulting",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "NTT, NTT DATA and INDYCAR extend entitlement partnership with multi-year agreement",
+      "takeaway": "This alliance positions NTT Data directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to Express Computer, NTT Data has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-25",
+      "source": "Express Computer",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOeWp3eHVkYTJ6c1NEcTBIRy1qZ1M2aW5rY2gwRXBrN1NMa0pyaXM2Ykgzdy03ZDNzZkJEZmlKTWp4cC1IZGd4Y1BlamZialdOTnpRSkJfWDlyRENqYnQyUXlkcHljY2RreTU4U3lCem9paDVFWHNXdTd2dGNJTFpxV1l4bzJzc1hBMTI0ZzVOck1aVFpPTEktdWFuR3NqckhIQUhiY0RFWXNqb1dvcjk4aTRRM3FGNnN6czl5SnVDRVZleE3SAcgBQVVfeXFMTWxsYXpiRGJjbXc2aS0zX3FyTWpGUzhWU0NoMU9sdzdCZWZvNHdRMXQtVVduck41dXliUVpIb01aS202VFh4MHZ4Qzl0UVhZRC1RaS1PcXdONmJRUjdHX3h6ZnRfdWRGSjAtYWlCdlZxYzRPY3IyUy1mZ095ZGxNdlh4bkdzT1FacENKMW1MVE1sVEljVGNwZVBaYmRBRGpxOHMzcXlYUE9ia2k4R3RNT05FTDdoQ3RRSkJiZldxekFjTzQ1Q3c5SWo?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T09:09:31.265Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779959337147_3vzms",
+      "firm": "Mistral AI",
+      "type": "ai-first",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "BMW Group and Mistral AI advance AI in crash simulation",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Mistral AI is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by BMW Group tracks the deployment of new AI capabilities at Mistral AI. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-28",
+      "source": "BMW Group",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOdW9IOXJKcFM3cmU4cHlZX2ZSOWZvNTNHN0lZdlZPQ1dsclJTN3NqWnRwZUFCQUF0bi1RdHlFSk9ZZGxRUkhQSVREcV84bkdhXzdxTFRKR3ZEVW5ONTdIUmQ4UWtET3M1MFlWeHdsdUFWT2o2RTQwOVMtcG91clVacU9vR1h0aklKTGdzODUtVHZCT0ZBaHAzNy1fRmRQc0xNQXlrSWlrbXAwRksxSm53THhjNnl6X2FJcUxN?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T09:09:23.300Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779959337145_k5gu4",
+      "firm": "Google",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Google adds ‘Preferred Sources’ feature to AI Search for personalised content discovery",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Google is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by The Indian Express tracks the deployment of new AI capabilities at Google. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-28",
+      "source": "The Indian Express",
+      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQSWJILUh0VHo5VUVjRFRual9tY2tiVUg3T3p4U1hsOEhMLVVZdkJkSHN2QUtvT05vT0tfQTNWRVZxeE0teW5DaUdmTF9SX0FycGNnNWhGckU5ZDFMZEFHZ05vZXRad0duLVUta0ZvXzA3LUlzUDBHdmJhX2NycmhyTjh2OERibmVsWjUzSElhRlJMamlfYkVYSDZ1MXZCSEo0eWU4U3pCQkJDTUlVRmIxcllDV28tbllENmJwVk80UzhOZmlXU0xQLTQ2SkxKZzVkZDEyTVRaWENzRWRXZVJRNVEwbzdHV1dZbk40ckt2V1BlNG1FdC040gH-AUFVX3lxTE1IWlhaLVdaUDNkSFlESmRXOVVTVDJpWVFpQjdETlhrbG5od3VsTTJ0dy1IVXRyYUNXMUhFZmF5Y3pzYkpyUUJyT19WdF9DWFNJaW1JU1Iwbk5nMjdWV3lMMEMxdW4yLTJ4VDQyLWpNbWlyVHI4cHZYcHFxWEsxZDYwQTBrNXZMOUZlaW4zX3VDTjRNVHZSc3dyaDlxZWFVSkxNZDNyNEwzdWkxeUJOQzk1dnMtbDR2clR5R2lqSXFxSm13bmE0UzVXb3RScXh6c1ZJczJjQTR1V2RvVmcwdzNlSHcxclJzZTBFeU16MGVDOU1aS0JmTjgzdWhITkJ3?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T09:09:11.235Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779959337145_hz8ym",
+      "firm": "ServiceNow",
+      "type": "tech",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "Wipro and ServiceNow deepen AI partnership to automate enterprise workflows",
+      "takeaway": "This alliance positions ServiceNow directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to BusinessLine, ServiceNow has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-05-28",
+      "source": "BusinessLine",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOVEFyQlhsRExuZnJEczdWbFpkTlFjUkhOX1JRUDJiUnpKRUxLSkpIT0l3b3V2YS0xcm5VU0IxbzVNYmlMdTUxcXlBUy1FRkFsQ29LX1hnbVpEREVCQk5nNUZGMTE0SFlQOTlUVXNfdlcwX2dUUEVPR0hNc0dFU2dfSU9idDlzY2NpN3k0NnBhc181OFRiNmNPWXRVNnJKeFN3T3U5QVVIWUhKcUI2ZkNMd1R5UUlFOWN4SmxzOUl2Qy1sMnZYRTg1TFdOSmFDeVk3S1RKSkMwZ2lzUdIB4AFBVV95cUxOeXJTVDdzNjZrVHB2cmlIZnJpN1NtSEx1a1E3TF9xTHRKZFZLWlYyNUFDU1ROR0ZFZmRqcWZnZVhxTUplazdINS1pQ0Y3aFZBdFA5cUJ3MzVTdTZCQi1kVlF5RnpGLU4tXzRyQVJ3RXJoM2ZDSDFMQklaWlpnc1BRWl9udGhnTndndWRQMmE5dllaZHo5dFY4VmlWZjRjSUItYXVGMFlIRkdBYjd4RWhjVy0teTFraEdQLVdOck8tNGxlZUFEcmpqenNSY2NFeUE4MnE1WGdtQ0dDZUtQYlZVXw?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T09:09:08.833Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779959337145_xge3p",
+      "firm": "PwC",
+      "type": "consulting",
+      "signal": "Restructure",
+      "importance": 5,
+      "title": "PwC: SAP AI Strategy Shifts Toward Enterprise Execution",
+      "takeaway": "Operational restructuring at PwC highlights the urgent necessity of adopting automated delivery models to maintain pricing margins.",
+      "summary": "Recent reporting from Channel Insider outlines organizational changes at PwC. The firm is streamlining back-office roles and scaling technical competencies.",
+      "date": "2026-05-27",
+      "source": "Channel Insider",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOYUctXzQwcFA4LVQ2cUVWaXptcXBQNTZxcUJCWXZVdEZ6anpLZDN6R1MwRk5pc0duN1RUYzVEeXNaZ1BKN2tuMVRRaDlEd09tM0FoN0JwYVh2aVBnX3JwU183REhiYk0tQWczUy1KOThHSm9UOFg4czJkMmpLcUFKbDVCUE1LMUp4WGlDSk9FWURXWkNwMVFPLXJGUHJqdw?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T09:09:07.064Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1779959337142_uk60a",
+      "firm": "Deloitte",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "How Optimizely is Powering Personalised AI Ads with Deloitte",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Deloitte is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by AI Magazine tracks the deployment of new AI capabilities at Deloitte. The initiative aims to automate key analytical workflows.",
+      "date": "2026-05-28",
+      "source": "AI Magazine",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQaHFUaGpETmhKd2U1UktIX0VpY1RQQnJjeTI1WkFnM2stTUpCbERRR3JNU1FCSXlfR19aY1UtNnhDcF9KNmtMNFpRTkQ0SXl0RFlDdVJNYnpWR2syRENQMnNRSWxqZ2hsYVl5LUpNR0NtX2Nka2ROa2J6YWxuQlpPT0lR?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-05-28T09:08:57.360Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
       "id": "sig_rss_1779956065601_9jwkg",
       "firm": "Snorkel AI",
       "type": "ai-first",
@@ -2596,5 +2736,144 @@
   ],
   "chatLogs": [],
   "readArticles": {},
-  "graphCoordinates": {}
+  "graphCoordinates": {},
+  "summits": [
+    {
+      "id": "summit_mistral_ainow_2026",
+      "name": "Mistral AI NOW Summit 2026",
+      "organizer": "Mistral AI",
+      "startDate": "2026-05-28",
+      "endDate": "2026-05-30",
+      "location": "Paris, France",
+      "url": "https://ainowsummit.com",
+      "description": "Mistral's flagship summit focusing on open-weights foundation models, enterprise agentic workflows, and secure sovereign cloud integrations.",
+      "focus": "Open Weights, Sovereign AI, Multi-Agent Systems",
+      "sponsors": [
+        "Mistral AI",
+        "EY",
+        "Accenture",
+        "Capgemini",
+        "Microsoft",
+        "SAP",
+        "NVIDIA",
+        "Qualcomm",
+        "Neo4j"
+      ]
+    },
+    {
+      "id": "summit_nvidia_gtc_2026",
+      "name": "NVIDIA GTC 2026",
+      "organizer": "NVIDIA",
+      "startDate": "2026-03-16",
+      "endDate": "2026-03-19",
+      "location": "San Jose, CA",
+      "url": "https://www.nvidia.com/gtc",
+      "description": "The premier developer conference for the era of AI and accelerated computing. Featuring groundbreaking announcements on Blackwell architecture, physical AI, and enterprise AI factories.",
+      "focus": "GPU Acceleration, Robotics, LLM Infrastructure",
+      "sponsors": [
+        "NVIDIA",
+        "Microsoft",
+        "AWS",
+        "Google",
+        "Deloitte",
+        "PwC",
+        "EY",
+        "KPMG",
+        "Accenture",
+        "SAP"
+      ]
+    },
+    {
+      "id": "summit_openai_devday_2026",
+      "name": "OpenAI DevDay 2026",
+      "organizer": "OpenAI",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-06",
+      "location": "San Francisco, CA",
+      "url": "https://devday.openai.com",
+      "description": "OpenAI's flagship developer assembly. Featuring new API releases, advanced reasoning integrations, GPT-5 architecture previews, and autonomous agent runtime systems.",
+      "focus": "Reasoning Models, API Platforms, Agent Runtimes",
+      "sponsors": [
+        "OpenAI",
+        "Microsoft",
+        "Accenture",
+        "BCG",
+        "McKinsey",
+        "Capgemini"
+      ]
+    },
+    {
+      "id": "summit_google_io_2026",
+      "name": "Google I/O 2026",
+      "organizer": "Google",
+      "startDate": "2026-05-12",
+      "endDate": "2026-05-13",
+      "location": "Mountain View, CA",
+      "url": "https://io.google",
+      "description": "Google's annual developer festival focusing on Gemini 2.5 models, Project Astra agent previews, and Android AI core integrations.",
+      "focus": "Gemini Models, Multimodal AI, Mobile AI",
+      "sponsors": [
+        "Google",
+        "Deloitte",
+        "PwC",
+        "Accenture"
+      ]
+    },
+    {
+      "id": "summit_anthropic_assembly_2026",
+      "name": "Anthropic Assembly 2026",
+      "organizer": "Anthropic",
+      "startDate": "2026-10-15",
+      "endDate": "2026-10-16",
+      "location": "San Francisco, CA",
+      "url": "https://anthropic.com/assembly",
+      "description": "Anthropic's inaugural enterprise and developer summit. Highlighting advanced alignment protocols, SOC 2 compliance, secure agent workflows, and the Claude 4 family of models.",
+      "focus": "Sovereign AI, Enterprise Security, Model Alignment",
+      "sponsors": [
+        "Anthropic",
+        "AWS",
+        "Google",
+        "Deloitte",
+        "PwC",
+        "BCG",
+        "Bain"
+      ]
+    },
+    {
+      "id": "summit_scanned_1779959634581_1",
+      "name": "Cohere Enterprise Forum 2026",
+      "organizer": "Cohere",
+      "startDate": "2026-09-10",
+      "endDate": "2026-09-11",
+      "location": "Toronto, Canada",
+      "url": "https://cohere.com/enterprise-forum",
+      "description": "Cohere's dedicated enterprise summit, showcasing private LLM architectures, multilingual enterprise search reranking models, and banking/finance case studies.",
+      "focus": "Private LLMs, Multilingual Search, Enterprise Security",
+      "sponsors": [
+        "Cohere",
+        "McKinsey",
+        "Deloitte",
+        "AWS",
+        "Google"
+      ]
+    },
+    {
+      "id": "summit_scanned_1779959634581_2",
+      "name": "xAI Grok Developer Day 2026",
+      "organizer": "xAI",
+      "startDate": "2026-08-05",
+      "endDate": "2026-08-05",
+      "location": "Austin, TX",
+      "url": "https://x.ai/grok-devday",
+      "description": "xAI's developer event showcasing grok-3 real-time X data integrations, robotics APIs, and cost-efficient multimodal inference setups.",
+      "focus": "Real-time Data, Multimodal APIs, Grok-3",
+      "sponsors": [
+        "xAI",
+        "Bain",
+        "Accenture",
+        "NVIDIA",
+        "Qualcomm"
+      ]
+    }
+  ]
 }
