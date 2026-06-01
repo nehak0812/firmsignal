@@ -22,7 +22,7 @@ export const TECH_FIRMS = [
   { id: 'SAP',        dot: '#0070f2', type: 'tech', aiNowSponsor: true },
   { id: 'ServiceNow', dot: '#62d84e', type: 'tech' },
   { id: 'Google',     dot: '#ea4335', type: 'tech' },
-  { id: 'AuditBoard', dot: '#5c6bc0', type: 'tech' },
+  { id: 'Optro (AuditBoard)', dot: '#5c6bc0', type: 'tech' },
   { id: 'Salesforce', dot: '#00a1e0', type: 'tech' },
   { id: 'AWS',        dot: '#ff9900', type: 'tech' },
   { id: 'Workday',    dot: '#f68b1f', type: 'tech' },

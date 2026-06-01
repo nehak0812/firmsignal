@@ -72,21 +72,25 @@ async function fetchGoogleNewsRSS(query) {
 // Helper to perform strict, boundary-safe competitor firm name matching
 function matchFirm(title, url, firm) {
   const firmName = firm.id;
-  const escaped = firmName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const namesToMatch = firmName === 'Optro (AuditBoard)' ? ['Optro', 'AuditBoard'] : [firmName];
   
-  // 1. Title match using word boundaries (case insensitive)
-  const regex = new RegExp(`\\b${escaped}\\b`, 'i');
-  if (regex.test(title)) {
-    return true;
-  }
-  
-  // 2. URL match using domain/path boundaries (only if not a Google News base64 string)
-  if (url) {
-    const lowerUrl = url.toLowerCase();
-    if (!lowerUrl.includes('news.google.com/rss/articles/') && !lowerUrl.includes('news.google.com/articles/')) {
-      const urlRegex = new RegExp(`[/.@_-]${escaped}[/.@_-]`, 'i');
-      if (urlRegex.test(lowerUrl) || lowerUrl.includes(firmName.toLowerCase())) {
-        return true;
+  for (const name of namesToMatch) {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    
+    // 1. Title match using word boundaries (case insensitive)
+    const regex = new RegExp(`\\b${escaped}\\b`, 'i');
+    if (regex.test(title)) {
+      return true;
+    }
+    
+    // 2. URL match using domain/path boundaries (only if not a Google News base64 string)
+    if (url) {
+      const lowerUrl = url.toLowerCase();
+      if (!lowerUrl.includes('news.google.com/rss/articles/') && !lowerUrl.includes('news.google.com/articles/')) {
+        const urlRegex = new RegExp(`[/.@_-]${escaped}[/.@_-]`, 'i');
+        if (urlRegex.test(lowerUrl) || lowerUrl.includes(name.toLowerCase())) {
+          return true;
+        }
       }
     }
   }
@@ -443,10 +447,10 @@ const DEFAULT_DEMO_SIGNALS = [
     date: '2026-05-07', source: 'Financial Times', url: '',
   },
   {
-    id: 'd21', firm: 'AuditBoard', type: 'tech', signal: 'AI Pivot', importance: 2,
-    title: 'AuditBoard launches AI-native risk and controls assistant',
+    id: 'd21', firm: 'Optro (AuditBoard)', type: 'tech', signal: 'AI Pivot', importance: 2,
+    title: 'Optro (AuditBoard) launches AI-native risk and controls assistant',
     takeaway: 'A direct shot at Big 4 audit margins. Deloitte and PwC integrating it is defensive, not strategic.',
-    summary: 'AuditBoard released its AI controls assistant in GA, enabling audit teams to auto-generate test procedures, synthesise evidence, and draft findings using natural language.',
+    summary: 'Optro (AuditBoard) released its AI controls assistant in GA, enabling audit teams to auto-generate test procedures, synthesise evidence, and draft findings using natural language.',
     date: '2026-05-06', source: 'WSJ', url: '',
   },
   {
@@ -765,7 +769,7 @@ const ALL_TRACKED_LEADERS = [
   { name: "CJ Desai", role: "President & COO", firm: "ServiceNow" },
   { name: "Sundar Pichai", role: "CEO", firm: "Google" },
   { name: "Demis Hassabis", role: "CEO, Google DeepMind", firm: "Google" },
-  { name: "Scott Arnold", role: "CEO", firm: "AuditBoard" },
+  { name: "Scott Arnold", role: "CEO", firm: "Optro (AuditBoard)" },
   { name: "Marc Benioff", role: "Chair & CEO", firm: "Salesforce" },
   { name: "Adam Evans", role: "EVP & GM, Salesforce AI", firm: "Salesforce" },
   { name: "Matt Garman", role: "CEO", firm: "AWS" },
@@ -781,7 +785,11 @@ const ALL_TRACKED_LEADERS = [
   { name: "Christel Heydemann", role: "CEO", firm: "Orange" },
   { name: "Patrice Bance", role: "EVP, Enterprise & AI", firm: "Orange" },
   { name: "Andrej Vlasov", role: "CTO & Co-Founder", firm: "Qdrant" },
-  { name: "Devang Sachdev", role: "VP of Marketing", firm: "Snorkel AI" }
+  { name: "Devang Sachdev", role: "VP of Marketing", firm: "Snorkel AI" },
+  { name: "Brad Smith", role: "Vice Chair & President", firm: "Microsoft" },
+  { name: "Thomas Kurian", role: "CEO, Google Cloud", firm: "Google" },
+  { name: "Amy Hood", role: "EVP & CFO", firm: "Microsoft" },
+  { name: "Ruth Porat", role: "President & Chief Investment Officer", firm: "Google" }
 ];
 
 function generateLocalLeaderPost(leader) {
@@ -1118,7 +1126,7 @@ async function readDb() {
         { id: "SAP", dot: "#0070f2", type: "tech", aiNowSponsor: true },
         { id: "ServiceNow", dot: "#62d84e", type: "tech" },
         { id: "Google", dot: "#ea4335", type: "tech" },
-        { id: "AuditBoard", dot: "#5c6bc0", type: "tech" },
+        { id: "Optro (AuditBoard)", dot: "#5c6bc0", type: "tech" },
         { id: "Salesforce", dot: "#00a1e0", type: "tech" },
         { id: "AWS", dot: "#ff9900", type: "tech" },
         { id: "Workday", dot: "#f68b1f", type: "tech" },
@@ -2610,7 +2618,7 @@ app.post('/api/db/reset', async (req, res) => {
         { id: "SAP", dot: "#0070f2", type: "tech", aiNowSponsor: true },
         { id: "ServiceNow", dot: "#62d84e", type: "tech" },
         { id: "Google", dot: "#ea4335", type: "tech" },
-        { id: "AuditBoard", dot: "#5c6bc0", type: "tech" },
+        { id: "Optro (AuditBoard)", dot: "#5c6bc0", type: "tech" },
         { id: "Salesforce", dot: "#00a1e0", type: "tech" },
         { id: "AWS", dot: "#ff9900", type: "tech" },
         { id: "Workday", dot: "#f68b1f", type: "tech" },
@@ -2792,7 +2800,8 @@ async function runAutoScan() {
       const batch = firmsList.slice(i, i + batchSize);
       const batchPromises = batch.map(async (firm) => {
         try {
-          const firmQuery = `"${firm.id}" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)`;
+          const queryId = firm.id === 'Optro (AuditBoard)' ? '(Optro OR AuditBoard)' : `"${firm.id}"`;
+          const firmQuery = `${queryId} AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)`;
           const results = await fetchGoogleNewsRSS(firmQuery);
           // Limit to top few results to keep the feed high-quality
           return results.slice(0, sweepCountPerFirm);
