@@ -2287,46 +2287,75 @@ export function LatestOnLinkedInView({
 }) {
   const [firmFilter, setFirmFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedTheme, setSelectedTheme] = useState(null);
   const [customScanQuery, setCustomScanQuery] = useState('');
   const [isScanning, setIsScanning] = useState(false);
-
-  // Dynamic calculations
-  const totalPosts = posts.length;
-  const totalEngagement = useMemo(() => {
-    return posts.reduce((sum, p) => sum + (p.likes || 0) + (p.comments || 0) + (p.shares || 0), 0);
-  }, [posts]);
-  
-  const leadersCount = useMemo(() => {
-    return new Set(posts.map(p => p.author)).size;
-  }, [posts]);
 
   // Executive Themes Summary Data
   const executiveThemes = [
     {
+      id: "agentic",
       title: "Agentic AI Swarms",
       desc: "Migrating from basic copilots to multi-agent production systems.",
       leaders: "Satya Nadella, Bob Sternfels",
-      icon: "🧠"
+      icon: "🧠",
+      matchThemes: ["Agentic AI Swarms", "Outcome-Based Operating Models", "Open Source & Bespoke Agents"]
     },
     {
+      id: "sovereign",
       title: "Sovereign Cloud & Safety",
       desc: "Localized on-premises model compliance and regulated data boundaries.",
       leaders: "Janet Truncale, Christoph Schweizer",
-      icon: "🛡️"
+      icon: "🛡️",
+      matchThemes: ["Sovereign AI & Data Privacy"]
     },
     {
+      id: "infrastructure",
       title: "AI Infrastructure Factories",
       desc: "Blackwell hardware deployments, physical AI architectures, and custom silicon.",
       leaders: "Jensen Huang, Arvind Krishna",
-      icon: "⚙️"
+      icon: "⚙️",
+      matchThemes: ["AI Infrastructure & Blackwell", "Multimodal AI & Reasoning"]
     },
     {
+      id: "automation",
       title: "ERP Process Automation",
       desc: "Integrating GAI pipelines into procurement and automated HR ticketing.",
       leaders: "Christian Klein, Bill McDermott",
-      icon: "💼"
+      icon: "💼",
+      matchThemes: ["Enterprise ERP Integration", "Workflow Automation", "Enterprise Scaling & Upskilling"]
     }
   ];
+
+  // Filter posts
+  const filteredPosts = useMemo(() => {
+    return posts.filter(p => {
+      const matchesFirm = firmFilter === 'all' || p.firm.toLowerCase() === firmFilter.toLowerCase();
+      
+      const matchesSearch = !searchQuery ? true : (
+        p.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.theme.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.firm.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      
+      const matchesTheme = !selectedTheme ? true : (
+        selectedTheme.matchThemes.some(mt => p.theme.toLowerCase().includes(mt.toLowerCase()))
+      );
+      
+      return matchesFirm && matchesSearch && matchesTheme;
+    });
+  }, [posts, firmFilter, searchQuery, selectedTheme]);
+
+  // Dynamic calculations grounded to current filters
+  const totalPosts = filteredPosts.length;
+  const totalEngagement = useMemo(() => {
+    return filteredPosts.reduce((sum, p) => sum + (p.likes || 0) + (p.comments || 0) + (p.shares || 0), 0);
+  }, [filteredPosts]);
+  
+  const leadersCount = useMemo(() => {
+    return new Set(filteredPosts.map(p => p.author)).size;
+  }, [filteredPosts]);
 
   // LinkedIn Search URL Resolver
   const getLinkedInSearchUrl = (author, firm) => {
@@ -2366,22 +2395,6 @@ export function LatestOnLinkedInView({
     };
     return map[firmName] || '#aaaaaa';
   };
-
-  // Filter posts
-  const filteredPosts = useMemo(() => {
-    return posts.filter(p => {
-      const matchesFirm = firmFilter === 'all' || p.firm.toLowerCase() === firmFilter.toLowerCase();
-      
-      const matchesSearch = !searchQuery ? true : (
-        p.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.theme.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.firm.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      
-      return matchesFirm && matchesSearch;
-    });
-  }, [posts, firmFilter, searchQuery]);
 
   const handleScan = async (e) => {
     e.preventDefault();
@@ -2426,35 +2439,91 @@ export function LatestOnLinkedInView({
 
       {/* Visual Themes Summary Grid (Ivory White Aesthetic) */}
       <div style={{ marginBottom: 24 }}>
-        <h3 style={{ margin: '0 0 12px 0', fontFamily: 'var(--mono)', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--accent)' }}>
-          C-Suite Themes Synthesis
-        </h3>
-        <div className="reports-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
-          {executiveThemes.map((th, idx) => (
-            <div 
-              key={idx} 
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+          <h3 style={{ margin: 0, fontFamily: 'var(--mono)', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--accent)' }}>
+            C-Suite Themes Synthesis
+          </h3>
+          {selectedTheme && (
+            <button 
+              onClick={() => setSelectedTheme(null)}
               style={{
-                background: 'var(--bg)',
-                border: '1px solid var(--line)',
-                borderRadius: 'var(--r-lg)',
-                padding: '16px 20px',
-                display: 'flex',
-                gap: 12,
-                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.03)'
+                background: 'none',
+                border: 'none',
+                color: 'var(--crit)',
+                fontSize: 11,
+                fontFamily: 'var(--mono)',
+                cursor: 'pointer',
+                padding: 0,
+                textDecoration: 'underline'
               }}
             >
-              <span style={{ fontSize: 24, alignSelf: 'flex-start' }}>{th.icon}</span>
-              <div>
-                <h4 style={{ margin: 0, fontSize: 14, fontWeight: 700, color: 'var(--ink)' }}>{th.title}</h4>
-                <p style={{ margin: '4px 0 0 0', fontSize: 11.5, color: 'var(--ink-2)', lineHeight: 1.4, fontFamily: 'var(--serif)' }}>
-                  {th.desc}
-                </p>
-                <div style={{ marginTop: 8, fontSize: 9.5, fontFamily: 'var(--mono)', color: 'var(--accent)', fontWeight: 600 }}>
-                  Active: {th.leaders}
+              Clear Theme Filter [✕]
+            </button>
+          )}
+        </div>
+        <div className="reports-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+          {executiveThemes.map((th, idx) => {
+            const isSelected = selectedTheme && selectedTheme.id === th.id;
+            return (
+              <div 
+                key={idx} 
+                onClick={() => setSelectedTheme(isSelected ? null : th)}
+                style={{
+                  background: isSelected ? 'var(--accent-bg)' : 'var(--bg)',
+                  border: isSelected ? '1px solid var(--accent)' : '1px solid var(--line)',
+                  borderRadius: 'var(--r-lg)',
+                  padding: '16px 20px',
+                  display: 'flex',
+                  gap: 12,
+                  boxShadow: isSelected ? '0 4px 15px rgba(168, 122, 44, 0.12)' : '0 2px 10px rgba(0, 0, 0, 0.03)',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  userSelect: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  if (!isSelected) {
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.borderColor = 'var(--accent)';
+                    e.currentTarget.style.boxShadow = '0 6px 16px rgba(168, 122, 44, 0.06)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isSelected) {
+                    e.currentTarget.style.transform = 'none';
+                    e.currentTarget.style.borderColor = 'var(--line)';
+                    e.currentTarget.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.03)';
+                  }
+                }}
+              >
+                <span style={{ fontSize: 24, alignSelf: 'flex-start' }}>{th.icon}</span>
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <h4 style={{ margin: 0, fontSize: 14, fontWeight: 700, color: 'var(--ink)' }}>{th.title}</h4>
+                    {isSelected && (
+                      <span style={{ 
+                        fontSize: 9, 
+                        fontFamily: 'var(--mono)', 
+                        color: 'var(--accent)', 
+                        background: 'rgba(168, 122, 44, 0.15)', 
+                        padding: '1px 6px', 
+                        borderRadius: 12,
+                        fontWeight: 'bold',
+                        textTransform: 'uppercase'
+                      }}>
+                        Active
+                      </span>
+                    )}
+                  </div>
+                  <p style={{ margin: '4px 0 0 0', fontSize: 11.5, color: 'var(--ink-2)', lineHeight: 1.4, fontFamily: 'var(--serif)' }}>
+                    {th.desc}
+                  </p>
+                  <div style={{ marginTop: 8, fontSize: 9.5, fontFamily: 'var(--mono)', color: 'var(--accent)', fontWeight: 600 }}>
+                    Active: {th.leaders}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
