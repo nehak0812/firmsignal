@@ -2622,3 +2622,57 @@
 [2026-06-01T08:48:59.431Z] AUTO-SCAN COMPLETED: No new signals retrieved.
 [2026-06-01T08:48:59.555Z] AUTO-SCAN: Initiating automatic hourly background scan for thought leadership reports...
 [2026-06-01T08:48:59.743Z] AUTO-SCAN REPORTS ERROR: fetch failed
+[2026-06-01T09:26:38.985Z] POST /api/db/reset hit. Restoring database to factory default demo signals.
+[2026-06-01T09:26:38.994Z] Database successfully rollback to factory defaults and live news sweep triggered.
+[2026-06-01T09:26:38.994Z] AUTO-SCAN: Initiating automatic hourly background scan for consulting and tech news...
+[2026-06-01T09:26:39.011Z] AUTO-SCAN: Initiating parallel RSS sweeps across all 40 active competitor watchlists...
+[2026-06-01T09:26:39.013Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Deloitte" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:39.013Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""PwC" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:39.013Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""KPMG" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:39.013Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""EY" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:39.013Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""McKinsey" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:40.079Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:40.172Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:40.258Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:40.409Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:40.426Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:40.742Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""BCG" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:40.742Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Accenture" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:40.742Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Capgemini" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:40.742Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Bain" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:40.742Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""IBM Consulting" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:41.532Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:41.827Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:41.882Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:41.900Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:41.902Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:42.216Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Reply" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:42.216Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""NTT Data" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:42.216Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""TCS" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:42.216Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""SAP" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:42.216Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Microsoft" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:43.098Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:43.202Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:43.262Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:43.300Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:43.417Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:43.731Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Salesforce" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:43.730Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""ServiceNow" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:43.731Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Google" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:43.731Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""AuditBoard" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:43.731Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""AWS" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:44.770Z] RSS CRAWLER SUCCESS: Found 61 real news articles on the web.
+[2026-06-01T09:26:44.794Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:44.825Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:44.880Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:45.010Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:45.319Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""OpenAI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:45.319Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Palantir" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:45.319Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Workday" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:45.319Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Perplexity" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:45.319Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Anthropic" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-01T09:26:46.341Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:46.394Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:46.403Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:46.411Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-01T09:26:46.668Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.

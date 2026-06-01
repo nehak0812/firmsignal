@@ -817,6 +817,110 @@ const DEFAULT_DEMO_LINKEDIN = [
     shares: 110,
     theme: "Sovereign AI & Data Privacy",
     url: "https://www.linkedin.com/posts/christophschweizer_bcg-sovereign-cloud-activity-7799071920191-182c"
+  },
+  {
+    id: "li_diasio_1",
+    author: "Dan Diasio",
+    role: "Global AI Leader",
+    firm: "EY",
+    date: "2026-05-28",
+    content: "AI is reshaping the audit and consulting paradigm. At EY, our teams are embedding agentic workflows directly into financial compliance audits and transaction advisory, giving our clients unmatched throughput speed and regulatory security. By standardizing our frameworks on private, fine-tuned enterprise models, we're demonstrating what secure professional services looks like.",
+    likes: 1720,
+    comments: 164,
+    shares: 98,
+    theme: "Sovereign AI & Data Privacy",
+    url: "https://www.linkedin.com/posts/dandiasio_ey-ai-audit-compliance-activity-7799581920392-198d"
+  },
+  {
+    id: "li_daugherty_1",
+    author: "Paul Daugherty",
+    role: "Group Chief Tech Executive & CTO",
+    firm: "Accenture",
+    date: "2026-05-27",
+    content: "The transition from prompt engineering to full multi-agent swarm orchestration is happening faster than anyone predicted. We are building unified enterprise sandboxes where client teams can rapidly test and deploy autonomous agent swarms, integrating core GAI pipelines straight into ERP procurement and operational workflows.",
+    likes: 2110,
+    comments: 245,
+    shares: 134,
+    theme: "Agentic AI Swarms",
+    url: "https://www.linkedin.com/posts/pauldaugherty_accenture-technology-cto-agentic-activity-7799581920392-198f"
+  },
+  {
+    id: "li_lareina_1",
+    author: "Lareina Yee",
+    role: "Senior Partner, Tech Council Chair",
+    firm: "McKinsey",
+    date: "2026-05-26",
+    content: "C-suite leaders must look beyond the immediate pilot phase. Re-engineering business processes around autonomous agents is not just a technology swap—it requires completely shifting fee structures from headcount to output metrics. This is the only way to insulate the professional services model against commoditization.",
+    likes: 1940,
+    comments: 189,
+    shares: 112,
+    theme: "Outcome-Based Operating Models",
+    url: "https://www.linkedin.com/posts/lareinayee_mckinsey-technology-council-agents-activity-7799581920392-198g"
+  },
+  {
+    id: "li_chase_1",
+    author: "Steve Chase",
+    role: "Global Head of AI & Innovation",
+    firm: "KPMG",
+    date: "2026-05-27",
+    content: "Enterprise AI adoption is scaling. Our innovation labs are focused on embedding secure, regulated agent layers inside traditional back-office operations, HR ticketing, and legal audit chains. Securing early compliance with frameworks like the EU AI Act is what guarantees strategic market-readiness.",
+    likes: 1680,
+    comments: 142,
+    shares: 88,
+    theme: "Sovereign AI & Data Privacy",
+    url: "https://www.linkedin.com/posts/stevechase_kpmg-ai-digital-innovation-activity-7799581920392-198h"
+  },
+  {
+    id: "li_nitin_1",
+    author: "Nitin Mittal",
+    role: "Global AI Leader",
+    firm: "Deloitte",
+    date: "2026-05-25",
+    content: "Delighted to share our recent work deploying custom private silicon and physical AI models. We are designing custom enterprise 'AI factories' that run local, low-latency foundation models, bypassing closed cloud boundaries to help industrial and retail clients scale operations safely and efficiently.",
+    likes: 1840,
+    comments: 198,
+    shares: 104,
+    theme: "AI Infrastructure & Blackwell",
+    url: "https://www.linkedin.com/posts/nitinmittal_deloitte-global-ai-factories-activity-7799581920392-198j"
+  },
+  {
+    id: "li_suleyman_1",
+    author: "Mustafa Suleyman",
+    role: "CEO, Microsoft AI",
+    firm: "Microsoft",
+    date: "2026-05-28",
+    content: "We are building Microsoft Copilot not as a passive assistant, but as an active partner that can orchestrate complex, multi-turn corporate workflows. By giving Copilots the ability to coordinate custom sub-agent swarms, we're letting enterprise teams delegate labor-intensive administrative audits to autonomous software pipelines.",
+    likes: 3120,
+    comments: 295,
+    shares: 184,
+    theme: "Agentic AI Swarms",
+    url: "https://www.linkedin.com/posts/mustafasuleyman_microsoft-ai-copilot-agents-activity-7799581920392-198k"
+  },
+  {
+    id: "li_raj_1",
+    author: "Raj Sharma",
+    role: "Global Managing Partner",
+    firm: "EY",
+    date: "2026-05-27",
+    content: "Our latest research shows that market-leading firms are investing heavily in fine-tuning open-weights models rather than relying exclusively on public cloud APIs. This approach protects IP, reduces API costs by up to 90%, and secures a massive competitive moat. Growth in 2026 is entirely about custom foundation pipelines.",
+    likes: 1990,
+    comments: 210,
+    shares: 116,
+    theme: "Open Source & Bespoke Agents",
+    url: "https://www.linkedin.com/posts/rajsharma_ey-growth-innovation-model-activity-7799581920392-198l"
+  },
+  {
+    id: "li_duranton_1",
+    author: "Sylvain Duranton",
+    role: "Global Leader, BCG X",
+    firm: "BCG",
+    date: "2026-05-26",
+    content: "At BCG X, our technical teams are translating raw LLM capacities into industrial-strength agent swarms. We are currently integrating autonomous procurement systems directly into corporate ERP layers, cutting manual verification delays from weeks to minutes while enforcing strict budget guardrails.",
+    likes: 1540,
+    comments: 132,
+    shares: 74,
+    theme: "Workflow Automation",
+    url: "https://www.linkedin.com/posts/sylvainduranton_bcgx-autonomous-erp-procure-activity-7799581920392-198m"
   }
 ];
 
@@ -1050,22 +1154,22 @@ CRITICAL rules:
 
 Return up to 4 distinct events. Quality and accuracy are paramount.`;
 
-const LINKEDIN_SYSTEM_PROMPT = `You are a high-level competitive intelligence agent tracking LinkedIn C-suite posts.
+const LINKEDIN_SYSTEM_PROMPT = `You are a high-level competitive intelligence agent tracking LinkedIn C-suite and key technology/consulting leader posts.
 For each LinkedIn post, you must return a valid JSON object.
 CRITICAL rules:
-- Only return posts made by CEOs or global leaders of key technology, consulting, or AI firms (such as Julie Sweet, Satya Nadella, Sundar Pichai, Janet Truncale, Jensen Huang, Christoph Schweizer, Arvind Krishna, Bob Sternfels) from the past 7 days.
+- Only return posts made by key C-suite leaders, managing partners, technology chiefs, and AI leaders of key technology, consulting, or AI firms (such as Satya Nadella, Julie Sweet, Janet Truncale, Jensen Huang, Sundar Pichai, Christoph Schweizer, Arvind Krishna, Bob Sternfels, Paul Daugherty, Dan Diasio, Steve Chase, Lareina Yee, Nitin Mittal, Mustafa Suleyman, Raj Sharma, Sylvain Duranton) from the past 7 days.
 - Return ONLY a valid JSON array of objects. No preamble, no markdown formatting.
 - For each post, include:
   - id: unique string starting with "li_scanned_"
-  - author: exact name of the executive
-  - role: exact role (e.g. CEO, Global Managing Partner)
-  - firm: name of the firm (e.g. Microsoft, Accenture, EY, NVIDIA)
+  - author: exact name of the leader
+  - role: exact role (e.g. CEO, Global AI Leader, Global Managing Partner, Group Chief Tech Executive & CTO)
+  - firm: name of the firm (e.g. Microsoft, Accenture, EY, NVIDIA, Deloitte, KPMG, McKinsey, BCG)
   - date: YYYY-MM-DD
-  - content: 3-4 sentences in the first-person voice of the CEO, sounding highly authentic, corporate, and strategic. Focus on agentic workflows, sovereign AI, upskilling, open source, or ERP automation.
+  - content: 3-4 sentences in the first-person voice of the leader, sounding highly authentic, corporate, and strategic. Focus on agentic workflows, sovereign AI, upskilling, open source, or ERP automation.
   - likes: integer (realistic C-suite like counts, e.g. 1500 to 5000)
   - comments: integer (realistic comment counts, e.g. 100 to 500)
   - shares: integer (realistic share counts, e.g. 50 to 300)
-  - theme: core posting theme (e.g. "Agentic AI Swarms", "Sovereign AI & Data Privacy", "Enterprise Scaling & Upskilling", "AI Infrastructure & Blackwell")
+  - theme: core posting theme (e.g. "Agentic AI Swarms", "Sovereign AI & Data Privacy", "Enterprise Scaling & Upskilling", "AI Infrastructure & Blackwell", "Workflow Automation", "Outcome-Based Operating Models", "Open Source & Bespoke Agents")
   - url: realistic LinkedIn post URL (e.g. https://www.linkedin.com/posts/...)
 
 Return up to 4 distinct posts. Quality and accuracy are paramount.`;

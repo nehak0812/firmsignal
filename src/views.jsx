@@ -2424,16 +2424,16 @@ export function LatestOnLinkedInView({
         <div>
           <div className="aw-eyebrow">LinkedIn Executive Intelligence</div>
           <h1 className="aw-title" style={{ fontFamily: 'var(--serif-disp)' }}>
-            LinkedIn <em>Voices</em>: CEO Narrative Briefs.
+            LinkedIn <em>Voices</em>: Key Corporate Leaders.
           </h1>
           <p className="aw-sub">
-            Monitoring strategic messages, product announcements, and corporate thought leadership posts made directly by C-Suite leaders in the past 7 days.
+            Monitoring strategic messages, product announcements, and corporate thought leadership posts made directly by C-Suite and professional services leaders in the past 7 days.
           </p>
         </div>
         <div className="aw-meta" style={{ minWidth: 260 }}>
           <div><span className="num">{totalPosts}</span>Posts (7d)</div>
           <div style={{ marginTop: 10 }}><span className="num">{(totalEngagement / 1000).toFixed(1)}k</span>Engagement</div>
-          <div style={{ marginTop: 10 }}><span className="num">{leadersCount}</span>Tracked CEOs</div>
+          <div style={{ marginTop: 10 }}><span className="num">{leadersCount}</span>Tracked Leaders</div>
         </div>
       </div>
 
@@ -2537,7 +2537,7 @@ export function LatestOnLinkedInView({
           <input
             className="custom-input"
             style={{ flex: 1 }}
-            placeholder="Search executive (e.g. 'Julie Sweet', leave blank to scan global tracked CEOs)"
+            placeholder="Search executive (e.g. 'Julie Sweet', leave blank to scan all tracked leaders)"
             value={customScanQuery}
             onChange={e => setCustomScanQuery(e.target.value)}
             disabled={isScanning}
