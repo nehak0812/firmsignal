@@ -385,7 +385,7 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
       <div className="brief-head">
         <div>
           <div className="brief-eyebrow">{dateLong} · Executive Brief</div>
-          <h1 className="brief-title">What's moving in <em>consulting</em> &amp; tech, in five minutes.</h1>
+          <h1 className="brief-title">What's moving in <em>professional services</em> &amp; tech, in five minutes.</h1>
           <p className="brief-sub">Curated signals on Big 4, MBB, and the tech alliance partners they live and die with. Ranked by what should actually concern you.</p>
           <div style={{ display: 'flex', gap: 14, marginTop: 12, flexWrap: 'wrap', alignItems: 'center' }}>
             <span style={{ fontSize: 10, color: 'var(--ink-3)', fontFamily: 'var(--mono)', letterSpacing: '0.08em', textTransform: 'uppercase', marginRight: 4 }}>Impact Key:</span>
