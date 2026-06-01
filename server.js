@@ -687,6 +687,168 @@ const DEFAULT_DEMO_SUMMITS = [
   }
 ];
 
+const ALL_TRACKED_LEADERS = [
+  { name: "Sam Altman", role: "CEO", firm: "OpenAI" },
+  { name: "Greg Brockman", role: "President & Co-Founder", firm: "OpenAI" },
+  { name: "Dario Amodei", role: "CEO", firm: "Anthropic" },
+  { name: "Daniela Amodei", role: "President", firm: "Anthropic" },
+  { name: "Aravind Srinivas", role: "CEO & Co-Founder", firm: "Perplexity" },
+  { name: "Arthur Mensch", role: "CEO & Co-Founder", firm: "Mistral AI" },
+  { name: "Guillaume Lample", role: "Chief Scientist & Co-Founder", firm: "Mistral AI" },
+  { name: "Aidan Gomez", role: "CEO & Co-Founder", firm: "Cohere" },
+  { name: "Elon Musk", role: "Founder & CEO", firm: "xAI" },
+  { name: "Liang Wenfeng", role: "Founder & CEO", firm: "DeepSeek" },
+  { name: "Alex Karp", role: "CEO & Co-Founder", firm: "Palantir" },
+  { name: "Shyam Sankar", role: "CTO", firm: "Palantir" },
+  { name: "Joe Ucuzoglu", role: "Global CEO", firm: "Deloitte" },
+  { name: "Jason Girzadas", role: "CEO, Deloitte US", firm: "Deloitte" },
+  { name: "Anna Marks", role: "Global Board Chair", firm: "Deloitte" },
+  { name: "Jason Balcetti", role: "Chair & CEO, Deloitte Consulting LLP (US)", firm: "Deloitte" },
+  { name: "Nitin Mittal", role: "Global AI Leader", firm: "Deloitte" },
+  { name: "Dounia Ammoush", role: "Global Deloitte AI Institute Leader", firm: "Deloitte" },
+  { name: "Jerome Oglesby", role: "Global Chief Technology Officer", firm: "Deloitte" },
+  { name: "Nishita Henry", role: "Global Chief Commercial Officer, Consulting Ecosystem Alliances", firm: "Deloitte" },
+  { name: "Mohamed Kande", role: "Global Chair", firm: "PwC" },
+  { name: "Alex Bristol", role: "Global Assurance Leader", firm: "PwC" },
+  { name: "Damian Ganes", role: "Global Advisory Leader", firm: "PwC" },
+  { name: "Brad Silver", role: "Global Tax & Legal Services Leader", firm: "PwC" },
+  { name: "Tyson Cornell", role: "Global Advisory Leader-elect", firm: "PwC" },
+  { name: "Krishnan Chandrasekhar", role: "Global Tax & Legal Services Leader-elect", firm: "PwC" },
+  { name: "Andy Hammond", role: "Global Assurance Leader-elect", firm: "PwC" },
+  { name: "Pete Wakefield", role: "Clients, Markets & Industries Leader", firm: "PwC" },
+  { name: "Janet Truncale", role: "Global Chair & CEO", firm: "EY" },
+  { name: "Jad Shimaly", role: "Global Managing Partner - Client Service", firm: "EY" },
+  { name: "Raj Sharma", role: "Global Managing Partner - Growth & Innovation, EY AI Council Chair", firm: "EY" },
+  { name: "Dan Diasio", role: "Global AI Leader, EY Consulting", firm: "EY" },
+  { name: "Warna Kumar", role: "Global Vice Chair - Tax", firm: "EY" },
+  { name: "Andrea Guerzoni", role: "Global Vice Chair - EY Parthenon", firm: "EY" },
+  { name: "Julie Teigland", role: "Global Vice Chair - Alliances & Ecosystems", firm: "EY" },
+  { name: "Paul Goodhew", role: "Global Assurance Innovation & Emerging Technology Leader", firm: "EY" },
+  { name: "Marc Jochemich", role: "Global Assurance Digital Leader", firm: "EY" },
+  { name: "Laurence Buchanan", role: "Global Leader, EY Ocean (CX & Growth)", firm: "EY" },
+  { name: "Gil Forer", role: "Global Digital & Business Disruption Leader", firm: "EY" },
+  { name: "Bill Thomas", role: "Global Chairman & CEO", firm: "KPMG" },
+  { name: "Rob Fisher", role: "Global Head of Advisory", firm: "KPMG" },
+  { name: "Steve Chase", role: "Global Head of AI & Digital Innovation", firm: "KPMG" },
+  { name: "Timothy Knish", role: "Chair & CEO, KPMG US", firm: "KPMG" },
+  { name: "Anis Zani", role: "Deputy Chair & US Managing Principal", firm: "KPMG" },
+  { name: "Bob Sternfels", role: "Global Managing Partner", firm: "McKinsey" },
+  { name: "Alex Singla", role: "Global Leader, QuantumBlack, AI by McKinsey", firm: "McKinsey" },
+  { name: "Lareina Yee", role: "Senior Partner - AI & Frontier Technologies, McKinsey Global Institute Chair", firm: "McKinsey" },
+  { name: "Bernhard Scholl", role: "Senior Partner - QuantumBlack, Alliances & Partnerships", firm: "McKinsey" },
+  { name: "Alexander Sukharevsky", role: "Senior Partner - QuantumBlack, AI by McKinsey", firm: "McKinsey" },
+  { name: "Holger Harreis", role: "Senior Partner & Director, McKinsey Global Institute", firm: "McKinsey" },
+  { name: "Warren Valdmanis", role: "Senior Partner, McKinsey Global Institute", firm: "McKinsey" },
+  { name: "Christoph Schweizer", role: "CEO", firm: "BCG" },
+  { name: "Rich Lesser", role: "Global Chair", firm: "BCG" },
+  { name: "Sylvain Duranton", role: "Global Leader, BCG X", firm: "BCG" },
+  { name: "Suchi Sahu", role: "North America Chair, BCG X, Global Leader AI & Fast Track", firm: "BCG" },
+  { name: "Manny Maceda", role: "Worldwide Managing Partner & CEO", firm: "Bain" },
+  { name: "Hernan Saenz", role: "Global Head, Strategy & Transformation Practice", firm: "Bain" },
+  { name: "Arvind Krishna", role: "Chairman & CEO, IBM", firm: "IBM Consulting" },
+  { name: "Manish Khera", role: "Senior VP, IBM Consulting", firm: "IBM Consulting" },
+  { name: "John Granger", role: "Senior VP & CEO", firm: "IBM Consulting" },
+  { name: "Julie Sweet", role: "Chair & CEO", firm: "Accenture" },
+  { name: "Paul Daugherty", role: "Group Chief Executive - Technology & CTO", firm: "Accenture" },
+  { name: "Lan Guan", role: "Global AI Leader", firm: "Accenture" },
+  { name: "Aiman Ezzat", role: "CEO", firm: "Capgemini" },
+  { name: "Patrick Gouvène", role: "Chief of Portfolio & Technology Officer", firm: "Capgemini" },
+  { name: "Abhijit Dubey", role: "CEO (Outside Japan)", firm: "NTT Data" },
+  { name: "Mario Rizzante", role: "Chairman & Co-Founder", firm: "Reply" },
+  { name: "Tatiana Rizzante", role: "CEO", firm: "Reply" },
+  { name: "Satya Nadella", role: "Chairman & CEO", firm: "Microsoft" },
+  { name: "Mustafa Suleyman", role: "CEO, Microsoft AI", firm: "Microsoft" },
+  { name: "Kevin Scott", role: "CTO & EVP of AI", firm: "Microsoft" },
+  { name: "Christian Klein", role: "Chairman & CEO", firm: "SAP" },
+  { name: "Muhammad Alam", role: "President, Cloud ERP", firm: "SAP" },
+  { name: "Bill McDermott", role: "Chairman & CEO", firm: "ServiceNow" },
+  { name: "CJ Desai", role: "President & COO", firm: "ServiceNow" },
+  { name: "Sundar Pichai", role: "CEO", firm: "Google" },
+  { name: "Demis Hassabis", role: "CEO, Google DeepMind", firm: "Google" },
+  { name: "Scott Arnold", role: "CEO", firm: "AuditBoard" },
+  { name: "Marc Benioff", role: "Chair & CEO", firm: "Salesforce" },
+  { name: "Adam Evans", role: "EVP & GM, Salesforce AI", firm: "Salesforce" },
+  { name: "Matt Garman", role: "CEO", firm: "AWS" },
+  { name: "Vasi Philomin", role: "VP of AI & Data", firm: "AWS" },
+  { name: "Carl Eschenbach", role: "CEO", firm: "Workday" },
+  { name: "Sayan Chakraborty", role: "President, Technology & Product", firm: "Workday" },
+  { name: "Cristiano Amon", role: "President & CEO", firm: "Qualcomm" },
+  { name: "Jensen Huang", role: "Founder, President & CEO", firm: "NVIDIA" },
+  { name: "Manuvir Das", role: "VP of Enterprise Computing", firm: "NVIDIA" },
+  { name: "David Cramer", role: "CEO & Co-Founder", firm: "Sentry" },
+  { name: "Charles Meyers", role: "President & CEO", firm: "Equinix" },
+  { name: "Emil Eifrem", role: "CEO & Co-Founder", firm: "Neo4j" },
+  { name: "Christel Heydemann", role: "CEO", firm: "Orange" },
+  { name: "Patrice Bance", role: "EVP, Enterprise & AI", firm: "Orange" },
+  { name: "Andrej Vlasov", role: "CTO & Co-Founder", firm: "Qdrant" },
+  { name: "Devang Sachdev", role: "VP of Marketing", firm: "Snorkel AI" }
+];
+
+function generateLocalLeaderPost(leader) {
+  const today = new Date().toISOString().slice(0, 10);
+  const themes = [
+    {
+      theme: "Agentic AI Swarms",
+      templates: [
+        "Incredibly excited about how quickly our teams are scaling multi-agent swarm networks. Moving from basic copilots to autonomous orchestration is the definitive shift of 2026. By chaining active sub-agent flows directly into client layers, we are bypassing manual administrative bottlenecks and delivering up to 60% margin improvement.",
+        "We are seeing a massive demand for agentic swarm systems across professional services and supply chains. Rather than passive search queries, these automated agents execute complex procurement transactions and audits autonomously, protecting corporate agility in highly compression-prone markets."
+      ]
+    },
+    {
+      theme: "Sovereign AI & Data Privacy",
+      templates: [
+        "Sovereign AI and regulated data storage solutions are the highest priority for our enterprise clients in H2. Restricting model fine-tuning to local secure cloud infrastructures is paramount for compliance. Our collaborative secure setups ensure that private corporation IP never leaks into public systems.",
+        "Delighted to lead our secure model deployment tracks. Navigating EU AI Act guidelines requires private fine-tuned networks that guarantee local data residency. We're delivering secure, compliant advisory blocks that prove corporate compliance is a powerful competitive differentiator."
+      ]
+    },
+    {
+      theme: "AI Infrastructure & Blackwell",
+      templates: [
+        "Deploying Blackwell chips and custom hardware systems directly inside operational layers is transforming raw processing speed. Local, private AI factories represent the modern engine room of corporate agility. Our ecosystem alliance integrations are delivering real-time low-latency intelligence on-prem.",
+        "Accelerating enterprise infrastructure means moving model computation as close to the data as possible. By constructing private, hardware-integrated model pipelines, we're cutting API compute overhead by 90% while providing industrial-strength security for sensitive pipelines."
+      ]
+    },
+    {
+      theme: "Workflow Automation",
+      templates: [
+        "Integrating generative orchestration directly into legacy ERP systems is completely redesigning back-office operations. We are successfully automating up to 50% of routine HR ticketing and financial reconciliation workflows, allowing corporate teams to focus on strategic execution.",
+        "True digital transformation means connecting disparate business layers through automated workflow orchestration. By linking private models straight to active procurement chains, we're helping clients achieve outcome-aligned efficiency without human middleware bottlenecks."
+      ]
+    },
+    {
+      theme: "Outcome-Based Operating Models",
+      templates: [
+        "The traditional hourly consulting billing framework is under strategic pressure. As autonomous systems absorb headcount-heavy tasks, advisory firms must transition to outcome-based operating models. Pricing services around strategic throughput and margin gains is the only way to protect professional value.",
+        "Re-pricing advisory services around high-value structural throughput rather than consultant hours is a massive corporate shift. Multi-agent swarms deliver deliverables instantly, making fee alignment based on client growth and cost drops the definitive model of 2026."
+      ]
+    },
+    {
+      theme: "Open Source & Bespoke Agents",
+      templates: [
+        "Open-source foundation models and local custom agents are enabling complete strategic independence for major organizations. Embedding lightweight, custom-tuned weights directly inside corporate layers ensures absolute IP ownership and eliminates vendor lock-in.",
+        "The era of monolithic closed APIs is giving way to highly targeted open-weights fine-tuning. By orchestrating private, open-source model pipelines, companies can scale strategic automated operations without massive capital outlays or operational exposure."
+      ]
+    }
+  ];
+
+  const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+  const randomContent = randomTheme.templates[Math.floor(Math.random() * randomTheme.templates.length)];
+
+  return {
+    id: `li_scanned_${Date.now()}_${Math.floor(Math.random() * 100000)}`,
+    author: leader.name,
+    role: leader.role,
+    firm: leader.firm,
+    date: today,
+    content: randomContent,
+    likes: Math.floor(Math.random() * 2000) + 1200,
+    comments: Math.floor(Math.random() * 200) + 80,
+    shares: Math.floor(Math.random() * 150) + 40,
+    theme: randomTheme.theme,
+    url: `https://www.linkedin.com/posts/${leader.name.toLowerCase().replace(/[^a-z0-9]/g, '')}_${randomTheme.theme.toLowerCase().replace(/[^a-z0-9]/g, '')}-activity-${Math.floor(Math.random() * 10000000000000)}-${Math.floor(Math.random() * 1000).toString(16)}`
+  };
+}
+
 const DEFAULT_DEMO_LINKEDIN = [
   {
     id: "li_satya_1",
@@ -1745,34 +1907,16 @@ app.post('/api/linkedin/scan', async (req, res) => {
     // Phase 3: Absolute local offline mock fallback (Generate new scanned LinkedIn posts)
     if (!scanSuccess) {
       await logActivity('ALL LINKEDIN API CHANNELS OFFLINE: Generating local mock scanned posts...');
-      parsed = [
-        {
-          id: `li_scanned_${Date.now()}_1`,
-          author: "Janet Truncale",
-          role: "Global CEO",
-          firm: "EY",
-          date: new Date().toISOString().slice(0, 10),
-          content: "Fantastic exchange today with enterprise banking leaders at our Paris Executive Briefing. The message is clear: trust is the primary currency of Generative AI. Running our EY NVIDIA AI Factory on secure, private infrastructures gives banks the strategic control they need. Thrilled to see our sovereign AI roadmaps aligning perfectly with their H2 timelines.",
-          likes: 2150,
-          comments: 189,
-          shares: 110,
-          theme: "Sovereign AI & Data Privacy",
-          url: "https://www.linkedin.com/posts/janettruncale_ey-nvidia-paris-summit-activity-7799581920392-198c"
-        },
-        {
-          id: `li_scanned_${Date.now()}_2`,
-          author: "Satya Nadella",
-          role: "CEO",
-          firm: "Microsoft",
-          date: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
-          content: "Enterprise value is migrating rapidly from simple copilots to multi-agent swarms. By chaining autonomous agents directly over Azure, we are unlocking massive operational automation across procurement, HR, and custom support workflows. Our system integrator partners like Accenture and EY are executing on this design at record speed.",
-          likes: 3120,
-          comments: 298,
-          shares: 210,
-          theme: "Agentic AI Swarms",
-          url: "https://www.linkedin.com/posts/satyanadella_azure-agentic-flows-activity-7799482910394-281b"
-        }
-      ];
+      
+      const newMockPosts = [];
+      const shuffledLeaders = [...ALL_TRACKED_LEADERS].sort(() => 0.5 - Math.random());
+      
+      // Select 4 random leaders and generate posts dynamically from ALL_TRACKED_LEADERS catalog
+      const countToGenerate = Math.min(4, shuffledLeaders.length);
+      for (let i = 0; i < countToGenerate; i++) {
+        newMockPosts.push(generateLocalLeaderPost(shuffledLeaders[i]));
+      }
+      parsed = newMockPosts;
     }
 
     if (!db.linkedin) db.linkedin = [];
@@ -2436,6 +2580,17 @@ app.post('/api/db/reset', async (req, res) => {
   await logActivity('POST /api/db/reset hit. Restoring database to factory default demo signals.');
 
   try {
+    const resetLinkedInSeeds = [...DEFAULT_DEMO_LINKEDIN];
+    const existingAuthors = new Set(DEFAULT_DEMO_LINKEDIN.map(p => p.author.toLowerCase()));
+    const availableLeaders = ALL_TRACKED_LEADERS.filter(l => !existingAuthors.has(l.name.toLowerCase()));
+    
+    // Pick 20 random leaders and generate realistic first-person C-suite LinkedIn posts
+    const shuffled = [...availableLeaders].sort(() => 0.5 - Math.random());
+    const count = Math.min(20, shuffled.length);
+    for (let i = 0; i < count; i++) {
+      resetLinkedInSeeds.push(generateLocalLeaderPost(shuffled[i]));
+    }
+
     const defaultDb = {
       firms: [
         { id: "Deloitte", dot: "#4a90e2", type: "consulting" },
@@ -2482,7 +2637,7 @@ app.post('/api/db/reset', async (req, res) => {
       signals: [],
       reports: DEFAULT_DEMO_REPORTS,
       summits: DEFAULT_DEMO_SUMMITS,
-      linkedin: DEFAULT_DEMO_LINKEDIN,
+      linkedin: resetLinkedInSeeds,
       chatLogs: [],
       readArticles: {},
       graphCoordinates: {}
