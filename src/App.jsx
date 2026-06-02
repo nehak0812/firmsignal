@@ -13,6 +13,13 @@ import {
 } from './views.jsx';
 import { TweaksPanel, TweakSection, TweakRadio, TweakToggle, useTweaks } from './tweaks.jsx';
 
+// Helper to check if the AI NOW Summit is active (May 28-30, 2026; auto-hides on June 1, 2026)
+const isSummitActive = () => {
+  const now = new Date();
+  const expiration = new Date('2026-06-01T00:00:00');
+  return now <= expiration;
+};
+
 // ============== SIDEBAR FILTER COMPONENT ==============
 function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, toggleSignal, view, setView, onOpenApiModal, setActiveFirms, excludedFirms = new Set(), toggleExcludeFirm }) {
   const consCount = data.filter(d => d.type === 'consulting').length;
@@ -67,7 +74,7 @@ function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, tog
           <span className="sb-dot" style={{ background: f.dot }} />
           <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
             {f.id}
-            {f.aiNowSponsor && (
+            {f.aiNowSponsor && isSummitActive() && (
               <span style={{ color: '#d4a04a', fontSize: 11, cursor: 'help' }} title="Currently a sponsor of the AI Now Summit">★</span>
             )}
           </span>
@@ -166,21 +173,23 @@ function Sidebar({ firms = [], data, activeFirms, toggleFirm, activeSignals, tog
         </div>
       </div>
       {/* AI Now Summit Sponsor Legend */}
-      <div style={{
-        marginTop: 'auto',
-        padding: '10px 12px',
-        background: 'rgba(212, 160, 74, 0.05)',
-        border: '1px dashed rgba(212, 160, 74, 0.3)',
-        borderRadius: '6px',
-        fontSize: '11px',
-        color: 'var(--ink-2)',
-        fontFamily: 'var(--serif)',
-        lineHeight: '1.4',
-        margin: '10px 8px'
-      }}>
-        <span style={{ color: '#d4a04a', fontWeight: 'bold', marginRight: '4px' }}>★</span>
-        Currently a sponsor of the <strong>AI Now Summit</strong> organized by Mistral AI.
-      </div>
+      {isSummitActive() && (
+        <div style={{
+          marginTop: 'auto',
+          padding: '10px 12px',
+          background: 'rgba(212, 160, 74, 0.05)',
+          border: '1px dashed rgba(212, 160, 74, 0.3)',
+          borderRadius: '6px',
+          fontSize: '11px',
+          color: 'var(--ink-2)',
+          fontFamily: 'var(--serif)',
+          lineHeight: '1.4',
+          margin: '10px 8px'
+        }}>
+          <span style={{ color: '#d4a04a', fontWeight: 'bold', marginRight: '4px' }}>★</span>
+          Currently a sponsor of the <strong>AI Now Summit</strong> organized by Mistral AI.
+        </div>
+      )}
 
       <div className="sb-section" style={{ paddingTop: 10 }}>
         <button 
