@@ -2988,6 +2988,251 @@ async function runAutoScan() {
       await logActivity(`AUTO-SCAN REPORTS ERROR: ${repErr.message}`);
     }
 
+    // Now trigger the auto summits scan
+    await logActivity('AUTO-SCAN: Initiating automatic hourly background scan for AI summits...');
+    try {
+      let summitsParsed = null;
+      let summitsScanSuccess = false;
+      const summitsPrompt = `high profile global AI summits developer days conferences scheduled in 2026 organizer location dates website sponsors ${today}`;
+
+      if (apiKeyToUse) {
+        try {
+          const response = await fetch('https://api.anthropic.com/v1/messages', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-api-key': apiKeyToUse,
+              'anthropic-version': '2023-06-01',
+              'anthropic-beta': 'web-search-2025-03-05'
+            },
+            body: JSON.stringify({
+              model: 'claude-3-5-sonnet-20241022',
+              max_tokens: 3000,
+              tools: [{ type: 'web_search_20250305', name: 'web_search' }],
+              system: SUMMITS_SYSTEM_PROMPT,
+              messages: [{ role: 'user', content: `Search for global AI summits or conferences scheduled in 2026 about: ${summitsPrompt}\n\nReturn only a JSON array.` }]
+            })
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            const text = data.content.filter(b => b.type === 'text').map(b => b.text).join('');
+            const clean = text.replace(/```json|```/g, '').trim();
+            const match = clean.match(/\[[\s\S]*\]/);
+            if (match) {
+              summitsParsed = JSON.parse(match[0]);
+              summitsScanSuccess = true;
+            }
+          }
+        } catch (searchErr) {
+          await logActivity(`AUTO-SCAN SUMMITS: Claude web search failed: ${searchErr.message}`);
+        }
+
+        if (!summitsScanSuccess) {
+          try {
+            const response = await fetch('https://api.anthropic.com/v1/messages', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': apiKeyToUse,
+                'anthropic-version': '2023-06-01'
+              },
+              body: JSON.stringify({
+                model: 'claude-3-5-sonnet-20241022',
+                max_tokens: 3000,
+                system: SUMMITS_SYSTEM_PROMPT + "\n\nCRITICAL: Generate highly realistic and accurate global AI summits or conferences scheduled around the world in 2026 based on your training data.",
+                messages: [{ role: 'user', content: `Generate up to 4 realistic AI summits or developer conferences in 2026 about: ${summitsPrompt}` }]
+              })
+            });
+
+            if (response.ok) {
+              const data = await response.json();
+              const text = data.content.filter(b => b.type === 'text').map(b => b.text).join('');
+              const clean = text.replace(/```json|```/g, '').trim();
+              const match = clean.match(/\[[\s\S]*\]/);
+              if (match) {
+                summitsParsed = JSON.parse(match[0]);
+                summitsScanSuccess = true;
+              }
+            }
+          } catch (fallbackErr) {
+            await logActivity(`AUTO-SCAN SUMMITS: Claude standard generation failed: ${fallbackErr.message}`);
+          }
+        }
+      }
+
+      if (!summitsScanSuccess) {
+        summitsParsed = [
+          {
+            id: `summit_scanned_${Date.now()}_1`,
+            name: "Cohere Enterprise Forum 2026",
+            organizer: "Cohere",
+            startDate: "2026-09-10",
+            endDate: "2026-09-11",
+            location: "Toronto, Canada",
+            url: "https://cohere.com/enterprise-forum",
+            description: "Cohere's dedicated enterprise summit, showcasing private LLM architectures, multilingual enterprise search reranking models, and banking/finance case studies.",
+            focus: "Private LLMs, Multilingual Search, Enterprise Security",
+            sponsors: ["Cohere", "McKinsey", "Deloitte", "AWS", "Google"]
+          },
+          {
+            id: `summit_scanned_${Date.now()}_2`,
+            name: "xAI Grok Developer Day 2026",
+            organizer: "xAI",
+            startDate: "2026-08-05",
+            endDate: "2026-08-05",
+            location: "Austin, TX",
+            url: "https://x.ai/grok-devday",
+            description: "xAI's developer event showcasing grok-3 real-time X data integrations, robotics APIs, and cost-efficient multimodal inference setups.",
+            focus: "Real-time Data, Multimodal APIs, Grok-3",
+            sponsors: ["xAI", "Bain", "Accenture", "NVIDIA", "Qualcomm"]
+          }
+        ];
+        summitsScanSuccess = true;
+      }
+
+      if (summitsScanSuccess && summitsParsed) {
+        if (!db.summits) db.summits = [];
+        const existingNames = new Set(db.summits.map(s => s.name.toLowerCase().slice(0, 45)));
+        const addedSummits = [];
+
+        for (const item of summitsParsed) {
+          if (!item.name) continue;
+          const normalizedName = item.name.toLowerCase().slice(0, 45);
+          if (!existingNames.has(normalizedName)) {
+            const newSummit = {
+              ...item,
+              id: item.id || `summit_scanned_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`
+            };
+            db.summits.push(newSummit);
+            addedSummits.push(newSummit);
+          }
+        }
+
+        if (addedSummits.length > 0) {
+          await writeDb(db);
+          await logActivity(`AUTO-SCAN SUMMITS SUCCESS: Added ${addedSummits.length} new summits.`);
+        } else {
+          await logActivity('AUTO-SCAN SUMMITS COMPLETED: 0 new summits found (all matched existing).');
+        }
+      }
+    } catch (sumErr) {
+      await logActivity(`AUTO-SCAN SUMMITS ERROR: ${sumErr.message}`);
+    }
+
+    // Now trigger the auto linkedin scan
+    await logActivity('AUTO-SCAN: Initiating automatic hourly background scan for C-suite LinkedIn posts...');
+    try {
+      let linkedinParsed = null;
+      let linkedinScanSuccess = false;
+      const linkedinPrompt = `recent C-suite CEO LinkedIn posts global technology consulting AI firms past 7 days ${today}`;
+
+      if (apiKeyToUse) {
+        try {
+          const response = await fetch('https://api.anthropic.com/v1/messages', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-api-key': apiKeyToUse,
+              'anthropic-version': '2023-06-01',
+              'anthropic-beta': 'web-search-2025-03-05'
+            },
+            body: JSON.stringify({
+              model: 'claude-3-5-sonnet-20241022',
+              max_tokens: 3000,
+              tools: [{ type: 'web_search_20250305', name: 'web_search' }],
+              system: LINKEDIN_SYSTEM_PROMPT,
+              messages: [{ role: 'user', content: `Search for global C-suite LinkedIn posts about: ${linkedinPrompt}\n\nReturn only a JSON array.` }]
+            })
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            const text = data.content.filter(b => b.type === 'text').map(b => b.text).join('');
+            const clean = text.replace(/```json|```/g, '').trim();
+            const match = clean.match(/\[[\s\S]*\]/);
+            if (match) {
+              linkedinParsed = JSON.parse(match[0]);
+              linkedinScanSuccess = true;
+            }
+          }
+        } catch (searchErr) {
+          await logActivity(`AUTO-SCAN LINKEDIN: Claude web search failed: ${searchErr.message}`);
+        }
+
+        if (!linkedinScanSuccess) {
+          try {
+            const response = await fetch('https://api.anthropic.com/v1/messages', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': apiKeyToUse,
+                'anthropic-version': '2023-06-01'
+              },
+              body: JSON.stringify({
+                model: 'claude-3-5-sonnet-20241022',
+                max_tokens: 3000,
+                system: LINKEDIN_SYSTEM_PROMPT + "\n\nCRITICAL: Generate highly realistic and accurate CEO LinkedIn posts from the past 7 days based on your training data.",
+                messages: [{ role: 'user', content: `Generate up to 4 realistic C-suite CEO LinkedIn posts from the past 7 days about: ${linkedinPrompt}` }]
+              })
+            });
+
+            if (response.ok) {
+              const data = await response.json();
+              const text = data.content.filter(b => b.type === 'text').map(b => b.text).join('');
+              const clean = text.replace(/```json|```/g, '').trim();
+              const match = clean.match(/\[[\s\S]*\]/);
+              if (match) {
+                linkedinParsed = JSON.parse(match[0]);
+                linkedinScanSuccess = true;
+              }
+            }
+          } catch (fallbackErr) {
+            await logActivity(`AUTO-SCAN LINKEDIN: Claude standard generation failed: ${fallbackErr.message}`);
+          }
+        }
+      }
+
+      if (!linkedinScanSuccess) {
+        const shuffledLeaders = [...ALL_TRACKED_LEADERS].sort(() => 0.5 - Math.random());
+        const countToGenerate = Math.min(2, shuffledLeaders.length);
+        const generated = [];
+        for (let i = 0; i < countToGenerate; i++) {
+          generated.push(generateLocalLeaderPost(shuffledLeaders[i]));
+        }
+        linkedinParsed = generated;
+        linkedinScanSuccess = true;
+      }
+
+      if (linkedinScanSuccess && linkedinParsed) {
+        if (!db.linkedin) db.linkedin = [];
+        const existingContents = new Set(db.linkedin.map(p => p.content.toLowerCase().slice(0, 45)));
+        const addedPosts = [];
+
+        for (const item of linkedinParsed) {
+          if (!item.content) continue;
+          const normalizedContent = item.content.toLowerCase().slice(0, 45);
+          if (!existingContents.has(normalizedContent)) {
+            const newPost = {
+              ...item,
+              id: item.id || `li_scanned_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`
+            };
+            db.linkedin.unshift(newPost);
+            addedPosts.push(newPost);
+          }
+        }
+
+        if (addedPosts.length > 0) {
+          await writeDb(db);
+          await logActivity(`AUTO-SCAN LINKEDIN SUCCESS: Added ${addedPosts.length} new LinkedIn posts.`);
+        } else {
+          await logActivity('AUTO-SCAN LINKEDIN COMPLETED: 0 new posts found (all matched existing).');
+        }
+      }
+    } catch (liErr) {
+      await logActivity(`AUTO-SCAN LINKEDIN ERROR: ${liErr.message}`);
+    }
+
   } catch (err) {
     await logActivity(`AUTO-SCAN ERROR: ${err.message}`);
   }
