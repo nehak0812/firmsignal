@@ -1221,7 +1221,7 @@ function App() {
     { id: 'linkedin',  label: 'LinkedIn Voices' },
     { id: 'context',   label: 'Context Corner' },
     { id: 'reports',    label: 'Thought Leadership' },
-    { id: 'financials', label: 'Finance Roundup' },
+    { id: 'financials', label: 'Financial Roundup' },
     { id: 'graph',      label: 'Knowledge Graph' },
     { id: 'heatmap',    label: 'Heatmap' },
     { id: 'compare',    label: 'Compare' },
