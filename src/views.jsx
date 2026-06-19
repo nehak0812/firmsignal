@@ -2742,4 +2742,449 @@ export function LatestOnLinkedInView({
   );
 }
 
+// ============== FINANCIAL ROUND-UP VIEW ==============
+export function FinancialRoundupView({
+  financials = [],
+  onScanFinancials,
+  apiKey,
+  serverHasKey,
+  onOpenApiModal,
+  onShowToast
+}) {
+  const [activeSubTab, setActiveSubTab] = useState('comparison');
+  const [isScanning, setIsScanning] = useState(false);
+  const [customScanQuery, setCustomScanQuery] = useState('');
+
+  const firmsList = ['EY', 'Deloitte', 'Accenture', 'PwC', 'KPMG'];
+  
+  const getDotColor = (firmId) => {
+    const map = {
+      EY: '#f5a623',
+      Deloitte: '#4a90e2',
+      Accenture: '#a86fc7',
+      PwC: '#d4a04a',
+      KPMG: '#b294d4'
+    };
+    return map[firmId] || '#aaaaaa';
+  };
+
+  const handleScan = async (e) => {
+    e.preventDefault();
+    if (!apiKey && !serverHasKey) {
+      onOpenApiModal();
+      return;
+    }
+    setIsScanning(true);
+    try {
+      await onScanFinancials(customScanQuery);
+      setCustomScanQuery('');
+      onShowToast('✓ Financial data scan completed.');
+    } catch (err) {
+      onShowToast(`Scan failed: ${err.message || 'error'}`);
+    }
+    setIsScanning(false);
+  };
+
+  const selectedFirmData = useMemo(() => {
+    return financials.find(f => f.id.toLowerCase() === activeSubTab.toLowerCase());
+  }, [financials, activeSubTab]);
+
+  return (
+    <div className="thought-leadership-corner">
+      {/* Header Banner */}
+      <div className="aw-head" style={{ marginBottom: 20 }}>
+        <div>
+          <div className="aw-eyebrow">Intelligence Portal</div>
+          <h1 className="aw-title" style={{ fontFamily: 'var(--serif-disp)' }}>
+            Financial <em>Round-up</em> &amp; AI Exposure.
+          </h1>
+          <p className="aw-sub">
+            Track and compare real-time revenue splits, headcount stats, and AI strategic positioning of the Big 4 + Accenture.
+          </p>
+        </div>
+        <div className="aw-meta" style={{ minWidth: 280 }}>
+          <div><span className="num">5</span>Firms Monitored</div>
+          <div style={{ marginTop: 10 }}><span className="num">FY24/25</span>Current Cycle</div>
+          <div style={{ marginTop: 10 }}><span className="num">Ivory</span>Theme Calibrated</div>
+        </div>
+      </div>
+
+      {/* Live Financial Crawler Card */}
+      <div className="fetch-card" style={{ marginBottom: 24, padding: '16px 20px' }}>
+        <div className="fetch-title" style={{ color: 'var(--accent)', fontWeight: 600 }}>
+          <span style={{ marginRight: 8 }}>💼</span>
+          Live Financial Crawler &amp; Report Sweeper
+        </div>
+        <form onSubmit={handleScan} className="fetch-row" style={{ marginTop: 10, display: 'flex', gap: 12 }}>
+          <input
+            className="custom-input"
+            style={{ flex: 1 }}
+            placeholder="Search prompt (e.g. 'Accenture Q3 2025 earnings', leave blank for standard sweep)"
+            value={customScanQuery}
+            onChange={e => setCustomScanQuery(e.target.value)}
+            disabled={isScanning}
+          />
+          <button 
+            type="submit" 
+            className={`fetch-btn ${isScanning ? 'loading' : ''}`}
+            disabled={isScanning}
+            style={{
+              borderColor: 'var(--accent)',
+              color: 'var(--accent)',
+              background: 'transparent',
+              minWidth: 180
+            }}
+          >
+            {isScanning ? 'Sweeping Reports...' : 'Scan Financial Results'}
+          </button>
+        </form>
+        {isScanning && (
+          <div className="sweep-prog" style={{ marginTop: 12 }}>
+            <div className="sweep-bar-wrap" style={{ height: 4, background: 'rgba(212,160,74,0.1)' }}>
+              <div 
+                className="sweep-bar animate-pulse" 
+                style={{ 
+                  width: '100%', 
+                  background: 'var(--accent)', 
+                  height: '100%', 
+                  animation: 'pulse 1.5s infinite ease-in-out' 
+                }} 
+              />
+            </div>
+            <p style={{ fontSize: 10, fontFamily: 'var(--mono)', color: 'var(--ink-3)', marginTop: 6, textTransform: 'none', textAlign: 'center' }}>
+              Financial Crawler is scraping press releases, parsing investor relations PDFs, and synthesizing C-suite insights...
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Sub-Navigation Tabs */}
+      <div className="forum-hub-tabs" style={{ display: 'flex', gap: 8, borderBottom: '1px solid var(--line)', paddingBottom: 12, marginBottom: 24, flexWrap: 'wrap' }}>
+        <button
+          onClick={() => setActiveSubTab('comparison')}
+          style={{
+            background: activeSubTab === 'comparison' ? 'var(--accent-bg)' : 'transparent',
+            border: '1px solid ' + (activeSubTab === 'comparison' ? 'var(--accent)' : 'var(--line)'),
+            color: activeSubTab === 'comparison' ? 'var(--accent)' : 'var(--ink-2)',
+            fontFamily: 'var(--mono)',
+            fontSize: 11,
+            padding: '8px 16px',
+            borderRadius: 4,
+            cursor: 'pointer',
+            fontWeight: 600,
+            transition: 'all 0.2s ease'
+          }}
+        >
+          📊 One-View Comparison
+        </button>
+        {firmsList.map(firm => {
+          const isActive = activeSubTab.toLowerCase() === firm.toLowerCase();
+          return (
+            <button
+              key={firm}
+              onClick={() => setActiveSubTab(firm.toLowerCase())}
+              style={{
+                background: isActive ? 'var(--accent-bg)' : 'transparent',
+                border: '1px solid ' + (isActive ? 'var(--accent)' : 'var(--line)'),
+                color: isActive ? 'var(--accent)' : 'var(--ink-2)',
+                fontFamily: 'var(--mono)',
+                fontSize: 11,
+                padding: '8px 16px',
+                borderRadius: 4,
+                cursor: 'pointer',
+                fontWeight: 600,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <span style={{ width: 6, height: 6, background: getDotColor(firm), borderRadius: '50%' }} />
+              {firm}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Tab Contents */}
+      {activeSubTab === 'comparison' ? (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+          {/* Comparison Table */}
+          <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 'var(--r-lg)', padding: '24px 20px', overflowX: 'auto' }}>
+            <h3 style={{ fontFamily: 'var(--serif-disp)', fontSize: 18, marginTop: 0, marginBottom: 16, color: 'var(--ink)' }}>
+              Head-to-Head Comparative Matrix
+            </h3>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, textAlign: 'left' }}>
+              <thead>
+                <tr style={{ borderBottom: '1px solid var(--line)', color: 'var(--ink-3)', fontFamily: 'var(--mono)', fontSize: 11 }}>
+                  <th style={{ padding: '12px 8px' }}>Firm</th>
+                  <th style={{ padding: '12px 8px' }}>Reporting Period</th>
+                  <th style={{ padding: '12px 8px', textAlign: 'right' }}>Revenue (USD B)</th>
+                  <th style={{ padding: '12px 8px', textAlign: 'right' }}>Growth</th>
+                  <th style={{ padding: '12px 8px' }}>Managed Services Cut</th>
+                  <th style={{ padding: '12px 8px', textAlign: 'right' }}>Headcount</th>
+                  <th style={{ padding: '12px 8px', textAlign: 'right' }}>Partners</th>
+                  <th style={{ padding: '12px 8px', maxWidth: 280 }}>AI Strategic Positioning</th>
+                </tr>
+              </thead>
+              <tbody>
+                {financials.map(f => (
+                  <tr key={f.id} style={{ borderBottom: '1px solid var(--line)', transition: 'background 0.2s' }} className="table-row-hover">
+                    <td style={{ padding: '16px 8px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 8 }}>
+                      <span style={{ width: 8, height: 8, background: getDotColor(f.id), borderRadius: '50%' }} />
+                      {f.id}
+                    </td>
+                    <td style={{ padding: '16px 8px', color: 'var(--ink-3)', fontFamily: 'var(--mono)', fontSize: 11.5 }}>
+                      {f.period}
+                    </td>
+                    <td style={{ padding: '16px 8px', textAlign: 'right', fontWeight: 600, fontFamily: 'var(--mono)' }}>
+                      ${f.revenue?.toFixed(1)}B
+                    </td>
+                    <td style={{ padding: '16px 8px', textAlign: 'right', color: f.growth >= 0 ? 'var(--pos)' : 'var(--crit)', fontWeight: 600, fontFamily: 'var(--mono)' }}>
+                      {f.growth >= 0 ? '+' : ''}{f.growth?.toFixed(1)}%
+                    </td>
+                    <td style={{ padding: '16px 8px', color: 'var(--ink-2)' }}>
+                      {f.managedServicesRev}
+                    </td>
+                    <td style={{ padding: '16px 8px', textAlign: 'right', fontFamily: 'var(--mono)' }}>
+                      {f.headcount?.toLocaleString()}
+                    </td>
+                    <td style={{ padding: '16px 8px', textAlign: 'right', fontFamily: 'var(--mono)' }}>
+                      {f.partners?.toLocaleString()}
+                    </td>
+                    <td style={{ padding: '16px 8px', color: 'var(--ink-2)', fontSize: 12, lineHeight: 1.4, maxWidth: 280 }}>
+                      {f.aiRevenue}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Side-by-Side CSS Charts */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 24 }}>
+            {/* Revenue Chart */}
+            <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 'var(--r-lg)', padding: 24 }}>
+              <h4 style={{ fontFamily: 'var(--serif-disp)', fontSize: 16, marginTop: 0, marginBottom: 20, color: 'var(--ink)' }}>
+                Global Revenue Comparison (USD Billions)
+              </h4>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', height: 220, paddingBottom: 16, borderBottom: '1px solid var(--line)' }}>
+                {financials.map(f => {
+                  const maxRev = Math.max(...financials.map(x => x.revenue || 1));
+                  const pctHeight = ((f.revenue || 0) / maxRev) * 100;
+                  return (
+                    <div key={f.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, gap: 8 }}>
+                      <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, color: 'var(--ink-2)' }}>
+                        ${f.revenue?.toFixed(1)}B
+                      </div>
+                      <div 
+                        style={{ 
+                          width: 32, 
+                          height: `${pctHeight}%`, 
+                          background: getDotColor(f.id), 
+                          borderRadius: '4px 4px 0 0',
+                          transition: 'height 0.8s ease',
+                          cursor: 'help'
+                        }}
+                        title={`${f.id}: $${f.revenue}B`}
+                      />
+                      <div style={{ fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 600, color: 'var(--ink)' }}>
+                        {f.id}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Headcount Chart */}
+            <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 'var(--r-lg)', padding: 24 }}>
+              <h4 style={{ fontFamily: 'var(--serif-disp)', fontSize: 16, marginTop: 0, marginBottom: 20, color: 'var(--ink)' }}>
+                Global Headcount Comparison (Professionals)
+              </h4>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', height: 220, paddingBottom: 16, borderBottom: '1px solid var(--line)' }}>
+                {financials.map(f => {
+                  const maxHeadcount = Math.max(...financials.map(x => x.headcount || 1));
+                  const pctHeight = ((f.headcount || 0) / maxHeadcount) * 100;
+                  return (
+                    <div key={f.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, gap: 8 }}>
+                      <div style={{ fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 700, color: 'var(--ink-2)' }}>
+                        {Math.round((f.headcount || 0) / 1000)}k
+                      </div>
+                      <div 
+                        style={{ 
+                          width: 32, 
+                          height: `${pctHeight}%`, 
+                          background: getDotColor(f.id), 
+                          borderRadius: '4px 4px 0 0',
+                          transition: 'height 0.8s ease',
+                          cursor: 'help'
+                        }}
+                        title={`${f.id}: ${f.headcount?.toLocaleString()} professionals`}
+                      />
+                      <div style={{ fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 600, color: 'var(--ink)' }}>
+                        {f.id}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        selectedFirmData ? (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+            {/* Firm Overview Card */}
+            <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 'var(--r-lg)', padding: 24 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 16 }}>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <span style={{ width: 12, height: 12, background: getDotColor(selectedFirmData.id), borderRadius: '50%' }} />
+                    <h2 style={{ fontFamily: 'var(--serif-disp)', fontSize: 24, margin: 0, color: 'var(--ink)' }}>{selectedFirmData.id}</h2>
+                  </div>
+                  <p style={{ margin: '4px 0 0 0', fontSize: 12, fontFamily: 'var(--mono)', color: 'var(--ink-3)' }}>
+                    {selectedFirmData.period}
+                  </p>
+                </div>
+                <div style={{ display: 'flex', gap: 16 }}>
+                  {selectedFirmData.sources?.map((src, i) => (
+                    <div key={i} style={{ fontSize: 11, fontFamily: 'var(--mono)', background: 'var(--bg-3)', border: '1px solid var(--line)', padding: '6px 12px', borderRadius: 4, color: 'var(--ink-2)' }}>
+                      📄 Source: <strong>{src.source}</strong> ({src.date})
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Stat Cards Strip */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginTop: 24 }}>
+                <div style={{ background: 'var(--bg)', border: '1px solid var(--line)', padding: '16px 20px', borderRadius: 8 }}>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--ink-3)', textTransform: 'uppercase' }}>Global Revenue</div>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 24, fontWeight: 700, color: 'var(--ink)', marginTop: 4 }}>${selectedFirmData.revenue?.toFixed(1)}B</div>
+                </div>
+                <div style={{ background: 'var(--bg)', border: '1px solid var(--line)', padding: '16px 20px', borderRadius: 8 }}>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--ink-3)', textTransform: 'uppercase' }}>YoY Growth</div>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 24, fontWeight: 700, color: selectedFirmData.growth >= 0 ? 'var(--pos)' : 'var(--crit)', marginTop: 4 }}>
+                    {selectedFirmData.growth >= 0 ? '+' : ''}{selectedFirmData.growth?.toFixed(1)}%
+                  </div>
+                </div>
+                <div style={{ background: 'var(--bg)', border: '1px solid var(--line)', padding: '16px 20px', borderRadius: 8 }}>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--ink-3)', textTransform: 'uppercase' }}>Total Personnel</div>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 24, fontWeight: 700, color: 'var(--ink)', marginTop: 4 }}>{selectedFirmData.headcount?.toLocaleString()}</div>
+                </div>
+                <div style={{ background: 'var(--bg)', border: '1px solid var(--line)', padding: '16px 20px', borderRadius: 8 }}>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--ink-3)', textTransform: 'uppercase' }}>Equity Partners</div>
+                  <div style={{ fontFamily: 'var(--mono)', fontSize: 24, fontWeight: 700, color: 'var(--ink)', marginTop: 4 }}>{selectedFirmData.partners?.toLocaleString()}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Split Analyses & Progress Bars */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 24 }}>
+              {/* Service Line Splits */}
+              <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 'var(--r-lg)', padding: 24 }}>
+                <h3 style={{ fontFamily: 'var(--serif-disp)', fontSize: 16, marginTop: 0, marginBottom: 20, color: 'var(--ink)' }}>
+                  Revenue Split by Service Line
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                  {selectedFirmData.serviceLines?.map(sl => (
+                    <div key={sl.name}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12.5, marginBottom: 6, fontFamily: 'var(--mono)' }}>
+                        <span style={{ color: 'var(--ink)', fontWeight: 600 }}>{sl.name}</span>
+                        <span style={{ color: 'var(--ink-2)' }}>${sl.value?.toFixed(1)}B ({sl.pct}%)</span>
+                      </div>
+                      <div style={{ height: 8, background: 'var(--bg-3)', borderRadius: 4, overflow: 'hidden' }}>
+                        <div style={{ height: '100%', background: getDotColor(selectedFirmData.id), width: `${sl.pct}%`, borderRadius: 4 }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Geographic Splits */}
+              <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 'var(--r-lg)', padding: 24 }}>
+                <h3 style={{ fontFamily: 'var(--serif-disp)', fontSize: 16, marginTop: 0, marginBottom: 20, color: 'var(--ink)' }}>
+                  Revenue Split by Geography
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                  {selectedFirmData.geography?.map(geo => (
+                    <div key={geo.name}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12.5, marginBottom: 6, fontFamily: 'var(--mono)' }}>
+                        <span style={{ color: 'var(--ink)', fontWeight: 600 }}>{geo.name}</span>
+                        <span style={{ color: 'var(--ink-2)' }}>${geo.value?.toFixed(1)}B ({geo.pct}%)</span>
+                      </div>
+                      <div style={{ height: 8, background: 'var(--bg-3)', borderRadius: 4, overflow: 'hidden' }}>
+                        <div style={{ height: '100%', background: 'var(--accent)', width: `${geo.pct}%`, borderRadius: 4 }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* AI Synthesized Executive Insights */}
+            <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 'var(--r-lg)', padding: 24 }}>
+              <div style={{ borderBottom: '1px solid var(--line)', paddingBottom: 12, marginBottom: 20 }}>
+                <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--accent)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>EY Advisory Lab</span>
+                <h3 style={{ fontFamily: 'var(--serif-disp)', fontSize: 18, margin: '4px 0 0 0', color: 'var(--ink)' }}>
+                  AI Synthesized Executive Insights
+                </h3>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20 }}>
+                {/* Growth Drivers */}
+                <div style={{ background: 'var(--bg)', border: '1px solid rgba(108, 196, 179, 0.3)', borderRadius: 'var(--r-md)', padding: 18 }}>
+                  <h4 style={{ margin: '0 0 10px 0', fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--teal)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    🚀 Growth Drivers
+                  </h4>
+                  <p style={{ margin: 0, fontSize: 13, color: 'var(--ink-2)', lineHeight: 1.5, fontFamily: 'var(--serif)' }}>
+                    {selectedFirmData.insights?.drivers}
+                  </p>
+                </div>
+
+                {/* Growth Headwinds */}
+                <div style={{ background: 'var(--bg)', border: '1px solid rgba(224, 122, 106, 0.3)', borderRadius: 'var(--r-md)', padding: 18 }}>
+                  <h4 style={{ margin: '0 0 10px 0', fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--crit)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    ⚠️ Growth Headwinds
+                  </h4>
+                  <p style={{ margin: 0, fontSize: 13, color: 'var(--ink-2)', lineHeight: 1.5, fontFamily: 'var(--serif)' }}>
+                    {selectedFirmData.insights?.barriers}
+                  </p>
+                </div>
+              </div>
+
+              {/* Highlights & Future Outlook */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20, marginTop: 20 }}>
+                {/* Key Highlights */}
+                <div style={{ background: 'var(--bg)', border: '1px solid var(--line)', borderRadius: 'var(--r-md)', padding: 18 }}>
+                  <h4 style={{ margin: '0 0 10px 0', fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    📑 Key Highlights
+                  </h4>
+                  <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13, color: 'var(--ink-2)', lineHeight: 1.5, fontFamily: 'var(--serif)' }}>
+                    {selectedFirmData.insights?.highlights?.map((hl, i) => (
+                      <li key={i} style={{ marginBottom: 6 }}>{hl}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Future Forecast */}
+                <div style={{ background: 'var(--bg-3)', border: '1px solid var(--accent)', borderRadius: 'var(--r-md)', padding: 18 }}>
+                  <h4 style={{ margin: '0 0 10px 0', fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--accent)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    🔮 Future Forecast
+                  </h4>
+                  <p style={{ margin: 0, fontSize: 13, fontStyle: 'italic', color: 'var(--ink-2)', lineHeight: 1.5, fontFamily: 'var(--serif)' }}>
+                    {selectedFirmData.insights?.forecast}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="empty">Select tab to view details</div>
+        )
+      )}
+    </div>
+  );
+}
+
 

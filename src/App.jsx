@@ -9,7 +9,7 @@ import {
 import { 
   Ticker, BriefView, SignalsView, HeatmapView, CompareView, WatchlistView,
   ContextCornerView, KnowledgeGraph, DataPipelineAuditView, ThoughtLeadershipView,
-  AiSummitsView, LatestOnLinkedInView
+  AiSummitsView, LatestOnLinkedInView, FinancialRoundupView
 } from './views.jsx';
 import { TweaksPanel, TweakSection, TweakRadio, TweakToggle, useTweaks } from './tweaks.jsx';
 
@@ -682,6 +682,7 @@ function App() {
   const [reports, setReports] = useState([]);
   const [summits, setSummits] = useState([]);
   const [linkedinPosts, setLinkedinPosts] = useState([]);
+  const [financials, setFinancials] = useState([]);
   const [activeNav, setActiveNav] = useState('brief');
   const [view, setView] = useState('week');
   const [activeFirms, setActiveFirms] = useState(new Set());
@@ -766,6 +767,21 @@ function App() {
     }
   };
 
+  const loadFinancials = async () => {
+    try {
+      const resp = await fetch('/api/financials');
+      if (resp.ok) {
+        const db = await resp.json();
+        const list = db.financials;
+        if (list && list.length > 0) {
+          setFinancials(list);
+        }
+      }
+    } catch (err) {
+      console.warn('[FirmSignal] Could not fetch financials from backend.');
+    }
+  };
+
   const loadFirms = async () => {
     try {
       const resp = await fetch('/api/firms');
@@ -800,6 +816,7 @@ function App() {
     loadReports();
     loadSummits();
     loadLinkedIn();
+    loadFinancials();
     checkServerStatus();
   }, []);
 
@@ -1001,6 +1018,31 @@ function App() {
     return false;
   };
 
+  const handleScanFinancials = async (customQuery) => {
+    try {
+      showToast('Initiating Live Scan for Financial Outcomes...');
+      const resp = await fetch('/api/financials/scan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: customQuery, apiKey })
+      });
+      if (resp.ok) {
+        const json = await resp.json();
+        if (json.success) {
+          setFinancials(json.financials);
+          showToast(`✓ Scanned and loaded ${json.count} financial profiles`);
+          return json.count;
+        }
+      } else {
+        const err = await resp.json();
+        showToast(`Error: ${err.error || 'Failed to scan financials'}`);
+      }
+    } catch (err) {
+      showToast('Connection error scanning financials');
+    }
+    return 0;
+  };
+
   const handleScanReports = async (customQuery) => {
     try {
       showToast('Initiating Live Scan for Thought Leadership Reports...');
@@ -1173,8 +1215,9 @@ function App() {
   const ticker = useMemo(() => getTickerItems(data), [data]);
 
   const navTabs = [
-    { id: 'brief',     label: 'In Brief' },
-    { id: 'signals',   label: 'All Signals' },
+    { id: 'brief',      label: 'In Brief' },
+    { id: 'financials', label: 'Financial Round-up' },
+    { id: 'signals',    label: 'All Signals' },
     { id: 'summits',   label: 'AI Summits' },
     { id: 'linkedin',  label: 'LinkedIn Voices' },
     { id: 'context',   label: 'Context Corner' },
@@ -1238,6 +1281,17 @@ function App() {
 
           {activeNav === 'brief' && (
             <BriefView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={firms} SIGNAL_COLORS={SIGNAL_COLORS} getBrief={getBrief} onPulseClick={handlePulseClick} />
+          )}
+
+          {activeNav === 'financials' && (
+            <FinancialRoundupView
+              financials={financials}
+              onScanFinancials={handleScanFinancials}
+              apiKey={apiKey}
+              serverHasKey={serverHasKey}
+              onOpenApiModal={() => setApiModalOpen(true)}
+              onShowToast={showToast}
+            />
           )}
 
           {activeNav === 'summits' && (
