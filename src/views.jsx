@@ -2768,6 +2768,37 @@ export function FinancialRoundupView({
     return map[firmId] || '#aaaaaa';
   };
 
+  const normalizeServiceLine = (name) => {
+    const n = name.toLowerCase();
+    if (n.includes('consulting') || n.includes('advisory') || n.includes('technology integration') || n.includes('deals') || n.includes('strategy')) {
+      return 'Consulting & Advisory';
+    }
+    if (n.includes('assurance') || n.includes('audit')) {
+      return 'Audit & Assurance';
+    }
+    if (n.includes('tax') || n.includes('legal')) {
+      return 'Tax & Legal';
+    }
+    if (n.includes('managed') || n.includes('operate')) {
+      return 'Operate & Managed Services';
+    }
+    return 'Other';
+  };
+
+  const normalizeGeography = (name) => {
+    const n = name.toLowerCase();
+    if (n.includes('americas') || n.includes('north america')) {
+      return 'Americas';
+    }
+    if (n.includes('emea') || n.includes('europe') || n.includes('emeia') || n.includes('africa')) {
+      return 'EMEA';
+    }
+    if (n.includes('pacific') || n.includes('asia') || n.includes('growth')) {
+      return 'Asia-Pacific';
+    }
+    return 'Other';
+  };
+
   const handleScan = async (e) => {
     e.preventDefault();
     if (!apiKey && !serverHasKey) {
@@ -2973,21 +3004,23 @@ export function FinancialRoundupView({
                   const maxRev = Math.max(...financials.map(x => x.revenue || 1));
                   const pctHeight = ((f.revenue || 0) / maxRev) * 100;
                   return (
-                    <div key={f.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, gap: 8 }}>
+                    <div key={f.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, gap: 8, height: '100%', justifyContent: 'flex-end' }}>
                       <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, color: 'var(--ink-2)' }}>
                         ${f.revenue?.toFixed(1)}B
                       </div>
-                      <div 
-                        style={{ 
-                          width: 32, 
-                          height: `${pctHeight}%`, 
-                          background: getDotColor(f.id), 
-                          borderRadius: '4px 4px 0 0',
-                          transition: 'height 0.8s ease',
-                          cursor: 'help'
-                        }}
-                        title={`${f.id}: $${f.revenue}B`}
-                      />
+                      <div style={{ height: 140, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', width: '100%' }}>
+                        <div 
+                          style={{ 
+                            width: 32, 
+                            height: `${pctHeight}%`, 
+                            background: getDotColor(f.id), 
+                            borderRadius: '4px 4px 0 0',
+                            transition: 'height 0.8s ease',
+                            cursor: 'help'
+                          }}
+                          title={`${f.id}: $${f.revenue}B`}
+                        />
+                      </div>
                       <div style={{ fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 600, color: 'var(--ink)' }}>
                         {f.id}
                       </div>
@@ -3007,27 +3040,219 @@ export function FinancialRoundupView({
                   const maxHeadcount = Math.max(...financials.map(x => x.headcount || 1));
                   const pctHeight = ((f.headcount || 0) / maxHeadcount) * 100;
                   return (
-                    <div key={f.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, gap: 8 }}>
+                    <div key={f.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, gap: 8, height: '100%', justifyContent: 'flex-end' }}>
                       <div style={{ fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 700, color: 'var(--ink-2)' }}>
                         {Math.round((f.headcount || 0) / 1000)}k
                       </div>
-                      <div 
-                        style={{ 
-                          width: 32, 
-                          height: `${pctHeight}%`, 
-                          background: getDotColor(f.id), 
-                          borderRadius: '4px 4px 0 0',
-                          transition: 'height 0.8s ease',
-                          cursor: 'help'
-                        }}
-                        title={`${f.id}: ${f.headcount?.toLocaleString()} professionals`}
-                      />
+                      <div style={{ height: 140, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', width: '100%' }}>
+                        <div 
+                          style={{ 
+                            width: 32, 
+                            height: `${pctHeight}%`, 
+                            background: getDotColor(f.id), 
+                            borderRadius: '4px 4px 0 0',
+                            transition: 'height 0.8s ease',
+                            cursor: 'help'
+                          }}
+                          title={`${f.id}: ${f.headcount?.toLocaleString()} professionals`}
+                        />
+                      </div>
                       <div style={{ fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 600, color: 'var(--ink)' }}>
                         {f.id}
                       </div>
                     </div>
                   );
                 })}
+              </div>
+            </div>
+          </div>
+
+          {/* Revenue Mix Stacked Charts */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 24 }}>
+            {/* Service Line Mix Chart */}
+            <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 'var(--r-lg)', padding: 24 }}>
+              <h4 style={{ fontFamily: 'var(--serif-disp)', fontSize: 16, marginTop: 0, marginBottom: 8, color: 'var(--ink)' }}>
+                Revenue Mix by Service Line (%)
+              </h4>
+              <p style={{ margin: '0 0 20px 0', fontSize: 11.5, color: 'var(--ink-3)', lineHeight: 1.4 }}>
+                Comparing resource allocation and segment weights. Normalized across all firms.
+              </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingBottom: 16, borderBottom: '1px solid var(--line)' }}>
+                {financials.map(f => {
+                  const segments = {
+                    'Consulting & Advisory': 0,
+                    'Audit & Assurance': 0,
+                    'Tax & Legal': 0,
+                    'Operate & Managed Services': 0
+                  };
+                  
+                  (f.serviceLines || []).forEach(sl => {
+                    const norm = normalizeServiceLine(sl.name);
+                    if (segments[norm] !== undefined) {
+                      segments[norm] += sl.pct;
+                    }
+                  });
+                  
+                  const total = Object.values(segments).reduce((a, b) => a + b, 0);
+                  if (total > 0 && total !== 100) {
+                    segments['Consulting & Advisory'] += (100 - total);
+                  }
+
+                  const categoryColors = {
+                    'Consulting & Advisory': '#4a90e2',
+                    'Audit & Assurance': '#d4a04a',
+                    'Tax & Legal': '#e07a6a',
+                    'Operate & Managed Services': '#a86fc7'
+                  };
+
+                  return (
+                    <div key={f.id} style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span style={{ fontFamily: 'var(--mono)', fontSize: 12, fontWeight: 700, color: 'var(--ink)' }}>{f.id}</span>
+                        <span style={{ fontSize: 10, fontFamily: 'var(--mono)', color: 'var(--ink-3)' }}>FY25</span>
+                      </div>
+                      
+                      {/* Stacked Bar */}
+                      <div style={{ display: 'flex', height: 24, borderRadius: 4, overflow: 'hidden', background: 'var(--bg-3)', border: '1px solid var(--line)' }}>
+                        {Object.entries(segments).map(([cat, pct]) => {
+                          if (pct <= 0) return null;
+                          const color = categoryColors[cat];
+                          const absVal = (pct / 100) * (f.revenue || 0);
+                          return (
+                            <div
+                              key={cat}
+                              style={{
+                                width: `${pct}%`,
+                                height: '100%',
+                                background: color,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#ffffff',
+                                fontSize: 10,
+                                fontWeight: 700,
+                                fontFamily: 'var(--mono)',
+                                cursor: 'help',
+                                transition: 'all 0.3s ease'
+                              }}
+                              title={`${f.id} - ${cat}: $${absVal.toFixed(1)}B (${pct}%)`}
+                            >
+                              {pct >= 10 ? `${pct}%` : ''}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Service Line Legend */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 16 }}>
+                {[
+                  { label: 'Consulting & Advisory', color: '#4a90e2' },
+                  { label: 'Audit & Assurance', color: '#d4a04a' },
+                  { label: 'Tax & Legal', color: '#e07a6a' },
+                  { label: 'Operate & Managed Services', color: '#a86fc7' }
+                ].map(item => (
+                  <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--ink-2)' }}>
+                    <span style={{ width: 10, height: 10, background: item.color, borderRadius: 2 }} />
+                    {item.label}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Geographical Mix Chart */}
+            <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 'var(--r-lg)', padding: 24 }}>
+              <h4 style={{ fontFamily: 'var(--serif-disp)', fontSize: 16, marginTop: 0, marginBottom: 8, color: 'var(--ink)' }}>
+                Revenue Mix by Geography (%)
+              </h4>
+              <p style={{ margin: '0 0 20px 0', fontSize: 11.5, color: 'var(--ink-3)', lineHeight: 1.4 }}>
+                Comparing geographic concentration and exposure to regional growth engines.
+              </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingBottom: 16, borderBottom: '1px solid var(--line)' }}>
+                {financials.map(f => {
+                  const segments = {
+                    'Americas': 0,
+                    'EMEA': 0,
+                    'Asia-Pacific': 0
+                  };
+                  
+                  (f.geography || []).forEach(geo => {
+                    const norm = normalizeGeography(geo.name);
+                    if (segments[norm] !== undefined) {
+                      segments[norm] += geo.pct;
+                    }
+                  });
+                  
+                  const total = Object.values(segments).reduce((a, b) => a + b, 0);
+                  if (total > 0 && total !== 100) {
+                    segments['Americas'] += (100 - total);
+                  }
+
+                  const categoryColors = {
+                    'Americas': '#5c6bc0',
+                    'EMEA': '#6cc4b3',
+                    'Asia-Pacific': '#f5a623'
+                  };
+
+                  return (
+                    <div key={f.id} style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span style={{ fontFamily: 'var(--mono)', fontSize: 12, fontWeight: 700, color: 'var(--ink)' }}>{f.id}</span>
+                        <span style={{ fontSize: 10, fontFamily: 'var(--mono)', color: 'var(--ink-3)' }}>FY25</span>
+                      </div>
+                      
+                      {/* Stacked Bar */}
+                      <div style={{ display: 'flex', height: 24, borderRadius: 4, overflow: 'hidden', background: 'var(--bg-3)', border: '1px solid var(--line)' }}>
+                        {Object.entries(segments).map(([cat, pct]) => {
+                          if (pct <= 0) return null;
+                          const color = categoryColors[cat];
+                          const absVal = (pct / 100) * (f.revenue || 0);
+                          return (
+                            <div
+                              key={cat}
+                              style={{
+                                width: `${pct}%`,
+                                height: '100%',
+                                background: color,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#ffffff',
+                                fontSize: 10,
+                                fontWeight: 700,
+                                fontFamily: 'var(--mono)',
+                                cursor: 'help',
+                                transition: 'all 0.3s ease'
+                              }}
+                              title={`${f.id} - ${cat}: $${absVal.toFixed(1)}B (${pct}%)`}
+                            >
+                              {pct >= 10 ? `${pct}%` : ''}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Geography Legend */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 16 }}>
+                {[
+                  { label: 'Americas / North America', color: '#5c6bc0' },
+                  { label: 'Europe, Middle East & Africa (EMEA)', color: '#6cc4b3' },
+                  { label: 'Asia-Pacific / Growth Markets', color: '#f5a623' }
+                ].map(item => (
+                  <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--ink-2)' }}>
+                    <span style={{ width: 10, height: 10, background: item.color, borderRadius: 2 }} />
+                    {item.label}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

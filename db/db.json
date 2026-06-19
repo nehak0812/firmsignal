@@ -223,7 +223,7 @@
   ],
   "signals": [
     {
-      "id": "sig_rss_1781866397725_gg6ae",
+      "id": "sig_rss_1781871675403_wujrk",
       "firm": "Orange",
       "type": "tech",
       "signal": "AI Pivot",
@@ -236,14 +236,14 @@
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNaFl1WF83T1hJYkFyNkhLQmJZZXRKVm0tajRmRE1IeDd0cGc5Qk53bllxcWVtNkozYld2ZWlfUy1ucVNVYlozOEZHUTNmYWdTVXlYQW1feEdpNmJlWTJRSXExSFpFY0YwMXlmZmVXNmQyLXdQVlJaNEtxOUhnXzhQVS1ORXp5MnoyQ2tPU2FXYTc1dw?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:20.203Z",
+        "verifiedAt": "2026-06-19T12:22:04.201Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397725_33x0h",
+      "id": "sig_rss_1781871675403_abcox",
       "firm": "Orange",
       "type": "tech",
       "signal": "AI Pivot",
@@ -256,14 +256,14 @@
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPczJFVTRVWGpSUXg0c3NWUlFXdXNxcC1HZ1hCQUpZQzB1NFdSdWJjbU1mNHlrQ2hJaTJ3ejlsNnNyNFpaOEF6dWhiYkxHbEF6a1F4WVpFRVZZY1BsQU5BUmZRSnpOekotaVZva1o0SlFkejVmR3A2V21ydlJXTldCeDYxTWpZd29xODh5V3NtNkFHOUpwVUh2SGdJR1g1c0FoOFFXbHhRWTMycWVD?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:18.994Z",
+        "verifiedAt": "2026-06-19T12:22:03.296Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397725_glunw",
+      "id": "sig_rss_1781871675403_n1fo5",
       "firm": "Orange",
       "type": "tech",
       "signal": "Restructure",
@@ -276,14 +276,14 @@
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQM3V3NTM3Z25DWFozUjl4MVZsaDh1N0RyaUFZNmV1blBGbzNxQzVpb2RUVEtKWGRybnVFZkRrWktHWEpuSzY3MlpYc0oyc0NSLXZHLWVxa0llZjQ0UEdOU21yc1NoRjVOZXp5ZmVSejNOQkZuYk8zM1l4MVRMMHZ1ZU9MSU5mOEMyaE5BVVNlY2tMb2ZXYWM4Mk93RWw0TklxR2lKdDlUVnM4X1J4NzVhcGVqSlg0S0RGRW05V0pVd2ZsbFIzVEppNVhEUUE?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:17.956Z",
+        "verifiedAt": "2026-06-19T12:22:02.814Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397725_m0yjv",
+      "id": "sig_rss_1781871675403_4o6pz",
       "firm": "NVIDIA",
       "type": "tech",
       "signal": "AI Pivot",
@@ -296,14 +296,14 @@
       "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaFpNVnFkR3UxZUJQcFYzdVRHSlQxbTNNdWUwYWRreDFyaEhRLS1zZUs2QTFLMHhpVk5NeVV5OFZNSVVNOWZjNGZEZG43al94SGNfcnk3VWVUSTNxUm1OLW9hZTVHakdoeWpoeTZFTGFMTDhib3Bsa0dCakdXY2VMUmhvWlV3V1RsOXlBc21wUzZCU19HVWdhcTZxc3dJTUhseUJBZGpHU2VhSzlJZ3pTNlBhSkU3Vld1OU5ESWYtcUJSdjlnaExPVENIX2xNRWVoLVVV?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:16.908Z",
+        "verifiedAt": "2026-06-19T12:22:02.080Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397725_wlke7",
+      "id": "sig_rss_1781871675403_8ultx",
       "firm": "NVIDIA",
       "type": "tech",
       "signal": "Regulatory",
@@ -316,14 +316,14 @@
       "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNdmFvVjRYYUNkYk53QU1NSHBYVjktUFFqR25rX3p3ODlLMHNWM0lDcXdESHFPcUFZbDF2UTA3ZWFkWWJmbDJ5SXVIRFZRQUFaR25YbEpxVlBvX3JkWDZfZHRiMUlTd2Rkd3lLbG5XTVNSdldaclkzUUI1Mi1GOTM1U1pJR1BfRUZHMC1MSTAySXRaNW94akQ0SDVRbVBQOU9xdWV2bnJyQUhBazBTbWtxbUNpR29fSnAyUHc1eTRKTTF6VldDU2FDSGEwdmhXWXAtUkJ6cUp0amhsaVpqUVQxeXdTUkNaLXdLZzVQazZaN1ZpMW0xUUtz?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:16.214Z",
+        "verifiedAt": "2026-06-19T12:22:01.058Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397724_lvv84",
+      "id": "sig_rss_1781871675403_mmzrp",
       "firm": "Equinix",
       "type": "tech",
       "signal": "AI Pivot",
@@ -336,14 +336,14 @@
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPeUQ1bmRaekhmSzJ3SWhxeTkzT0hzSElIbnpoVjJlbE9kR0tNX0ZrZW03d3laVUhFaDRWUm83SnpPOUlPRER2Y1FMdUZsRzZNVEdPeXlTdUVEaDNjRGQ3RmM2cVJZOE1GLVVSZG1Wd1FXczJBbEFtWGc1UXJnOFN6RVk2bF8tMk9Mdm42dFpJOThIbGJi?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:15.814Z",
+        "verifiedAt": "2026-06-19T12:22:00.313Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397724_dq4hp",
+      "id": "sig_rss_1781871675403_uvgx0",
       "firm": "NVIDIA",
       "type": "tech",
       "signal": "Earnings",
@@ -356,14 +356,14 @@
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPRE5hTE1SS2J1VG14eWdFcnFjU2p3NGh3cjA2MnNRaFA3bFk0YzNpY20zQ2hXUm8zdFhMMFV6STFURlE1QXZ1TEZZaVBhbDNPME5kemlhVkJLdEM5d21xa3lSWTB0enllbzBOYzdnSG5KYUNrTHBEQ0RCOHpmR09zaEFTM3BZY0VrVWlHT1licnJNelFFWFJXblVuaXQtR0k4NmxQYm1mYzNuRjdYa2x0bm1CbU4xRTR1MUlXNDYyWQ?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:15.077Z",
+        "verifiedAt": "2026-06-19T12:21:59.590Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397724_4srt2",
+      "id": "sig_rss_1781871675403_q4j55",
       "firm": "NVIDIA",
       "type": "tech",
       "signal": "AI Pivot",
@@ -376,14 +376,14 @@
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQQzZoSDM3a1Q1QVlyNzN4YWFrX3Z0V0JTTlFSaTRpdVdFVHhnVU5xaXNudURJRG51Q0drbVlvNkNFTnM0R3BsR0xVZEw3WkRzMW1pcjNlTTQ2WGdVblhMYzNMeGNITnA0ZFNoTEs5RS1HZDFBTXJvZWVTeVZTajZ0MGRuSXhNN2N5bm5qcUM2UC0zU1RTQ0NhR2RfUXNrSjVoSFJGTWtGTk8?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:13.764Z",
+        "verifiedAt": "2026-06-19T12:21:59.130Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397724_f7rzh",
+      "id": "sig_rss_1781871675403_sbgo5",
       "firm": "Qualcomm",
       "type": "tech",
       "signal": "AI Pivot",
@@ -396,34 +396,14 @@
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9HWUZNUnhmNzFnc2FpRzlzaXBNT3NYdERSSVpZYVV4TXBYNmwzVXVSaTgyRHNNTWRBUnFmMU1kZldLSmVLc2l0NWJUZ252YXFZWlkwYU9ncWl1b01mdDhiY1lDVGxESUJyWHBRUE5iRGYzLUFsM2kya19UOA?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:12.618Z",
+        "verifiedAt": "2026-06-19T12:21:58.709Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397724_wo4xu",
-      "firm": "Qualcomm",
-      "type": "tech",
-      "signal": "Leadership",
-      "importance": 3,
-      "title": "Qualcomm CEO says AI agents will replace apps — as chip giant works on 40 new AI-powere...",
-      "takeaway": "This major shift by Qualcomm signals intensifying competition and forces peers to accelerate their alignment strategies.",
-      "summary": "A live briefing from CNBC reports that Qualcomm has made a strategic move. \"Qualcomm CEO says AI agents will replace apps — as chip giant works on 40 new AI-powered devices\" represents a key development in the professional services ecosystem.",
-      "date": "2026-06-16",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9LamVsYm05bGU1c1pmZWFUTzh0elVFNURzeWRtQWZHdWlfVkoyVUt6ZV9kem5uenFfUW5sOUxVWjMxdkxkdlQ1bkhnU1dzMVVtSkpkaWdrS0poX0dpeXQzUkhBMU9VUnlTRi1KYjdhUmpYRU5ETmfSAXtBVV95cUxNOU4wNXM1aElZeFB1RHhMeVgtd0JvanpvUEE5WkxDYVdUbkJmbXNMWkhWVXRJQ1ZDc1BVR1lpMnJWRUxxU01hdjJRS2RXWDJnN2pFamo2c3BVaHpXVF92Sk1UeEdORHNiMnpnVDJmSTBlc3NDeWZtcUxKMTg?oc=5",
-      "verification": {
-        "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:11.476Z",
-        "dateCompliance": true,
-        "firmRelevance": true,
-        "securityStatus": "Secure SSL"
-      }
-    },
-    {
-      "id": "sig_rss_1781866397724_cetoy",
+      "id": "sig_rss_1781871675403_ronm0",
       "firm": "Qualcomm",
       "type": "tech",
       "signal": "AI Pivot",
@@ -436,14 +416,34 @@
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSFNVRDB2ekxHaDhySjBjSEtPZmc2WWtOdUhLbmZuc2hmS2txb3RPWGt1NHRmZjF4YjJrWVdhSEtuT3hnc0JoQ2tUYWltRXZueTJ6ekZSQUNSblk5ZTc4aXluandmREFXX0hYMm9FQVlfbV9mLTNYWW51V3UxQmU1SnpMOXpjbHYzWk9Ta1F5WmZnb3ZBS2pPQlNwT19wZnNzVmdsaDdOUkFXNXVfbF9lNg?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:10.713Z",
+        "verifiedAt": "2026-06-19T12:21:57.872Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397724_ygyea",
+      "id": "sig_rss_1781871675403_u2l44",
+      "firm": "Qualcomm",
+      "type": "tech",
+      "signal": "Leadership",
+      "importance": 3,
+      "title": "Qualcomm CEO Cristiano Amon on the new world of AI agents",
+      "takeaway": "This major shift by Qualcomm signals intensifying competition and forces peers to accelerate their alignment strategies.",
+      "summary": "A live briefing from CNBC reports that Qualcomm has made a strategic move. \"Qualcomm CEO Cristiano Amon on the new world of AI agents\" represents a key development in the professional services ecosystem.",
+      "date": "2026-06-19",
+      "source": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5YZE9ZVC0tbUhlVHpjRGhSbDFxUlo4WEkxZ0pzMHdNZ2lRVGtOSzhsVFRrVWc5b0U5NDBMY0cwVG4yNmJod0F2bW5ORXM1QVctOVZBY25CMmp4WmhlaVJaQXVzbGlIY0x5TXQ5WTlRdFo1TlJhajFMVXJXa2tlQ2vSAYQBQVVfeXFMT3JUNjExY094YmVwUlB2QTNqT25rSXphX1lVX3hmVmhXNEo4NzIyMXQ2LXVKM2JVMmF4VkgyQ3ZpS1ItbFBSZ3dlOVRONjgwa1EwZVdZS1ZDTmZfZl9pQ1JCOG5QRHpjMTZRN0Y1U3ZLLTlWM2pkMmVPYk9Pek1KcVBTWXhm?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-06-19T12:21:56.816Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1781871675402_z0csd",
       "firm": "DeepSeek",
       "type": "ai-first",
       "signal": "Leadership",
@@ -456,14 +456,14 @@
       "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNS21IeEJ1bnRIWGZ3WmZiTURhLVhyc0N3NnRzcmN1LXpOT3NsZXRWdF9UYlE0TGhCNndzVWUyYXhCdTM4Y3VZRzgyTVI2TzFiU2lCeURnRE9SdWozcTJnOTE0cVpLR1dNSEd1akhxVTRsNmZzZVVad21nSkdzZVg3NTg3YW1qWnAyOE9wTkZhVmlIQUdNeDlJbHdMUXllMlFDX2l6VEdKVkpsbVRxcm12a0VONERlTHpQTVh3UFBOTGctTklUOXZtRW1NaGI1RGZvWEFscHNwTkxHZ09IX3hFZk1mTkp6cVNyemFrN1NYZ9IB9AFBVV95cUxNYTd5MTZpVDlJWVJGODFXYXotTGIyS0RqeWpTMjRoUFFIRVFVUXNiOERjb2M0OXJMSm4wTGdnNmlEUEdWMF9rRXo4VXpmRW81c0FocERVbDE2dFQzbEdmcmdsX2kwMkhjc2YtTC1RbURnQkVCRDdCQ2VxcGhUTEVTaDZhMnRlZGE1TGt3QUdNVjJYelRTQWFiaWt6dWlqYV9IdGkza0Y4dG1TNGkyZzhaTmsxX1dzNW1GWkM4NnNZUmE5VVdXQ1FLY1AwWWpsYW0xMV9RTFlPdzdnUXY2bUJCWk5wYlV1MzVxZmRlTjhWd3V4Vmc2?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:10.336Z",
+        "verifiedAt": "2026-06-19T12:21:56.368Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397724_q2d3o",
+      "id": "sig_rss_1781871675402_h2qyh",
       "firm": "DeepSeek",
       "type": "ai-first",
       "signal": "Earnings",
@@ -476,54 +476,34 @@
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQZW9fYTRXcDI4QTYzd2s3OVR4S1FHQnNBXzk1NGpqUThndmc4bmxOcExIVURZYXR4ZmEzOWowSmdVZDRILUpxQzZESl9yMlNPTkh1YjRqaG5CQWFDaFJyUFhBWXJkbG90NU1IWGxZcTlOdXZkZGpWbm4tM05hMUpVLTdxVlJ6Qk5lZ2hCZlVFUEwyd0lCX3pZNHRvME1BVktSMDBJTm8yWlJtaV9jYkk3RjM3RUdZR1JEdUE?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:09.641Z",
+        "verifiedAt": "2026-06-19T12:21:55.347Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397723_z1lg3",
-      "firm": "DeepSeek",
-      "type": "ai-first",
-      "signal": "Regulatory",
-      "importance": 4,
-      "title": "DeepSeek | Rise, Technologies, Impact, &amp; Global Response | Britannica Money",
-      "takeaway": "This major shift by DeepSeek signals intensifying competition and forces peers to accelerate their alignment strategies.",
-      "summary": "A live briefing from Britannica reports that DeepSeek has made a strategic move. \"DeepSeek | Rise, Technologies, Impact, &amp; Global Response | Britannica Money\" represents a key development in the professional services ecosystem.",
-      "date": "2026-06-17",
-      "source": "Britannica",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE14aVZsR1psY1J4VTdFSHZJOXh2b3B2cjItM1B3M2IybnJRMzR5OU9HMFRmYTlTbVpuY3ZUX1FDYTh4cDlFdVZHZkgyam1nUXVBN2pF?oc=5",
-      "verification": {
-        "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:08.732Z",
-        "dateCompliance": true,
-        "firmRelevance": true,
-        "securityStatus": "Secure SSL"
-      }
-    },
-    {
-      "id": "sig_rss_1781866397723_f7yed",
+      "id": "sig_rss_1781871675402_upzum",
       "firm": "xAI",
       "type": "ai-first",
       "signal": "AI Pivot",
       "importance": 3,
-      "title": "Godfather of AI blasts Musk's xAI as 'failure,' says labs are risking a 'big bubble exp...",
+      "title": "'xAI Is Kind Of A Failure': AI Pioneer Yann LeCun Questions Musk's AI Bet",
       "takeaway": "By pivoting operations around advanced model fine-tuning, xAI is scaling outcome-based pricing rather than hourly bills.",
-      "summary": "A report by CNBC tracks the deployment of new AI capabilities at xAI. The initiative aims to automate key analytical workflows.",
+      "summary": "A report by NDTV Profit tracks the deployment of new AI capabilities at xAI. The initiative aims to automate key analytical workflows.",
       "date": "2026-06-18",
-      "source": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZ0xtN2k3bkpySVpWLWlMQVBIWWcwdWE5eXlMWE9IbGUxekRtVjBXblN0dXZKOWFOeDd1MmJfalhOR01VWGJma1JOZVZIa1VRNlBNeFgxREFxLVRHdm5QX0REd1JVamo5Q0Z2ZEZ1S0tFT1FFWXNMRHZwZEJsaEVTZm1rcmd5aGg0STM2QllTc2hJOTTSAZgBQVVfeXFMUHRzdl9sS0JnNlVScnNPV2NVUHVud1o1QmVqRDd2OXdQZTBuWF8yMFJRVTIwTWpqSTBXS0lnNFh0MUcwaVVvaHN6QkRPZE5OaW9DR254cWRDYl82ZThGWTV2UnpBR1lLZVVJYTlEamdyVmlJRlI5M1A2ZzZiQTNMb2ZyeUlmcEFFdWV6SkdSTkFnb0FWWlZzWkg?oc=5",
+      "source": "NDTV Profit",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPY1BWcDNzai1LdFF0OU9HNzFOd0IzX3JKeUE3WmphSmNud2J3cnA0TUlreXNQUHVuaXNfV0dxYmszSmI4eDRFb3lXOENTQ2Z5NHFuVElxcmJKcnBnNTJueE9DQnFxZllMRGlXZEFhck9XajN4aE9Mb25LZWZBcVQ5QjFHWmpSdlczVnZxbGVLSXNKdFhTQkoxa3J5c2EzM2pGbjc2YVB3NGlxcUVBQmhreDFNQTNJY0HSAb8BQVVfeXFMT0RVc3oxeFMwa2RaRXdJQ1lSLVp4dF96QWdnaU94aG9rQWVXUDJqM0JuOC1yb3F1NGszak1DWkd3d25kc1o2QWkxemVrV3BwSHRPTFlESC1FTVlFbVV2M2xRUjdnbkhQblE0THh3Z0RSWGJORmlpRnV1c0t4MV9teEZ6Sllua1pMMGtmOHdaQ0hycl9CQUc0eU1oUWIzaFFvT0V6TVdBYUVkX0NzWXVXeHp6WmplVHNXNl9ORzVVZm8?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:07.989Z",
+        "verifiedAt": "2026-06-19T12:21:54.815Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397723_ebc73",
+      "id": "sig_rss_1781871675402_s49ju",
       "firm": "xAI",
       "type": "ai-first",
       "signal": "AI Pivot",
@@ -536,14 +516,14 @@
       "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxPWlE2dElJcEF1aFdIU1lwNGdHZ1p6ZjFjWGpRVC1XN295TmxRdGNqc2NwU0xCSGdRODYtd1VLdDZhRDBGZk5pS2tsYmtqU1FzUjk0S3VHOEFVQURyZDNMelJqX29yRGcxMnQ0WXBiQVBNbjdzUVBmaHMyTThacnE0OVZfTGVONWpiLUY1Q0V0OE85Ti14bEI5Z0dmV1Z4WDhrbDg0Z29JbVdEZk9kS0ttdXdCZUN1aDdBLS1ZcXZyNjloZktFNlRuWHVrUmRKTXhoQ0l2QzczbHpORW92bkUzVnV6Y2JZYVViMWZQQ0FXOThXVENXTEdHNE82RUlXQTFTcFczci1YNFdDdWtnTG56a3VCREpSaXBDWC1jRUVoTEdaV2VtTUU5R9IBrgJBVV95cUxQcERhTmY5a2xWVFB5VVJvT19tY2dxMGo2S2c4Rl9JcE8tZVFwbWl2Z2MwMGJCb3ZHRk5DRXhFbS05NXo2cURfVWpPV1VWRmpUajNOQndEWDlKbEl0QThDWU42YkY3cEh1RzNMVW5nMXpfdk8zcUFXMXpYUzZVdjVJU1VfWEJGZV81Q0x3bDg0dU1Hdy1Od3d2dHU4dW9HVmpQY3drbDAtQnk3QS1ySERPbi1rSmcxdzI5dFNMbXdUM05VOGs0RjBjV0RlX2E2V0kwaUdSM2ZKSUtZd251dmNjMG9JaTNUclJ5cWZZdlVoT3p1MzU4c3YtLWNwWndZSGh0T01WQW5zSGx0NVNOZnl3VWhEam45QUxMcXJoblN2YlRSZ3RWWXFGbnpsSjJ4dw?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:07.191Z",
+        "verifiedAt": "2026-06-19T12:21:54.071Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397723_0gigu",
+      "id": "sig_rss_1781871675402_upwlk",
       "firm": "OpenAI",
       "type": "ai-first",
       "signal": "AI Pivot",
@@ -556,34 +536,14 @@
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdV9DVWNqUGhIY05IejhrOHBNT1J1Wkp3aWpzNnVDYnN6bHVDSU41UWh3U1hTY1FmVXIybmQyMmlMeXl1QW5mWWppdHc4aFhRNjgxdFdpOC1PdmFwbTkxdWNYbk5uaTdZSm4xODVyWFEyaDZINDFqamstcHNwcEJuT0lzM1NjYjJYb0NEaVdKV3dKakFvcXFuZHlNYUVvX1prQXFtbG8xNWhkZkZuMDB5ZV9jRXV1UEdVUjctZENQSS1nYk83VnNrX21sWdIB0AFBVV95cUxPT0tuNU93dVVtQVVWeXQ3TmRDRjBhLXR1MDZsUGZhem9sVFdYRHFROXF6RERqMXB2TUptVmQzRk5Pam1YaWRDOXdfNFhFQmhUanRURUN6WDNpXzJzR3U1Ymk3eU44SFZaZ2JKZHQwWXR5M0RHSUo5bVpPbkppXzI0c0NfZUpkdEZsTkNnY2IwRXdxZm91ajFJOEhqVmZ1N1RSYXJkN0hLN3l6TWJxTEhPVEtLQThEb09LejlERFJqWGtyRWpYVGxXYTFEVnRxYzdX?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:06.222Z",
+        "verifiedAt": "2026-06-19T12:21:52.908Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397723_lm0nq",
-      "firm": "Cohere",
-      "type": "ai-first",
-      "signal": "Partnership",
-      "importance": 3,
-      "title": "BCE Reaches Deal to Provide Cohere With AI Computing Power",
-      "takeaway": "This alliance positions Cohere directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
-      "summary": "According to Bloomberg, Cohere has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
-      "date": "2026-06-18",
-      "source": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNQmd4enNiYVdHd2N0QXBzbUE0ZHRsZWdMckhHa1BacmFmRUdpY28wcjBzcFZ2bW9wLWFvNHM1OWFQUDAwOXhFZlk4c3NZRE44Nldyc28yZVlnRUo5NF9Gb2NELTVrVF9PMVNBb2d6OFJnMTN4Qkg4M3ZoeFY3bUg4cXUtOVc4YTd6M1RTNzEwdXhqZHhfYXI4ZGUwbGg4MXRpZkFiTW5VeXlORXZUb3ByQkdlcXdMakNsbFRCMDJVTUcwaUE?oc=5",
-      "verification": {
-        "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:05.665Z",
-        "dateCompliance": true,
-        "firmRelevance": true,
-        "securityStatus": "Secure SSL"
-      }
-    },
-    {
-      "id": "sig_rss_1781866397723_45m81",
+      "id": "sig_rss_1781871675402_493l4",
       "firm": "Cohere",
       "type": "ai-first",
       "signal": "Partnership",
@@ -596,14 +556,34 @@
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVTR4MzctcW13amZYTkNJNG92c2pEYkNLMHN3MjJUNms4RFZRS3JqZ3VBTDlJWXBYYXJiTHFlZFBSY21Gb3BHbDZYTEhoOTFRdVlXeVBBMWRaUHlFaFRnN2JmUmZLYVNIekZ2ZFZtUDBXZzNVZWlmamVSRDQtMjNmTEpUSG9UeFduOVN6emJmR0x6X3hEYndvdFdjU2MyNXhUNG1BTA?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:04.985Z",
+        "verifiedAt": "2026-06-19T12:21:52.412Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397723_zilm7",
+      "id": "sig_rss_1781871675402_vn1x3",
+      "firm": "Cohere",
+      "type": "ai-first",
+      "signal": "Partnership",
+      "importance": 3,
+      "title": "BCE Reaches Deal to Provide Cohere With AI Computing Power",
+      "takeaway": "This alliance positions Cohere directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to Bloomberg.com, Cohere has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-06-18",
+      "source": "Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNQmd4enNiYVdHd2N0QXBzbUE0ZHRsZWdMckhHa1BacmFmRUdpY28wcjBzcFZ2bW9wLWFvNHM1OWFQUDAwOXhFZlk4c3NZRE44Nldyc28yZVlnRUo5NF9Gb2NELTVrVF9PMVNBb2d6OFJnMTN4Qkg4M3ZoeFY3bUg4cXUtOVc4YTd6M1RTNzEwdXhqZHhfYXI4ZGUwbGg4MXRpZkFiTW5VeXlORXZUb3ByQkdlcXdMakNsbFRCMDJVTUcwaUE?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-06-19T12:21:51.607Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1781871675402_c7s66",
       "firm": "Cohere",
       "type": "ai-first",
       "signal": "AI Pivot",
@@ -616,14 +596,14 @@
       "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNSXY0WGlhZHpWeFVJRm1oS1hfeG1JZnFEVk81M3gtZzJoc3ZLZWRjODBfM0h1SHZYU2l3Z2ZWSnVvTFdaUWpSZGNKVmlNdXFnT0VGSGgtVDlSRnFZdmlHclVzMm93OHl3R2ZaOGVibW5abnR3QVZoa3dSbHdndUQwbTRvQVhpUXJiRXU0TXF4X3JyN3djLTU3bWQ5cUJzQl9USGs1ZDNhOUZfcmI3ckhHTFlxTExIemw5dzdoajFFY0ItdWc4dlZ5QmpBN1JrMldEWXgtUkJMVQ?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:04.229Z",
+        "verifiedAt": "2026-06-19T12:21:50.825Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397723_a5twb",
+      "id": "sig_rss_1781871675402_8ln5d",
       "firm": "Mistral AI",
       "type": "ai-first",
       "signal": "AI Pivot",
@@ -636,14 +616,14 @@
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPdFc2dlZpTFBvSy1TcHdLN1JEOVBhX0NBdkQ3TDdzNXhPWFpHXzVQQVN5WjRnV3pfVkNvSE14NTYzZmZYckFCekJNV0VHbDZVcGE0bzM0bHJZcmtUMmlJWWViZW5OeS1ReE1tT1BXeEdfWUY4dmpfcTZuOWNpRTNHVnV5R3BRa2IwdnRJckVHa0tETmViMG9qREhDZWJBZDRhVkxMT041TVotbU5NYXFYaw?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:03.036Z",
+        "verifiedAt": "2026-06-19T12:21:50.329Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397723_kilsv",
+      "id": "sig_rss_1781871675402_v7ybm",
       "firm": "Mistral AI",
       "type": "ai-first",
       "signal": "AI Pivot",
@@ -656,14 +636,14 @@
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQVllEREkxZmh6dmROaENteDE1M2dvZjZtTkNjVTd5WXBrNlowQ0hCNzlFYXZyZmt0SUwxanVNRTlhR3QxRGRESWxBdExpRm9OdXU2YVpNQU93bkRYYS1SMkQ5QUpiUjA5SlBvU0VUTnFJN1hZS1Y5YjZwdVJHZUNmYXdnMGhlWEZIU1htcEJDNWVlVUQ4Q0hEb3VGbHZSQQ?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:02.278Z",
+        "verifiedAt": "2026-06-19T12:21:49.588Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397723_26mei",
+      "id": "sig_rss_1781871675402_d1vu8",
       "firm": "Mistral AI",
       "type": "ai-first",
       "signal": "Leadership",
@@ -676,34 +656,14 @@
       "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOaEhqdW5LYnV3dk9UTTNrYmU0Tm5lckFuMEtwWW9GMjVhdDEzQnpoNWI4OWIzbmJEQ2dlUVUxWVpPT3hjVTRtbjR6eF9hT3BIQ3hmajB6alR0U0V0Mk5CUHE5OUYtZ0NWWmIxdG5nY0k3XzFPdGZoX21WNDduY2RjZU4xdGhGMndXb0ozZHhnczlZbVpwT21zbkI3cDJ5QVhERVp5bjNJYmxQRkVtTEdjUDBfVHNKNHpiMk5vNm1PNUl3VjZjczNrYUM1TnpiM0paX1cxZTllX0o3QlQ5cUlfNWh3U3pZdWZ0WVJhcTJuSm1nV3F2Y25DdE1Nbw?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:01.578Z",
+        "verifiedAt": "2026-06-19T12:21:48.560Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397722_pt7li",
-      "firm": "Google",
-      "type": "tech",
-      "signal": "AI Pivot",
-      "importance": 3,
-      "title": "Perplexity, Meta, Google Hit With Privacy Suit 04/02/2026",
-      "takeaway": "By pivoting operations around advanced model fine-tuning, Google is scaling outcome-based pricing rather than hourly bills.",
-      "summary": "A report by MediaPost tracks the deployment of new AI capabilities at Google. The initiative aims to automate key analytical workflows.",
-      "date": "2026-06-18",
-      "source": "MediaPost",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNYUc5YW1NN053RlhjLTA3cWRicGRoaEFUMU9Jalc5OTc1Q0t3Tk9GTVpsb0l5S3lVMHhqOFp2TDNsb3VEYjB1cFh3MG1PR01vbDE0QTlJaE55VXBRWVZvREIwUExQbFBNajhySHZCdDYtQVYtVUVTYnZPT0JuNEJ6X1M3bVdld1lPS3dxZkxZMXpEdGdMbXpQY29kcVVyRmtnWnN0dE53?oc=5",
-      "verification": {
-        "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:54:00.846Z",
-        "dateCompliance": true,
-        "firmRelevance": true,
-        "securityStatus": "Secure SSL"
-      }
-    },
-    {
-      "id": "sig_rss_1781866397722_3fmoe",
+      "id": "sig_rss_1781871675402_1o7zx",
       "firm": "Perplexity",
       "type": "ai-first",
       "signal": "AI Pivot",
@@ -716,14 +676,34 @@
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5mZk9CR2kweHdMUTNhem5FY1BuVlJGOWhzOERYMjJnZ0tNaEIyOU1mM2U3T0VsRlNYVEVDbzZBVTgzYWdBYXJaeUM3T3VMaXRqZmMtSExTYzVyY3c2amVHSA?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:59.820Z",
+        "verifiedAt": "2026-06-19T12:21:48.106Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397722_0relz",
+      "id": "sig_rss_1781871675402_nk0bj",
+      "firm": "Perplexity",
+      "type": "ai-first",
+      "signal": "Partnership",
+      "importance": 4,
+      "title": "Perplexity Launches 'Brain' for Self-Improving AI Agent Memory",
+      "takeaway": "This alliance positions Perplexity directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to techgig.com, Perplexity has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-06-19",
+      "source": "techgig.com",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNOV8xNW5YRzlFbmhjWmU4S3NZY0VNQmZqYlVRWHhaSTB4YXByYUJFOWFjSWEtaUh6cFBZekxaa0dmcnhqMmRtanFBMlN5amtVclF0M2d6MmpnT0lmUmFiaFgzVnRqdlJxMDBkNHNVWGI2ZmlwMi1YTXlIWkd4c1FPd05Db1RiNGUyZXFDSkZuZ0JlR2RQMVVFODZDUDFSVUHSAaQBQVVfeXFMTm9xRldnYXZBMEVheUFpYlFLbzBTYmlNZXUzaDF0QWRKTHJvdlNyR3hCLTN6Mi1vc0g4dldGOXdMZURJQWpHdkFaUlEyWG1JYkVFdWxheGlTWXBvOXVIM01YQ0JHaVJCajVpZ0dTdk9lYmNkSHNMN241Nl8wOTI0d2h1aWFWSGJ6blN2dzkwS3hXMU9BZjdoa25BRGoyMGlQNlJSMDQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-06-19T12:21:47.663Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1781871675402_8ry8d",
       "firm": "Perplexity",
       "type": "ai-first",
       "signal": "Partnership",
@@ -736,54 +716,54 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9aNmNHdEM3NXlSRG9oNk5WeHBTYlRNOU1wcUpJSm1Wa0lkeS1pS2o1OFlGNXpfeXdDMndsY2k3dmhtNzBSd0tnck9Kc2xjZXFmelE3ZWFjcElTZTNSeXBtT21xTDJqTWt6dm10VkExdGU1Z3Bv?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:58.747Z",
+        "verifiedAt": "2026-06-19T12:21:46.810Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397722_etxc8",
+      "id": "sig_rss_1781871675402_fax01",
       "firm": "Anthropic",
       "type": "ai-first",
       "signal": "AI Pivot",
       "importance": 3,
-      "title": "JPMorgan, Goldman Sachs restrict Anthropic AI use in Hong Kong amid US crackdown",
+      "title": "The Hacker Sent by Anthropic to Calm the Government’s Nerves About AI Safety",
       "takeaway": "By pivoting operations around advanced model fine-tuning, Anthropic is scaling outcome-based pricing rather than hourly bills.",
-      "summary": "A report by Storyboard18 tracks the deployment of new AI capabilities at Anthropic. The initiative aims to automate key analytical workflows.",
-      "date": "2026-06-19",
-      "source": "Storyboard18",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOX3RaRjExZ1EwY2d5WVNURGtCYjAtenJqQ2FXQmJMOS1SUkpfWDBraFVfXzFGc1RzZ2RfdHkzNUFBSGFnX1U2Q3Rkbk9CalVXUWJjc181SGZLSk11QmxuUFZtTE5Nb0JwSHBfRkV2aDBKRkRjSS0zeHBYUENQVmpQZW5tNXBYZWVmdnp0VDA0azZ3Rzlxd1dWNUxhc0lUTTZ2N3Z0NHgwNGJZM2tUZ2ZvdTZHbGFvaGpKejc0ZGY3eGNfcnkwaXfSAcsBQVVfeXFMUElILU9VOFZZa21ncEpwV3kyWUl2SmxnNFI4dmtMQnJMN1Vya01aRDBKQ2JTYWRrMi1kYmZ0OGU3ZmhINmdSVEdFQ3BGQmFRdGJ1UThXcjZIZzlGMVdZdnlJVkt1c2Q5cFNCUmoyYmkyWE5uamJwT3RqNUdiZndTQTZ4UjBuVDJsMkxIUFMzSFNPZmJhNUpnMlRST2tkWGhfR2QtTXpfcXJ2NnNjRm1PXzZvQi14dFA4RnJRdmdjdzRSRUJmQURkOWpVTE0?oc=5",
+      "summary": "A report by WSJ tracks the deployment of new AI capabilities at Anthropic. The initiative aims to automate key analytical workflows.",
+      "date": "2026-06-18",
+      "source": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQZ2RZem8yQUpabFJMQXpmRHdabW85RlUwOFZ4TThJSjJkS0dlTW1LUGZLcFRJQWFDZjlKdHZkVjdRaWhmeWMtWXNTSWN3TFJPNU85RzNKLVdaZXUxWWRXTkpaMlN4d2xfRjZqelh0R1NOY1p3azAtaXpDejd5SlNKSllOOA?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:57.686Z",
+        "verifiedAt": "2026-06-19T12:21:46.333Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397722_zhd04",
+      "id": "sig_rss_1781871675402_wo65t",
       "firm": "Anthropic",
       "type": "ai-first",
-      "signal": "Leadership",
+      "signal": "AI Pivot",
       "importance": 3,
-      "title": "‘Extremely disorganised’: Anthropic CEO's AI summit remark fuels Congress-BJP row | Ind...",
-      "takeaway": "This major shift by Anthropic signals intensifying competition and forces peers to accelerate their alignment strategies.",
-      "summary": "A live briefing from Hindustan Times reports that Anthropic has made a strategic move. \"‘Extremely disorganised’: Anthropic CEO's AI summit remark fuels Congress-BJP row | India News\" represents a key development in the professional services ecosystem.",
+      "title": "JPMorgan blocks Anthropic AI models for staff in Hong Kong",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Anthropic is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Private Banker International tracks the deployment of new AI capabilities at Anthropic. The initiative aims to automate key analytical workflows.",
       "date": "2026-06-19",
-      "source": "Hindustan Times",
-      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxObkJsa3FjS3ZFTEhBY18wUGUyaGNuQk44NXhxc1lxZC1YRXdGbmp0b1JkX09zdXBFWkdpR3VyR2k4Y2RBVUNpYm1kNndVc0xNcWc5N0Z2SXZURWxJaUxfZGZybzFnVDl1ck8wb3RPTWF5OThPUVl0TlRGVkNLMEpsTUlIQUFGN3JQZEljT01ycXpEa0IyMWdkOXJkYWN2NlVnMnZOcjktdHgtc1Q1SHZMUXRJS1F6cGpJY2lOME45Z0FRSmZTOXJubHFGLWFaVTVBajY3WmdUVXhkYzg4N29UZEVxSnlHSXozbVFEb3Z0UljSAfYBQVVfeXFMUGU4N3JxSHh6ZEVlNGFuX2YtNkpwdjF1MXlYcWlpeXVWelJJN0xjV2N4UHJJSXV6Rm9pY2VOZzBLYW5WNTJ1M0pTQ21uQXR1UHgtT2FRSWVRMUdheDd1a0dLdFNaOURNZTAzV05iZGdJdXFHU3NReU1nN0I3UTYyajJWQThLN0JUS0MzYVY5c1JYMEl1aUZVdmIxUU9LRURPVGJESFQ5MnYxRXl0WmhqUW1rT2NDTV90M2JYbnpQMW5LaFg0UFY4NWZ3ZU5GRXhGTmx6Ums1ZEF5TjdnTEZCNzR3RC1CSkRkRE5wOUx6VmFOMEJVOFR3?oc=5",
+      "source": "Private Banker International",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVFlCTk95RGlsNmVRbjZ1ZEdCUWdUSWJLdm5YdG15VVc1cGs1clllZmZaVENLSVVWRTF0TjlvRHNuSjl3T0NFZHZMUlJUMVBha0oxX1BGY2RuaXRuc1BETFRRNmM5S3dnek5aeDk5MzcwbTBOR1dPTFdWbEtraHJ4eENsanhQWTlrNkd2Zw?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:57.246Z",
+        "verifiedAt": "2026-06-19T12:21:45.555Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397722_b4xwm",
+      "id": "sig_rss_1781871675402_b87p8",
       "firm": "Anthropic",
       "type": "ai-first",
       "signal": "AI Pivot",
@@ -796,54 +776,54 @@
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSEFBZGphQ2loamYwOWhBQTAwLTNZa1pRQ1V6bmdEdjNOQlMyV1NiQUhHWHJ1Q0VCWG9RYmRvZkRFX1ZjMEhaNjVIeFBaWlZMeEM1MmhQdVk2WC02d1JrQnRYWWI3MEtLaElKMHMyY1IxUGQ0SFF4UkRoSnVFNWVuWk9jNmdEX0Q2M1hsWE8zSDlZY1JXRk5uUg?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:56.491Z",
+        "verifiedAt": "2026-06-19T12:21:45.078Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397722_cuyxk",
+      "id": "sig_rss_1781871675402_gwzdf",
       "firm": "OpenAI",
       "type": "ai-first",
       "signal": "AI Pivot",
       "importance": 3,
-      "title": "OpenAI is bringing on some big guns in the lead-up to its IPO",
+      "title": "New OpenAI research explores how reinforcement learning can make AI systems more aligne...",
       "takeaway": "By pivoting operations around advanced model fine-tuning, OpenAI is scaling outcome-based pricing rather than hourly bills.",
-      "summary": "A report by TechCrunch tracks the deployment of new AI capabilities at OpenAI. The initiative aims to automate key analytical workflows.",
-      "date": "2026-06-18",
-      "source": "TechCrunch",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQUdiWmxUYV9vZnlLZkEtZWFRdVBrZXRXOVRaNDF6YktTemUwVXJaeFdQVmVfRTNHR0Q4NEVaSnFCMUxXbTE5Nmp3ODQ2QlQ0dzdCZGJUaUQ0cFBRZzBLcUpsd3BaX19UVFdfQW5mYU43V0lzbGVVdXJTenFPRzkzaGp1dXplUEJ4UURPaS1wQWpOX3dFXzZyVUxnemw?oc=5",
+      "summary": "A report by Moneycontrol.com tracks the deployment of new AI capabilities at OpenAI. The initiative aims to automate key analytical workflows.",
+      "date": "2026-06-19",
+      "source": "Moneycontrol.com",
+      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxONW9lUnJ2MVcxWFRqZ1g4ajhjYnZyMGFDU25oYk5tcmtpZjc0UlBZRm1kbm5XenREOUdFVnJOeFRMSWhFWEZOSmJraE9vZnNlcFZwbTdHTDBON20zd2IxYkYxLTVCX3FxWXllTjd4cFVWYV9vZ1c0VW5PM2JPT1dMSXBnOEQwOWptanlDSWpsamVxYnBGSEdUdWRkcWJYeEp1ZldZX1RqdUh4UG9FRW1WVy1XWVBOWG83RDVTTWw4ejU2TTYyWElOelJ5aXhoMTFIeDJpcDZNNWNSMWFtdFRuRExZdVdPWWc0amdBMmNZU1pUbGt0MEVv0gH8AUFVX3lxTE1XYmVpVms3ZWtuOW1odmFjWTlyanhsaDF4MXUtTmZmaUVCUUI0VkdaNHVoUXVETHFQTzRqbkN6bmZSUm40NlY4bmpfdWdjZl9hQ3Z2Q3VLT2lCS08wYVJRODFJWmdfMmhHY2pGVkpiRzJQWFZlYUhLb2dzZTcwWHZwbGdkY0QyUmQ0RXlmMUY3eW9VZGFVMmVDSTBRTlh6LWRHandZUWtMVWlkc1gyYlhaUHAzUEthQV9yTVU4R3lMU28tcWdJdmg2VmNyU3NDeDNreTIwTnU0QTJrdUJqOUJiNXZxZlg2NVVabzNMTERjU21qaW1Yd1VSWnVZVQ?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:56.107Z",
+        "verifiedAt": "2026-06-19T12:21:44.312Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397722_ud2p1",
+      "id": "sig_rss_1781871675401_v0bna",
       "firm": "OpenAI",
       "type": "ai-first",
-      "signal": "Leadership",
+      "signal": "AI Pivot",
       "importance": 3,
-      "title": "After Noam Shazeer, OpenAI hires former Trump AI advisor Dean Ball to lead AI policy",
-      "takeaway": "This major shift by OpenAI signals intensifying competition and forces peers to accelerate their alignment strategies.",
-      "summary": "A live briefing from India Today reports that OpenAI has made a strategic move. \"After Noam Shazeer, OpenAI hires former Trump AI advisor Dean Ball to lead AI policy\" represents a key development in the professional services ecosystem.",
+      "title": "AI Agents to Make Sense of Data at OpenAI",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, OpenAI is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by infoq.com tracks the deployment of new AI capabilities at OpenAI. The initiative aims to automate key analytical workflows.",
       "date": "2026-06-19",
-      "source": "India Today",
-      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNZFlrNW1hREwxTkc0eFZObEE1VFpNLW45RXlPTFN0d0hTeGEydWxZaFcxNXRfVV9CNl9oLWVkcTh0ajJPVFh6eGFYeDM4WnI0OHlicnRWdHA5czZ1bWU3SF9sUTk5SC0wVzlhZi1FT1hTaUVUTmRYR0lRVGxwdl9UYmxGRnVsWVNvTjB4THVqQi1GMWFOSk5kdWlldkhWRzZLYTRqeUNMSW5zM29JRC1XUWNpR3NKeURmQVo0TVNkUjktbGJLejVfeXpRS0dmRm45VDhhN2hWUW5XUVlYUVFZUDdvQjHSAeoBQVVfeXFMTkFyZ0UtQjdZNXplZXdBMGhFUjNHZ3F6Nk93VTJ2S3dWU3dqZGJtdGotUkpqR0J6SFZ4eExWazRaaUtEQTc0Z3QxWVRjM29ScGVKeU50VFZlLXo5ekZCUUZfX1lManZjc1ZWZVZGa2l5SXZFdUxwdUpMTTZqS3FKbEZwOFFCODkwOEpvc08xOE8tVnJaXzdCY2t1Y0ktOVF4clBzRmhRLWdPbFR0eDByUTF5MGI1WVlzandRVFNNcThqUFdLV09IN3lxY0JkYkpUVlMzbE5PSHRyeFlmUURESGhPeWZ2azA2UWF3?oc=5",
+      "source": "infoq.com",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFB5Vmh2NEd6cHlzaUpSelJEODd4YW92UllfSHoxR3lCVHNCWmhyZDlmOUNxZVVBUU9aWkdDUndGMDNjb3VRTDFELVNSazkxX3h4OEdmQzJmVUM1T2JLT2JQN2hmbUlVcTNn?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:55.642Z",
+        "verifiedAt": "2026-06-19T12:21:43.496Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397722_ktdcl",
+      "id": "sig_rss_1781871675401_vjxsg",
       "firm": "OpenAI",
       "type": "ai-first",
       "signal": "Partnership",
@@ -856,14 +836,14 @@
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9uMkJtTlNBalBxNWxuLVlzbHlsaTFGdXdmUks2Z1pqZ0IyZkNyYmZUU1JkYlc4emNMclpXUWo1aEpyRVJRX3VKQnlScl93bkdrN1pBeWlaVVNSeWk2cmh5dlpWRF9ZTkY2LW9qMw?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:54.938Z",
+        "verifiedAt": "2026-06-19T12:21:42.703Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397722_0w19d",
+      "id": "sig_rss_1781871675401_kcxxh",
       "firm": "Palantir",
       "type": "tech",
       "signal": "Regulatory",
@@ -876,14 +856,14 @@
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxObzU5ZzhkcHRDRjhJWnctZmwzZWYtb2F4WXBtLVhsakVpdmxQMW5xVkQ1X1U5UWI4QXRBTmZHNzlwZ1o0aDJXZkJwU1RwRkFac3BrbjJQMWVldXdHZ2p2Vlg2OGN2ai04Wm9FQlpqOU84TDMxZ2VIVXBPcXoxQ0tMM0R0cUV0REdMNVVvYUVicndtcE82SmR4WTJqc19PMGp2M3VSbXd3?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:53.888Z",
+        "verifiedAt": "2026-06-19T12:21:41.918Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397722_i2c1i",
+      "id": "sig_rss_1781871675401_chflh",
       "firm": "Palantir",
       "type": "tech",
       "signal": "Partnership",
@@ -896,14 +876,14 @@
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOM1o1Qm9xQmVYX3FmQ1gtMl9QeUpBT3BfVkZMU1doTlIzOWZySVFHMjFQcTFFTUFsVmd6V2lHSlEzWF9NSHpkNlloZlRTaEVpVWNIam5HMjNDcWdjOTBSYjNjbnRMR183a1k5UDBvUHdmNXUxeVh2alBrTWFNZFNXcU8xVnhMd29KdUxxckJKcElWQQ?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:52.811Z",
+        "verifiedAt": "2026-06-19T12:21:41.472Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397722_948b4",
+      "id": "sig_rss_1781871675401_9u1ux",
       "firm": "Palantir",
       "type": "tech",
       "signal": "AI Pivot",
@@ -916,14 +896,14 @@
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNNm5LQnNGRzNDTHBMLXBOY21Ham90ZWNWWnBUMTByeTVKNkFTTExJTnpwenJKWlRHWkptVG9XSGVILTZXamluT2RyOGpQaFRsaEFuYWQwcUhraE9ZeG1NNlNxNlp5cndtV3Boc2RsWWd3aU93akY4NTRLSTl6MFVUQTNySHZHZU1pdE5hZ3U0bmk?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:52.046Z",
+        "verifiedAt": "2026-06-19T12:21:40.733Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397722_qstvb",
+      "id": "sig_rss_1781871675401_pol1u",
       "firm": "Workday",
       "type": "tech",
       "signal": "AI Pivot",
@@ -936,14 +916,14 @@
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQWFJ0ZktNV0pXbkVlenZRbDlzdkVjODVBSTNiWUhxRE5abTBiMzZDYl9TNTFyTUZPeDUzc2pGZUlMRmZ5c09nZkpSNVY3Ml9kWjhOcEdMV3VISjU3R3kyOTE5WWJUTGtiNHZINkFwbXgzWF91b0ZITTRseWwwOXNEbnRWR3FtUkI4eC01Y3lLeW55b0RTT0dqdGRHWVVXcFlSaHNIRlRnT2tmMVdnNnFPaERCN2hSeDVBWFNfZkhKM1Frc09M0gHKAUFVX3lxTFA0UUFJd3JrYmJ5OVp0ZFhhYnVyZWtfLTFZRDdiZTlNa3VvMjA1V0Uydk01RWlOUDlEWndNUTFzNDBuNzZNc3pFcFNib3pKLUJOa0VfcGJJQnVnLTJOaC05eW43ejRhR3N2Z3J6UEl1N1Q2SFNJc3RxaEs2cnpiSFVzVHRGd05jRTcxdG9MUzAtanlvdFo0aGRvUFQxY0hoSS14a0xQYTlvY1RBeDRId0hLVGxrdHVjWGhWcjY4eXYydnlMTWhhTzBmM0E?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:51.247Z",
+        "verifiedAt": "2026-06-19T12:21:39.931Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397721_a1hc3",
+      "id": "sig_rss_1781871675401_10vdk",
       "firm": "Workday",
       "type": "tech",
       "signal": "Regulatory",
@@ -956,14 +936,14 @@
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMERLY21nZzFITHdPb1MxVFY1c29wVkRPd3lqeWlwZENEeEhHT0h4STdWRTY5aG0zSm9kQWxJYjFtZEtIa0oxTjFjQjJkN2VJbjBwQnlLaWJRS0R0aUNQdmt2ZmNic2hHVE1XWWNScFdMYWluOUxvQTU0blRLSFk1UXh0SkN5b1plbkJmdEdyVVhOdUJQVWtyRUItVkxQeTdjaDJPU0VEVkE1cHNsSXBBODlsd0RhRnk4UWRyNGt3?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:50.868Z",
+        "verifiedAt": "2026-06-19T12:21:39.495Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397721_zikbs",
+      "id": "sig_rss_1781871675401_ew4uf",
       "firm": "Workday",
       "type": "tech",
       "signal": "Regulatory",
@@ -976,14 +956,14 @@
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQYnQ1cEpsQmlzdGNfWFdnbmxfLUJFU1hDRF93WEJuT2VwUDhpMzlCUmVWalRpbUljdEVwUXJqX2dESjQ3VDF0SE8xenZ6SXFPS3ZhaExKOGdzVmkzQ1JNWUlpMlFPZXFPcFp5Vm1yVWV6Y211VDFvWFpCYmFMWGhNTkV1aXhnSTd0aUhIQnRTaw?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:50.169Z",
+        "verifiedAt": "2026-06-19T12:21:38.667Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397721_8rbm6",
+      "id": "sig_rss_1781871675401_0s8ir",
       "firm": "AWS",
       "type": "tech",
       "signal": "AI Pivot",
@@ -996,14 +976,14 @@
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPVDhLeGppRWhMWnpYQWJ0eElIRmdVbTJpV1lpX1Y1bW5lanpsdndxSzNTSURUZ3FxMHhvYmdqWnZtdWJrRDhOSXFhYTlLUWZzRWFIQnhubTcyVW01NXZXNWpBUkszek1yRWdHcWo4eEdoMzdhYnd4RUJYbVZTMUlzRW9xZTBhMGNJRXYtTHRzamZKZUk3T1RKRUIzdnM?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:49.070Z",
+        "verifiedAt": "2026-06-19T12:21:38.202Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397721_oygii",
+      "id": "sig_rss_1781871675401_nv1cl",
       "firm": "AWS",
       "type": "tech",
       "signal": "AI Pivot",
@@ -1016,14 +996,14 @@
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYXFfR3pmX3d2Z1JmWURYMjF5WTItU09Lb2pYWnFGYU1PVm5pb2xPSzM0LUUtaTFhbGg3ZUhhWTdZeDVMam9ybGZlTzVUcXNvSVp4TlpxYUlzVlUzVGdjd2lmX2pJM05sTFpMaWQycnpSMnJoVGQ3bzdLUHBreUVxREpuQXpXUUhLQm9FM2pQa1NJZ0pSS2EySUdCckpIS2c0M1FLWERiYkFJRWVR?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:48.320Z",
+        "verifiedAt": "2026-06-19T12:21:37.759Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397721_riyox",
+      "id": "sig_rss_1781871675401_t53jj",
       "firm": "Salesforce",
       "type": "tech",
       "signal": "AI Pivot",
@@ -1036,14 +1016,14 @@
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPSVZzRGZrNm85NHRid1pqbU5EQ19TS0Q1OFlERUVSUHZBdHFXdzJfYmVDNEp5VFZKYWs3Wmxfd1p5TUxrUzJQclRCLWtRZ2FZeUJJVGYydmxBdmhrQXZnNExXX0ZaWGljYmpMTnpocmxuUGRjdXFob0lCRWhPbjAwdXp0ODZYSGR1ajJHWlVLYU1nT0JzLWFseVJvUDQ0SnNYcVN0TlpXX2NjN1h2Rkpsd2JpaGZhRnFSVmFMRjJ2dTE0dw?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:47.241Z",
+        "verifiedAt": "2026-06-19T12:21:36.960Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397721_eyp27",
+      "id": "sig_rss_1781871675401_z0rvk",
       "firm": "Salesforce",
       "type": "tech",
       "signal": "AI Pivot",
@@ -1056,14 +1036,14 @@
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPUHY0M25EVU9EVmIwVEV0ZFlhR2ZKaXlGalF6MEtORVY3WEpmaTlYY2p5a3hmajJlQjBySThQd0x4aThUa2FNZGxyLVcxUlZvRmt3MkNvWnJxekh3SmVJTWxhNlBLWXRqaFJfZWNnNDMwXzN4a1ZESUE3RE82VHZ2Y1BDZjQxSHhGWDJ2YzJpZnBSd2Z3Wnl1Z2dZLU1Ndlg2LThBREZORHdGaE1fRVFXejc2MWlHcTRjOFE?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:46.573Z",
+        "verifiedAt": "2026-06-19T12:21:36.212Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397721_pdsge",
+      "id": "sig_rss_1781871675401_40fu3",
       "firm": "Salesforce",
       "type": "tech",
       "signal": "Regulatory",
@@ -1076,14 +1056,14 @@
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPd2hSWHlOMlJjX2VoS2paVFBJdW9ndGhFODc2VGZIYXdQcFZwR1Z3WGlvN1JLSW12aVVIZmlSa2xMUXBmX0RkSG9ZVkZJck9EaFV3MkNlS2E2VFVtLVhJVTVLQ0JhSGgtRDBaY0w1RnItSkZVUEoyN1Y0SmhORDQtMmc0dG0yTEQtN19FcjZtSFlrNnBhYUpDYXM2clBVNTBnNXd1NWR3Q0xzZVo3NWhjLUN4OA?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:45.858Z",
+        "verifiedAt": "2026-06-19T12:21:35.340Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397721_z6mrb",
+      "id": "sig_rss_1781871675401_8dl2j",
       "firm": "Google",
       "type": "tech",
       "signal": "AI Pivot",
@@ -1096,14 +1076,14 @@
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNTVRUbXlSQm5iRThRcERHZkdEbFJTbUtObDVEU0VSc0VKS3AxcUNhUFdkRDktOUV0eTEwWlRZS19CSkFad2RzVXV5Zi1UaEdpTWdmVlFQMG9vWFlnZFFfU0VWNEpSSHh2R3c2Rk5ibkUtRWhURDU2Tm9zNlFtLVZmR29UdzY1T3ZjYkQwRU1XcEV2azRNZHFZNmZIMFUtdw?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:45.055Z",
+        "verifiedAt": "2026-06-19T12:21:34.446Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397720_2p5oo",
+      "id": "sig_rss_1781871675401_ozm4t",
       "firm": "Google",
       "type": "tech",
       "signal": "AI Pivot",
@@ -1116,14 +1096,14 @@
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUmFaN3pTeVAxSml4aXpYZlZMdi1tTGtkU3JncjZUR2h2a196eklrVWt1cklqTkh2bWh2VmNMZlgtTTlmZFFqS05rMlF1WG1mYnA4eVg3SGJDQWlDNVdnRDhQZ3dtd3FCMlZPckExSUVKRS1XU1JoQ1Awc3lxYkJkYkZodmJwM1NlcTJONnRHWjF3NmpBM2RFRUs5UkVROGdpd1hac2VR?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:44.364Z",
+        "verifiedAt": "2026-06-19T12:21:33.692Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397720_rvj8d",
+      "id": "sig_rss_1781871675401_yegul",
       "firm": "ServiceNow",
       "type": "tech",
       "signal": "AI Pivot",
@@ -1136,34 +1116,14 @@
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNeG8wR1M3LUtRVzhoYVB5a2RNZnRFempiYlVZa202Y3BqNkVrM05VQndkUkFRTUJWbVliVjl5U2VpZTMwemtkNUo2bWZWQkdJeS1aei11bDJzVmVhUVEtSDJrUzU2MUxybC1Gbnc4c2lqUkxFcVJHb1RnNGdnYURfNGVNVjFGOHFwMVZDYno5dmx1OHluRm5wZTRnMTc5UzBpOVE?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:43.955Z",
+        "verifiedAt": "2026-06-19T12:21:33.149Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397720_kdats",
-      "firm": "ServiceNow",
-      "type": "tech",
-      "signal": "Partnership",
-      "importance": 4,
-      "title": "Aria Systems, ServiceNow Launch Agentic BSS for Telecom AI Automation",
-      "takeaway": "This alliance positions ServiceNow directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
-      "summary": "According to The Fast Mode, ServiceNow has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
-      "date": "2026-06-19",
-      "source": "The Fast Mode",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQNVhKUkV4Z2tja3FTRUxqMzY3NWpLX0Z2Ni1XV01sZWdHaHdEaHRweEs5MmFMdWs2RV9EajZ0WW5ucTZHdEJJZWNuVmJWanFBT3J1WW5HUVFib1I3VEx0bkJKSnVqS2hkQllTcDZvSU5YWFZKNHU4WVdqckpySTdVUUxMZFdxaE05X3NsVnlzVWJhY3JjX2VzX2MxLVhuY3lSSk9USnJtd2lXSDJMS2htNDlPRVBXaFZrVUY1akdVaFI?oc=5",
-      "verification": {
-        "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:43.137Z",
-        "dateCompliance": true,
-        "firmRelevance": true,
-        "securityStatus": "Secure SSL"
-      }
-    },
-    {
-      "id": "sig_rss_1781866397720_5eaio",
+      "id": "sig_rss_1781871675401_fnmtu",
       "firm": "ServiceNow",
       "type": "tech",
       "signal": "AI Pivot",
@@ -1176,34 +1136,34 @@
       "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNSFdSTzFzYzljLWFSRHB5V0tjVnkzeU1hOTc1akh6aHpOcTJMOVBuSE5IZW11RUhSUU9TSUxfbHpKY0dCLXYzN2RRbGtmX2tZcGR4ankwTVlSYmFYUGZOOXVLbDNqczUtSGtQUG44UUd1QlAtT0F3dGZoWE9lY3R2ZEoxemlwMnBEMi0xMWYwRjRCT1BrdGJ3cTJMZzUyMTAyaVpMemVYWnJyVF84ZHJtSzgzSkkzYnF6ZnVMZjBwb1pjNFV2endWcXNVbGc5b1ZVVjZyem1qUloyRTUzZ2c?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:42.332Z",
+        "verifiedAt": "2026-06-19T12:21:32.073Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397720_8e411",
-      "firm": "SAP",
+      "id": "sig_rss_1781871675401_xlfde",
+      "firm": "ServiceNow",
       "type": "tech",
-      "signal": "Regulatory",
+      "signal": "Partnership",
       "importance": 4,
-      "title": "SAP (XTRA:SAP) Expands Enterprise AI Push With New Partnerships And German Security App...",
-      "takeaway": "This major shift by SAP signals intensifying competition and forces peers to accelerate their alignment strategies.",
-      "summary": "A live briefing from Yahoo Finance reports that SAP has made a strategic move. \"SAP (XTRA:SAP) Expands Enterprise AI Push With New Partnerships And German Security Approval\" represents a key development in the professional services ecosystem.",
-      "date": "2026-06-18",
-      "source": "Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPNTY4cXliUDBRNnFtZDA0bnZPUUJNU2ZmQkZRRWFnbDR5a0VhWXU5TUY1RTd2dkxfMG02MlNXV2RUcWZ2SnJHZnFWalRlbElKUkR1d19sYmlYTnFsVEVjT1VNUERKNUZyUkUxdkhZU1RTdmpzYTI1eVc4Z2UzbmlkLTdmWE9XdmJTRUo5Zm1uYmZaN1lKaXY3MnBLSQ?oc=5",
+      "title": "Aria Systems, ServiceNow Launch Agentic BSS for Telecom AI Automation",
+      "takeaway": "This alliance positions ServiceNow directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to The Fast Mode, ServiceNow has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-06-19",
+      "source": "The Fast Mode",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQNVhKUkV4Z2tja3FTRUxqMzY3NWpLX0Z2Ni1XV01sZWdHaHdEaHRweEs5MmFMdWs2RV9EajZ0WW5ucTZHdEJJZWNuVmJWanFBT3J1WW5HUVFib1I3VEx0bkJKSnVqS2hkQllTcDZvSU5YWFZKNHU4WVdqckpySTdVUUxMZFdxaE05X3NsVnlzVWJhY3JjX2VzX2MxLVhuY3lSSk9USnJtd2lXSDJMS2htNDlPRVBXaFZrVUY1akdVaFI?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:41.582Z",
+        "verifiedAt": "2026-06-19T12:21:30.990Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397720_9s2ac",
+      "id": "sig_rss_1781871675401_bjfec",
       "firm": "SAP",
       "type": "tech",
       "signal": "Partnership",
@@ -1216,54 +1176,74 @@
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNTzEzMW9CdlFTOU9YSElVeXJXWDh0dGJXTjYxbE1HajREblktSXlCYy10TDlOUDg1M1RCeDJrZU9UNE05SVgwSVdkdk1TMGFoYTY1SUNnM0hjVXFsZzNtY3c3WUhTLWl6RG40NXFMdnVDM3RYdUFJeTFpSkNjUkxGcUNxM1p3U1U0bFJCYkxwWi1FVTZOQzNDaVpjUXQyV2VnaFU2VXAwaUU3MzVScmpEQUhRaVhxdW05bGtpYXU4SmtVYkR2WUHSAdMBQVVfeXFMTzZxUlVlVzNYYU1zMXAzVFFMTmxPLU9zVHpPVDVkOVh5Ujl0NVNwQTRtcEx0VTFtN0d4X2NYSHRDanF6SHlNTW80RVZ1X0h4MXZYOGlKa3UxRW1zY1VsbjJDY2FNTXJRVHFFc2dVUnAycDdkTVdSQzRfcXVrWlQ0bE1ic2E2ejlBWWlDbVNuejhTRzVkc3lGa19RX1V2MVE4VzVfNU1hQ0N1ek04N2sxTEoxeXVtY010YmUzVG84Ul9RNG9OUzU3LVNWdWFzcWttQUZpSQ?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:40.492Z",
+        "verifiedAt": "2026-06-19T12:21:30.256Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397720_jvxgn",
-      "firm": "Microsoft",
+      "id": "sig_rss_1781871675400_1b53q",
+      "firm": "SAP",
       "type": "tech",
-      "signal": "Earnings",
+      "signal": "Partnership",
       "importance": 4,
-      "title": "Microsoft Builds $1 Billion-Plus AI Business With ByteDance",
-      "takeaway": "Strong financial metrics at Microsoft confirm that technological advisory is now the primary growth engine in professional services.",
-      "summary": "Financial disclosures compiled by TradingView show robust performance at Microsoft. The margins reflect high demand for AI implementation services.",
-      "date": "2026-06-18",
-      "source": "TradingView",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNT0xBXzliVmM4Y191Rlkxa25XbE94Y2x0NThGdVU5bUJKdjZLLVdYWDlGamJJX0g5ZGk3eERpd2xnelBLNnpZcTdNNzRsbmxzMjFSVTh1M1hIdlljcTRsaHB0OVNwT1JiVlBNb00tTjZtbjgyUUhvUFNqNTRZS0UyeHR5LURSaldaM2ZVTi1UQ3Fac3MtLTN6dHNodGhrbUhiaUxuNlgwVTB6Mm1YeFI5YkJoQlRqNmpPWmc?oc=5",
+      "title": "SAP Concur launches AI-powered travel solution for Indian customers",
+      "takeaway": "This alliance positions SAP directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to techgig.com, SAP has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-06-19",
+      "source": "techgig.com",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTFhWMS1oWG5CdnRJSzBXbDdqQ21oUlZNM2xaTHBERjVPTVdieDhpb0Y4SzUtRGVqY2NnekdGQWxLbnJCeG9vU2pocTJ6bm9YX3oxWWtOY2kzdDh6NVdjajEyTjRKVmxhQ25ETFVoSnNhZ3JmcWpWVFYxUkQ2azQ3azhzZFJqUlVfMlNvYXNfaEtUTkQxTElkS3VHZ0ZueUp5MzdvS2VOLV9uNlRzVWJuLWx2R0RaVHQwTVFSZ29R0gHDAUFVX3lxTFBudjVOYVJGSm1ZU2x4S0JqRlkxaEVWdVkzcVJGcEJnNmJTYVliTzV4bC1uSktvU01KZEgxaE1MOE9YTTVVa1RRb093Zm9uaE50Y0ZteEFjVVAyMl9tVUM4ZFl1YjBiUWk1TkRYSEFfZEFreHRYLTZBYXk0cmZic1c4LWxqWHJnSEktT05ORHN6LU00Yi1YeTVlb0NDZ3NPQ2xhWll5RnQzQXpVRXdwcmhxYXhiTW1BRkNJeElfRzBZY2lwUQ?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:39.434Z",
+        "verifiedAt": "2026-06-19T12:21:30.011Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397720_os7e0",
+      "id": "sig_rss_1781871675400_89cjd",
+      "firm": "Microsoft",
+      "type": "tech",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Microsoft eyes DeepSeek for enterprise AI",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Microsoft is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by Axios tracks the deployment of new AI capabilities at Microsoft. The initiative aims to automate key analytical workflows.",
+      "date": "2026-06-16",
+      "source": "Axios",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOeFJsMGEtZFFZX0puaHo5UThqSHhlM0dfRXJTU2xXNXRsSWpVR1BTQ1VIXzVIVjBNYmdtTnFvM0MzblBvMDR0bXBMVEd5aFNhTWhuYm9BWElYYy1CUGVxZ01WT1RnVUdCdUVSMDhLZlFPMXpTRElrSUg2a3dYTVBrSkVhNA?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-06-19T12:21:29.758Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1781871675400_nmpbr",
       "firm": "Microsoft",
       "type": "tech",
       "signal": "AI Pivot",
       "importance": 3,
       "title": "Microsoft Makes Big AI Inroads in China by Selling OpenAI Models",
       "takeaway": "By pivoting operations around advanced model fine-tuning, Microsoft is scaling outcome-based pricing rather than hourly bills.",
-      "summary": "A report by Bloomberg tracks the deployment of new AI capabilities at Microsoft. The initiative aims to automate key analytical workflows.",
+      "summary": "A report by Bloomberg.com tracks the deployment of new AI capabilities at Microsoft. The initiative aims to automate key analytical workflows.",
       "date": "2026-06-17",
-      "source": "Bloomberg",
+      "source": "Bloomberg.com",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQmpZV3VBc2x3c2txMllwdVEzVzdwUXNGRVNrUEwzdm1MZHBCU1dsS0VVVVRQMFIxYzVjNDhRSzd0LWlnV0NrWFp5LVFwLXEzcnVNZ1FHNE50bFE1MlRkbTAxbzlCWE5MbWxXQ3dfQVJVdEctN0VPYmxRV0FvTEdVRmhKbmh1dHd5MTNaZFNSLVJOSkhPY0FLc0pLUDdXZVo1TnZjWm9vT0NmcEU3?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:37.858Z",
+        "verifiedAt": "2026-06-19T12:21:29.514Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397720_x5l5x",
+      "id": "sig_rss_1781871675400_5n0dl",
       "firm": "Reply",
       "type": "consulting",
       "signal": "AI Pivot",
@@ -1276,14 +1256,14 @@
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORks1b0lkVmVLbHUxdHlVNnUwNmVUdDRjQXFnSFVwQkF2a0RTQlhvc1V0a0ptUGZEWmc1X2ZscWJNLXdDZUpYeEJPQ29uaDBhNVJnRjkyUHVtY0lEQ29ORlYtWTN1eHJEdUdjMG5SeUhiaHZlRkpJRFhnNnBSTGM5MlRvUm9SSEFUWmdpdW5JaHBMOWp5X2dXeVZ3?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:37.120Z",
+        "verifiedAt": "2026-06-19T12:21:28.612Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397720_rgor5",
+      "id": "sig_rss_1781871675400_i9xsr",
       "firm": "Accenture",
       "type": "consulting",
       "signal": "AI Pivot",
@@ -1296,14 +1276,14 @@
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNVEEwdFBTQWsyeTY3OVVPdmZPT2RvNGxSLVpEY0doNDFQZS1wdU9OVjlpTGxxRnN5aVItblU5VGJQeDl4ejgyVXB5MW9ldGJFaS1aSVM1UTAzWDNzSVRfVXZUNHdLbHkyY19OWEdXMGQ1OUhRVTZoWFh3NzdZQmpuV01KanlJTkNOZVNCd2Q1Vm9USUpjMXN4Q0FCRnJvOWhDLV9sODFQZ0tPYnptajMwSm9UdDNjbC10a1lFSE44UEg2SlA0NUxPMkFjOEhfZw?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:35.677Z",
+        "verifiedAt": "2026-06-19T12:21:27.720Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397719_640jb",
+      "id": "sig_rss_1781871675400_xoygu",
       "firm": "TCS",
       "type": "consulting",
       "signal": "AI Pivot",
@@ -1316,14 +1296,14 @@
       "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPbFlZZXRDQkNnZnQ3NXQxYUJUbjU4R1ktSGNSMHdxTll0TUtBc1hBSW5PUjRQTDQyU0xDUDZ3RTVyYkdEY21ra0I1Z3owdG8ta1hQemczOEZRVElNQ0VWWC1DVmlRTVRFSXJTOEJBcHk2dmZXaFJ4STFxZEF6QmQtaXFHcjc3djVKY0MyenpXNnVZNzlfQkdwZG8yNkNfbndZMDJTT3lKdS1TaHp4UDJaLUhlSkZoOGZ5Ny0tSU5jODB2S2pnaERTcHVqNjFLWnhOdk00Y0tqNTQwVXMyaWo2Z0EwNDhERWtvMXFCRUN0V0lyVTVtaldqSG1n?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:34.548Z",
+        "verifiedAt": "2026-06-19T12:21:26.814Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397719_77ivd",
+      "id": "sig_rss_1781871675400_916nn",
       "firm": "TCS",
       "type": "consulting",
       "signal": "Partnership",
@@ -1336,14 +1316,34 @@
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQVGl1TnhqQ3EwNzFaOHg2amtsMllscjMzN0VSR3J2aWtpR2ttMF9sRHB2bmctNEpndUdzc1BMcjJaMkpod0ZhRzlNQlg4SmtjNGFaa1ZGZjFmTHZMQS1FMEVObXVqcFZlSEdTMG5kNXljVjJzNDFrSmR1STVGZDd3MDhzb3RXVlJmZmRSdDFIdGRjd25TMTRUMDdDTFhBOTVOd1IybUhTZGhYUW9QSkJaWDRrSQ?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:33.720Z",
+        "verifiedAt": "2026-06-19T12:21:26.574Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397719_kytd3",
+      "id": "sig_rss_1781871675400_lwxfn",
+      "firm": "NTT Data",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "NTT DATA Brings Salesforce Capabilities to East Africa as Demand for AI and CRM Solutio...",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, NTT Data is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by TechAfrica News tracks the deployment of new AI capabilities at NTT Data. The initiative aims to automate key analytical workflows.",
+      "date": "2026-06-15",
+      "source": "TechAfrica News",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNa0otamc3MnVHRm5DY3pxdFpsOHZNRGdPV0lCVHU3OU9RaWNVYk1HWU1XM3FqWFFyTDlXUzdPYmh3cC1TQnNCTkhnWURsdTNVUVlUblFNOXpqR2tKRVlNck82cVZqVUJiNkxnRUZVakROMXZvY3gxQ3hnMUF1eXlvdUhrTTdkV0hQdlVEbUlsVmNLeXl3MnY3VUtheGtjSE1KWm8wc05zOHBwWTZ2VHJyclJzYVprcWdKbUk2MEtiX2hNb0NFbHRQYWl0ZW1EZFE?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-06-19T12:21:25.583Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1781871675400_bd75f",
       "firm": "NTT Data",
       "type": "consulting",
       "signal": "AI Pivot",
@@ -1356,14 +1356,14 @@
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOaWF1VjRCbG5sLTRiak9FOVh6dnZBZjF0UUZ0endiOXJrSzdtTnFXQzF0STlJRG0yQTdjYVJLTDg2VWRCdmJBRUxFdWZ5bzQ5dTlZeEFaZThTanp1RnNGZVlIRmNKV0JiNGRTYVB3Qmw5UnRDZXVHTUlrVXpyVGxCcXVxenNJRWZZOUlKcVl6dUdCbHpvZmFPOXdvN2hTNWJkZ0I4TVNCSEpQYXdFWWg4a3JPRTVqVjNl?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:33.003Z",
+        "verifiedAt": "2026-06-19T12:21:24.500Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397719_52dc5",
+      "id": "sig_rss_1781871675399_zvm5w",
       "firm": "IBM Consulting",
       "type": "consulting",
       "signal": "Regulatory",
@@ -1376,14 +1376,14 @@
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNNUNHSGhWREk4Y3ozdGU2VUpabkFfVzhPSTA5U0NXU0UxTnhhR1JHNUpCMFhIR2pCOU9ib0ZpaEdOQUIyM210UGhuOUFJLTBiY0IxTnpRZEllLTFyS19GVEROSFQ2b1lOYzVQb3NBUjdHZVI0cE5OdFJKdk9zVjBJRnMtanNzQ01VZ0ZjZ1dmTms5LUFYMWlreEhTaUlncUcxaXc?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:31.709Z",
+        "verifiedAt": "2026-06-19T12:21:23.820Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397719_gboz4",
+      "id": "sig_rss_1781871675399_5gvd2",
       "firm": "IBM Consulting",
       "type": "consulting",
       "signal": "Regulatory",
@@ -1396,14 +1396,14 @@
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNT05XYTZKcEJyTWRzSFBTaEl0ZkFrbzNpMFo4SU1MVkZSRWNnbTAyMXdqZHdTenkxVWVqS21jZ00wNjRrNmdLMWlWb3gzT21iTG1FVkNxamZZWVBwd09hUER6OVRYbHVJaVg0X0JPYUh0SXFjSjVwQ05IeHZIdHh1U0ZtUmN0UjZNb296U2UzM2JfVjNOVTZNQ3BsZHlBcnFBVEdYMVhPSkFEeE0wYWpNZW43UjFUN3BrZTVBVHJ5OEhjcXc?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:30.952Z",
+        "verifiedAt": "2026-06-19T12:21:23.161Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397719_qcow8",
+      "id": "sig_rss_1781871675399_nl3th",
       "firm": "IBM Consulting",
       "type": "consulting",
       "signal": "AI Pivot",
@@ -1416,34 +1416,14 @@
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQQWFENC15aEhLbnJteWtpZUdZdkhscGN6Y25sbDVHT29RVV9rakM5YWRnakx4TDdVQ3RlZlB6QVF3b1Jtd2s2ZWtjSHVSS05ieDhkWHpDVEdCbl8yclNpZDFQcnJ6QjM1WlBZSUd0X3VTRmZtTFlINkFSVjNEa3hHVUZZcHd2UVdkdUVJMG9ob0RFQm9OTTRoWmlTVjhzbmlDb1VqaVlGUlh1VTlGWHVibnkteEc?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:30.134Z",
+        "verifiedAt": "2026-06-19T12:21:22.501Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397719_kcqdt",
-      "firm": "Accenture",
-      "type": "consulting",
-      "signal": "M&A",
-      "importance": 4,
-      "title": "Accenture: How Earnings and Acquisitions Triggered a Historic Stock Crash",
-      "takeaway": "This major shift by Accenture signals intensifying competition and forces peers to accelerate their alignment strategies.",
-      "summary": "A live briefing from Barron's reports that Accenture has made a strategic move. \"Accenture: How Earnings and Acquisitions Triggered a Historic Stock Crash\" represents a key development in the professional services ecosystem.",
-      "date": "2026-06-18",
-      "source": "Barron's",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFB1R3QxRUtDdmJfTlhYQmV2VTNpXzBPNDlrQXEtU3RfSVRudzMyWTNNVFpOVDFNT2dJZGxVcFJLNXF5ek5ZX0NCMWlvVkp6bF9JS3ZSWWxUT1BteHBfcTRIUnM4WVgtRlNjdEhXNmxjWkF4d0VzUWN6SDJaZkQ?oc=5",
-      "verification": {
-        "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:29.079Z",
-        "dateCompliance": true,
-        "firmRelevance": true,
-        "securityStatus": "Secure SSL"
-      }
-    },
-    {
-      "id": "sig_rss_1781866397719_o3ez4",
+      "id": "sig_rss_1781871675399_z0whu",
       "firm": "Accenture",
       "type": "consulting",
       "signal": "Earnings",
@@ -1456,14 +1436,34 @@
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaWIyTmhWUzF5bmJDUGxRNllGWnRDdzQ4cFdwcXNyWTBvV3Z6RUJLLUk0cnBTaGRKYnJ0aVREQ2hFby1wb0RDcXRYNHdOOVJxZkxzbVBoUFRLWUJiRkNGTHRDdW14WmNaNHFVZjBYZDQzdzMtZ0tWRkNTVDBkZkctRVdUM1NHRTdlQUhvcERIOGxpWUnSAZgBQVVfeXFMTkotXy1kZDlSTTJBV3lFazlSV21TZjZvcjVORlFRdTJqRDlXbUFPRzVjTFhIcmU1YmU2azl1UVNKY1BkMThQV3VRV1FwU0pHOGl2MHRhZEUyTEg1VG9TYWhGVkxMS3Y2YkV6VFZXQ2tHb2N0SFRaQmw1VFZvbDRjeHYyU2NxU0xpQ0R4N2dlRUk0NGtnazFvenQ?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:27.970Z",
+        "verifiedAt": "2026-06-19T12:21:21.523Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397718_wbrq1",
+      "id": "sig_rss_1781871675399_yo1n0",
+      "firm": "Accenture",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Accenture warning sparks IT rout: Are tougher days ahead for Indian tech?",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Accenture is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by The Indian Express tracks the deployment of new AI capabilities at Accenture. The initiative aims to automate key analytical workflows.",
+      "date": "2026-06-19",
+      "source": "The Indian Express",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWjBTUGlLRUZzUTBLM190cm9UdDYwdVZ5V0Q3d3hSdzJjRV92QW5XMW9xM3F6aVp5ZzR1RGFJcDlmblBmeVBkejIwTDBNaXRWSDlySGM3Rm1USnA2MjJrSlhoZ0RNRV9yS2JjLV9WLVJBdVpINE9ibEEtWmN6aFdMdHRrUGhBWVFiVkMxYVBFa01icWljRDY4LXB3aldrUTlkOEY2V0RXT2ctbG5fTDBLcldHQlF0NmRxcWhPMUFzSGRqbTDSAcoBQVVfeXFMTTRHWnJ4VHhZOTFSMVlBVFlXY3RkOXQxSFJKTFJMSVhIMUFQWGFUd05LQWZ1eGRwVU1FWWsyaUFLYVh2aFE5djVNZzBuOEJQSG1QLXZmem9fY1Z3NFhzRlFuN2c3YmNmdlNfbXUzZVU3bi03SWVNam4xMmdSWm9GOEhZRmQyRXZpWF9rNm1xVXotakp3cnFOd0Z1OG1kcGxUQnZ0dlBjWjhyeXYyeGxQanBnZ0EyT3k4VERoMjU3VjF2d091ZmlzUzE4Zw?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-06-19T12:21:20.927Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1781871675399_ot58s",
       "firm": "Accenture",
       "type": "consulting",
       "signal": "Regulatory",
@@ -1476,74 +1476,34 @@
       "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOLUdWMXRCUXVjcmo3YksxZTZIeHluR3F6MkVlN04wd25vUmRHeEVJU3BVUmFuTmpvLVZSSTNQa1JuSUNWYnNrMnRXT3lvRVE1SGdRbWpNc0cyMTNYdXJudFpqbGx1TUNVT0JVdjhVamc3czRHWVdnR1c5Q1Q2NnVQWC1hcllMWUM2UEw0Tk52WE03Z1BtcDdST0swbzR5ZHUzYXBsVFdLd3lJWjlleVB0OVM3ODBheDhmUFp4ZlpwMmJYMVZfOS1lbnhPVHl3M05uRkdFOE95ZXRySHpNXzZBV2JkMTJaWF9yaXZQQVEzSlNYNktaSFdZMzZVRFA1bDVQQkNZR2RmX2xyaVBVMDFxU2dsWUxueE9iaDFV?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:27.247Z",
+        "verifiedAt": "2026-06-19T12:21:20.657Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397718_p0m8x",
-      "firm": "BCG",
-      "type": "consulting",
-      "signal": "AI Pivot",
-      "importance": 3,
-      "title": "India’s marketers are increasingly leading AI transformation in enterprises, shows BCG ...",
-      "takeaway": "By pivoting operations around advanced model fine-tuning, BCG is scaling outcome-based pricing rather than hourly bills.",
-      "summary": "A report by YourStory.com tracks the deployment of new AI capabilities at BCG. The initiative aims to automate key analytical workflows.",
-      "date": "2026-06-15",
-      "source": "YourStory.com",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSmtic1k5VmlpOGpXUnFWLWQ5YlpqY3o4eEpxU2JtWEp0bEQ1YU0xV0pSUEx3RjJmVFlxd3pCRkRnUDdnMElGc1lUX1o2LXFpR1RwX0JoMmx5OERPWXI5cU5nNUFYSm9vdGNNQWYwUEhrXzlXdXE4UGloa1JPWFUwZXZ5ZS1fNm5kdEYxelVuYVdSTG1RZVZxLVd5OWZXbE1ZaTY4?oc=5",
-      "verification": {
-        "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:26.446Z",
-        "dateCompliance": true,
-        "firmRelevance": true,
-        "securityStatus": "Secure SSL"
-      }
-    },
-    {
-      "id": "sig_rss_1781866397718_yqbju",
-      "firm": "BCG",
-      "type": "consulting",
-      "signal": "AI Pivot",
-      "importance": 3,
-      "title": "BCG Is Among the Biggest Losers From Saudi Arabia’s Pullback on Consultants",
-      "takeaway": "By pivoting operations around advanced model fine-tuning, BCG is scaling outcome-based pricing rather than hourly bills.",
-      "summary": "A report by Bloomberg tracks the deployment of new AI capabilities at BCG. The initiative aims to automate key analytical workflows.",
-      "date": "2026-06-19",
-      "source": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNSlBTdnJyM2ZxemcyVk96S2dMZzBHMXR5VGxIZEZDZEdjUldYbDFOTC1WQW1DT04weXZGaGNjZEx4QjZCNE56QXg3ZXd4SlVwcGVEZ1Vvdm80Qlo4WGxxUFRqb2R4VHFvX0VUSDNxYUVLU2tGODhnX1VqakV3bnlwUW5hMDNoYW1MNFo2SHVnMDVZcXc3cTl1Wno0QjJkbGVLZGNsWDZuUk8yZmg5a1VVSFA4TUk1TnZ4aTNLV05GYzdGQ3Vo?oc=5",
-      "verification": {
-        "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:25.622Z",
-        "dateCompliance": true,
-        "firmRelevance": true,
-        "securityStatus": "Secure SSL"
-      }
-    },
-    {
-      "id": "sig_rss_1781866397718_kk250",
+      "id": "sig_rss_1781871675399_dq17v",
       "firm": "KPMG",
       "type": "consulting",
       "signal": "AI Pivot",
       "importance": 3,
-      "title": "Inside KPMG's AI report scandal: False claims, bogus case studies and hallucinated succ...",
+      "title": "Boards are sleepwalking into the AI era. KPMG’s global risk chief has a survival guide",
       "takeaway": "By pivoting operations around advanced model fine-tuning, KPMG is scaling outcome-based pricing rather than hourly bills.",
-      "summary": "A report by The Economic Times tracks the deployment of new AI capabilities at KPMG. The initiative aims to automate key analytical workflows.",
-      "date": "2026-06-16",
-      "source": "The Economic Times",
-      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQcWtyNFpKY1hNUWlXOERCdXc1RUZMTGRZY0FBVVl0eFB2YUt2NEI2NzBVNHVGTzJKcUJ5QVhwTmRUQkVOWFNrQU5CcDIxQk9fY19hdEptSWk2V1lHb0c1UXo0cUhHR25RWWRVeXJ3b1UyNVdyUUdLa2NKRzAtOEFLTlJqX3VUcmU5WURvMldpS1A4RUlSRkdlSlZhNUNMUHZzNGN1Z2plR0JoaG5YRzZOTmhuWkRVZXFDQUxPbHBpUERhQnptNXJzT000ZjY2WHlzWkxFdm13T19fR3dTTEwxRkVUUml1VlVfSUVPYlI5QTFhRDh4UDdiVUlB0gH_AUFVX3lxTFB2VURRSzhDVlh2MG5XTGZiQTRpTUVPSVNqQmQyenBtbWhxUi1FTlprNEFQVjhHa1dlTXAwNk1ZYllCVkVXVkwxZkFUY0pxWlpzREJSQmNNWnM4R1ZaZk9YX2tQejRwXzJvbmhPNVc1by1Kb0hDN1Z5T3FLSU9QUGphVkJkc000dGpUb3RXZnJpU0YwWHBPZ19VOVhLcU9WT0hnX0dKR0hLajVfNG9rYUlwYW1Ub3V4U3Q0RW9QZFk0VFdsQlRScEdqVkxkenZTaGhNNUppVWJrVTlIV25QOWkxQkdwZ0RfbjBzbFl2VDd6Rnl3aVhOam5PeE15SmMtbw?oc=5",
+      "summary": "A report by Fortune tracks the deployment of new AI capabilities at KPMG. The initiative aims to automate key analytical workflows.",
+      "date": "2026-06-19",
+      "source": "Fortune",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPbWdybmRhakUxOVdDcG1DLWpzZUpDOXFLOU9SNXQyTExuZkdnbzNsamJGMkpLR1ZzTW1TbVlVcEFwSG5PLV80S2otNWZSdVFYTHpTdUlULU1CQmZnNTg3Wkx6MTg5UF82MXZraUE5dWRFZVJEVmVoYWxqUUF1ZUZuSHY4S1FCTXB6VHdLYm1QdzNTanRS?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:24.393Z",
+        "verifiedAt": "2026-06-19T12:21:19.962Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397718_ewiak",
+      "id": "sig_rss_1781871675399_ytwwb",
       "firm": "KPMG",
       "type": "consulting",
       "signal": "Regulatory",
@@ -1556,54 +1516,14 @@
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNQklwVVBPT3REX3NLVzhKd2UtbjBSYVN0X0UtMldWR0RKd3hjcXRPaHQyOGMtZXBQSG5Rd3lxXy1yVW11R21uUlFKVXRqMFRxUHZCaUxlUmdPYXM4ZzdmX2d5cGdXcGZRcW9aVjhRVFdFUklpM2t4eGpiYXJYazZmM240ZE1mNVFPS3RSWXZ2dUw2YXhxRXZpeFVUMXZoUzdOcVBQRFhsZmtjZ1RvNWpDVFhTd1ladVhEVlY1SUh1Z291aHhyQnhLRTJZSdIB0gFBVV95cUxNbXhFTVpGS3NrMnljM1RwY1FfSG1TNVFQcFo3WThDc25yRlRNem01TFE3NUE5TFpZLVRabi1hclBVNFBNTUJRZVJ4blZDX280TGhKaDdmV3JNdGRNaTBLRmJfazZaOFNxQVZVd3ZjWUFINzZHX2NKdmktV1ZNWWFHaXlzTHlTaUFMRFZDVm9pQzg4UHcwbEFwMXNMNkN2OXI2UGNHNkw3N2tkTV9tQUFkeWpVNkJPYXk3U194WXdzQWlWal9UdGlVWUVMYnRkemNQbVE?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:23.332Z",
+        "verifiedAt": "2026-06-19T12:21:19.373Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397718_rzxgv",
-      "firm": "EY",
-      "type": "consulting",
-      "signal": "AI Pivot",
-      "importance": 3,
-      "title": "EY opens India's first AI experience centre",
-      "takeaway": "By pivoting operations around advanced model fine-tuning, EY is scaling outcome-based pricing rather than hourly bills.",
-      "summary": "A report by Rediff tracks the deployment of new AI capabilities at EY. The initiative aims to automate key analytical workflows.",
-      "date": "2026-06-12",
-      "source": "Rediff",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOR01TZE1zT000ZDlyZjZTcnNzTzA2V2RnWGFmaVJlQjh3QlB3NDZPcW5DRUFfV0NDdnAwTnl1am8zSTBINXFkOUMzZFhDTmdjUWx3QkVsbVFfNWtpSF81ZWFscklLZ2VndldPYUltVFdnbm1DYXFiM1VUbkE3bE10bzY1QWsyM0xJT1ZvREhvc1YtRTFJb2czNDZHbXlMMF9uNHFINEFYaW4wRFA5YUNlMjIwdWl0aE5aTGcwY3lnR0xTNE9O?oc=5",
-      "verification": {
-        "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:22.144Z",
-        "dateCompliance": true,
-        "firmRelevance": true,
-        "securityStatus": "Secure SSL"
-      }
-    },
-    {
-      "id": "sig_rss_1781866397718_1hv5m",
-      "firm": "EY",
-      "type": "consulting",
-      "signal": "Regulatory",
-      "importance": 4,
-      "title": "EY-CREDAI report: Gen AI to transform real estate sector",
-      "takeaway": "This major shift by EY signals intensifying competition and forces peers to accelerate their alignment strategies.",
-      "summary": "A live briefing from Construction Week India reports that EY has made a strategic move. \"EY-CREDAI report: Gen AI to transform real estate sector\" represents a key development in the professional services ecosystem.",
-      "date": "2026-06-19",
-      "source": "Construction Week India",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNQzVQazFjVUlpdFR0Tk1kM2FUeEFJbWtXd0F6VGNWSGJHejIwS0FFUlZ5NkVNd0VhSUo1TkM5WUJvVDBzLWFfTE1fM24zQnFlQkxsaG1Ja1ZrYVAwcF9hX051aTJRMWFVb1FJN0xfWGV5aF9JTWQ2NVU3VFdfbXI0Vlp6djg2SWdHNVQzcEpBVzFKYWM2LVVZVW1pc2Nzd2s?oc=5",
-      "verification": {
-        "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:21.014Z",
-        "dateCompliance": true,
-        "firmRelevance": true,
-        "securityStatus": "Secure SSL"
-      }
-    },
-    {
-      "id": "sig_rss_1781866397718_w9g5m",
+      "id": "sig_rss_1781871675398_k6sak",
       "firm": "PwC",
       "type": "consulting",
       "signal": "Restructure",
@@ -1616,14 +1536,54 @@
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTktYQ3Z0TjU0UFNiOVYtb1ZGdGowSlFoMEl6eU5hcWdBX0xsa3lZTGlWR1lndXRKUGZkWW1SUHB0YklrWkE5Y1NZUlNtMlRBX0k1REZWTmZjVFYtZVNhcTk0R2F0bGtGMGVOTFNvQ244UnlrSmxWMFJfcnRONUY2NzN0enFGWF92RmdZd3cyS3E?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:20.296Z",
+        "verifiedAt": "2026-06-19T12:21:18.814Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397717_kzs3n",
+      "id": "sig_rss_1781871675398_chxp7",
+      "firm": "PwC",
+      "type": "consulting",
+      "signal": "Restructure",
+      "importance": 5,
+      "title": "The global chair of PwC shares 3 takes on what AI means for jobs",
+      "takeaway": "Operational restructuring at PwC highlights the urgent necessity of adopting automated delivery models to maintain pricing margins.",
+      "summary": "Recent reporting from Business Insider outlines organizational changes at PwC. The firm is streamlining back-office roles and scaling technical competencies.",
+      "date": "2026-06-19",
+      "source": "Business Insider",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPdGxDZTJwNHBiOTgwMDR1Qk80YzJVY25vXzkwX2JyeG84aG85d20tTUpyTTR3WUhCUmdRdnJfX1FCZXlBT3BHbGROd3BBLWFYQW54MUdQMmZ6V1NIc2NVeXN0em9mZGxneGJiRHB2b3BwdnphVDBkRklVb2REVFlveEtjbmg1QTQ?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-06-19T12:21:17.873Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1781871675397_t4eri",
+      "firm": "Deloitte",
+      "type": "consulting",
+      "signal": "AI Pivot",
+      "importance": 3,
+      "title": "Deloitte opens the London AI Studio with Google Cloud",
+      "takeaway": "By pivoting operations around advanced model fine-tuning, Deloitte is scaling outcome-based pricing rather than hourly bills.",
+      "summary": "A report by IT Brief UK tracks the deployment of new AI capabilities at Deloitte. The initiative aims to automate key analytical workflows.",
+      "date": "2026-06-19",
+      "source": "IT Brief UK",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOajBUaEh6M1lJNGVGdXJvRFNqVVV2R2psSG8wNUlwcWZyUXNNLTRma1BZS0d5YUtqZUVXZlFxYUZ4ZzZNUVdmNzhyTEpCcE52cHdJN3F5VGZuU2pjdzVnWFN1cG1XTTV3LTBNcDNDU2VpU0VPT2U0dzQ0dTM1enluSVVzY2M2WnZX?oc=5",
+      "verification": {
+        "agent": "Live News Verifier Agent v1.0",
+        "verifiedAt": "2026-06-19T12:21:17.150Z",
+        "dateCompliance": true,
+        "firmRelevance": true,
+        "securityStatus": "Secure SSL"
+      }
+    },
+    {
+      "id": "sig_rss_1781871675397_0midd",
       "firm": "Deloitte",
       "type": "consulting",
       "signal": "Partnership",
@@ -1636,27 +1596,27 @@
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNYV9PcnFIQmUxcFJNdmFjNWdKUnhnMXF3Q3BtTDNLMDdPbWxEd3hJRi1aU21teVEtbko4bXFwaDdvM0hUUk1Da0dua095UXFIZzY1WDZydFdNOUFURjM1eV9uTFZfcm9DaHQ0bFVXaFRpcDlfbjVldTBTWUQtcnFWdFduS1luSXl3RWthV2xNeVlsaU90bXZvdG9LNTlaS0ZMTmpVSG80aFVxbnFUNTFHSnJ4ZExKcU1K?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:19.223Z",
+        "verifiedAt": "2026-06-19T12:21:16.247Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
       }
     },
     {
-      "id": "sig_rss_1781866397717_08tt2",
+      "id": "sig_rss_1781871675397_xp37c",
       "firm": "Deloitte",
       "type": "consulting",
-      "signal": "AI Pivot",
-      "importance": 3,
-      "title": "Deloitte opens new London AI Studio; trains UK workers on Gemini Enterprise",
-      "takeaway": "By pivoting operations around advanced model fine-tuning, Deloitte is scaling outcome-based pricing rather than hourly bills.",
-      "summary": "A report by Telecompaper tracks the deployment of new AI capabilities at Deloitte. The initiative aims to automate key analytical workflows.",
-      "date": "2026-06-19",
-      "source": "Telecompaper",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxORVVsSWNqV2FTN1RqaTdUQWExR0Z6WkhfRVhkSHJ6cVlzWGN6R2c0X0thay1PMTFyanl3bmJ5NDJwTG9mRm9ieWVIaGF0dm9TakRNZmtlMGZ3ZXZSQnZRa3pybnN3LVRSUUVMekM1bUpHZTZmU0tCQndJR0ZsS3RjQ2xrWHlzS3JDZV9WbmJxcU1mQ0RWNEtwNGRBenRrMnI4MVA3WkhIdjE4ZllFeVFjZ3dmOXNGbmtD?oc=5",
+      "signal": "Partnership",
+      "importance": 4,
+      "title": "Deloitte and Google Cloud Collaborate to Launch London AI Studio to Spearhead UK’s Tran...",
+      "takeaway": "This alliance positions Deloitte directly inside the core distribution channel of leading AI labs, bypassing secondary integrators.",
+      "summary": "According to Deloitte, Deloitte has cemented a strategic partnership. The collaboration focuses on accelerating GAI client delivery and joint roadmap alignment.",
+      "date": "2026-06-17",
+      "source": "Deloitte",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSW5QWVJhTFJxbmV6QVJiUlA1NUV2emRUOG9LSmRxdFVpSkRGa1NiZWVodEphd0Zic2FtZWE5ZE1VRUt6cnpUV1ZfNVg0YW1BaGZIVE9nUzlhckhoNWgybHpQTWFpUEZUZ3FXUXUtMnlYcG9tYUNfc2YxRTFuaWxxU2NVOFVKcVZvd21vdldQWThfX3Q5SFJic3Fsa0pkTWdwLTF4cEFTZllzU1FVWEE5OGxxNWVGOWlo?oc=5",
       "verification": {
         "agent": "Live News Verifier Agent v1.0",
-        "verifiedAt": "2026-06-19T10:53:18.119Z",
+        "verifiedAt": "2026-06-19T12:21:15.636Z",
         "dateCompliance": true,
         "firmRelevance": true,
         "securityStatus": "Secure SSL"
@@ -1840,7 +1800,7 @@
       ]
     },
     {
-      "id": "summit_scanned_1781866460570_1",
+      "id": "summit_scanned_1781871724738_1",
       "name": "Cohere Enterprise Forum 2026",
       "organizer": "Cohere",
       "startDate": "2026-09-10",
@@ -1858,7 +1818,7 @@
       ]
     },
     {
-      "id": "summit_scanned_1781866460570_2",
+      "id": "summit_scanned_1781871724738_2",
       "name": "xAI Grok Developer Day 2026",
       "organizer": "xAI",
       "startDate": "2026-08-05",
@@ -2112,320 +2072,320 @@
       "url": "https://www.linkedin.com/posts/sylvainduranton_bcgx-autonomous-erp-procure-activity-7799581920392-198m"
     },
     {
-      "id": "li_scanned_1781866393073_85070",
-      "author": "Manny Maceda",
-      "role": "Worldwide Managing Partner & CEO",
-      "firm": "Bain",
-      "date": "2026-06-19",
-      "content": "Re-pricing advisory services around high-value structural throughput rather than consultant hours is a massive corporate shift. Multi-agent swarms deliver deliverables instantly, making fee alignment based on client growth and cost drops the definitive model of 2026.",
-      "likes": 1946,
-      "comments": 125,
-      "shares": 59,
-      "theme": "Outcome-Based Operating Models",
-      "url": "https://www.linkedin.com/posts/mannymaceda_outcomebasedoperatingmodels-activity-1049236067332-262"
-    },
-    {
-      "id": "li_scanned_1781866393073_31792",
-      "author": "Greg Brockman",
-      "role": "President & Co-Founder",
-      "firm": "OpenAI",
-      "date": "2026-06-19",
-      "content": "True digital transformation means connecting disparate business layers through automated workflow orchestration. By linking private models straight to active procurement chains, we're helping clients achieve outcome-aligned efficiency without human middleware bottlenecks.",
-      "likes": 1629,
-      "comments": 247,
-      "shares": 163,
-      "theme": "Workflow Automation",
-      "url": "https://www.linkedin.com/posts/gregbrockman_workflowautomation-activity-5801318363132-131"
-    },
-    {
-      "id": "li_scanned_1781866393073_32767",
-      "author": "Bill Thomas",
-      "role": "Global Chairman & CEO",
-      "firm": "KPMG",
-      "date": "2026-06-19",
-      "content": "Incredibly excited about how quickly our teams are scaling multi-agent swarm networks. Moving from basic copilots to autonomous orchestration is the definitive shift of 2026. By chaining active sub-agent flows directly into client layers, we are bypassing manual administrative bottlenecks and delivering up to 60% margin improvement.",
-      "likes": 2542,
-      "comments": 195,
-      "shares": 109,
-      "theme": "Agentic AI Swarms",
-      "url": "https://www.linkedin.com/posts/billthomas_agenticaiswarms-activity-6136445368757-225"
-    },
-    {
-      "id": "li_scanned_1781866393073_46402",
-      "author": "Krishnan Chandrasekhar",
-      "role": "Global Tax & Legal Services Leader-elect",
-      "firm": "PwC",
-      "date": "2026-06-19",
-      "content": "The era of monolithic closed APIs is giving way to highly targeted open-weights fine-tuning. By orchestrating private, open-source model pipelines, companies can scale strategic automated operations without massive capital outlays or operational exposure.",
-      "likes": 2049,
-      "comments": 207,
-      "shares": 64,
-      "theme": "Open Source & Bespoke Agents",
-      "url": "https://www.linkedin.com/posts/krishnanchandrasekhar_opensourcebespokeagents-activity-2882748548702-362"
-    },
-    {
-      "id": "li_scanned_1781866393073_76054",
-      "author": "Elon Musk",
-      "role": "Founder & CEO",
-      "firm": "xAI",
-      "date": "2026-06-19",
-      "content": "The era of monolithic closed APIs is giving way to highly targeted open-weights fine-tuning. By orchestrating private, open-source model pipelines, companies can scale strategic automated operations without massive capital outlays or operational exposure.",
-      "likes": 2943,
-      "comments": 202,
-      "shares": 92,
-      "theme": "Open Source & Bespoke Agents",
-      "url": "https://www.linkedin.com/posts/elonmusk_opensourcebespokeagents-activity-4200731134191-1cb"
-    },
-    {
-      "id": "li_scanned_1781866393073_34196",
-      "author": "Timothy Knish",
-      "role": "Chair & CEO, KPMG US",
-      "firm": "KPMG",
-      "date": "2026-06-19",
-      "content": "Re-pricing advisory services around high-value structural throughput rather than consultant hours is a massive corporate shift. Multi-agent swarms deliver deliverables instantly, making fee alignment based on client growth and cost drops the definitive model of 2026.",
-      "likes": 1874,
-      "comments": 86,
-      "shares": 111,
-      "theme": "Outcome-Based Operating Models",
-      "url": "https://www.linkedin.com/posts/timothyknish_outcomebasedoperatingmodels-activity-5861530209341-273"
-    },
-    {
-      "id": "li_scanned_1781866393073_95364",
-      "author": "Brad Silver",
-      "role": "Global Tax & Legal Services Leader",
-      "firm": "PwC",
-      "date": "2026-06-19",
-      "content": "Integrating generative orchestration directly into legacy ERP systems is completely redesigning back-office operations. We are successfully automating up to 50% of routine HR ticketing and financial reconciliation workflows, allowing corporate teams to focus on strategic execution.",
-      "likes": 1794,
-      "comments": 276,
-      "shares": 74,
-      "theme": "Workflow Automation",
-      "url": "https://www.linkedin.com/posts/bradsilver_workflowautomation-activity-5600935584573-2b9"
-    },
-    {
-      "id": "li_scanned_1781866393073_12362",
-      "author": "Jad Shimaly",
-      "role": "Global Managing Partner - Client Service",
-      "firm": "EY",
+      "id": "li_scanned_1781871667655_52732",
+      "author": "Matt Garman",
+      "role": "CEO",
+      "firm": "AWS",
       "date": "2026-06-19",
       "content": "Deploying Blackwell chips and custom hardware systems directly inside operational layers is transforming raw processing speed. Local, private AI factories represent the modern engine room of corporate agility. Our ecosystem alliance integrations are delivering real-time low-latency intelligence on-prem.",
-      "likes": 2203,
-      "comments": 177,
-      "shares": 95,
+      "likes": 1450,
+      "comments": 91,
+      "shares": 172,
       "theme": "AI Infrastructure & Blackwell",
-      "url": "https://www.linkedin.com/posts/jadshimaly_aiinfrastructureblackwell-activity-8647539598695-c"
+      "url": "https://www.linkedin.com/posts/mattgarman_aiinfrastructureblackwell-activity-8934335762688-1c7"
     },
     {
-      "id": "li_scanned_1781866393074_8930",
-      "author": "Anis Zani",
-      "role": "Deputy Chair & US Managing Principal",
-      "firm": "KPMG",
-      "date": "2026-06-19",
-      "content": "Sovereign AI and regulated data storage solutions are the highest priority for our enterprise clients in H2. Restricting model fine-tuning to local secure cloud infrastructures is paramount for compliance. Our collaborative secure setups ensure that private corporation IP never leaks into public systems.",
-      "likes": 2377,
-      "comments": 209,
-      "shares": 82,
-      "theme": "Sovereign AI & Data Privacy",
-      "url": "https://www.linkedin.com/posts/aniszani_sovereignaidataprivacy-activity-1181820558763-bd"
-    },
-    {
-      "id": "li_scanned_1781866393074_52461",
-      "author": "Rob Fisher",
-      "role": "Global Head of Advisory",
-      "firm": "KPMG",
-      "date": "2026-06-19",
-      "content": "Integrating generative orchestration directly into legacy ERP systems is completely redesigning back-office operations. We are successfully automating up to 50% of routine HR ticketing and financial reconciliation workflows, allowing corporate teams to focus on strategic execution.",
-      "likes": 1901,
-      "comments": 113,
-      "shares": 78,
-      "theme": "Workflow Automation",
-      "url": "https://www.linkedin.com/posts/robfisher_workflowautomation-activity-6239201975940-27"
-    },
-    {
-      "id": "li_scanned_1781866393074_34397",
-      "author": "Patrick Gouvène",
-      "role": "Chief of Portfolio & Technology Officer",
-      "firm": "Capgemini",
-      "date": "2026-06-19",
-      "content": "Re-pricing advisory services around high-value structural throughput rather than consultant hours is a massive corporate shift. Multi-agent swarms deliver deliverables instantly, making fee alignment based on client growth and cost drops the definitive model of 2026.",
-      "likes": 2438,
-      "comments": 199,
-      "shares": 96,
-      "theme": "Outcome-Based Operating Models",
-      "url": "https://www.linkedin.com/posts/patrickgouvne_outcomebasedoperatingmodels-activity-9463262606619-c0"
-    },
-    {
-      "id": "li_scanned_1781866393074_36152",
-      "author": "Alex Karp",
-      "role": "CEO & Co-Founder",
-      "firm": "Palantir",
-      "date": "2026-06-19",
-      "content": "Sovereign AI and regulated data storage solutions are the highest priority for our enterprise clients in H2. Restricting model fine-tuning to local secure cloud infrastructures is paramount for compliance. Our collaborative secure setups ensure that private corporation IP never leaks into public systems.",
-      "likes": 2256,
-      "comments": 114,
-      "shares": 120,
-      "theme": "Sovereign AI & Data Privacy",
-      "url": "https://www.linkedin.com/posts/alexkarp_sovereignaidataprivacy-activity-70073181876-2ac"
-    },
-    {
-      "id": "li_scanned_1781866393074_87030",
-      "author": "Jason Girzadas",
-      "role": "CEO, Deloitte US",
-      "firm": "Deloitte",
-      "date": "2026-06-19",
-      "content": "Accelerating enterprise infrastructure means moving model computation as close to the data as possible. By constructing private, hardware-integrated model pipelines, we're cutting API compute overhead by 90% while providing industrial-strength security for sensitive pipelines.",
-      "likes": 2281,
-      "comments": 179,
-      "shares": 187,
-      "theme": "AI Infrastructure & Blackwell",
-      "url": "https://www.linkedin.com/posts/jasongirzadas_aiinfrastructureblackwell-activity-2688082160463-139"
-    },
-    {
-      "id": "li_scanned_1781866393074_42773",
-      "author": "Amy Hood",
-      "role": "EVP & CFO",
-      "firm": "Microsoft",
+      "id": "li_scanned_1781871667655_2456",
+      "author": "Warna Kumar",
+      "role": "Global Vice Chair - Tax",
+      "firm": "EY",
       "date": "2026-06-19",
       "content": "We are seeing a massive demand for agentic swarm systems across professional services and supply chains. Rather than passive search queries, these automated agents execute complex procurement transactions and audits autonomously, protecting corporate agility in highly compression-prone markets.",
-      "likes": 1482,
-      "comments": 140,
-      "shares": 87,
+      "likes": 1923,
+      "comments": 209,
+      "shares": 46,
       "theme": "Agentic AI Swarms",
-      "url": "https://www.linkedin.com/posts/amyhood_agenticaiswarms-activity-6511261145969-35c"
+      "url": "https://www.linkedin.com/posts/warnakumar_agenticaiswarms-activity-9047860248121-3d"
     },
     {
-      "id": "li_scanned_1781866393074_36516",
+      "id": "li_scanned_1781871667655_78805",
+      "author": "Bernhard Scholl",
+      "role": "Senior Partner - QuantumBlack, Alliances & Partnerships",
+      "firm": "McKinsey",
+      "date": "2026-06-19",
+      "content": "Open-source foundation models and local custom agents are enabling complete strategic independence for major organizations. Embedding lightweight, custom-tuned weights directly inside corporate layers ensures absolute IP ownership and eliminates vendor lock-in.",
+      "likes": 2312,
+      "comments": 139,
+      "shares": 97,
+      "theme": "Open Source & Bespoke Agents",
+      "url": "https://www.linkedin.com/posts/bernhardscholl_opensourcebespokeagents-activity-3162693348774-7d"
+    },
+    {
+      "id": "li_scanned_1781871667655_19275",
+      "author": "Aravind Srinivas",
+      "role": "CEO & Co-Founder",
+      "firm": "Perplexity",
+      "date": "2026-06-19",
+      "content": "Accelerating enterprise infrastructure means moving model computation as close to the data as possible. By constructing private, hardware-integrated model pipelines, we're cutting API compute overhead by 90% while providing industrial-strength security for sensitive pipelines.",
+      "likes": 1317,
+      "comments": 155,
+      "shares": 164,
+      "theme": "AI Infrastructure & Blackwell",
+      "url": "https://www.linkedin.com/posts/aravindsrinivas_aiinfrastructureblackwell-activity-565465368790-262"
+    },
+    {
+      "id": "li_scanned_1781871667655_60247",
       "author": "Damian Ganes",
       "role": "Global Advisory Leader",
       "firm": "PwC",
       "date": "2026-06-19",
-      "content": "Incredibly excited about how quickly our teams are scaling multi-agent swarm networks. Moving from basic copilots to autonomous orchestration is the definitive shift of 2026. By chaining active sub-agent flows directly into client layers, we are bypassing manual administrative bottlenecks and delivering up to 60% margin improvement.",
-      "likes": 1570,
-      "comments": 145,
-      "shares": 171,
-      "theme": "Agentic AI Swarms",
-      "url": "https://www.linkedin.com/posts/damianganes_agenticaiswarms-activity-6783808590391-19b"
+      "content": "The era of monolithic closed APIs is giving way to highly targeted open-weights fine-tuning. By orchestrating private, open-source model pipelines, companies can scale strategic automated operations without massive capital outlays or operational exposure.",
+      "likes": 3163,
+      "comments": 88,
+      "shares": 86,
+      "theme": "Open Source & Bespoke Agents",
+      "url": "https://www.linkedin.com/posts/damianganes_opensourcebespokeagents-activity-6427510829823-2e0"
     },
     {
-      "id": "li_scanned_1781866393074_41895",
+      "id": "li_scanned_1781871667655_79661",
+      "author": "Daniela Amodei",
+      "role": "President",
+      "firm": "Anthropic",
+      "date": "2026-06-19",
+      "content": "We are seeing a massive demand for agentic swarm systems across professional services and supply chains. Rather than passive search queries, these automated agents execute complex procurement transactions and audits autonomously, protecting corporate agility in highly compression-prone markets.",
+      "likes": 1681,
+      "comments": 250,
+      "shares": 151,
+      "theme": "Agentic AI Swarms",
+      "url": "https://www.linkedin.com/posts/danielaamodei_agenticaiswarms-activity-441450401060-2f4"
+    },
+    {
+      "id": "li_scanned_1781871667655_22888",
+      "author": "Aiman Ezzat",
+      "role": "CEO",
+      "firm": "Capgemini",
+      "date": "2026-06-19",
+      "content": "Delighted to lead our secure model deployment tracks. Navigating EU AI Act guidelines requires private fine-tuned networks that guarantee local data residency. We're delivering secure, compliant advisory blocks that prove corporate compliance is a powerful competitive differentiator.",
+      "likes": 2492,
+      "comments": 161,
+      "shares": 76,
+      "theme": "Sovereign AI & Data Privacy",
+      "url": "https://www.linkedin.com/posts/aimanezzat_sovereignaidataprivacy-activity-242913149327-13e"
+    },
+    {
+      "id": "li_scanned_1781871667655_71318",
+      "author": "Andrea Guerzoni",
+      "role": "Global Vice Chair - EY Parthenon",
+      "firm": "EY",
+      "date": "2026-06-19",
+      "content": "Integrating generative orchestration directly into legacy ERP systems is completely redesigning back-office operations. We are successfully automating up to 50% of routine HR ticketing and financial reconciliation workflows, allowing corporate teams to focus on strategic execution.",
+      "likes": 1647,
+      "comments": 279,
+      "shares": 107,
+      "theme": "Workflow Automation",
+      "url": "https://www.linkedin.com/posts/andreaguerzoni_workflowautomation-activity-982577538726-2c4"
+    },
+    {
+      "id": "li_scanned_1781871667655_41963",
+      "author": "Andy Hammond",
+      "role": "Global Assurance Leader-elect",
+      "firm": "PwC",
+      "date": "2026-06-19",
+      "content": "Delighted to lead our secure model deployment tracks. Navigating EU AI Act guidelines requires private fine-tuned networks that guarantee local data residency. We're delivering secure, compliant advisory blocks that prove corporate compliance is a powerful competitive differentiator.",
+      "likes": 2624,
+      "comments": 200,
+      "shares": 106,
+      "theme": "Sovereign AI & Data Privacy",
+      "url": "https://www.linkedin.com/posts/andyhammond_sovereignaidataprivacy-activity-6683812449064-139"
+    },
+    {
+      "id": "li_scanned_1781871667655_63157",
+      "author": "Aidan Gomez",
+      "role": "CEO & Co-Founder",
+      "firm": "Cohere",
+      "date": "2026-06-19",
+      "content": "True digital transformation means connecting disparate business layers through automated workflow orchestration. By linking private models straight to active procurement chains, we're helping clients achieve outcome-aligned efficiency without human middleware bottlenecks.",
+      "likes": 2909,
+      "comments": 152,
+      "shares": 81,
+      "theme": "Workflow Automation",
+      "url": "https://www.linkedin.com/posts/aidangomez_workflowautomation-activity-1248989127785-cc"
+    },
+    {
+      "id": "li_scanned_1781871667655_64765",
+      "author": "Alex Singla",
+      "role": "Global Leader, QuantumBlack, AI by McKinsey",
+      "firm": "McKinsey",
+      "date": "2026-06-19",
+      "content": "Incredibly excited about how quickly our teams are scaling multi-agent swarm networks. Moving from basic copilots to autonomous orchestration is the definitive shift of 2026. By chaining active sub-agent flows directly into client layers, we are bypassing manual administrative bottlenecks and delivering up to 60% margin improvement.",
+      "likes": 1571,
+      "comments": 142,
+      "shares": 160,
+      "theme": "Agentic AI Swarms",
+      "url": "https://www.linkedin.com/posts/alexsingla_agenticaiswarms-activity-8259208581663-1d3"
+    },
+    {
+      "id": "li_scanned_1781871667655_29704",
       "author": "Manuvir Das",
       "role": "VP of Enterprise Computing",
       "firm": "NVIDIA",
       "date": "2026-06-19",
-      "content": "Open-source foundation models and local custom agents are enabling complete strategic independence for major organizations. Embedding lightweight, custom-tuned weights directly inside corporate layers ensures absolute IP ownership and eliminates vendor lock-in.",
-      "likes": 1866,
-      "comments": 243,
-      "shares": 132,
-      "theme": "Open Source & Bespoke Agents",
-      "url": "https://www.linkedin.com/posts/manuvirdas_opensourcebespokeagents-activity-1174009226162-35e"
-    },
-    {
-      "id": "li_scanned_1781866393074_92942",
-      "author": "Joe Ucuzoglu",
-      "role": "Global CEO",
-      "firm": "Deloitte",
-      "date": "2026-06-19",
       "content": "The traditional hourly consulting billing framework is under strategic pressure. As autonomous systems absorb headcount-heavy tasks, advisory firms must transition to outcome-based operating models. Pricing services around strategic throughput and margin gains is the only way to protect professional value.",
-      "likes": 1355,
-      "comments": 155,
-      "shares": 127,
+      "likes": 2965,
+      "comments": 253,
+      "shares": 66,
       "theme": "Outcome-Based Operating Models",
-      "url": "https://www.linkedin.com/posts/joeucuzoglu_outcomebasedoperatingmodels-activity-1143511429055-1cc"
+      "url": "https://www.linkedin.com/posts/manuvirdas_outcomebasedoperatingmodels-activity-2846853408723-35d"
     },
     {
-      "id": "li_scanned_1781866393074_38948",
-      "author": "Ruth Porat",
-      "role": "President & Chief Investment Officer",
-      "firm": "Google",
-      "date": "2026-06-19",
-      "content": "Accelerating enterprise infrastructure means moving model computation as close to the data as possible. By constructing private, hardware-integrated model pipelines, we're cutting API compute overhead by 90% while providing industrial-strength security for sensitive pipelines.",
-      "likes": 3189,
-      "comments": 201,
-      "shares": 136,
-      "theme": "AI Infrastructure & Blackwell",
-      "url": "https://www.linkedin.com/posts/ruthporat_aiinfrastructureblackwell-activity-6653141472899-142"
-    },
-    {
-      "id": "li_scanned_1781866393074_61176",
-      "author": "Scott Arnold",
-      "role": "CEO",
-      "firm": "Optro (AuditBoard)",
-      "date": "2026-06-19",
-      "content": "The era of monolithic closed APIs is giving way to highly targeted open-weights fine-tuning. By orchestrating private, open-source model pipelines, companies can scale strategic automated operations without massive capital outlays or operational exposure.",
-      "likes": 2721,
-      "comments": 200,
-      "shares": 101,
-      "theme": "Open Source & Bespoke Agents",
-      "url": "https://www.linkedin.com/posts/scottarnold_opensourcebespokeagents-activity-7219993216840-2f0"
-    },
-    {
-      "id": "li_scanned_1781866393074_44156",
+      "id": "li_scanned_1781871667655_94492",
       "author": "Abhijit Dubey",
       "role": "CEO (Outside Japan)",
       "firm": "NTT Data",
       "date": "2026-06-19",
-      "content": "Re-pricing advisory services around high-value structural throughput rather than consultant hours is a massive corporate shift. Multi-agent swarms deliver deliverables instantly, making fee alignment based on client growth and cost drops the definitive model of 2026.",
-      "likes": 2767,
-      "comments": 274,
-      "shares": 64,
+      "content": "Accelerating enterprise infrastructure means moving model computation as close to the data as possible. By constructing private, hardware-integrated model pipelines, we're cutting API compute overhead by 90% while providing industrial-strength security for sensitive pipelines.",
+      "likes": 1477,
+      "comments": 183,
+      "shares": 131,
+      "theme": "AI Infrastructure & Blackwell",
+      "url": "https://www.linkedin.com/posts/abhijitdubey_aiinfrastructureblackwell-activity-8836175193952-12c"
+    },
+    {
+      "id": "li_scanned_1781871667655_69882",
+      "author": "Christel Heydemann",
+      "role": "CEO",
+      "firm": "Orange",
+      "date": "2026-06-19",
+      "content": "Incredibly excited about how quickly our teams are scaling multi-agent swarm networks. Moving from basic copilots to autonomous orchestration is the definitive shift of 2026. By chaining active sub-agent flows directly into client layers, we are bypassing manual administrative bottlenecks and delivering up to 60% margin improvement.",
+      "likes": 2535,
+      "comments": 196,
+      "shares": 48,
+      "theme": "Agentic AI Swarms",
+      "url": "https://www.linkedin.com/posts/christelheydemann_agenticaiswarms-activity-1654647216467-db"
+    },
+    {
+      "id": "li_scanned_1781871667655_48001",
+      "author": "Suchi Sahu",
+      "role": "North America Chair, BCG X, Global Leader AI & Fast Track",
+      "firm": "BCG",
+      "date": "2026-06-19",
+      "content": "The traditional hourly consulting billing framework is under strategic pressure. As autonomous systems absorb headcount-heavy tasks, advisory firms must transition to outcome-based operating models. Pricing services around strategic throughput and margin gains is the only way to protect professional value.",
+      "likes": 2339,
+      "comments": 161,
+      "shares": 50,
       "theme": "Outcome-Based Operating Models",
-      "url": "https://www.linkedin.com/posts/abhijitdubey_outcomebasedoperatingmodels-activity-6669232212626-335"
+      "url": "https://www.linkedin.com/posts/suchisahu_outcomebasedoperatingmodels-activity-769817111847-26a"
+    },
+    {
+      "id": "li_scanned_1781871667655_93253",
+      "author": "Amy Hood",
+      "role": "EVP & CFO",
+      "firm": "Microsoft",
+      "date": "2026-06-19",
+      "content": "Incredibly excited about how quickly our teams are scaling multi-agent swarm networks. Moving from basic copilots to autonomous orchestration is the definitive shift of 2026. By chaining active sub-agent flows directly into client layers, we are bypassing manual administrative bottlenecks and delivering up to 60% margin improvement.",
+      "likes": 1789,
+      "comments": 104,
+      "shares": 152,
+      "theme": "Agentic AI Swarms",
+      "url": "https://www.linkedin.com/posts/amyhood_agenticaiswarms-activity-9830864478682-b1"
+    },
+    {
+      "id": "li_scanned_1781871667655_35669",
+      "author": "Jason Balcetti",
+      "role": "Chair & CEO, Deloitte Consulting LLP (US)",
+      "firm": "Deloitte",
+      "date": "2026-06-19",
+      "content": "Incredibly excited about how quickly our teams are scaling multi-agent swarm networks. Moving from basic copilots to autonomous orchestration is the definitive shift of 2026. By chaining active sub-agent flows directly into client layers, we are bypassing manual administrative bottlenecks and delivering up to 60% margin improvement.",
+      "likes": 2435,
+      "comments": 171,
+      "shares": 119,
+      "theme": "Agentic AI Swarms",
+      "url": "https://www.linkedin.com/posts/jasonbalcetti_agenticaiswarms-activity-3194124268302-2cb"
+    },
+    {
+      "id": "li_scanned_1781871667655_91009",
+      "author": "Pete Wakefield",
+      "role": "Clients, Markets & Industries Leader",
+      "firm": "PwC",
+      "date": "2026-06-19",
+      "content": "The traditional hourly consulting billing framework is under strategic pressure. As autonomous systems absorb headcount-heavy tasks, advisory firms must transition to outcome-based operating models. Pricing services around strategic throughput and margin gains is the only way to protect professional value.",
+      "likes": 2863,
+      "comments": 155,
+      "shares": 71,
+      "theme": "Outcome-Based Operating Models",
+      "url": "https://www.linkedin.com/posts/petewakefield_outcomebasedoperatingmodels-activity-7268178386793-3a1"
+    },
+    {
+      "id": "li_scanned_1781871667655_3399",
+      "author": "Tyson Cornell",
+      "role": "Global Advisory Leader-elect",
+      "firm": "PwC",
+      "date": "2026-06-19",
+      "content": "Incredibly excited about how quickly our teams are scaling multi-agent swarm networks. Moving from basic copilots to autonomous orchestration is the definitive shift of 2026. By chaining active sub-agent flows directly into client layers, we are bypassing manual administrative bottlenecks and delivering up to 60% margin improvement.",
+      "likes": 2004,
+      "comments": 237,
+      "shares": 91,
+      "theme": "Agentic AI Swarms",
+      "url": "https://www.linkedin.com/posts/tysoncornell_agenticaiswarms-activity-745968236560-18d"
+    },
+    {
+      "id": "li_scanned_1781871667655_8904",
+      "author": "Charles Meyers",
+      "role": "President & CEO",
+      "firm": "Equinix",
+      "date": "2026-06-19",
+      "content": "Accelerating enterprise infrastructure means moving model computation as close to the data as possible. By constructing private, hardware-integrated model pipelines, we're cutting API compute overhead by 90% while providing industrial-strength security for sensitive pipelines.",
+      "likes": 1261,
+      "comments": 187,
+      "shares": 165,
+      "theme": "AI Infrastructure & Blackwell",
+      "url": "https://www.linkedin.com/posts/charlesmeyers_aiinfrastructureblackwell-activity-9141549716335-278"
     }
   ],
   "financials": [
     {
       "id": "EY",
-      "fiscalYear": "FY2024",
-      "period": "Financial Year ending June 30, 2024",
-      "revenue": 51.2,
-      "growth": 3.9,
-      "headcount": 393000,
-      "partners": 14500,
-      "aiRevenue": "Committed $1.4B pool for Client GAI infrastructure including EY Dell/NVIDIA AI Factory",
+      "fiscalYear": "FY2025",
+      "period": "Financial Year ending June 30, 2025",
+      "revenue": 53.2,
+      "growth": 4,
+      "headcount": 406209,
+      "partners": 14800,
+      "aiRevenue": "Committed $1.4B pool for Client GAI infrastructure including EY Dell/NVIDIA AI Factory. GAI bookings hit $1.5B (30% increase).",
       "aiBookings": null,
-      "managedServicesRev": "Est. $7.2B (14% of total via Operate / Managed Services)",
+      "managedServicesRev": "Est. $7.6B (14% of total via Operate / Managed Services)",
       "serviceLines": [
         {
           "name": "Consulting",
-          "value": 22,
+          "value": 22.9,
           "pct": 43
         },
         {
           "name": "Assurance",
-          "value": 14.8,
+          "value": 15.4,
           "pct": 29
         },
         {
           "name": "Tax & Legal",
-          "value": 7.2,
+          "value": 7.5,
           "pct": 14
         },
         {
           "name": "Operate / Managed Services",
-          "value": 7.2,
+          "value": 7.4,
           "pct": 14
         }
       ],
       "geography": [
         {
           "name": "Americas",
-          "value": 25.1,
+          "value": 26.1,
           "pct": 49
         },
         {
           "name": "EMEA / EMEIA",
-          "value": 17.9,
+          "value": 18.6,
           "pct": 35
         },
         {
           "name": "Asia-Pacific",
-          "value": 8.2,
+          "value": 8.5,
           "pct": 16
         }
       ],
       "insights": {
-        "drivers": "Strong demand for sovereign cloud solutions and EU AI Act compliance advisory, alongside double-digit growth in automated Assurance practices.",
-        "barriers": "Sluggish discretionary consulting in West Europe and slower regulatory approvals in key trans-Atlantic legal frameworks.",
+        "drivers": "Strong demand for sovereign cloud solutions, double-digit growth in automated Assurance practices, and EU AI Act compliance advisory.",
+        "barriers": "Sluggish discretionary consulting in Western Europe and slower regulatory approvals in key trans-Atlantic legal frameworks.",
         "highlights": [
           "First Big 4 firm to achieve full EU AI Act conformity certification for proprietary audit platforms.",
           "Launched EY Dell/NVIDIA AI Factory for on-premise, secure sovereign cloud model deployments."
@@ -2434,9 +2394,9 @@
       },
       "sources": [
         {
-          "title": "EY reports global revenues of $51.2 billion for fiscal year 2024",
+          "title": "EY reports global revenues of $53.2 billion for fiscal year 2025",
           "source": "EY Newsroom",
-          "date": "2024-10-27"
+          "date": "2025-10-30"
         }
       ]
     },
@@ -2509,46 +2469,46 @@
     },
     {
       "id": "Accenture",
-      "fiscalYear": "FY2024",
-      "period": "Financial Year ending August 31, 2024",
-      "revenue": 64.9,
-      "growth": 1.2,
-      "headcount": 742000,
-      "partners": 20500,
-      "aiRevenue": "H1 FY2025 GenAI new bookings hit $3.2B (30% of contract signings)",
-      "aiBookings": 3.2,
-      "managedServicesRev": "$32.4B (50% of total via Managed Services)",
+      "fiscalYear": "FY2025",
+      "period": "Financial Year ending August 31, 2025",
+      "revenue": 69.7,
+      "growth": 7,
+      "headcount": 779000,
+      "partners": 21500,
+      "aiRevenue": "GenAI new bookings hit $4.5B (35% of contract signings)",
+      "aiBookings": 4.5,
+      "managedServicesRev": "$34.8B (50% of total via Managed Services)",
       "serviceLines": [
         {
           "name": "Technology Integration",
-          "value": 22.7,
+          "value": 24.4,
           "pct": 35
         },
         {
           "name": "Strategy & Consulting",
-          "value": 9.8,
+          "value": 10.5,
           "pct": 15
         },
         {
           "name": "Managed Services",
-          "value": 32.4,
+          "value": 34.8,
           "pct": 50
         }
       ],
       "geography": [
         {
           "name": "North America",
-          "value": 30.5,
+          "value": 32.8,
           "pct": 47
         },
         {
           "name": "Europe",
-          "value": 21.4,
+          "value": 23,
           "pct": 33
         },
         {
           "name": "Growth Markets",
-          "value": 13,
+          "value": 13.9,
           "pct": 20
         }
       ],
@@ -2556,66 +2516,66 @@
         "drivers": "Massive scale-up of GenAI-powered applications, software migration agreements with SAP/Workday, and major outsource operations in growth markets.",
         "barriers": "Client discretionary tech project deferrals in small-scale applications, leading to flat advisory revenue in Europe.",
         "highlights": [
-          "AI bookings reached $3.2B in late H1 FY25, representing 30% of total contract value.",
+          "AI bookings reached $4.5B in FY25, representing 35% of total contract value.",
           "Announced plan to train and certify 250,000 consultants in advanced NVIDIA/Microsoft AI stacks."
         ],
-        "forecast": "Accenture expects full year FY25 growth to accelerate to 3.0%-6.0% driven by agentic orchestration and multi-agent system deals."
+        "forecast": "Accenture expects growth to accelerate to 5.0%-8.0% in FY26 driven by agentic orchestration and multi-agent system deals."
       },
       "sources": [
         {
-          "title": "Accenture Reports Fourth Quarter and Full Fiscal Year 2024 Results",
+          "title": "Accenture Reports Fourth Quarter and Full Fiscal Year 2025 Results",
           "source": "Accenture Investor Relations",
-          "date": "2024-09-26"
+          "date": "2025-09-25"
         }
       ]
     },
     {
       "id": "PwC",
-      "fiscalYear": "FY2024",
-      "period": "Financial Year ending June 30, 2024",
-      "revenue": 55.4,
-      "growth": 3.7,
-      "headcount": 364000,
-      "partners": 12800,
-      "aiRevenue": "Committed $1.0B in internal GenAI tooling rollout and OpenAI alliance integration",
+      "fiscalYear": "FY2025",
+      "period": "Financial Year ending June 30, 2025",
+      "revenue": 56.9,
+      "growth": 2.7,
+      "headcount": 364782,
+      "partners": 13100,
+      "aiRevenue": "Committed $1.5B in internal GenAI tooling rollout and OpenAI alliance integration",
       "aiBookings": null,
-      "managedServicesRev": "Est. $6.6B (12% of total via Operate / Managed Services)",
+      "managedServicesRev": "Est. $6.8B (12% of total via Operate / Managed Services)",
       "serviceLines": [
         {
           "name": "Advisory & Deals",
-          "value": 23.3,
+          "value": 23.9,
           "pct": 42
         },
         {
           "name": "Assurance",
-          "value": 19.4,
+          "value": 19.9,
           "pct": 35
         },
         {
           "name": "Tax & Legal",
-          "value": 6.1,
+          "value": 6.3,
           "pct": 11
         },
         {
           "name": "Operate / Managed Services",
-          "value": 6.6,
+          "value": 6.8,
           "pct": 12
         }
       ],
       "geography": [
         {
           "name": "Americas",
-          "value": 23.8,
+          "value": 24.5,
           "pct": 43
         },
         {
           "name": "Europe, Middle East & Africa",
-          "value": 22.2,
+          "value": 22.8,
           "pct": 40
         },
         {
           "name": "Asia-Pacific",
-          "value": 9.4,
+          "value": 9.6,
           "pct": 17
         }
       ],
@@ -2630,59 +2590,59 @@
       },
       "sources": [
         {
-          "title": "PwC Global Revenues reach US$55.4 billion",
+          "title": "PwC Global Revenues reach US$56.9 billion",
           "source": "PwC Press Release",
-          "date": "2024-10-24"
+          "date": "2025-10-24"
         }
       ]
     },
     {
       "id": "KPMG",
-      "fiscalYear": "FY2024",
-      "period": "Financial Year ending September 30, 2024",
-      "revenue": 36.4,
-      "growth": 3,
-      "headcount": 273000,
-      "partners": 9900,
+      "fiscalYear": "FY2025",
+      "period": "Financial Year ending September 30, 2025",
+      "revenue": 39.8,
+      "growth": 5.1,
+      "headcount": 276030,
+      "partners": 10200,
       "aiRevenue": "Committed $2B Microsoft-integrated AI practice investments through 2028",
       "aiBookings": null,
-      "managedServicesRev": "Est. $4.4B (12% of total via Operate / Managed Services)",
+      "managedServicesRev": "Est. $4.8B (12% of total via Operate / Managed Services)",
       "serviceLines": [
         {
           "name": "Advisory",
-          "value": 15.3,
+          "value": 16.7,
           "pct": 42
         },
         {
           "name": "Audit",
-          "value": 12,
+          "value": 13.1,
           "pct": 33
         },
         {
           "name": "Tax & Legal",
-          "value": 4.7,
+          "value": 5.2,
           "pct": 13
         },
         {
           "name": "Operate / Managed Services",
-          "value": 4.4,
+          "value": 4.8,
           "pct": 12
         }
       ],
       "geography": [
         {
           "name": "Americas",
-          "value": 14.6,
+          "value": 15.9,
           "pct": 40
         },
         {
           "name": "Europe, Middle East & Africa",
-          "value": 16.4,
+          "value": 17.9,
           "pct": 45
         },
         {
           "name": "Asia-Pacific",
-          "value": 5.4,
+          "value": 6,
           "pct": 15
         }
       ],
@@ -2697,9 +2657,9 @@
       },
       "sources": [
         {
-          "title": "KPMG reports FY24 global revenues of $36.4 billion",
+          "title": "KPMG reports FY25 global revenues of $39.8 billion",
           "source": "KPMG News",
-          "date": "2024-12-12"
+          "date": "2025-12-11"
         }
       ]
     }

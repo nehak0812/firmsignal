@@ -4945,3 +4945,434 @@
 [2026-06-19T10:54:20.574Z] AUTO-SCAN SUMMITS SUCCESS: Added 2 new summits.
 [2026-06-19T10:54:20.576Z] AUTO-SCAN: Initiating automatic hourly background scan for C-suite LinkedIn posts...
 [2026-06-19T10:54:20.578Z] AUTO-SCAN LINKEDIN COMPLETED: 0 new posts found (all matched existing).
+[2026-06-19T12:13:13.570Z] AUTO-SCAN: Initiating automatic hourly background scan for consulting and tech news...
+[2026-06-19T12:13:13.591Z] AUTO-SCAN: Initiating parallel RSS sweeps across all 40 active competitor watchlists...
+[2026-06-19T12:13:13.594Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Deloitte" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:13.594Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""PwC" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:13.594Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""EY" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:13.594Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""McKinsey" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:13.594Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""KPMG" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:14.879Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:15.029Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:15.209Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:15.261Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:15.370Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:15.681Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Bain" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:15.681Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Accenture" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:15.681Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""IBM Consulting" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:15.680Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""BCG" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:15.681Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Capgemini" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:16.594Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:16.644Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:16.691Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:16.743Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:16.759Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:17.070Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Microsoft" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:17.070Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Reply" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:17.070Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""TCS" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:17.069Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""NTT Data" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:17.070Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""SAP" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:17.711Z] RSS CRAWLER SUCCESS: Found 0 real news articles on the web.
+[2026-06-19T12:13:17.779Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:18.063Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:18.076Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:18.104Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:18.407Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Google" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:18.408Z] RSS CRAWLER: Fetching Google News RSS feed for query: "(Optro OR AuditBoard) AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:18.407Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""ServiceNow" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:18.408Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Salesforce" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:18.408Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""AWS" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:19.246Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:19.301Z] RSS CRAWLER SUCCESS: Found 76 real news articles on the web.
+[2026-06-19T12:13:19.409Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:19.425Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:19.552Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:19.861Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Workday" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:19.861Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""OpenAI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:19.861Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Anthropic" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:19.861Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Palantir" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:19.861Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Perplexity" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:20.811Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:20.892Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:20.930Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:20.988Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:21.175Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:21.483Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Mistral AI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:21.483Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Cohere" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:21.485Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""xAI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:21.485Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""DeepSeek" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:21.485Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Qualcomm" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:22.320Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:22.477Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:22.478Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:22.519Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:22.571Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:22.879Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""NVIDIA" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:22.879Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Sentry" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:22.879Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Neo4j" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:22.879Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Equinix" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:22.879Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Orange" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:23.588Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:23.987Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:23.988Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:23.989Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:13:24.077Z] RSS CRAWLER SUCCESS: Found 98 real news articles on the web.
+[2026-06-19T12:13:24.387Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Qdrant" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:24.387Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Snorkel AI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:24.387Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Anyformat.ai" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:24.387Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Alpic" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:24.387Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Lingo Dev" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:13:24.929Z] RSS CRAWLER SUCCESS: Found 35 real news articles on the web.
+[2026-06-19T12:13:25.046Z] RSS CRAWLER SUCCESS: Found 9 real news articles on the web.
+[2026-06-19T12:13:25.052Z] RSS CRAWLER SUCCESS: Found 6 real news articles on the web.
+[2026-06-19T12:13:25.073Z] RSS CRAWLER SUCCESS: Found 2 real news articles on the web.
+[2026-06-19T12:13:25.519Z] RSS CRAWLER SUCCESS: Found 80 real news articles on the web.
+[2026-06-19T12:13:25.522Z] AUTO-SCAN CRAWLER: Successfully aggregated 114 unique live news articles across all firms.
+[2026-06-19T12:13:25.524Z] AUTO-SCAN: Local RSS Parser fallback — Mapping 114 live articles...
+[2026-06-19T12:13:25.539Z] AUTO-SCAN: Local RSS parsing successful.
+[2026-06-19T12:13:26.680Z] VERIFIER APPROVED (AUTO): "Deloitte and Google Cloud Collaborate to Laun..." -> Status: Approved & Committed.
+[2026-06-19T12:13:28.175Z] VERIFIER APPROVED (AUTO): "The global chair of PwC shares 3 takes on wha..." -> Status: Approved & Committed.
+[2026-06-19T12:13:28.462Z] VERIFIER REJECTED (AUTO): "GenAI could deliver up to 50% higher sales ve..." -> Reason: No tracked competitor firm matched.
+[2026-06-19T12:13:28.464Z] VERIFIER REJECTED (AUTO): "EY and Microsoft announce global initiative t..." -> Reason: Article is older than 7 days (29 days old).
+[2026-06-19T12:13:30.038Z] VERIFIER APPROVED (AUTO): "Boards are sleepwalking into the AI era. KPMG..." -> Status: Approved & Committed.
+[2026-06-19T12:13:30.042Z] VERIFIER REJECTED (AUTO): "McKinsey consultants are using AI to end thei..." -> Reason: Article is older than 7 days (9 days old).
+[2026-06-19T12:13:30.044Z] VERIFIER REJECTED (AUTO): "How AI is forcing McKinsey and its peers to r..." -> Reason: Article is older than 7 days (27 days old).
+[2026-06-19T12:13:31.845Z] VERIFIER REJECTED (AUTO): "India among APAC's most AI-ready healthcare m..." -> Reason: No tracked competitor firm matched.
+[2026-06-19T12:13:33.566Z] VERIFIER APPROVED (AUTO): "Accenture warning sparks IT rout: Are tougher..." -> Status: Approved & Committed.
+[2026-06-19T12:13:38.276Z] VERIFIER APPROVED (AUTO): "NTT DATA Brings Salesforce Capabilities to Ea..." -> Status: Approved & Committed.
+[2026-06-19T12:13:40.691Z] VERIFIER REJECTED (AUTO): "Reply at VivaTech 2026: Making AI, Agents and..." -> Reason: Article is older than 7 days (11 days old).
+[2026-06-19T12:13:43.126Z] VERIFIER APPROVED (AUTO): "Microsoft eyes DeepSeek for enterprise AI..." -> Status: Approved & Committed.
+[2026-06-19T12:13:45.772Z] VERIFIER REJECTED (AUTO): "Optro Leads the Global Audit Transformation w..." -> Reason: Article is older than 7 days (44 days old).
+[2026-06-19T12:13:45.775Z] VERIFIER REJECTED (AUTO): "AuditBoard, Protiviti introduce new AI-driven..." -> Reason: Article is older than 7 days (241 days old).
+[2026-06-19T12:13:45.777Z] VERIFIER REJECTED (AUTO): "Optro Acquires AI-Native SOX Automation Platf..." -> Reason: Article is older than 7 days (38 days old).
+[2026-06-19T12:13:55.827Z] VERIFIER APPROVED (AUTO): "AI Agents to Make Sense of Data at OpenAI..." -> Status: Approved & Committed.
+[2026-06-19T12:13:57.669Z] VERIFIER APPROVED (AUTO): "JPMorgan blocks Anthropic AI models for staff..." -> Status: Approved & Committed.
+[2026-06-19T12:13:57.910Z] VERIFIER APPROVED (AUTO): "The Hacker Sent by Anthropic to Calm the Gove..." -> Status: Approved & Committed.
+[2026-06-19T12:13:59.893Z] VERIFIER APPROVED (AUTO): "Perplexity Launches 'Brain' for Self-Improvin..." -> Status: Approved & Committed.
+[2026-06-19T12:14:01.050Z] VERIFIER APPROVED (AUTO): "Mistral AI in talks to raise €3 billion at €2..." -> Status: Approved & Committed.
+[2026-06-19T12:14:01.054Z] VERIFIER REJECTED (AUTO): "Sail Reply &amp; Mistral AI Launch event..." -> Reason: Article is older than 7 days (16 days old).
+[2026-06-19T12:14:06.652Z] VERIFIER APPROVED (AUTO): "'xAI Is Kind Of A Failure': AI Pioneer Yann L..." -> Status: Approved & Committed.
+[2026-06-19T12:14:10.060Z] VERIFIER APPROVED (AUTO): "Qualcomm CEO Cristiano Amon on the new world ..." -> Status: Approved & Committed.
+[2026-06-19T12:14:12.518Z] VERIFIER REJECTED (AUTO): "Harness Acquires Codecov from Sentry to Stren..." -> Reason: Article is older than 7 days (17 days old).
+[2026-06-19T12:14:15.185Z] VERIFIER REJECTED (AUTO): "Video: Neo4j &amp; Graph-Powered AI..." -> Reason: Article is older than 7 days (73 days old).
+[2026-06-19T12:14:15.187Z] VERIFIER REJECTED (AUTO): "Graph-driven AI for all: Neo4j Aura Agent ent..." -> Reason: Article is older than 7 days (136 days old).
+[2026-06-19T12:14:17.455Z] VERIFIER REJECTED (AUTO): "Qdrant’s AI vector search is faster, auditabl..." -> Reason: Article is older than 7 days (52 days old).
+[2026-06-19T12:14:17.460Z] VERIFIER REJECTED (AUTO): "Qdrant Raises $50 Million Series B to Define ..." -> Reason: Article is older than 7 days (99 days old).
+[2026-06-19T12:14:17.462Z] VERIFIER REJECTED (AUTO): "Qdrant Raises $50M Series B to Define Composa..." -> Reason: Article is older than 7 days (16 days old).
+[2026-06-19T12:14:17.467Z] VERIFIER REJECTED (AUTO): "Accenture Invests in Snorkel AI to Help Finan..." -> Reason: Article is older than 7 days (317 days old).
+[2026-06-19T12:14:17.471Z] VERIFIER REJECTED (AUTO): "Benchmarking AI Agents: Snorkel AI's Vincent ..." -> Reason: Article is older than 7 days (15 days old).
+[2026-06-19T12:14:17.472Z] VERIFIER REJECTED (AUTO): "€5 million for Paris-based Alpic to build the..." -> Reason: Article is older than 7 days (288 days old).
+[2026-06-19T12:14:17.476Z] VERIFIER REJECTED (AUTO): "Alpic raises $6M to build first MCP-native cl..." -> Reason: Article is older than 7 days (288 days old).
+[2026-06-19T12:14:17.478Z] VERIFIER REJECTED (AUTO): "Rail Europe Adds Connected AI With Alpic Part..." -> Reason: Article is older than 7 days (122 days old).
+[2026-06-19T12:14:17.484Z] AUTO-SCAN SUCCESS: Added 13 new signals.
+[2026-06-19T12:14:17.486Z] AUTO-SCAN: Initiating automatic hourly background scan for thought leadership reports...
+[2026-06-19T12:14:17.991Z] AUTO-SCAN REPORTS FAILED: Claude API returned 401 - {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"},"request_id":"req_011CcCbkaeE6fM5h5gtgGKGv"}
+[2026-06-19T12:14:17.994Z] AUTO-SCAN: Initiating automatic hourly background scan for AI summits...
+[2026-06-19T12:14:17.995Z] AUTO-SCAN SUMMITS COMPLETED: 0 new summits found (all matched existing).
+[2026-06-19T12:14:18.003Z] AUTO-SCAN: Initiating automatic hourly background scan for C-suite LinkedIn posts...
+[2026-06-19T12:14:18.012Z] AUTO-SCAN LINKEDIN COMPLETED: 0 new posts found (all matched existing).
+[2026-06-19T12:21:03.145Z] FirmSignal Backend running on port 3000
+[2026-06-19T12:21:04.158Z] AUTO-SCAN: Initiating automatic hourly background scan for consulting and tech news...
+[2026-06-19T12:21:04.167Z] AUTO-SCAN: Initiating parallel RSS sweeps across all 40 active competitor watchlists...
+[2026-06-19T12:21:04.170Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""PwC" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:04.170Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Deloitte" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:04.171Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""KPMG" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:04.171Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""EY" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:04.171Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""McKinsey" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:05.001Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:05.175Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:05.300Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:05.302Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:05.408Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:05.716Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""BCG" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:05.716Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""IBM Consulting" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:05.716Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Accenture" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:05.716Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Bain" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:05.716Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Capgemini" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:06.501Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:06.599Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:06.704Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:06.720Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:06.804Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:07.109Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Reply" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:07.109Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""SAP" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:07.109Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""TCS" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:07.109Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Microsoft" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:07.109Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""NTT Data" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:07.654Z] POST /api/db/reset hit. Restoring database to factory default demo signals.
+[2026-06-19T12:21:07.657Z] AUTO-SCAN: Initiating automatic hourly background scan for consulting and tech news...
+[2026-06-19T12:21:07.657Z] Database successfully rollback to factory defaults and live news sweep triggered.
+[2026-06-19T12:21:07.666Z] AUTO-SCAN: Initiating parallel RSS sweeps across all 40 active competitor watchlists...
+[2026-06-19T12:21:07.668Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""PwC" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:07.668Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Deloitte" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:07.668Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""KPMG" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:07.668Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""McKinsey" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:07.668Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""EY" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:07.794Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:07.796Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:07.806Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:07.833Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:07.837Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:07.860Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.045Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.089Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.140Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""BCG" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.140Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Accenture" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.140Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""IBM Consulting" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.140Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Bain" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.140Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Capgemini" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.167Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.248Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.250Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.252Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.255Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.267Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.271Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.551Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Google" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.551Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""ServiceNow" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.551Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Salesforce" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.551Z] RSS CRAWLER: Fetching Google News RSS feed for query: "(Optro OR AuditBoard) AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.551Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""AWS" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.579Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""NTT Data" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.579Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""TCS" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.579Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Reply" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.579Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Microsoft" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.580Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""SAP" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:08.690Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.698Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.703Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.733Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:08.736Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:09.058Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""ServiceNow" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:09.058Z] RSS CRAWLER: Fetching Google News RSS feed for query: "(Optro OR AuditBoard) AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:09.058Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Salesforce" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:09.058Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Google" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:09.058Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""AWS" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:09.181Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:09.186Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:09.363Z] RSS CRAWLER SUCCESS: Found 76 real news articles on the web.
+[2026-06-19T12:21:09.367Z] RSS CRAWLER SUCCESS: Found 76 real news articles on the web.
+[2026-06-19T12:21:09.599Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:09.602Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:09.630Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:09.634Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:09.818Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:09.826Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:10.133Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Workday" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:10.134Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Palantir" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:10.134Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""OpenAI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:10.135Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Anthropic" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:10.135Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Perplexity" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:10.135Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Workday" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:10.136Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""OpenAI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:10.136Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Perplexity" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:10.136Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Anthropic" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:10.135Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Palantir" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:10.569Z] GET /api/financials hit.
+[2026-06-19T12:21:11.070Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:11.075Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:11.158Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:11.164Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:11.317Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:11.323Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:11.367Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:11.373Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:11.549Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:11.600Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:11.867Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Mistral AI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:11.868Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""DeepSeek" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:11.868Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Cohere" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:11.868Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Qualcomm" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:11.868Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""xAI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:11.915Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Mistral AI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:11.916Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Cohere" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:11.916Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""xAI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:11.916Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""DeepSeek" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:11.916Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Qualcomm" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:12.608Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:12.618Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:12.682Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:12.696Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:12.824Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:12.848Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:12.851Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:12.856Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:12.859Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:12.862Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:13.167Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""NVIDIA" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:13.167Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Neo4j" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:13.167Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Equinix" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:13.167Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Sentry" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:13.167Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Orange" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:13.167Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""NVIDIA" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:13.167Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Sentry" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:13.167Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Equinix" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:13.167Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Orange" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:13.167Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Neo4j" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:13.802Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:13.803Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:13.889Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:13.892Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:13.947Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:13.951Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:14.137Z] RSS CRAWLER SUCCESS: Found 98 real news articles on the web.
+[2026-06-19T12:21:14.141Z] RSS CRAWLER SUCCESS: Found 98 real news articles on the web.
+[2026-06-19T12:21:14.151Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:14.164Z] RSS CRAWLER SUCCESS: Found 100 real news articles on the web.
+[2026-06-19T12:21:14.454Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Snorkel AI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:14.454Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Qdrant" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:14.455Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Alpic" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:14.455Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Anyformat.ai" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:14.455Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Lingo Dev" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:14.469Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Qdrant" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:14.470Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Snorkel AI" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:14.470Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Anyformat.ai" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:14.470Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Alpic" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:14.470Z] RSS CRAWLER: Fetching Google News RSS feed for query: ""Lingo Dev" AND (AI OR tech OR consulting OR earnings OR restructure OR layoff OR alliance OR partner)"
+[2026-06-19T12:21:14.924Z] RSS CRAWLER SUCCESS: Found 6 real news articles on the web.
+[2026-06-19T12:21:14.924Z] RSS CRAWLER SUCCESS: Found 6 real news articles on the web.
+[2026-06-19T12:21:15.132Z] RSS CRAWLER SUCCESS: Found 9 real news articles on the web.
+[2026-06-19T12:21:15.132Z] RSS CRAWLER SUCCESS: Found 9 real news articles on the web.
+[2026-06-19T12:21:15.197Z] RSS CRAWLER SUCCESS: Found 2 real news articles on the web.
+[2026-06-19T12:21:15.202Z] RSS CRAWLER SUCCESS: Found 2 real news articles on the web.
+[2026-06-19T12:21:15.207Z] RSS CRAWLER SUCCESS: Found 35 real news articles on the web.
+[2026-06-19T12:21:15.208Z] RSS CRAWLER SUCCESS: Found 35 real news articles on the web.
+[2026-06-19T12:21:15.389Z] RSS CRAWLER SUCCESS: Found 80 real news articles on the web.
+[2026-06-19T12:21:15.391Z] AUTO-SCAN CRAWLER: Successfully aggregated 117 unique live news articles across all firms.
+[2026-06-19T12:21:15.394Z] AUTO-SCAN: Local RSS Parser fallback — Mapping 117 live articles...
+[2026-06-19T12:21:15.404Z] AUTO-SCAN: Local RSS parsing successful.
+[2026-06-19T12:21:15.410Z] RSS CRAWLER SUCCESS: Found 80 real news articles on the web.
+[2026-06-19T12:21:15.413Z] AUTO-SCAN CRAWLER: Successfully aggregated 117 unique live news articles across all firms.
+[2026-06-19T12:21:15.415Z] AUTO-SCAN: Local RSS Parser fallback — Mapping 117 live articles...
+[2026-06-19T12:21:15.423Z] AUTO-SCAN: Local RSS parsing successful.
+[2026-06-19T12:21:15.636Z] VERIFIER APPROVED (AUTO): "Deloitte and Google Cloud Collaborate to Laun..." -> Status: Approved & Committed.
+[2026-06-19T12:21:16.247Z] VERIFIER APPROVED (AUTO): "Deloitte to open London AI Studio with Google..." -> Status: Approved & Committed.
+[2026-06-19T12:21:17.150Z] VERIFIER APPROVED (AUTO): "Deloitte opens the London AI Studio with Goog..." -> Status: Approved & Committed.
+[2026-06-19T12:21:17.688Z] VERIFIER APPROVED (AUTO): "Deloitte opens the London AI Studio with Goog..." -> Status: Approved & Committed.
+[2026-06-19T12:21:17.874Z] VERIFIER APPROVED (AUTO): "The global chair of PwC shares 3 takes on wha..." -> Status: Approved & Committed.
+[2026-06-19T12:21:18.814Z] VERIFIER APPROVED (AUTO): "AI reshapes global labour market into two dis..." -> Status: Approved & Committed.
+[2026-06-19T12:21:18.816Z] VERIFIER REJECTED (AUTO): "GenAI could deliver up to 50% higher sales ve..." -> Reason: No tracked competitor firm matched.
+[2026-06-19T12:21:18.818Z] VERIFIER REJECTED (AUTO): "EY and Microsoft announce global initiative t..." -> Reason: Article is older than 7 days (29 days old).
+[2026-06-19T12:21:19.361Z] VERIFIER REJECTED (AUTO): "GenAI could deliver up to 50% higher sales ve..." -> Reason: No tracked competitor firm matched.
+[2026-06-19T12:21:19.363Z] VERIFIER REJECTED (AUTO): "EY and Microsoft announce global initiative t..." -> Reason: Article is older than 7 days (29 days old).
+[2026-06-19T12:21:19.373Z] VERIFIER APPROVED (AUTO): "KPMG retracts agentic AI study after research..." -> Status: Approved & Committed.
+[2026-06-19T12:21:19.962Z] VERIFIER APPROVED (AUTO): "Boards are sleepwalking into the AI era. KPMG..." -> Status: Approved & Committed.
+[2026-06-19T12:21:19.964Z] VERIFIER REJECTED (AUTO): "McKinsey consultants are using AI to end thei..." -> Reason: Article is older than 7 days (9 days old).
+[2026-06-19T12:21:19.966Z] VERIFIER REJECTED (AUTO): "How AI is forcing McKinsey and its peers to r..." -> Reason: Article is older than 7 days (27 days old).
+[2026-06-19T12:21:19.968Z] VERIFIER REJECTED (AUTO): "No Market Is Adopting AI at Work Faster Than ..." -> Reason: Article is older than 7 days (15 days old).
+[2026-06-19T12:21:19.969Z] VERIFIER REJECTED (AUTO): "India among APAC's most AI-ready healthcare m..." -> Reason: No tracked competitor firm matched.
+[2026-06-19T12:21:20.657Z] VERIFIER APPROVED (AUTO): "Accenture to Strengthen Critical Infrastructu..." -> Status: Approved & Committed.
+[2026-06-19T12:21:20.927Z] VERIFIER APPROVED (AUTO): "Accenture warning sparks IT rout: Are tougher..." -> Status: Approved & Committed.
+[2026-06-19T12:21:21.271Z] VERIFIER REJECTED (AUTO): "McKinsey consultants are using AI to end thei..." -> Reason: Article is older than 7 days (9 days old).
+[2026-06-19T12:21:21.273Z] VERIFIER REJECTED (AUTO): "How AI is forcing McKinsey and its peers to r..." -> Reason: Article is older than 7 days (27 days old).
+[2026-06-19T12:21:21.275Z] VERIFIER REJECTED (AUTO): "No Market Is Adopting AI at Work Faster Than ..." -> Reason: Article is older than 7 days (15 days old).
+[2026-06-19T12:21:21.280Z] VERIFIER REJECTED (AUTO): "India among APAC's most AI-ready healthcare m..." -> Reason: No tracked competitor firm matched.
+[2026-06-19T12:21:21.523Z] VERIFIER APPROVED (AUTO): "Indian IT stocks slump up to 7% as Accenture ..." -> Status: Approved & Committed.
+[2026-06-19T12:21:22.502Z] VERIFIER APPROVED (AUTO): "Forward deployed units: IBM Consulting’s fiel..." -> Status: Approved & Committed.
+[2026-06-19T12:21:23.161Z] VERIFIER APPROVED (AUTO): "IBM Consulting extends Microsoft Security for..." -> Status: Approved & Committed.
+[2026-06-19T12:21:23.820Z] VERIFIER APPROVED (AUTO): "IBM Consulting Expands Microsoft Security Col..." -> Status: Approved & Committed.
+[2026-06-19T12:21:24.500Z] VERIFIER APPROVED (AUTO): "NTT Data signs agreement to offer Nikkei's en..." -> Status: Approved & Committed.
+[2026-06-19T12:21:25.584Z] VERIFIER APPROVED (AUTO): "NTT DATA Brings Salesforce Capabilities to Ea..." -> Status: Approved & Committed.
+[2026-06-19T12:21:26.574Z] VERIFIER APPROVED (AUTO): "TCS wins multi-year deal to transform Elopak’..." -> Status: Approved & Committed.
+[2026-06-19T12:21:26.814Z] VERIFIER APPROVED (AUTO): "TCS chief projects AI-human workforce parity ..." -> Status: Approved & Committed.
+[2026-06-19T12:21:27.720Z] VERIFIER APPROVED (AUTO): "Nifty IT Crashes Over 6% as Infosys, TCS, HCL..." -> Status: Approved & Committed.
+[2026-06-19T12:21:27.723Z] VERIFIER REJECTED (AUTO): "Reply at VivaTech 2026: Making AI, Agents and..." -> Reason: Article is older than 7 days (11 days old).
+[2026-06-19T12:21:28.476Z] VERIFIER REJECTED (AUTO): "Reply at VivaTech 2026: Making AI, Agents and..." -> Reason: Article is older than 7 days (11 days old).
+[2026-06-19T12:21:28.612Z] VERIFIER APPROVED (AUTO): "Gmail Reply Bug Hits Pixel Users, Keyboard Re..." -> Status: Approved & Committed.
+[2026-06-19T12:21:29.514Z] VERIFIER APPROVED (AUTO): "Microsoft Makes Big AI Inroads in China by Se..." -> Status: Approved & Committed.
+[2026-06-19T12:21:29.758Z] VERIFIER APPROVED (AUTO): "Microsoft eyes DeepSeek for enterprise AI..." -> Status: Approved & Committed.
+[2026-06-19T12:21:29.760Z] VERIFIER REJECTED (AUTO): "SAP’s AI-Native North Star Architecture: Tech..." -> Reason: Article is older than 7 days (11 days old).
+[2026-06-19T12:21:30.011Z] VERIFIER APPROVED (AUTO): "SAP Concur launches AI-powered travel solutio..." -> Status: Approved & Committed.
+[2026-06-19T12:21:30.256Z] VERIFIER APPROVED (AUTO): "SAP Concur launches AI-powered travel experie..." -> Status: Approved & Committed.
+[2026-06-19T12:21:30.411Z] VERIFIER REJECTED (AUTO): "SAP’s AI-Native North Star Architecture: Tech..." -> Reason: Article is older than 7 days (11 days old).
+[2026-06-19T12:21:30.990Z] VERIFIER APPROVED (AUTO): "Aria Systems, ServiceNow Launch Agentic BSS f..." -> Status: Approved & Committed.
+[2026-06-19T12:21:31.182Z] VERIFIER APPROVED (AUTO): "SAP Concur launches AI-powered travel solutio..." -> Status: Approved & Committed.
+[2026-06-19T12:21:32.073Z] VERIFIER APPROVED (AUTO): "Cognizant expands cross-platform agentic AI w..." -> Status: Approved & Committed.
+[2026-06-19T12:21:33.149Z] VERIFIER APPROVED (AUTO): "Is ServiceNow (NOW) Quietly Becoming the Core..." -> Status: Approved & Committed.
+[2026-06-19T12:21:33.692Z] VERIFIER APPROVED (AUTO): "Google Is Using Nvidia’s Playbook to Build a ..." -> Status: Approved & Committed.
+[2026-06-19T12:21:34.446Z] VERIFIER APPROVED (AUTO): "Create &amp; capture demand in the AI Search ..." -> Status: Approved & Committed.
+[2026-06-19T12:21:34.447Z] VERIFIER REJECTED (AUTO): "Optro Leads the Global Audit Transformation w..." -> Reason: Article is older than 7 days (44 days old).
+[2026-06-19T12:21:34.449Z] VERIFIER REJECTED (AUTO): "AuditBoard, Protiviti introduce new AI-driven..." -> Reason: Article is older than 7 days (241 days old).
+[2026-06-19T12:21:34.450Z] VERIFIER REJECTED (AUTO): "Optro Acquires AI-Native SOX Automation Platf..." -> Reason: Article is older than 7 days (38 days old).
+[2026-06-19T12:21:35.340Z] VERIFIER APPROVED (AUTO): "Salesforce Partners with Databricks to Help A..." -> Status: Approved & Committed.
+[2026-06-19T12:21:35.453Z] VERIFIER REJECTED (AUTO): "Optro Leads the Global Audit Transformation w..." -> Reason: Article is older than 7 days (44 days old).
+[2026-06-19T12:21:35.454Z] VERIFIER REJECTED (AUTO): "AuditBoard, Protiviti introduce new AI-driven..." -> Reason: Article is older than 7 days (241 days old).
+[2026-06-19T12:21:35.456Z] VERIFIER REJECTED (AUTO): "Optro Acquires AI-Native SOX Automation Platf..." -> Reason: Article is older than 7 days (38 days old).
+[2026-06-19T12:21:36.212Z] VERIFIER APPROVED (AUTO): "Capita and Salesforce Deliver AI Solutions fo..." -> Status: Approved & Committed.
+[2026-06-19T12:21:36.960Z] VERIFIER APPROVED (AUTO): "Salesforce Futures VP: Customers Face Three C..." -> Status: Approved & Committed.
+[2026-06-19T12:21:37.759Z] VERIFIER APPROVED (AUTO): "AWS Weighs Selling Trainium AI Chips in Chall..." -> Status: Approved & Committed.
+[2026-06-19T12:21:38.203Z] VERIFIER APPROVED (AUTO): "Amazon wants to sell AI chips outside of AWS..." -> Status: Approved & Committed.
+[2026-06-19T12:21:38.667Z] VERIFIER APPROVED (AUTO): "Quasar to scale global manufacturing capabili..." -> Status: Approved & Committed.
+[2026-06-19T12:21:39.495Z] VERIFIER APPROVED (AUTO): "Workday will likely face California claims in..." -> Status: Approved & Committed.
+[2026-06-19T12:21:39.931Z] VERIFIER APPROVED (AUTO): "Workday (WDAY) Stock Could Be 32% Below Fair ..." -> Status: Approved & Committed.
+[2026-06-19T12:21:40.733Z] VERIFIER APPROVED (AUTO): "France to ditch Palantir’s AI data tools in f..." -> Status: Approved & Committed.
+[2026-06-19T12:21:41.472Z] VERIFIER APPROVED (AUTO): "France ends Palantir AI deal in sovereign pus..." -> Status: Approved & Committed.
+[2026-06-19T12:21:41.918Z] VERIFIER APPROVED (AUTO): "French security service to replace Palantir w..." -> Status: Approved & Committed.
+[2026-06-19T12:21:42.703Z] VERIFIER APPROVED (AUTO): "Introducing the OpenAI Partner Network..." -> Status: Approved & Committed.
+[2026-06-19T12:21:43.496Z] VERIFIER APPROVED (AUTO): "AI Agents to Make Sense of Data at OpenAI..." -> Status: Approved & Committed.
+[2026-06-19T12:21:44.312Z] VERIFIER APPROVED (AUTO): "New OpenAI research explores how reinforcemen..." -> Status: Approved & Committed.
+[2026-06-19T12:21:45.078Z] VERIFIER APPROVED (AUTO): "Why Anthropic Is Sounding the Alarm on the Ne..." -> Status: Approved & Committed.
+[2026-06-19T12:21:45.555Z] VERIFIER APPROVED (AUTO): "JPMorgan blocks Anthropic AI models for staff..." -> Status: Approved & Committed.
+[2026-06-19T12:21:46.333Z] VERIFIER APPROVED (AUTO): "The Hacker Sent by Anthropic to Calm the Gove..." -> Status: Approved & Committed.
+[2026-06-19T12:21:46.810Z] VERIFIER APPROVED (AUTO): "Perplexity Launches Brain, a Self-Improving M..." -> Status: Approved & Committed.
+[2026-06-19T12:21:47.629Z] VERIFIER APPROVED (AUTO): "New OpenAI research explores how reinforcemen..." -> Status: Approved & Committed.
+[2026-06-19T12:21:47.663Z] VERIFIER APPROVED (AUTO): "Perplexity Launches 'Brain' for Self-Improvin..." -> Status: Approved & Committed.
+[2026-06-19T12:21:48.106Z] VERIFIER APPROVED (AUTO): "Perplexity's AI Agent Now Has a Brain That Le..." -> Status: Approved & Committed.
+[2026-06-19T12:21:48.560Z] VERIFIER APPROVED (AUTO): "PM exchanges views with Mistral AI CEO Arthur..." -> Status: Approved & Committed.
+[2026-06-19T12:21:49.588Z] VERIFIER APPROVED (AUTO): "Mistral AI expresses strong interest in expan..." -> Status: Approved & Committed.
+[2026-06-19T12:21:50.329Z] VERIFIER APPROVED (AUTO): "India’s Growth Story in Focus as PM Modi Meet..." -> Status: Approved & Committed.
+[2026-06-19T12:21:50.825Z] VERIFIER APPROVED (AUTO): "Bell, Cohere, Hypertec and BUZZ HPC Build Can..." -> Status: Approved & Committed.
+[2026-06-19T12:21:51.607Z] VERIFIER APPROVED (AUTO): "BCE Reaches Deal to Provide Cohere With AI Co..." -> Status: Approved & Committed.
+[2026-06-19T12:21:52.412Z] VERIFIER APPROVED (AUTO): "Bell, Cohere, Hypertec, Buzz HPC partner to b..." -> Status: Approved & Committed.
+[2026-06-19T12:21:52.908Z] VERIFIER APPROVED (AUTO): "AI godfather Yann LeCun calls Elon Musk's xAI..." -> Status: Approved & Committed.
+[2026-06-19T12:21:54.071Z] VERIFIER APPROVED (AUTO): "Father of AI Yann LeCun declares Elon Musk's ..." -> Status: Approved & Committed.
+[2026-06-19T12:21:54.815Z] VERIFIER APPROVED (AUTO): "'xAI Is Kind Of A Failure': AI Pioneer Yann L..." -> Status: Approved & Committed.
+[2026-06-19T12:21:55.347Z] VERIFIER APPROVED (AUTO): "DeepSeek Becomes China’s Most Valuable AI Sta..." -> Status: Approved & Committed.
+[2026-06-19T12:21:56.368Z] VERIFIER APPROVED (AUTO): "DeepSeek asks investors not to poach its empl..." -> Status: Approved & Committed.
+[2026-06-19T12:21:56.816Z] VERIFIER APPROVED (AUTO): "Qualcomm CEO Cristiano Amon on the new world ..." -> Status: Approved & Committed.
+[2026-06-19T12:21:57.872Z] VERIFIER APPROVED (AUTO): "Qualcomm Takes Spatial Computing into the AI ..." -> Status: Approved & Committed.
+[2026-06-19T12:21:58.709Z] VERIFIER APPROVED (AUTO): "Qualcomm Is a Rare AI Chip Value Play..." -> Status: Approved & Committed.
+[2026-06-19T12:21:59.130Z] VERIFIER APPROVED (AUTO): "Amazon hopes to challenge Nvidia more directl..." -> Status: Approved & Committed.
+[2026-06-19T12:21:59.590Z] VERIFIER APPROVED (AUTO): "NVIDIA’s revenue from data centers and AI has..." -> Status: Approved & Committed.
+[2026-06-19T12:21:59.593Z] VERIFIER REJECTED (AUTO): "Harness Acquires Codecov from Sentry to Stren..." -> Reason: Article is older than 7 days (17 days old).
+[2026-06-19T12:22:00.313Z] VERIFIER APPROVED (AUTO): "Equinix opens AI-ready data centre in Hong Ko..." -> Status: Approved & Committed.
+[2026-06-19T12:22:00.838Z] VERIFIER REJECTED (AUTO): "Harness Acquires Codecov from Sentry to Stren..." -> Reason: Article is older than 7 days (17 days old).
+[2026-06-19T12:22:01.058Z] VERIFIER APPROVED (AUTO): "Equinix Collaborates with Cisco and NVIDIA to..." -> Status: Approved & Committed.
+[2026-06-19T12:22:02.080Z] VERIFIER APPROVED (AUTO): "Equinix, Cisco and NVIDIA Expand Collaboratio..." -> Status: Approved & Committed.
+[2026-06-19T12:22:02.082Z] VERIFIER REJECTED (AUTO): "Video: Neo4j &amp; Graph-Powered AI..." -> Reason: Article is older than 7 days (73 days old).
+[2026-06-19T12:22:02.083Z] VERIFIER REJECTED (AUTO): "Graph-driven AI for all: Neo4j Aura Agent ent..." -> Reason: Article is older than 7 days (136 days old).
+[2026-06-19T12:22:02.643Z] VERIFIER REJECTED (AUTO): "Video: Neo4j &amp; Graph-Powered AI..." -> Reason: Article is older than 7 days (73 days old).
+[2026-06-19T12:22:02.646Z] VERIFIER REJECTED (AUTO): "Graph-driven AI for all: Neo4j Aura Agent ent..." -> Reason: Article is older than 7 days (136 days old).
+[2026-06-19T12:22:02.815Z] VERIFIER APPROVED (AUTO): "Orange Luxembourg targets 10% cut in mobile n..." -> Status: Approved & Committed.
+[2026-06-19T12:22:03.296Z] VERIFIER APPROVED (AUTO): "Orange ties with French energy agency on AI n..." -> Status: Approved & Committed.
+[2026-06-19T12:22:04.201Z] VERIFIER APPROVED (AUTO): "Orange, CEA lay groundwork for AI-native netw..." -> Status: Approved & Committed.
+[2026-06-19T12:22:04.203Z] VERIFIER REJECTED (AUTO): "Qdrant’s AI vector search is faster, auditabl..." -> Reason: Article is older than 7 days (52 days old).
+[2026-06-19T12:22:04.204Z] VERIFIER REJECTED (AUTO): "Qdrant Raises $50 Million Series B to Define ..." -> Reason: Article is older than 7 days (99 days old).
+[2026-06-19T12:22:04.205Z] VERIFIER REJECTED (AUTO): "Qdrant Raises $50M Series B to Define Composa..." -> Reason: Article is older than 7 days (16 days old).
+[2026-06-19T12:22:04.206Z] VERIFIER REJECTED (AUTO): "Accenture Invests in Snorkel AI to Help Finan..." -> Reason: Article is older than 7 days (317 days old).
+[2026-06-19T12:22:04.208Z] VERIFIER REJECTED (AUTO): "Benchmarking AI Agents: Snorkel AI's Vincent ..." -> Reason: Article is older than 7 days (15 days old).
+[2026-06-19T12:22:04.211Z] VERIFIER REJECTED (AUTO): "€5 million for Paris-based Alpic to build the..." -> Reason: Article is older than 7 days (288 days old).
+[2026-06-19T12:22:04.213Z] VERIFIER REJECTED (AUTO): "Alpic raises $6M to build first MCP-native cl..." -> Reason: Article is older than 7 days (288 days old).
+[2026-06-19T12:22:04.214Z] VERIFIER REJECTED (AUTO): "Rail Europe Adds Connected AI With Alpic Part..." -> Reason: Article is older than 7 days (122 days old).
+[2026-06-19T12:22:04.220Z] AUTO-SCAN SUCCESS: Added 70 new signals.
+[2026-06-19T12:22:04.222Z] AUTO-SCAN: Initiating automatic hourly background scan for thought leadership reports...
+[2026-06-19T12:22:04.421Z] VERIFIER REJECTED (AUTO): "Qdrant’s AI vector search is faster, auditabl..." -> Reason: Article is older than 7 days (52 days old).
+[2026-06-19T12:22:04.423Z] VERIFIER REJECTED (AUTO): "Qdrant Raises $50 Million Series B to Define ..." -> Reason: Article is older than 7 days (99 days old).
+[2026-06-19T12:22:04.425Z] VERIFIER REJECTED (AUTO): "Qdrant Raises $50M Series B to Define Composa..." -> Reason: Article is older than 7 days (16 days old).
+[2026-06-19T12:22:04.428Z] VERIFIER REJECTED (AUTO): "Accenture Invests in Snorkel AI to Help Finan..." -> Reason: Article is older than 7 days (317 days old).
+[2026-06-19T12:22:04.430Z] VERIFIER REJECTED (AUTO): "Benchmarking AI Agents: Snorkel AI's Vincent ..." -> Reason: Article is older than 7 days (15 days old).
+[2026-06-19T12:22:04.431Z] VERIFIER REJECTED (AUTO): "€5 million for Paris-based Alpic to build the..." -> Reason: Article is older than 7 days (288 days old).
+[2026-06-19T12:22:04.432Z] VERIFIER REJECTED (AUTO): "Alpic raises $6M to build first MCP-native cl..." -> Reason: Article is older than 7 days (288 days old).
+[2026-06-19T12:22:04.434Z] VERIFIER REJECTED (AUTO): "Rail Europe Adds Connected AI With Alpic Part..." -> Reason: Article is older than 7 days (122 days old).
+[2026-06-19T12:22:04.438Z] AUTO-SCAN SUCCESS: Added 3 new signals.
+[2026-06-19T12:22:04.439Z] AUTO-SCAN: Initiating automatic hourly background scan for thought leadership reports...
+[2026-06-19T12:22:04.734Z] AUTO-SCAN REPORTS FAILED: Claude API returned 401 - {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"},"request_id":"req_011CcCcLzBXASfbFkxUFt9gq"}
+[2026-06-19T12:22:04.736Z] AUTO-SCAN: Initiating automatic hourly background scan for AI summits...
+[2026-06-19T12:22:04.741Z] AUTO-SCAN SUMMITS SUCCESS: Added 2 new summits.
+[2026-06-19T12:22:04.744Z] AUTO-SCAN: Initiating automatic hourly background scan for C-suite LinkedIn posts...
+[2026-06-19T12:22:04.747Z] AUTO-SCAN LINKEDIN COMPLETED: 0 new posts found (all matched existing).
+[2026-06-19T12:22:04.998Z] AUTO-SCAN REPORTS FAILED: Claude API returned 401 - {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"},"request_id":"req_011CcCcLzztLyswKSBjnuaQJ"}
+[2026-06-19T12:22:04.999Z] AUTO-SCAN: Initiating automatic hourly background scan for AI summits...
+[2026-06-19T12:22:05.001Z] AUTO-SCAN SUMMITS COMPLETED: 0 new summits found (all matched existing).
+[2026-06-19T12:22:05.003Z] AUTO-SCAN: Initiating automatic hourly background scan for C-suite LinkedIn posts...
+[2026-06-19T12:22:05.005Z] AUTO-SCAN LINKEDIN COMPLETED: 0 new posts found (all matched existing).

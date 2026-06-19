@@ -694,29 +694,29 @@ const DEFAULT_DEMO_SUMMITS = [
 const DEFAULT_DEMO_FINANCIALS = [
   {
     id: "EY",
-    fiscalYear: "FY2024",
-    period: "Financial Year ending June 30, 2024",
-    revenue: 51.2,
-    growth: 3.9,
-    headcount: 393000,
-    partners: 14500,
-    aiRevenue: "Committed $1.4B pool for Client GAI infrastructure including EY Dell/NVIDIA AI Factory",
+    fiscalYear: "FY2025",
+    period: "Financial Year ending June 30, 2025",
+    revenue: 53.2,
+    growth: 4.0,
+    headcount: 406209,
+    partners: 14800,
+    aiRevenue: "Committed $1.4B pool for Client GAI infrastructure including EY Dell/NVIDIA AI Factory. GAI bookings hit $1.5B (30% increase).",
     aiBookings: null,
-    managedServicesRev: "Est. $7.2B (14% of total via Operate / Managed Services)",
+    managedServicesRev: "Est. $7.6B (14% of total via Operate / Managed Services)",
     serviceLines: [
-      { name: "Consulting", value: 22.0, pct: 43 },
-      { name: "Assurance", value: 14.8, pct: 29 },
-      { name: "Tax & Legal", value: 7.2, pct: 14 },
-      { name: "Operate / Managed Services", value: 7.2, pct: 14 }
+      { name: "Consulting", value: 22.9, pct: 43 },
+      { name: "Assurance", value: 15.4, pct: 29 },
+      { name: "Tax & Legal", value: 7.5, pct: 14 },
+      { name: "Operate / Managed Services", value: 7.4, pct: 14 }
     ],
     geography: [
-      { name: "Americas", value: 25.1, pct: 49 },
-      { name: "EMEA / EMEIA", value: 17.9, pct: 35 },
-      { name: "Asia-Pacific", value: 8.2, pct: 16 }
+      { name: "Americas", value: 26.1, pct: 49 },
+      { name: "EMEA / EMEIA", value: 18.6, pct: 35 },
+      { name: "Asia-Pacific", value: 8.5, pct: 16 }
     ],
     insights: {
-      drivers: "Strong demand for sovereign cloud solutions and EU AI Act compliance advisory, alongside double-digit growth in automated Assurance practices.",
-      barriers: "Sluggish discretionary consulting in West Europe and slower regulatory approvals in key trans-Atlantic legal frameworks.",
+      drivers: "Strong demand for sovereign cloud solutions, double-digit growth in automated Assurance practices, and EU AI Act compliance advisory.",
+      barriers: "Sluggish discretionary consulting in Western Europe and slower regulatory approvals in key trans-Atlantic legal frameworks.",
       highlights: [
         "First Big 4 firm to achieve full EU AI Act conformity certification for proprietary audit platforms.",
         "Launched EY Dell/NVIDIA AI Factory for on-premise, secure sovereign cloud model deployments."
@@ -724,7 +724,7 @@ const DEFAULT_DEMO_FINANCIALS = [
       forecast: "Targeting 5.5% growth in FY26 led by sovereign defense and federal AI-modernization pipelines."
     },
     sources: [
-      { title: "EY reports global revenues of $51.2 billion for fiscal year 2024", source: "EY Newsroom", date: "2024-10-27" }
+      { title: "EY reports global revenues of $53.2 billion for fiscal year 2025", source: "EY Newsroom", date: "2025-10-30" }
     ]
   },
   {
@@ -764,59 +764,59 @@ const DEFAULT_DEMO_FINANCIALS = [
   },
   {
     id: "Accenture",
-    fiscalYear: "FY2024",
-    period: "Financial Year ending August 31, 2024",
-    revenue: 64.9,
-    growth: 1.2,
-    headcount: 742000,
-    partners: 20500,
-    aiRevenue: "H1 FY2025 GenAI new bookings hit $3.2B (30% of contract signings)",
-    aiBookings: 3.2,
-    managedServicesRev: "$32.4B (50% of total via Managed Services)",
+    fiscalYear: "FY2025",
+    period: "Financial Year ending August 31, 2025",
+    revenue: 69.7,
+    growth: 7.0,
+    headcount: 779000,
+    partners: 21500,
+    aiRevenue: "GenAI new bookings hit $4.5B (35% of contract signings)",
+    aiBookings: 4.5,
+    managedServicesRev: "$34.8B (50% of total via Managed Services)",
     serviceLines: [
-      { name: "Technology Integration", value: 22.7, pct: 35 },
-      { name: "Strategy & Consulting", value: 9.8, pct: 15 },
-      { name: "Managed Services", value: 32.4, pct: 50 }
+      { name: "Technology Integration", value: 24.4, pct: 35 },
+      { name: "Strategy & Consulting", value: 10.5, pct: 15 },
+      { name: "Managed Services", value: 34.8, pct: 50 }
     ],
     geography: [
-      { name: "North America", value: 30.5, pct: 47 },
-      { name: "Europe", value: 21.4, pct: 33 },
-      { name: "Growth Markets", value: 13.0, pct: 20 }
+      { name: "North America", value: 32.8, pct: 47 },
+      { name: "Europe", value: 23.0, pct: 33 },
+      { name: "Growth Markets", value: 13.9, pct: 20 }
     ],
     insights: {
       drivers: "Massive scale-up of GenAI-powered applications, software migration agreements with SAP/Workday, and major outsource operations in growth markets.",
       barriers: "Client discretionary tech project deferrals in small-scale applications, leading to flat advisory revenue in Europe.",
       highlights: [
-        "AI bookings reached $3.2B in late H1 FY25, representing 30% of total contract value.",
+        "AI bookings reached $4.5B in FY25, representing 35% of total contract value.",
         "Announced plan to train and certify 250,000 consultants in advanced NVIDIA/Microsoft AI stacks."
       ],
-      forecast: "Accenture expects full year FY25 growth to accelerate to 3.0%-6.0% driven by agentic orchestration and multi-agent system deals."
+      forecast: "Accenture expects growth to accelerate to 5.0%-8.0% in FY26 driven by agentic orchestration and multi-agent system deals."
     },
     sources: [
-      { title: "Accenture Reports Fourth Quarter and Full Fiscal Year 2024 Results", source: "Accenture Investor Relations", date: "2024-09-26" }
+      { title: "Accenture Reports Fourth Quarter and Full Fiscal Year 2025 Results", source: "Accenture Investor Relations", date: "2025-09-25" }
     ]
   },
   {
     id: "PwC",
-    fiscalYear: "FY2024",
-    period: "Financial Year ending June 30, 2024",
-    revenue: 55.4,
-    growth: 3.7,
-    headcount: 364000,
-    partners: 12800,
-    aiRevenue: "Committed $1.0B in internal GenAI tooling rollout and OpenAI alliance integration",
+    fiscalYear: "FY2025",
+    period: "Financial Year ending June 30, 2025",
+    revenue: 56.9,
+    growth: 2.7,
+    headcount: 364782,
+    partners: 13100,
+    aiRevenue: "Committed $1.5B in internal GenAI tooling rollout and OpenAI alliance integration",
     aiBookings: null,
-    managedServicesRev: "Est. $6.6B (12% of total via Operate / Managed Services)",
+    managedServicesRev: "Est. $6.8B (12% of total via Operate / Managed Services)",
     serviceLines: [
-      { name: "Advisory & Deals", value: 23.3, pct: 42 },
-      { name: "Assurance", value: 19.4, pct: 35 },
-      { name: "Tax & Legal", value: 6.1, pct: 11 },
-      { name: "Operate / Managed Services", value: 6.6, pct: 12 }
+      { name: "Advisory & Deals", value: 23.9, pct: 42 },
+      { name: "Assurance", value: 19.9, pct: 35 },
+      { name: "Tax & Legal", value: 6.3, pct: 11 },
+      { name: "Operate / Managed Services", value: 6.8, pct: 12 }
     ],
     geography: [
-      { name: "Americas", value: 23.8, pct: 43 },
-      { name: "Europe, Middle East & Africa", value: 22.2, pct: 40 },
-      { name: "Asia-Pacific", value: 9.4, pct: 17 }
+      { name: "Americas", value: 24.5, pct: 43 },
+      { name: "Europe, Middle East & Africa", value: 22.8, pct: 40 },
+      { name: "Asia-Pacific", value: 9.6, pct: 17 }
     ],
     insights: {
       drivers: "Pioneering rollouts of ChatPwC enterprise-wide, driving efficiency, alongside solid expansion in legal-compliance advisory and risk consulting.",
@@ -828,30 +828,30 @@ const DEFAULT_DEMO_FINANCIALS = [
       forecast: "Projecting 4.0% revenue expansion in FY26, heavily reliant on premium legal tech and OpenAI-centric consulting mandates."
     },
     sources: [
-      { title: "PwC Global Revenues reach US$55.4 billion", source: "PwC Press Release", date: "2024-10-24" }
+      { title: "PwC Global Revenues reach US$56.9 billion", source: "PwC Press Release", date: "2025-10-24" }
     ]
   },
   {
     id: "KPMG",
-    fiscalYear: "FY2024",
-    period: "Financial Year ending September 30, 2024",
-    revenue: 36.4,
-    growth: 3.0,
-    headcount: 273000,
-    partners: 9900,
+    fiscalYear: "FY2025",
+    period: "Financial Year ending September 30, 2025",
+    revenue: 39.8,
+    growth: 5.1,
+    headcount: 276030,
+    partners: 10200,
     aiRevenue: "Committed $2B Microsoft-integrated AI practice investments through 2028",
     aiBookings: null,
-    managedServicesRev: "Est. $4.4B (12% of total via Operate / Managed Services)",
+    managedServicesRev: "Est. $4.8B (12% of total via Operate / Managed Services)",
     serviceLines: [
-      { name: "Advisory", value: 15.3, pct: 42 },
-      { name: "Audit", value: 12.0, pct: 33 },
-      { name: "Tax & Legal", value: 4.7, pct: 13 },
-      { name: "Operate / Managed Services", value: 4.4, pct: 12 }
+      { name: "Advisory", value: 16.7, pct: 42 },
+      { name: "Audit", value: 13.1, pct: 33 },
+      { name: "Tax & Legal", value: 5.2, pct: 13 },
+      { name: "Operate / Managed Services", value: 4.8, pct: 12 }
     ],
     geography: [
-      { name: "Americas", value: 14.6, pct: 40 },
-      { name: "Europe, Middle East & Africa", value: 16.4, pct: 45 },
-      { name: "Asia-Pacific", value: 5.4, pct: 15 }
+      { name: "Americas", value: 15.9, pct: 40 },
+      { name: "Europe, Middle East & Africa", value: 17.9, pct: 45 },
+      { name: "Asia-Pacific", value: 6.0, pct: 15 }
     ],
     insights: {
       drivers: "Strong demand for ESG assurance reporting, tax-process outsourcing, and AI-enabled software implementation contracts in EMEA.",
@@ -863,7 +863,7 @@ const DEFAULT_DEMO_FINANCIALS = [
       forecast: "Targeting 4.5% growth by FY26 by prioritizing mid-market tax automation and cloud compliance consulting."
     },
     sources: [
-      { title: "KPMG reports FY24 global revenues of $36.4 billion", source: "KPMG News", date: "2024-12-12" }
+      { title: "KPMG reports FY25 global revenues of $39.8 billion", source: "KPMG News", date: "2025-12-11" }
     ]
   }
 ];
