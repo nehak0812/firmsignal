@@ -1216,17 +1216,17 @@ function App() {
 
   const navTabs = [
     { id: 'brief',      label: 'In Brief' },
-    { id: 'financials', label: 'Financial Round-up' },
     { id: 'signals',    label: 'All Signals' },
     { id: 'summits',   label: 'AI Summits' },
     { id: 'linkedin',  label: 'LinkedIn Voices' },
     { id: 'context',   label: 'Context Corner' },
-    { id: 'reports',   label: 'Thought Leadership' },
-    { id: 'graph',     label: 'Knowledge Graph' },
-    { id: 'heatmap',   label: 'Heatmap' },
-    { id: 'compare',   label: 'Compare' },
-    { id: 'watchlist', label: 'Watchlist' },
-    { id: 'pipeline',  label: 'Data Pipeline' },
+    { id: 'reports',    label: 'Thought Leadership' },
+    { id: 'financials', label: 'Finance Roundup' },
+    { id: 'graph',      label: 'Knowledge Graph' },
+    { id: 'heatmap',    label: 'Heatmap' },
+    { id: 'compare',    label: 'Compare' },
+    { id: 'watchlist',  label: 'Watchlist' },
+    { id: 'pipeline',   label: 'Data Pipeline' },
   ];
 
   return (
