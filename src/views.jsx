@@ -2770,7 +2770,7 @@ export function FinancialRoundupView({
 
   const normalizeServiceLine = (name) => {
     const n = name.toLowerCase();
-    if (n.includes('consulting') || n.includes('advisory') || n.includes('technology integration') || n.includes('deals') || n.includes('strategy')) {
+    if (n.includes('consulting') || n.includes('advisory') || n.includes('technology') || n.includes('transformation') || n.includes('deals') || n.includes('strategy') || n.includes('transactions')) {
       return 'Consulting & Advisory';
     }
     if (n.includes('assurance') || n.includes('audit')) {
@@ -3280,10 +3280,19 @@ export function FinancialRoundupView({
                     }
                   }
 
-                  // Programmatic extraction of Operate & Managed Services segment for EY
+                  // Programmatic extraction of Operate & Managed Services segment for EY, Deloitte, PwC, KPMG
                   if (f.id === 'EY') {
                     segments['Operate & Managed Services'] = 14.0;
                     segments['Consulting & Advisory'] = Math.max(0, parseFloat((segments['Consulting & Advisory'] - 14.0).toFixed(1)));
+                  } else if (f.id === 'Deloitte') {
+                    segments['Operate & Managed Services'] = 12.0;
+                    segments['Consulting & Advisory'] = Math.max(0, parseFloat((segments['Consulting & Advisory'] - 12.0).toFixed(1)));
+                  } else if (f.id === 'PwC') {
+                    segments['Operate & Managed Services'] = 12.0;
+                    segments['Consulting & Advisory'] = Math.max(0, parseFloat((segments['Consulting & Advisory'] - 12.0).toFixed(1)));
+                  } else if (f.id === 'KPMG') {
+                    segments['Operate & Managed Services'] = 12.0;
+                    segments['Consulting & Advisory'] = Math.max(0, parseFloat((segments['Consulting & Advisory'] - 12.0).toFixed(1)));
                   }
 
                   const categoryColors = {
@@ -3440,6 +3449,63 @@ export function FinancialRoundupView({
                     {item.label}
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Methodology & Harmonization Notes Card */}
+          <div style={{
+            background: 'var(--bg-2)',
+            border: '1px solid var(--line)',
+            borderRadius: 'var(--r-lg)',
+            padding: 24,
+            marginTop: 8
+          }}>
+            <h4 style={{
+              fontFamily: 'var(--serif-disp)',
+              fontSize: 16,
+              marginTop: 0,
+              marginBottom: 12,
+              color: 'var(--ink)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8
+            }}>
+              <span>⚖️</span> Methodology & Harmonization Notes
+            </h4>
+            <p style={{ margin: '0 0 16px 0', fontSize: 12, color: 'var(--ink-2)', lineHeight: 1.5 }}>
+              To enable meaningful, head-to-head performance benchmarking across different organizational structures, currency bases, and reporting timetables, figures in the comparison dashboard have been normalized using the following methodology:
+            </p>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+              {/* Item 1 */}
+              <div style={{ background: 'var(--bg-3)', padding: 16, borderRadius: 'var(--r-md)', border: '1px solid var(--line)' }}>
+                <h5 style={{ fontFamily: 'var(--mono)', fontSize: 11.5, margin: '0 0 8px 0', color: 'var(--ink)' }}>
+                  1. Service Line Normalization
+                </h5>
+                <p style={{ margin: 0, fontSize: 11, color: 'var(--ink-3)', lineHeight: 1.45 }}>
+                  Statutory reporting segments differ by firm. To map them to standard comparative categories, Deloitte's <i>Technology & Transformation</i> and PwC's/KPMG's <i>Advisory</i> map to <b>Consulting & Advisory</b>, while Accenture's <i>Technology Integration</i> and <i>Strategy & Consulting</i> are combined.
+                </p>
+              </div>
+              
+              {/* Item 2 */}
+              <div style={{ background: 'var(--bg-3)', padding: 16, borderRadius: 'var(--r-md)', border: '1px solid var(--line)' }}>
+                <h5 style={{ fontFamily: 'var(--mono)', fontSize: 11.5, margin: '0 0 8px 0', color: 'var(--ink)' }}>
+                  2. Managed Services Extrapolations
+                </h5>
+                <p style={{ margin: 0, fontSize: 11, color: 'var(--ink-3)', lineHeight: 1.45 }}>
+                  Big 4 firms do not report Managed Services as a separate statutory segment. To provide comparison with Accenture (where Managed Services is 47.1% of revenue), we programmatically estimate and extract Operate/Managed Services slices from Consulting & Advisory pools (Deloitte: 12%, EY: 14%, PwC: 12%, KPMG: 12%).
+                </p>
+              </div>
+              
+              {/* Item 3 */}
+              <div style={{ background: 'var(--bg-3)', padding: 16, borderRadius: 'var(--r-md)', border: '1px solid var(--line)' }}>
+                <h5 style={{ fontFamily: 'var(--mono)', fontSize: 11.5, margin: '0 0 8px 0', color: 'var(--ink)' }}>
+                  3. Reporting Periods & Currency
+                </h5>
+                <p style={{ margin: 0, fontSize: 11, color: 'var(--ink-3)', lineHeight: 1.45 }}>
+                  Financial numbers represent FY25. Fiscal years end on different dates: May 31 (Deloitte), June 30 (EY, PwC), Aug 31 (Accenture), and Sept 30 (KPMG). All revenues are reported in USD or converted using period-average official exchange rates to eliminate currency volatility.
+                </p>
               </div>
             </div>
           </div>

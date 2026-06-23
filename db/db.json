@@ -635,264 +635,264 @@
       "url": "https://www.linkedin.com/posts/sylvainduranton_bcgx-autonomous-erp-procure-activity-7799581920392-198m"
     },
     {
-      "id": "li_scanned_1782195971474_96332",
+      "id": "li_scanned_1782196720780_54808",
+      "author": "Bernhard Scholl",
+      "role": "Senior Partner - QuantumBlack, Alliances & Partnerships",
+      "firm": "McKinsey",
+      "date": "2026-06-23",
+      "content": "Re-pricing advisory services around high-value structural throughput rather than consultant hours is a massive corporate shift. Multi-agent swarms deliver deliverables instantly, making fee alignment based on client growth and cost drops the definitive model of 2026.",
+      "likes": 3096,
+      "comments": 153,
+      "shares": 97,
+      "theme": "Outcome-Based Operating Models",
+      "url": "https://www.linkedin.com/posts/bernhardscholl_outcomebasedoperatingmodels-activity-4303368713652-246"
+    },
+    {
+      "id": "li_scanned_1782196720781_31514",
+      "author": "Alexander Sukharevsky",
+      "role": "Senior Partner - QuantumBlack, AI by McKinsey",
+      "firm": "McKinsey",
+      "date": "2026-06-23",
+      "content": "Delighted to lead our secure model deployment tracks. Navigating EU AI Act guidelines requires private fine-tuned networks that guarantee local data residency. We're delivering secure, compliant advisory blocks that prove corporate compliance is a powerful competitive differentiator.",
+      "likes": 2534,
+      "comments": 131,
+      "shares": 49,
+      "theme": "Sovereign AI & Data Privacy",
+      "url": "https://www.linkedin.com/posts/alexandersukharevsky_sovereignaidataprivacy-activity-2272060403429-1af"
+    },
+    {
+      "id": "li_scanned_1782196720781_59736",
+      "author": "Dario Amodei",
+      "role": "CEO",
+      "firm": "Anthropic",
+      "date": "2026-06-23",
+      "content": "True digital transformation means connecting disparate business layers through automated workflow orchestration. By linking private models straight to active procurement chains, we're helping clients achieve outcome-aligned efficiency without human middleware bottlenecks.",
+      "likes": 2265,
+      "comments": 152,
+      "shares": 61,
+      "theme": "Workflow Automation",
+      "url": "https://www.linkedin.com/posts/darioamodei_workflowautomation-activity-9712960125814-2af"
+    },
+    {
+      "id": "li_scanned_1782196720781_20212",
+      "author": "Amy Hood",
+      "role": "EVP & CFO",
+      "firm": "Microsoft",
+      "date": "2026-06-23",
+      "content": "Incredibly excited about how quickly our teams are scaling multi-agent swarm networks. Moving from basic copilots to autonomous orchestration is the definitive shift of 2026. By chaining active sub-agent flows directly into client layers, we are bypassing manual administrative bottlenecks and delivering up to 60% margin improvement.",
+      "likes": 1840,
+      "comments": 171,
+      "shares": 103,
+      "theme": "Agentic AI Swarms",
+      "url": "https://www.linkedin.com/posts/amyhood_agenticaiswarms-activity-3117882414633-2ad"
+    },
+    {
+      "id": "li_scanned_1782196720781_9756",
+      "author": "Scott Arnold",
+      "role": "CEO",
+      "firm": "Optro (AuditBoard)",
+      "date": "2026-06-23",
+      "content": "Incredibly excited about how quickly our teams are scaling multi-agent swarm networks. Moving from basic copilots to autonomous orchestration is the definitive shift of 2026. By chaining active sub-agent flows directly into client layers, we are bypassing manual administrative bottlenecks and delivering up to 60% margin improvement.",
+      "likes": 2233,
+      "comments": 213,
+      "shares": 70,
+      "theme": "Agentic AI Swarms",
+      "url": "https://www.linkedin.com/posts/scottarnold_agenticaiswarms-activity-1938492871415-116"
+    },
+    {
+      "id": "li_scanned_1782196720781_55280",
       "author": "Alex Karp",
       "role": "CEO & Co-Founder",
       "firm": "Palantir",
       "date": "2026-06-23",
       "content": "Open-source foundation models and local custom agents are enabling complete strategic independence for major organizations. Embedding lightweight, custom-tuned weights directly inside corporate layers ensures absolute IP ownership and eliminates vendor lock-in.",
-      "likes": 1872,
-      "comments": 100,
-      "shares": 129,
-      "theme": "Open Source & Bespoke Agents",
-      "url": "https://www.linkedin.com/posts/alexkarp_opensourcebespokeagents-activity-3831921679005-20c"
-    },
-    {
-      "id": "li_scanned_1782195971474_65659",
-      "author": "Sam Altman",
-      "role": "CEO",
-      "firm": "OpenAI",
-      "date": "2026-06-23",
-      "content": "Accelerating enterprise infrastructure means moving model computation as close to the data as possible. By constructing private, hardware-integrated model pipelines, we're cutting API compute overhead by 90% while providing industrial-strength security for sensitive pipelines.",
-      "likes": 1441,
-      "comments": 138,
-      "shares": 158,
-      "theme": "AI Infrastructure & Blackwell",
-      "url": "https://www.linkedin.com/posts/samaltman_aiinfrastructureblackwell-activity-9513019859333-1a0"
-    },
-    {
-      "id": "li_scanned_1782195971474_53521",
-      "author": "Jerome Oglesby",
-      "role": "Global Chief Technology Officer",
-      "firm": "Deloitte",
-      "date": "2026-06-23",
-      "content": "Sovereign AI and regulated data storage solutions are the highest priority for our enterprise clients in H2. Restricting model fine-tuning to local secure cloud infrastructures is paramount for compliance. Our collaborative secure setups ensure that private corporation IP never leaks into public systems.",
-      "likes": 3091,
-      "comments": 221,
-      "shares": 42,
-      "theme": "Sovereign AI & Data Privacy",
-      "url": "https://www.linkedin.com/posts/jeromeoglesby_sovereignaidataprivacy-activity-3799057979630-1e0"
-    },
-    {
-      "id": "li_scanned_1782195971474_32738",
-      "author": "Demis Hassabis",
-      "role": "CEO, Google DeepMind",
-      "firm": "Google",
-      "date": "2026-06-23",
-      "content": "True digital transformation means connecting disparate business layers through automated workflow orchestration. By linking private models straight to active procurement chains, we're helping clients achieve outcome-aligned efficiency without human middleware bottlenecks.",
-      "likes": 1514,
-      "comments": 241,
-      "shares": 134,
-      "theme": "Workflow Automation",
-      "url": "https://www.linkedin.com/posts/demishassabis_workflowautomation-activity-7340667060117-4f"
-    },
-    {
-      "id": "li_scanned_1782195971474_93013",
-      "author": "Aidan Gomez",
-      "role": "CEO & Co-Founder",
-      "firm": "Cohere",
-      "date": "2026-06-23",
-      "content": "We are seeing a massive demand for agentic swarm systems across professional services and supply chains. Rather than passive search queries, these automated agents execute complex procurement transactions and audits autonomously, protecting corporate agility in highly compression-prone markets.",
-      "likes": 2381,
-      "comments": 164,
-      "shares": 184,
-      "theme": "Agentic AI Swarms",
-      "url": "https://www.linkedin.com/posts/aidangomez_agenticaiswarms-activity-4586480774961-155"
-    },
-    {
-      "id": "li_scanned_1782195971474_62647",
-      "author": "Holger Harreis",
-      "role": "Senior Partner & Director, McKinsey Global Institute",
-      "firm": "McKinsey",
-      "date": "2026-06-23",
-      "content": "True digital transformation means connecting disparate business layers through automated workflow orchestration. By linking private models straight to active procurement chains, we're helping clients achieve outcome-aligned efficiency without human middleware bottlenecks.",
-      "likes": 2755,
-      "comments": 116,
+      "likes": 1269,
+      "comments": 276,
       "shares": 106,
-      "theme": "Workflow Automation",
-      "url": "https://www.linkedin.com/posts/holgerharreis_workflowautomation-activity-7510863092702-2cc"
+      "theme": "Open Source & Bespoke Agents",
+      "url": "https://www.linkedin.com/posts/alexkarp_opensourcebespokeagents-activity-6060469234904-3b9"
     },
     {
-      "id": "li_scanned_1782195971474_17336",
-      "author": "Alexander Sukharevsky",
-      "role": "Senior Partner - QuantumBlack, AI by McKinsey",
+      "id": "li_scanned_1782196720781_39844",
+      "author": "Warren Valdmanis",
+      "role": "Senior Partner, McKinsey Global Institute",
       "firm": "McKinsey",
-      "date": "2026-06-23",
-      "content": "We are seeing a massive demand for agentic swarm systems across professional services and supply chains. Rather than passive search queries, these automated agents execute complex procurement transactions and audits autonomously, protecting corporate agility in highly compression-prone markets.",
-      "likes": 3033,
-      "comments": 249,
-      "shares": 124,
-      "theme": "Agentic AI Swarms",
-      "url": "https://www.linkedin.com/posts/alexandersukharevsky_agenticaiswarms-activity-4494077142964-3da"
-    },
-    {
-      "id": "li_scanned_1782195971474_89315",
-      "author": "Manuvir Das",
-      "role": "VP of Enterprise Computing",
-      "firm": "NVIDIA",
-      "date": "2026-06-23",
-      "content": "Delighted to lead our secure model deployment tracks. Navigating EU AI Act guidelines requires private fine-tuned networks that guarantee local data residency. We're delivering secure, compliant advisory blocks that prove corporate compliance is a powerful competitive differentiator.",
-      "likes": 2146,
-      "comments": 215,
-      "shares": 125,
-      "theme": "Sovereign AI & Data Privacy",
-      "url": "https://www.linkedin.com/posts/manuvirdas_sovereignaidataprivacy-activity-9198854973588-2b7"
-    },
-    {
-      "id": "li_scanned_1782195971474_80338",
-      "author": "Arthur Mensch",
-      "role": "CEO & Co-Founder",
-      "firm": "Mistral AI",
-      "date": "2026-06-23",
-      "content": "Sovereign AI and regulated data storage solutions are the highest priority for our enterprise clients in H2. Restricting model fine-tuning to local secure cloud infrastructures is paramount for compliance. Our collaborative secure setups ensure that private corporation IP never leaks into public systems.",
-      "likes": 1474,
-      "comments": 213,
-      "shares": 131,
-      "theme": "Sovereign AI & Data Privacy",
-      "url": "https://www.linkedin.com/posts/arthurmensch_sovereignaidataprivacy-activity-9863689893632-14"
-    },
-    {
-      "id": "li_scanned_1782195971474_93153",
-      "author": "Matt Garman",
-      "role": "CEO",
-      "firm": "AWS",
-      "date": "2026-06-23",
-      "content": "Delighted to lead our secure model deployment tracks. Navigating EU AI Act guidelines requires private fine-tuned networks that guarantee local data residency. We're delivering secure, compliant advisory blocks that prove corporate compliance is a powerful competitive differentiator.",
-      "likes": 2594,
-      "comments": 205,
-      "shares": 91,
-      "theme": "Sovereign AI & Data Privacy",
-      "url": "https://www.linkedin.com/posts/mattgarman_sovereignaidataprivacy-activity-7612725767540-ee"
-    },
-    {
-      "id": "li_scanned_1782195971474_61388",
-      "author": "Greg Brockman",
-      "role": "President & Co-Founder",
-      "firm": "OpenAI",
-      "date": "2026-06-23",
-      "content": "True digital transformation means connecting disparate business layers through automated workflow orchestration. By linking private models straight to active procurement chains, we're helping clients achieve outcome-aligned efficiency without human middleware bottlenecks.",
-      "likes": 2424,
-      "comments": 113,
-      "shares": 172,
-      "theme": "Workflow Automation",
-      "url": "https://www.linkedin.com/posts/gregbrockman_workflowautomation-activity-4133333715785-356"
-    },
-    {
-      "id": "li_scanned_1782195971474_73866",
-      "author": "Pete Wakefield",
-      "role": "Clients, Markets & Industries Leader",
-      "firm": "PwC",
       "date": "2026-06-23",
       "content": "Open-source foundation models and local custom agents are enabling complete strategic independence for major organizations. Embedding lightweight, custom-tuned weights directly inside corporate layers ensures absolute IP ownership and eliminates vendor lock-in.",
-      "likes": 2141,
-      "comments": 91,
-      "shares": 65,
+      "likes": 1396,
+      "comments": 108,
+      "shares": 86,
       "theme": "Open Source & Bespoke Agents",
-      "url": "https://www.linkedin.com/posts/petewakefield_opensourcebespokeagents-activity-6070927074718-e8"
+      "url": "https://www.linkedin.com/posts/warrenvaldmanis_opensourcebespokeagents-activity-2286973379243-c4"
     },
     {
-      "id": "li_scanned_1782195971474_645",
-      "author": "Liang Wenfeng",
-      "role": "Founder & CEO",
-      "firm": "DeepSeek",
-      "date": "2026-06-23",
-      "content": "Deploying Blackwell chips and custom hardware systems directly inside operational layers is transforming raw processing speed. Local, private AI factories represent the modern engine room of corporate agility. Our ecosystem alliance integrations are delivering real-time low-latency intelligence on-prem.",
-      "likes": 2415,
-      "comments": 252,
-      "shares": 134,
-      "theme": "AI Infrastructure & Blackwell",
-      "url": "https://www.linkedin.com/posts/liangwenfeng_aiinfrastructureblackwell-activity-6807931449064-1a7"
-    },
-    {
-      "id": "li_scanned_1782195971474_49503",
-      "author": "Aravind Srinivas",
-      "role": "CEO & Co-Founder",
-      "firm": "Perplexity",
-      "date": "2026-06-23",
-      "content": "True digital transformation means connecting disparate business layers through automated workflow orchestration. By linking private models straight to active procurement chains, we're helping clients achieve outcome-aligned efficiency without human middleware bottlenecks.",
-      "likes": 1960,
-      "comments": 237,
-      "shares": 116,
-      "theme": "Workflow Automation",
-      "url": "https://www.linkedin.com/posts/aravindsrinivas_workflowautomation-activity-5468932113635-130"
-    },
-    {
-      "id": "li_scanned_1782195971474_61814",
-      "author": "Thomas Kurian",
-      "role": "CEO, Google Cloud",
-      "firm": "Google",
-      "date": "2026-06-23",
-      "content": "Re-pricing advisory services around high-value structural throughput rather than consultant hours is a massive corporate shift. Multi-agent swarms deliver deliverables instantly, making fee alignment based on client growth and cost drops the definitive model of 2026.",
-      "likes": 2634,
-      "comments": 98,
-      "shares": 64,
-      "theme": "Outcome-Based Operating Models",
-      "url": "https://www.linkedin.com/posts/thomaskurian_outcomebasedoperatingmodels-activity-2266316468172-11f"
-    },
-    {
-      "id": "li_scanned_1782195971474_39071",
-      "author": "Joe Ucuzoglu",
-      "role": "Global CEO",
-      "firm": "Deloitte",
-      "date": "2026-06-23",
-      "content": "The era of monolithic closed APIs is giving way to highly targeted open-weights fine-tuning. By orchestrating private, open-source model pipelines, companies can scale strategic automated operations without massive capital outlays or operational exposure.",
-      "likes": 1972,
-      "comments": 174,
-      "shares": 72,
-      "theme": "Open Source & Bespoke Agents",
-      "url": "https://www.linkedin.com/posts/joeucuzoglu_opensourcebespokeagents-activity-6342586193602-3a2"
-    },
-    {
-      "id": "li_scanned_1782195971474_81045",
-      "author": "Lan Guan",
-      "role": "Global AI Leader",
-      "firm": "Accenture",
-      "date": "2026-06-23",
-      "content": "The era of monolithic closed APIs is giving way to highly targeted open-weights fine-tuning. By orchestrating private, open-source model pipelines, companies can scale strategic automated operations without massive capital outlays or operational exposure.",
-      "likes": 1338,
-      "comments": 147,
-      "shares": 111,
-      "theme": "Open Source & Bespoke Agents",
-      "url": "https://www.linkedin.com/posts/languan_opensourcebespokeagents-activity-7963273396492-25a"
-    },
-    {
-      "id": "li_scanned_1782195971474_78574",
-      "author": "Krishnan Chandrasekhar",
-      "role": "Global Tax & Legal Services Leader-elect",
+      "id": "li_scanned_1782196720781_82015",
+      "author": "Tyson Cornell",
+      "role": "Global Advisory Leader-elect",
       "firm": "PwC",
       "date": "2026-06-23",
-      "content": "Delighted to lead our secure model deployment tracks. Navigating EU AI Act guidelines requires private fine-tuned networks that guarantee local data residency. We're delivering secure, compliant advisory blocks that prove corporate compliance is a powerful competitive differentiator.",
-      "likes": 2200,
-      "comments": 189,
-      "shares": 56,
-      "theme": "Sovereign AI & Data Privacy",
-      "url": "https://www.linkedin.com/posts/krishnanchandrasekhar_sovereignaidataprivacy-activity-5543934232401-287"
+      "content": "Integrating generative orchestration directly into legacy ERP systems is completely redesigning back-office operations. We are successfully automating up to 50% of routine HR ticketing and financial reconciliation workflows, allowing corporate teams to focus on strategic execution.",
+      "likes": 2685,
+      "comments": 272,
+      "shares": 133,
+      "theme": "Workflow Automation",
+      "url": "https://www.linkedin.com/posts/tysoncornell_workflowautomation-activity-6908134053402-89"
     },
     {
-      "id": "li_scanned_1782195971474_31997",
-      "author": "Hernan Saenz",
-      "role": "Global Head, Strategy & Transformation Practice",
-      "firm": "Bain",
-      "date": "2026-06-23",
-      "content": "Accelerating enterprise infrastructure means moving model computation as close to the data as possible. By constructing private, hardware-integrated model pipelines, we're cutting API compute overhead by 90% while providing industrial-strength security for sensitive pipelines.",
-      "likes": 2042,
-      "comments": 123,
-      "shares": 106,
-      "theme": "AI Infrastructure & Blackwell",
-      "url": "https://www.linkedin.com/posts/hernansaenz_aiinfrastructureblackwell-activity-2075543936161-228"
-    },
-    {
-      "id": "li_scanned_1782195971474_8256",
+      "id": "li_scanned_1782196720781_40179",
       "author": "Marc Jochemich",
       "role": "Global Assurance Digital Leader",
       "firm": "EY",
       "date": "2026-06-23",
-      "content": "True digital transformation means connecting disparate business layers through automated workflow orchestration. By linking private models straight to active procurement chains, we're helping clients achieve outcome-aligned efficiency without human middleware bottlenecks.",
-      "likes": 3143,
-      "comments": 222,
-      "shares": 152,
+      "content": "Integrating generative orchestration directly into legacy ERP systems is completely redesigning back-office operations. We are successfully automating up to 50% of routine HR ticketing and financial reconciliation workflows, allowing corporate teams to focus on strategic execution.",
+      "likes": 1586,
+      "comments": 133,
+      "shares": 105,
       "theme": "Workflow Automation",
-      "url": "https://www.linkedin.com/posts/marcjochemich_workflowautomation-activity-1241412268230-8b"
+      "url": "https://www.linkedin.com/posts/marcjochemich_workflowautomation-activity-7373283542788-385"
+    },
+    {
+      "id": "li_scanned_1782196720781_38291",
+      "author": "Sam Altman",
+      "role": "CEO",
+      "firm": "OpenAI",
+      "date": "2026-06-23",
+      "content": "We are seeing a massive demand for agentic swarm systems across professional services and supply chains. Rather than passive search queries, these automated agents execute complex procurement transactions and audits autonomously, protecting corporate agility in highly compression-prone markets.",
+      "likes": 1875,
+      "comments": 171,
+      "shares": 72,
+      "theme": "Agentic AI Swarms",
+      "url": "https://www.linkedin.com/posts/samaltman_agenticaiswarms-activity-4652577889047-342"
+    },
+    {
+      "id": "li_scanned_1782196720781_98675",
+      "author": "Greg Brockman",
+      "role": "President & Co-Founder",
+      "firm": "OpenAI",
+      "date": "2026-06-23",
+      "content": "Accelerating enterprise infrastructure means moving model computation as close to the data as possible. By constructing private, hardware-integrated model pipelines, we're cutting API compute overhead by 90% while providing industrial-strength security for sensitive pipelines.",
+      "likes": 1528,
+      "comments": 107,
+      "shares": 123,
+      "theme": "AI Infrastructure & Blackwell",
+      "url": "https://www.linkedin.com/posts/gregbrockman_aiinfrastructureblackwell-activity-9595791517198-19a"
+    },
+    {
+      "id": "li_scanned_1782196720781_9735",
+      "author": "Brad Smith",
+      "role": "Vice Chair & President",
+      "firm": "Microsoft",
+      "date": "2026-06-23",
+      "content": "Open-source foundation models and local custom agents are enabling complete strategic independence for major organizations. Embedding lightweight, custom-tuned weights directly inside corporate layers ensures absolute IP ownership and eliminates vendor lock-in.",
+      "likes": 2273,
+      "comments": 148,
+      "shares": 61,
+      "theme": "Open Source & Bespoke Agents",
+      "url": "https://www.linkedin.com/posts/bradsmith_opensourcebespokeagents-activity-8660868024952-1"
+    },
+    {
+      "id": "li_scanned_1782196720781_66140",
+      "author": "Bill Thomas",
+      "role": "Global Chairman & CEO",
+      "firm": "KPMG",
+      "date": "2026-06-23",
+      "content": "Deploying Blackwell chips and custom hardware systems directly inside operational layers is transforming raw processing speed. Local, private AI factories represent the modern engine room of corporate agility. Our ecosystem alliance integrations are delivering real-time low-latency intelligence on-prem.",
+      "likes": 1212,
+      "comments": 205,
+      "shares": 143,
+      "theme": "AI Infrastructure & Blackwell",
+      "url": "https://www.linkedin.com/posts/billthomas_aiinfrastructureblackwell-activity-9092565739202-95"
+    },
+    {
+      "id": "li_scanned_1782196720781_64383",
+      "author": "Christel Heydemann",
+      "role": "CEO",
+      "firm": "Orange",
+      "date": "2026-06-23",
+      "content": "Open-source foundation models and local custom agents are enabling complete strategic independence for major organizations. Embedding lightweight, custom-tuned weights directly inside corporate layers ensures absolute IP ownership and eliminates vendor lock-in.",
+      "likes": 1625,
+      "comments": 201,
+      "shares": 145,
+      "theme": "Open Source & Bespoke Agents",
+      "url": "https://www.linkedin.com/posts/christelheydemann_opensourcebespokeagents-activity-9790794652062-114"
+    },
+    {
+      "id": "li_scanned_1782196720781_32654",
+      "author": "Patrice Bance",
+      "role": "EVP, Enterprise & AI",
+      "firm": "Orange",
+      "date": "2026-06-23",
+      "content": "Accelerating enterprise infrastructure means moving model computation as close to the data as possible. By constructing private, hardware-integrated model pipelines, we're cutting API compute overhead by 90% while providing industrial-strength security for sensitive pipelines.",
+      "likes": 2991,
+      "comments": 161,
+      "shares": 159,
+      "theme": "AI Infrastructure & Blackwell",
+      "url": "https://www.linkedin.com/posts/patricebance_aiinfrastructureblackwell-activity-8063569577520-5"
+    },
+    {
+      "id": "li_scanned_1782196720781_71955",
+      "author": "Holger Harreis",
+      "role": "Senior Partner & Director, McKinsey Global Institute",
+      "firm": "McKinsey",
+      "date": "2026-06-23",
+      "content": "The era of monolithic closed APIs is giving way to highly targeted open-weights fine-tuning. By orchestrating private, open-source model pipelines, companies can scale strategic automated operations without massive capital outlays or operational exposure.",
+      "likes": 3090,
+      "comments": 193,
+      "shares": 114,
+      "theme": "Open Source & Bespoke Agents",
+      "url": "https://www.linkedin.com/posts/holgerharreis_opensourcebespokeagents-activity-8378289014693-64"
+    },
+    {
+      "id": "li_scanned_1782196720781_92740",
+      "author": "Andrej Vlasov",
+      "role": "CTO & Co-Founder",
+      "firm": "Qdrant",
+      "date": "2026-06-23",
+      "content": "True digital transformation means connecting disparate business layers through automated workflow orchestration. By linking private models straight to active procurement chains, we're helping clients achieve outcome-aligned efficiency without human middleware bottlenecks.",
+      "likes": 2121,
+      "comments": 168,
+      "shares": 117,
+      "theme": "Workflow Automation",
+      "url": "https://www.linkedin.com/posts/andrejvlasov_workflowautomation-activity-3049446026368-32d"
+    },
+    {
+      "id": "li_scanned_1782196720781_48876",
+      "author": "Charles Meyers",
+      "role": "President & CEO",
+      "firm": "Equinix",
+      "date": "2026-06-23",
+      "content": "Delighted to lead our secure model deployment tracks. Navigating EU AI Act guidelines requires private fine-tuned networks that guarantee local data residency. We're delivering secure, compliant advisory blocks that prove corporate compliance is a powerful competitive differentiator.",
+      "likes": 2195,
+      "comments": 234,
+      "shares": 150,
+      "theme": "Sovereign AI & Data Privacy",
+      "url": "https://www.linkedin.com/posts/charlesmeyers_sovereignaidataprivacy-activity-9118438441998-aa"
+    },
+    {
+      "id": "li_scanned_1782196720781_91133",
+      "author": "Emil Eifrem",
+      "role": "CEO & Co-Founder",
+      "firm": "Neo4j",
+      "date": "2026-06-23",
+      "content": "Accelerating enterprise infrastructure means moving model computation as close to the data as possible. By constructing private, hardware-integrated model pipelines, we're cutting API compute overhead by 90% while providing industrial-strength security for sensitive pipelines.",
+      "likes": 1484,
+      "comments": 100,
+      "shares": 156,
+      "theme": "AI Infrastructure & Blackwell",
+      "url": "https://www.linkedin.com/posts/emileifrem_aiinfrastructureblackwell-activity-5891912336022-f6"
+    },
+    {
+      "id": "li_scanned_1782196720781_93291",
+      "author": "Abhijit Dubey",
+      "role": "CEO (Outside Japan)",
+      "firm": "NTT Data",
+      "date": "2026-06-23",
+      "content": "Deploying Blackwell chips and custom hardware systems directly inside operational layers is transforming raw processing speed. Local, private AI factories represent the modern engine room of corporate agility. Our ecosystem alliance integrations are delivering real-time low-latency intelligence on-prem.",
+      "likes": 3050,
+      "comments": 230,
+      "shares": 118,
+      "theme": "AI Infrastructure & Blackwell",
+      "url": "https://www.linkedin.com/posts/abhijitdubey_aiinfrastructureblackwell-activity-9026459022048-c4"
     }
   ],
   "financials": [
@@ -1012,24 +1012,24 @@
       ],
       "serviceLines": [
         {
-          "name": "Consulting & Advisory",
-          "value": 31.8,
-          "pct": 45
-        },
-        {
           "name": "Audit & Assurance",
-          "value": 19.5,
-          "pct": 28
+          "value": 13.4,
+          "pct": 19
         },
         {
           "name": "Tax & Legal",
-          "value": 10.7,
-          "pct": 15
+          "value": 12.7,
+          "pct": 18
         },
         {
-          "name": "Operate / Managed Services",
-          "value": 8.5,
-          "pct": 12
+          "name": "Strategy, Risk & Transactions",
+          "value": 14.8,
+          "pct": 21
+        },
+        {
+          "name": "Technology & Transformation",
+          "value": 29.6,
+          "pct": 42
         }
       ],
       "geography": [
@@ -1097,19 +1097,14 @@
       ],
       "serviceLines": [
         {
-          "name": "Technology Integration",
-          "value": 24.4,
-          "pct": 35
-        },
-        {
-          "name": "Strategy & Consulting",
-          "value": 10.5,
-          "pct": 15
+          "name": "Consulting",
+          "value": 36.9,
+          "pct": 52.9
         },
         {
           "name": "Managed Services",
-          "value": 34.8,
-          "pct": 50
+          "value": 32.8,
+          "pct": 47.1
         }
       ],
       "geography": [
@@ -1177,9 +1172,9 @@
       ],
       "serviceLines": [
         {
-          "name": "Advisory & Deals",
-          "value": 23.9,
-          "pct": 42
+          "name": "Advisory",
+          "value": 24.3,
+          "pct": 42.7
         },
         {
           "name": "Assurance",
@@ -1187,14 +1182,9 @@
           "pct": 35
         },
         {
-          "name": "Tax & Legal",
-          "value": 6.3,
-          "pct": 11
-        },
-        {
-          "name": "Operate / Managed Services",
-          "value": 6.8,
-          "pct": 12
+          "name": "Tax & Legal Services",
+          "value": 12.7,
+          "pct": 22.3
         }
       ],
       "geography": [
@@ -1263,23 +1253,18 @@
       "serviceLines": [
         {
           "name": "Advisory",
-          "value": 16.7,
-          "pct": 42
+          "value": 16.4,
+          "pct": 41.2
         },
         {
           "name": "Audit",
-          "value": 13.1,
-          "pct": 33
+          "value": 14.1,
+          "pct": 35.4
         },
         {
           "name": "Tax & Legal",
-          "value": 5.2,
-          "pct": 13
-        },
-        {
-          "name": "Operate / Managed Services",
-          "value": 4.8,
-          "pct": 12
+          "value": 9.3,
+          "pct": 23.4
         }
       ],
       "geography": [

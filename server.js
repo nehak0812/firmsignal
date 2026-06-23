@@ -751,10 +751,10 @@ const DEFAULT_DEMO_FINANCIALS = [
       { year: "FY2025", revenue: 70.5, growth: 4.8 }
     ],
     serviceLines: [
-      { name: "Consulting & Advisory", value: 31.8, pct: 45 },
-      { name: "Audit & Assurance", value: 19.5, pct: 28 },
-      { name: "Tax & Legal", value: 10.7, pct: 15 },
-      { name: "Operate / Managed Services", value: 8.5, pct: 12 }
+      { name: "Audit & Assurance", value: 13.4, pct: 19.0 },
+      { name: "Tax & Legal", value: 12.7, pct: 18.0 },
+      { name: "Strategy, Risk & Transactions", value: 14.8, pct: 21.0 },
+      { name: "Technology & Transformation", value: 29.6, pct: 42.0 }
     ],
     geography: [
       { name: "Americas", value: 38.0, pct: 54 },
@@ -792,9 +792,8 @@ const DEFAULT_DEMO_FINANCIALS = [
       { year: "FY2025", revenue: 69.7, growth: 7.0 }
     ],
     serviceLines: [
-      { name: "Technology Integration", value: 24.4, pct: 35 },
-      { name: "Strategy & Consulting", value: 10.5, pct: 15 },
-      { name: "Managed Services", value: 34.8, pct: 50 }
+      { name: "Consulting", value: 36.9, pct: 52.9 },
+      { name: "Managed Services", value: 32.8, pct: 47.1 }
     ],
     geography: [
       { name: "North America", value: 32.8, pct: 47 },
@@ -832,10 +831,9 @@ const DEFAULT_DEMO_FINANCIALS = [
       { year: "FY2025", revenue: 56.9, growth: 2.7 }
     ],
     serviceLines: [
-      { name: "Advisory & Deals", value: 23.9, pct: 42 },
-      { name: "Assurance", value: 19.9, pct: 35 },
-      { name: "Tax & Legal", value: 6.3, pct: 11 },
-      { name: "Operate / Managed Services", value: 6.8, pct: 12 }
+      { name: "Advisory", value: 24.3, pct: 42.7 },
+      { name: "Assurance", value: 19.9, pct: 35.0 },
+      { name: "Tax & Legal Services", value: 12.7, pct: 22.3 }
     ],
     geography: [
       { name: "Americas", value: 24.5, pct: 43 },
@@ -873,10 +871,9 @@ const DEFAULT_DEMO_FINANCIALS = [
       { year: "FY2025", revenue: 39.8, growth: 5.1 }
     ],
     serviceLines: [
-      { name: "Advisory", value: 16.7, pct: 42 },
-      { name: "Audit", value: 13.1, pct: 33 },
-      { name: "Tax & Legal", value: 5.2, pct: 13 },
-      { name: "Operate / Managed Services", value: 4.8, pct: 12 }
+      { name: "Advisory", value: 16.4, pct: 41.2 },
+      { name: "Audit", value: 14.1, pct: 35.4 },
+      { name: "Tax & Legal", value: 9.3, pct: 23.4 }
     ],
     geography: [
       { name: "Americas", value: 15.9, pct: 40 },
