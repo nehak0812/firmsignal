@@ -3132,6 +3132,21 @@ export function FinancialRoundupView({
                     EY: 10,
                     KPMG: 0
                   };
+                  const bubbleOffsets = {
+                    Deloitte: -14,
+                    Accenture: 14,
+                    PwC: -14,
+                    EY: 14,
+                    KPMG: 0
+                  };
+                  const nodeLabelOffsets = {
+                    Deloitte: -10,
+                    Accenture: 17,
+                    PwC: -10,
+                    EY: 17,
+                    KPMG: -10
+                  };
+
                   const offset = labelOffsets[f.id] || 0;
                   const finalPt = points[2];
                   const growthStr = f.growth >= 0 ? `+${f.growth?.toFixed(1)}%` : `${f.growth?.toFixed(1)}%`;
@@ -3159,11 +3174,14 @@ export function FinancialRoundupView({
                         const segmentGrowth = pt.gr;
                         if (segmentGrowth === null || segmentGrowth === undefined) return null;
 
+                        const bOffset = bubbleOffsets[f.id] || 0;
+                        const midYOffset = midY + bOffset;
+
                         return (
                           <g key={`${f.id}-grow-${idx}`} style={{ cursor: 'help' }}>
                             <rect
                               x={midX - 22}
-                              y={midY - 8}
+                              y={midYOffset - 8}
                               width="44"
                               height="15"
                               rx="3"
@@ -3173,7 +3191,7 @@ export function FinancialRoundupView({
                             />
                             <text
                               x={midX}
-                              y={midY + 3}
+                              y={midYOffset + 3}
                               textAnchor="middle"
                               style={{ fontFamily: 'var(--mono)', fontSize: 8.5, fontWeight: 700, fill: color }}
                             >
@@ -3184,26 +3202,29 @@ export function FinancialRoundupView({
                       })}
 
                       {/* Node points */}
-                      {points.map((pt, idx) => (
-                        <g key={`${f.id}-node-${idx}`} style={{ cursor: 'help' }}>
-                          <circle
-                            cx={pt.x}
-                            cy={pt.y}
-                            r="5"
-                            fill={color}
-                            stroke="var(--bg-2)"
-                            strokeWidth="2"
-                          />
-                          <text
-                            x={pt.x}
-                            y={pt.y - 10}
-                            textAnchor="middle"
-                            style={{ fontFamily: 'var(--mono)', fontSize: 9.5, fontWeight: 700, fill: 'var(--ink)' }}
-                          >
-                            ${pt.val.toFixed(1)}B
-                          </text>
-                        </g>
-                      ))}
+                      {points.map((pt, idx) => {
+                        const nlOffset = nodeLabelOffsets[f.id] || -10;
+                        return (
+                          <g key={`${f.id}-node-${idx}`} style={{ cursor: 'help' }}>
+                            <circle
+                              cx={pt.x}
+                              cy={pt.y}
+                              r="5"
+                              fill={color}
+                              stroke="var(--bg-2)"
+                              strokeWidth="2"
+                            />
+                            <text
+                              x={pt.x}
+                              y={pt.y + nlOffset}
+                              textAnchor="middle"
+                              style={{ fontFamily: 'var(--mono)', fontSize: 9.5, fontWeight: 700, fill: 'var(--ink)' }}
+                            >
+                              ${pt.val.toFixed(1)}B
+                            </text>
+                          </g>
+                        );
+                      })}
 
                       {/* Right-aligned End Label */}
                       <text
