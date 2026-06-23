@@ -1707,6 +1707,79 @@ function getFiledDate(dateObj) {
   return `${days[dateObj.getDay()]} ${dateObj.getDate()} ${months[dateObj.getMonth()]}`;
 }
 
+async function launchBrowser() {
+  const launchOptions = {
+    headless: 'shell',
+    pipe: true,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-gpu'
+    ]
+  };
+
+  const errors = [];
+
+  // Strategy 1: Launch with default options (which resolves cached browser inside .cache/puppeteer on Railway or local default)
+  try {
+    const browser = await puppeteer.launch(launchOptions);
+    await logActivity('PUPPETEER LAUNCH SUCCESS: Using default cached/bundled Chrome.');
+    return { browser, strategy: 'default' };
+  } catch (err) {
+    errors.push(`Strategy 1 (default) failed: ${err.message}`);
+  }
+
+  // Strategy 2: Try 'chromium' in PATH
+  try {
+    const browser = await puppeteer.launch({
+      ...launchOptions,
+      executablePath: 'chromium'
+    });
+    await logActivity('PUPPETEER LAUNCH SUCCESS: Using "chromium" from PATH.');
+    return { browser, strategy: 'chromium_path' };
+  } catch (err) {
+    errors.push(`Strategy 2 (executablePath: chromium) failed: ${err.message}`);
+  }
+
+  // Strategy 3: Try common Linux paths
+  const linuxPaths = [
+    '/usr/bin/chromium',
+    '/usr/bin/chromium-browser',
+    '/usr/bin/google-chrome',
+    '/usr/bin/google-chrome-stable',
+    '/usr/bin/google-chrome-unstable'
+  ];
+  for (const p of linuxPaths) {
+    try {
+      const browser = await puppeteer.launch({
+        ...launchOptions,
+        executablePath: p
+      });
+      await logActivity(`PUPPETEER LAUNCH SUCCESS: Using system path ${p}.`);
+      return { browser, strategy: `linux_path_${p}` };
+    } catch (err) {
+      errors.push(`Strategy 3 (path ${p}) failed: ${err.message}`);
+    }
+  }
+
+  // Strategy 4: Try Windows local path specifically configured
+  const windowsLocalPath = 'C:\\Users\\Neha Kukreja\\.cache\\puppeteer\\chrome-headless-shell\\win64-150.0.7871.24\\chrome-headless-shell-win64\\chrome-headless-shell.exe';
+  try {
+    const browser = await puppeteer.launch({
+      ...launchOptions,
+      executablePath: windowsLocalPath
+    });
+    await logActivity('PUPPETEER LAUNCH SUCCESS: Using local Windows path.');
+    return { browser, strategy: 'windows_configured_path' };
+  } catch (err) {
+    errors.push(`Strategy 4 (Windows path) failed: ${err.message}`);
+  }
+
+  // If all failed, throw a descriptive combined error
+  throw new Error(`Puppeteer failed to launch with all strategies.\n${errors.join('\n')}`);
+}
+
 async function buildPdfDigest() {
   try {
     await logActivity('AUTO-SCAN: Starting AI Weekly Digest PDF generation sweep...');
@@ -1862,20 +1935,7 @@ async function buildPdfDigest() {
     }
 
     const finalHtml = $.html();
-    const isProduction = process.env.NODE_ENV === 'production' || !!process.env.RAILWAY_STATIC_URL;
-    const browser = await puppeteer.launch({
-      executablePath: isProduction 
-        ? 'chromium' 
-        : 'C:\\Users\\Neha Kukreja\\.cache\\puppeteer\\chrome-headless-shell\\win64-150.0.7871.24\\chrome-headless-shell-win64\\chrome-headless-shell.exe',
-      headless: 'shell',
-      pipe: true,
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-gpu'
-      ]
-    });
+    const { browser, strategy } = await launchBrowser();
     const page = await browser.newPage();
     await page.setContent(finalHtml, { waitUntil: 'networkidle0' });
     
@@ -2034,25 +2094,9 @@ app.get('/api/pdf-diagnostic', async (req, res) => {
   }
 
   try {
-    const isProduction = process.env.NODE_ENV === 'production' || !!process.env.RAILWAY_STATIC_URL;
-    const execPath = isProduction 
-      ? 'chromium' 
-      : 'C:\\Users\\Neha Kukreja\\.cache\\puppeteer\\chrome-headless-shell\\win64-150.0.7871.24\\chrome-headless-shell-win64\\chrome-headless-shell.exe';
-    
-    report.checks.attemptedPath = execPath;
-    
-    const browser = await puppeteer.launch({
-      executablePath: execPath,
-      headless: 'shell',
-      pipe: true,
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-gpu'
-      ]
-    });
+    const { browser, strategy } = await launchBrowser();
     report.checks.launchSuccess = true;
+    report.checks.strategyUsed = strategy;
     await browser.close();
   } catch (err) {
     report.checks.launchSuccess = false;
