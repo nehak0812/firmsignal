@@ -3,6 +3,7 @@ import cors from 'cors';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { exec } from 'child_process';
 import * as cheerio from 'cheerio';
 import puppeteer from 'puppeteer';
 
@@ -1996,6 +1997,70 @@ app.get('/api/signals', async (req, res) => {
     await logActivity(`Error in GET /api/signals: ${err.message}`);
     return res.status(500).json({ error: err.message || 'Failed to fetch signals.' });
   }
+});
+
+// GET /api/pdf-diagnostic for production troubleshooting
+app.get('/api/pdf-diagnostic', async (req, res) => {
+  await logActivity('GET /api/pdf-diagnostic hit.');
+  const report = {
+    env: {
+      NODE_ENV: process.env.NODE_ENV,
+      PORT: process.env.PORT,
+      RAILWAY_STATIC_URL: process.env.RAILWAY_STATIC_URL,
+      platform: process.platform,
+      arch: process.arch
+    },
+    checks: {}
+  };
+
+  try {
+    const templatePath = path.join(__dirname, 'ai-moves-weekly-digest_2.html');
+    await fs.access(templatePath);
+    report.checks.templateExists = true;
+  } catch (err) {
+    report.checks.templateExists = false;
+    report.checks.templateError = err.message;
+  }
+
+  try {
+    const whichChromium = await new Promise((resolve) => {
+      exec('which chromium || which chromium-browser || which google-chrome', (err, stdout) => {
+        resolve(err ? 'not found (' + err.message + ')' : stdout.trim());
+      });
+    });
+    report.checks.whichChromium = whichChromium;
+  } catch (err) {
+    report.checks.whichChromium = 'error: ' + err.message;
+  }
+
+  try {
+    const isProduction = process.env.NODE_ENV === 'production' || !!process.env.RAILWAY_STATIC_URL;
+    const execPath = isProduction 
+      ? 'chromium' 
+      : 'C:\\Users\\Neha Kukreja\\.cache\\puppeteer\\chrome-headless-shell\\win64-150.0.7871.24\\chrome-headless-shell-win64\\chrome-headless-shell.exe';
+    
+    report.checks.attemptedPath = execPath;
+    
+    const browser = await puppeteer.launch({
+      executablePath: execPath,
+      headless: 'shell',
+      pipe: true,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu'
+      ]
+    });
+    report.checks.launchSuccess = true;
+    await browser.close();
+  } catch (err) {
+    report.checks.launchSuccess = false;
+    report.checks.launchError = err.message;
+    report.checks.launchErrorStack = err.stack;
+  }
+
+  return res.json(report);
 });
 
 // GET /api/pdf-digest to download the AI Weekly Digest PDF
