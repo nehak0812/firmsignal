@@ -313,10 +313,31 @@ export function SignalCard({ item, isSaved, onToggleSave, index, ALL_FIRMS = [],
 }
 
 // ============== BRIEF VIEW ==============
-export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL_COLORS = {}, getBrief = () => ({ lead: null, secondary: [] }), onPulseClick }) {
+export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL_COLORS = {}, getBrief = () => ({ lead: null, secondary: [] }), onPulseClick, onShowToast }) {
   const today = new Date();
   const dateLong = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
   const brief = getBrief(data);
+
+  const handleDownloadPdf = async () => {
+    if (onShowToast) onShowToast('Generating AI Weekly Briefing PDF...');
+    try {
+      const response = await fetch('/api/pdf-digest');
+      if (!response.ok) throw new Error('Failed to generate PDF');
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'AI-Moves-Weekly-Digest.pdf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+      if (onShowToast) onShowToast('✓ PDF download started');
+    } catch (err) {
+      if (onShowToast) onShowToast(`Error: ${err.message}`);
+      else alert('Error: ' + err.message);
+    }
+  };
 
   if (!brief.lead) {
     return <div className="empty"><h3>No signals available</h3><p>Fetch live intelligence to populate the brief.</p></div>;
@@ -387,6 +408,9 @@ export function BriefView({ data, savedIds, onToggleSave, ALL_FIRMS = [], SIGNAL
           <div className="brief-eyebrow">{dateLong} · Executive Brief</div>
           <h1 className="brief-title">What's moving in <em>professional services</em> &amp; tech, in five minutes.</h1>
           <p className="brief-sub">Curated signals on Big 4, MBB, and the tech alliance partners they live and die with. Ranked by what should actually concern you.</p>
+          <button onClick={handleDownloadPdf} className="pdf-download-btn">
+            <span style={{ marginRight: 6 }}>📄</span> AI Weekly Digest
+          </button>
           <div style={{ display: 'flex', gap: 14, marginTop: 12, flexWrap: 'wrap', alignItems: 'center' }}>
             <span style={{ fontSize: 10, color: 'var(--ink-3)', fontFamily: 'var(--mono)', letterSpacing: '0.08em', textTransform: 'uppercase', marginRight: 4 }}>Impact Key:</span>
             

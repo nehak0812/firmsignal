@@ -1280,7 +1280,7 @@ function App() {
           )}
 
           {activeNav === 'brief' && (
-            <BriefView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={firms} SIGNAL_COLORS={SIGNAL_COLORS} getBrief={getBrief} onPulseClick={handlePulseClick} />
+            <BriefView data={filtered} savedIds={savedIds} onToggleSave={onToggleSave} ALL_FIRMS={firms} SIGNAL_COLORS={SIGNAL_COLORS} getBrief={getBrief} onPulseClick={handlePulseClick} onShowToast={showToast} />
           )}
 
           {activeNav === 'financials' && (

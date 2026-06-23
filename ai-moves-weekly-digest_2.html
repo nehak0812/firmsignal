@@ -1,0 +1,670 @@
+<!--
+  AI MOVES — WEEKLY DIGEST
+  A reusable 3-page weekly briefing on AI moves across:
+    Page 1 · Consulting & Advisory  (Deloitte, PwC, EY, KPMG, Accenture, McKinsey, BCG, Bain)
+    Page 2 · Tech Players         (SAP, Microsoft, Nvidia, ServiceNow, Google, AWS, Optro, Salesforce)
+    Page 3 · AI-First Labs          (OpenAI, Anthropic, Perplexity, Mistral AI, DeepSeek, Cohere, xAI, Snorkel AI)
+
+  HOW TO REUSE
+  - Each story is <article class="move" data-firm="KEY">. KEY drives colour + the per-page filter.
+  - Keys: deloitte pwc ey kpmg accenture mckinsey bcg bain  |  sap microsoft nvidia servicenow google aws optro salesforce
+          openai anthropic perplexity mistral deepseek cohere xai snorkel
+  - Fill the slug (FIRM · CATEGORY · DATE), headline, a 1–2 line summary in your own words, and a source.
+  - Quiet bucket? Keep the .empty block and delete the articles. Update each count badge.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap');
+  :root{
+    --ink:#161A21; --ink-soft:#3A414C; --paper:#F6F7F9; --card:#FFFFFF;
+    --hair:#E3E6EB; --hair-strong:#CDD2DA; --signal:#E08A2B; --muted:#6B727D;
+    --display:'Archivo', system-ui, sans-serif;
+    --funk:'Bricolage Grotesque', 'Archivo', system-ui, sans-serif;
+    --body:'Newsreader', Georgia, serif;
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+
+    /* firm colours = data encoding */
+    --deloitte:#86BC25; --pwc:#D04A02; --ey:#2E2E38; --ey-ink:#FFE600;
+    --kpmg:#00338D; --accenture:#A100FF; --mckinsey:#14213D; --bcg:#0B6E4F; --bain:#C8102E;
+    --sap:#00B8F1; --microsoft:#0067C0; --nvidia:#76B900; --servicenow:#008A80;
+    --google:#EA4335; --aws:#FF9900; --optro:#6B4EFF; --salesforce:#1B2A57;
+    --openai:#10A37F; --anthropic:#CC785C; --perplexity:#20B8CD; --mistral:#FA5111;
+    --deepseek:#4D6BFE; --cohere:#6B5BD2; --xai:#1A1A1A; --snorkel:#C026D3;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0}
+  .wire{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.5;
+    max-width:1060px;margin:0 auto;padding:0 22px 64px;overflow-x:hidden}
+
+  /* MASTHEAD */
+  .masthead{background:var(--ink);color:var(--paper);margin:0 -22px;padding:30px 22px 22px;border-bottom:3px solid var(--signal)}
+  .mast-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap}
+  .wordmark{font-family:var(--funk);font-weight:800;letter-spacing:-.035em;line-height:.84;margin:0;
+    font-size:clamp(46px,9.3vw,96px)}
+  .wordmark .ai{color:var(--paper)}
+  .wordmark .moves{color:var(--signal);display:inline-block;transform:skewX(-8deg)}
+  .wordmark .kin{display:inline-block;color:var(--signal);font-size:.4em;vertical-align:.5em;margin-left:.02em;
+    animation:kin 2.6s ease-in-out infinite}
+  @keyframes kin{0%,100%{transform:translate(0,0)}50%{transform:translate(.18em,-.16em)}}
+  .tagline{font-family:var(--mono);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:#AEB4BE;
+    margin:14px 0 0;display:flex;align-items:center;gap:11px}
+  .tagline::before{content:"";width:18px;height:7px;background:var(--signal);transform:skewX(-12deg)}
+  .issue-meta{font-family:var(--mono);font-size:11px;line-height:1.9;letter-spacing:.06em;text-align:right;color:#AEB4BE;white-space:nowrap}
+  .issue-meta b{color:var(--paper);font-weight:600}.issue-meta .row{display:block}
+
+  /* PAGE NAV */
+  .pagenav{position:sticky;top:0;z-index:20;background:var(--paper);margin:0 -22px;padding:12px 22px;
+    border-bottom:1px solid var(--hair);display:flex;gap:8px;flex-wrap:wrap}
+  .pagebtn{font-family:var(--mono);font-size:11px;letter-spacing:.06em;cursor:pointer;
+    border:1px solid var(--hair-strong);background:var(--card);color:var(--ink);
+    padding:8px 13px;border-radius:4px;display:flex;gap:9px;align-items:center;transition:all .12s ease}
+  .pagebtn .n{color:var(--signal);font-weight:700}
+  .pagebtn:hover{transform:translateY(-1px)}
+  .pagebtn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+  .pagebtn[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .pagebtn[aria-selected="true"] .n{color:var(--signal)}
+
+  .page{display:none}
+  .page.is-active{display:block}
+
+  /* LEAD */
+  .lead{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;padding:28px 0 22px;border-bottom:1px solid var(--hair)}
+  .lead-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+    writing-mode:vertical-rl;transform:rotate(180deg);padding:4px 14px 0 0;border-right:1px solid var(--hair)}
+  .lead h2{font-family:var(--display);font-weight:800;font-stretch:expanded;text-transform:uppercase;
+    letter-spacing:-.02em;font-size:clamp(20px,3vw,28px);margin:0 0 8px;line-height:1}
+  .lead p{font-size:clamp(16px,2vw,19px);line-height:1.46;margin:0;color:var(--ink-soft)}
+  .lead .drop{color:var(--signal);font-weight:600}
+
+  /* FILTER */
+  .legend{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:18px 0 4px}
+  .legend-label{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+  .chip{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.02em;border:1px solid var(--hair-strong);
+    background:var(--card);color:var(--ink);padding:5px 11px;border-radius:999px;cursor:pointer;
+    display:inline-flex;align-items:center;gap:7px;transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease}
+  .chip:hover{transform:translateY(-1px)}
+  .chip:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+  .chip .swatch{width:9px;height:9px;border-radius:2px;display:inline-block}
+  .chip[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--ink)}
+  .chip.is-dim{opacity:.38}
+  .chip-all{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  /* BUCKETS */
+  .bucket{padding:28px 0 6px;border-top:1px solid var(--hair);margin-top:14px}
+  .bucket:first-of-type{border-top:none}
+  .bucket-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+  .bucket-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--signal);font-weight:600}
+  .bucket-title{font-family:var(--display);font-weight:800;font-stretch:expanded;font-size:clamp(21px,3vw,30px);
+    letter-spacing:-.02em;margin:0;line-height:1;text-transform:uppercase}
+  .count{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em;border:1px solid var(--hair-strong);padding:2px 8px;border-radius:999px}
+
+  .moves{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .move{background:var(--card);border:1px solid var(--hair);border-left:4px solid var(--firm,var(--hair-strong));
+    padding:17px 17px 15px;border-radius:4px;transition:transform .14s ease, box-shadow .14s ease;display:flex;flex-direction:column;gap:9px}
+  .move:hover{transform:translateY(-2px);box-shadow:0 10px 26px -16px rgba(20,24,33,.5)}
+  .move[data-firm="deloitte"]{--firm:var(--deloitte)} .move[data-firm="pwc"]{--firm:var(--pwc)}
+  .move[data-firm="ey"]{--firm:var(--ey)} .move[data-firm="kpmg"]{--firm:var(--kpmg)}
+  .move[data-firm="accenture"]{--firm:var(--accenture)} .move[data-firm="mckinsey"]{--firm:var(--mckinsey)}
+  .move[data-firm="bcg"]{--firm:var(--bcg)} .move[data-firm="bain"]{--firm:var(--bain)}
+  .move[data-firm="sap"]{--firm:var(--sap)} .move[data-firm="microsoft"]{--firm:var(--microsoft)}
+  .move[data-firm="nvidia"]{--firm:var(--nvidia)} .move[data-firm="servicenow"]{--firm:var(--servicenow)}
+  .move[data-firm="google"]{--firm:var(--google)} .move[data-firm="aws"]{--firm:var(--aws)}
+  .move[data-firm="optro"]{--firm:var(--optro)} .move[data-firm="salesforce"]{--firm:var(--salesforce)}
+  .move[data-firm="openai"]{--firm:var(--openai)} .move[data-firm="anthropic"]{--firm:var(--anthropic)}
+  .move[data-firm="perplexity"]{--firm:var(--perplexity)} .move[data-firm="mistral"]{--firm:var(--mistral)}
+  .move[data-firm="deepseek"]{--firm:var(--deepseek)} .move[data-firm="cohere"]{--firm:var(--cohere)}
+  .move[data-firm="xai"]{--firm:var(--xai)} .move[data-firm="snorkel"]{--firm:var(--snorkel)}
+
+  .slug{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+    display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .firm-tag{font-weight:600;color:#fff;background:var(--firm,var(--ink));padding:2px 7px;border-radius:3px;letter-spacing:.06em}
+  .move[data-firm="ey"] .firm-tag{color:var(--ey-ink)}
+  .slug .sep{opacity:.45}
+  .move-head{font-family:var(--body);font-weight:600;font-size:18px;line-height:1.27;letter-spacing:-.01em;margin:0}
+  .move-dek{font-size:14.5px;line-height:1.46;color:var(--ink-soft);margin:0}
+  .src{font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--muted);margin-top:auto;padding-top:4px}
+  .src::before{content:"↳ ";color:var(--signal)}
+  .src a{color:inherit;text-decoration:none;border-bottom:1px solid var(--hair-strong)}
+  .src a:hover,.src a:focus-visible{color:var(--signal);border-color:var(--signal)}
+  .src a::after{content:" ↗";opacity:.55;font-size:.9em}
+
+  .seealso{grid-column:1 / -1;font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--muted);
+    border:1px dashed var(--hair-strong);border-radius:4px;padding:10px 14px}
+  .seealso b{color:var(--ink);font-weight:600}
+  .empty{grid-column:1 / -1;border:1px dashed var(--hair-strong);border-radius:4px;padding:20px;text-align:center;background:var(--card)}
+  .empty .e-head{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);font-weight:600;margin-bottom:6px}
+  .empty .e-sub{font-size:14px;color:var(--muted);margin:0}
+
+  .move.is-hidden{display:none}
+  .bucket.is-empty .moves > .move{display:none}
+  .filter-empty{display:none}
+  .bucket.is-empty .filter-empty{display:block;grid-column:1 / -1;font-family:var(--mono);font-size:12px;color:var(--muted);
+    border:1px dashed var(--hair);border-radius:4px;padding:16px;text-align:center}
+
+  /* COLOPHON */
+  .colophon{margin-top:40px;border-top:3px solid var(--ink);padding-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .colophon h3{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--signal);margin:0 0 10px}
+  .colophon p,.colophon li{font-size:13.5px;line-height:1.5;color:var(--ink-soft);margin:0 0 8px}
+  .colophon ol{margin:0;padding-left:18px}.colophon ol li{margin-bottom:7px}
+  .colophon code{font-family:var(--mono);font-size:11.5px;background:#ECEEF1;padding:1px 5px;border-radius:3px;color:var(--ink)}
+  .note{font-family:var(--mono);font-size:10.5px;line-height:1.7;color:var(--muted);grid-column:1 / -1;border-top:1px solid var(--hair);padding-top:14px;letter-spacing:.02em}
+
+  @media (max-width:680px){
+    .moves{grid-template-columns:1fr}
+    .lead{grid-template-columns:1fr}
+    .lead-eyebrow{writing-mode:horizontal-tb;transform:none;border-right:none;border-bottom:1px solid var(--hair);padding:0 0 8px}
+    .issue-meta{text-align:left}.colophon{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+
+  /* PRINT / PDF — force all three pages, one section per page, keep colours + links */
+  @media print{
+    @page{margin:14mm}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-shadow:none !important}
+    .wire{max-width:none;padding:0}
+    .pagenav{display:none !important}              /* interactive tabs + button */
+    .legend{display:none !important}               /* interactive filter */
+    .masthead{margin:0 0 6mm}
+    .page{display:block !important}                /* reveal every page */
+    .page[data-page="2"],.page[data-page="3"],.colophon{break-before:page}
+    .move{break-inside:avoid;transform:none !important}
+    .bucket-head{break-after:avoid}
+    .seealso,.empty,.bucket{break-inside:avoid}
+    a{color:inherit}
+    /* ignore any active filter so the PDF always contains every card */
+    .move.is-hidden{display:flex !important}
+    .bucket.is-empty .moves > .move{display:flex !important}
+    .bucket.is-empty .filter-empty{display:none !important}
+  }
+</style>
+
+<div class="wire">
+
+  <!-- ===================  MASTHEAD  =================== -->
+  <header class="masthead">
+    <div class="mast-top">
+      <h1 class="wordmark"><span class="ai">AI</span> <span class="moves">Moves</span><span class="kin" aria-hidden="true">↗</span></h1>
+      <div class="issue-meta">
+        <span class="row">ISSUE <b>№ 01</b></span>
+        <span class="row">WEEK OF <b>16–23 JUN 2026</b></span>
+        <span class="row">COVERING <b>BIG FOUR · MBB · TECH · LABS</b></span>
+        <span class="row">FILED <b>TUE 23 JUN</b></span>
+      </div>
+    </div>
+    <p class="tagline">Weekly Digest</p>
+  </header>
+
+  <!-- ===================  PAGE NAV  =================== -->
+  <nav class="pagenav" role="tablist" aria-label="Briefing pages">
+    <button class="pagebtn" role="tab" data-page="1" aria-selected="true"><span class="n">01</span> Consulting &amp; Advisory</button>
+    <button class="pagebtn" role="tab" data-page="2" aria-selected="false"><span class="n">02</span> Tech Players</button>
+    <button class="pagebtn" role="tab" data-page="3" aria-selected="false"><span class="n">03</span> AI-First Labs</button>
+  </nav>
+
+  <!-- =====================================================================
+       PAGE 1 · CONSULTING & ADVISORY
+       ===================================================================== -->
+  <section class="page is-active" data-page="1">
+    <div class="lead">
+      <div class="lead-eyebrow">The week in one line</div>
+      <div>
+        <h2>Big Four · Accenture · MBB</h2>
+        <p>The advisory pack kept <span class="drop">productising agentic AI through hyperscaler tie-ups</span> — Deloitte with Google Cloud, Accenture with AWS — while MBB pushed deeper into AI's plumbing: BCG put $500M behind AI-for-good with Anthropic, Bain turned coding agents on its own deal diligence, and the people-and-trust questions (skills premiums, a withdrawn report) stayed loud.</p>
+      </div>
+    </div>
+
+    <div class="legend" role="group" aria-label="Filter stories by firm">
+      <span class="legend-label">Filter</span>
+      <button class="chip chip-all" data-filter="all" aria-pressed="true">All firms</button>
+      <button class="chip" data-filter="deloitte" aria-pressed="false"><span class="swatch" style="background:var(--deloitte)"></span>Deloitte</button>
+      <button class="chip" data-filter="pwc" aria-pressed="false"><span class="swatch" style="background:var(--pwc)"></span>PwC</button>
+      <button class="chip" data-filter="ey" aria-pressed="false"><span class="swatch" style="background:var(--ey-ink);border:1px solid var(--ey)"></span>EY</button>
+      <button class="chip" data-filter="kpmg" aria-pressed="false"><span class="swatch" style="background:var(--kpmg)"></span>KPMG</button>
+      <button class="chip" data-filter="accenture" aria-pressed="false"><span class="swatch" style="background:var(--accenture)"></span>Accenture</button>
+      <button class="chip" data-filter="mckinsey" aria-pressed="false"><span class="swatch" style="background:var(--mckinsey)"></span>McKinsey</button>
+      <button class="chip" data-filter="bcg" aria-pressed="false"><span class="swatch" style="background:var(--bcg)"></span>BCG</button>
+      <button class="chip" data-filter="bain" aria-pressed="false"><span class="swatch" style="background:var(--bain)"></span>Bain</button>
+    </div>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 01</span><h3 class="bucket-title">Forging Partnerships</h3><span class="count">3 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="kpmg">
+          <div class="slug"><span class="firm-tag">KPMG</span><span class="sep">·</span>Alliance<span class="sep">·</span>09 Jun</div>
+          <h4 class="move-head">KPMG widens its Microsoft alliance to scale AI agents firm-wide</h4>
+          <p class="move-dek">Microsoft 365 Copilot rolls out to 276,000+ staff and Agent 365 will help KPMG and clients manage, monitor and secure agents under its Trusted AI framework.</p>
+          <div class="src"><a href="https://news.microsoft.com/source/2026/06/09/kpmg-and-microsoft-scale-trusted-enterprise-ai-agents-globally-through-deployment-of-agent-365-and-copilot/" target="_blank" rel="noopener">Microsoft Source</a></div>
+        </article>
+        <article class="move" data-firm="kpmg">
+          <div class="slug"><span class="firm-tag">KPMG</span><span class="sep">·</span>Alliance<span class="sep">·</span>29 May</div>
+          <h4 class="move-head">KPMG signs a global alliance with Anthropic</h4>
+          <p class="move-dek">The deal embeds Anthropic's Claude tools deeper into KPMG's delivery capabilities across audit, tax and advisory work.</p>
+          <div class="src"><a href="https://kpmg.com/us/en/media/news.html" target="_blank" rel="noopener">KPMG Newsroom</a></div>
+        </article>
+        <article class="move" data-firm="bcg">
+          <div class="slug"><span class="firm-tag">BCG</span><span class="sep">·</span>Commitment<span class="sep">·</span>04 Jun</div>
+          <h4 class="move-head">BCG pledges $500M to AI for social impact, partnering Anthropic</h4>
+          <p class="move-dek">Its largest-ever social-impact commitment (by 2030) opens with an Anthropic partnership to speed 2026 delivery for high-impact non-profits.</p>
+          <div class="src"><a href="https://www.bcg.com/press/4june2026-ai-transform-social-impact" target="_blank" rel="noopener">BCG</a></div>
+        </article>
+        <div class="seealso"><b>See also →</b> Accenture × AWS and Deloitte × Google Cloud are partnership-led too — logged under <i>New Platform / Product Launches</i>.</div>
+      </div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 02</span><h3 class="bucket-title">Acquisitions</h3><span class="count">0 moves</span></div>
+      <div class="moves">
+        <div class="empty">
+          <div class="e-head">No qualifying AI acquisitions logged this week</div>
+          <p class="e-sub">Watchlist: Accenture's purchase of UK AI-native firm Faculty (Jan 2026) remains the most recent major deal in this group. Drop new acquisitions here as they land.</p>
+        </div>
+        <div class="filter-empty">No acquisitions from this firm this week.</div>
+      </div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 03</span><h3 class="bucket-title">Upskilling of People</h3><span class="count">3 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="pwc">
+          <div class="slug"><span class="firm-tag">PwC</span><span class="sep">·</span>People &amp; Skills<span class="sep">·</span>15 Jun</div>
+          <h4 class="move-head">PwC's 2026 AI Jobs Barometer: a two-track labour market</h4>
+          <p class="move-dek">From a billion-plus job ads: AI is "professionalising" some roles and "democratising" others, with the AI-skills wage premium up to ~62% and juniors asked for senior judgment sooner.</p>
+          <div class="src"><a href="https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-ai-jobs-barometer.html" target="_blank" rel="noopener">PwC</a></div>
+        </article>
+        <article class="move" data-firm="deloitte">
+          <div class="slug"><span class="firm-tag">Deloitte</span><span class="sep">·</span>Ecosystem<span class="sep">·</span>08 Jun</div>
+          <h4 class="move-head">Deloitte and NVIDIA launch the 'Adopt 100' programme</h4>
+          <p class="move-dek">Unveiled at London Tech Week, it pairs the two to help UK organisations adopt responsible AI at scale — extending Deloitte's Fast 50 startup legacy.</p>
+          <div class="src"><a href="https://www.deloitte.com/uk/en/about/press-room/deloitte-launches-adopt-100-programme-with-nvidia.html" target="_blank" rel="noopener">Deloitte UK</a></div>
+        </article>
+        <article class="move" data-firm="bcg">
+          <div class="slug"><span class="firm-tag">BCG</span><span class="sep">·</span>Research<span class="sep">·</span>03 Jun</div>
+          <h4 class="move-head">BCG: AI is changing jobs faster than firms can redesign them</h4>
+          <p class="move-dek">Its fourth annual AI at Work survey finds strategy and workflow redesign — not tools — separate the firms capturing real value from the rest.</p>
+          <div class="src"><a href="https://www.bcg.com/publications/2026/ai-transformation-is-a-workforce-transformation" target="_blank" rel="noopener">BCG</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 04</span><h3 class="bucket-title">New Platform / Product Launches</h3><span class="count">3 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="deloitte">
+          <div class="slug"><span class="firm-tag">Deloitte</span><span class="sep">·</span>Launch<span class="sep">·</span>17 Jun</div>
+          <h4 class="move-head">Deloitte opens a London AI Studio with Google Cloud</h4>
+          <p class="move-dek">A co-innovation hub to move clients from experimentation to production-ready agentic AI across public sector, financial services, retail and healthcare. Opens late July.</p>
+          <div class="src"><a href="https://www.deloitte.com/uk/en/about/press-room/deloitte-and-google-cloud-collaborate-to-launch-london-ai-studio.html" target="_blank" rel="noopener">Deloitte UK</a></div>
+        </article>
+        <article class="move" data-firm="accenture">
+          <div class="slug"><span class="firm-tag">Accenture</span><span class="sep">·</span>Launch<span class="sep">·</span>16 Jun</div>
+          <h4 class="move-head">Accenture and AWS productise industry AI on the Marketplace</h4>
+          <p class="move-dek">A new AI products line packages Accenture's industry IP into ready-to-deploy solutions; first up is an autonomous supply-chain orchestration product.</p>
+          <div class="src"><a href="https://newsroom.accenture.com/blogs/2026/accenture-expands-accenture-aws-business-group-with-new-ai-products-capability" target="_blank" rel="noopener">Accenture Newsroom</a></div>
+        </article>
+        <article class="move" data-firm="ey">
+          <div class="slug"><span class="firm-tag">EY</span><span class="sep">·</span>Launch<span class="sep">·</span>11 Jun</div>
+          <h4 class="move-head">EY opens an ey.ai Center for Reimagination in Bengaluru</h4>
+          <p class="move-dek">EY's Global Delivery Services launches a hub for AI-powered innovation, design thinking and enterprise growth — expanding ey.ai's India footprint.</p>
+          <div class="src"><a href="https://www.ey.com/en_in/newsroom" target="_blank" rel="noopener">EY India</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 05</span><h3 class="bucket-title">Other Areas of Interest</h3><span class="count">4 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="kpmg">
+          <div class="slug"><span class="firm-tag">KPMG</span><span class="sep">·</span>Trust &amp; Governance<span class="sep">·</span>13 Jun</div>
+          <h4 class="move-head">KPMG withdraws an agentic-AI report after citation disputes</h4>
+          <p class="move-dek">The firm pulled its "agentic AI excellence" paper while reviewing publication, after organisations disputed case studies and analysts flagged unreliable citations.</p>
+          <div class="src"><a href="https://nerova.ai/troubleshooting-fixes/kpmg-pulls-agentic-ai-report-hallucinations-june-13-2026" target="_blank" rel="noopener">Coverage: TechCrunch · GPTZero</a></div>
+        </article>
+        <article class="move" data-firm="bain">
+          <div class="slug"><span class="firm-tag">Bain</span><span class="sep">·</span>Deal Tech<span class="sep">·</span>22 Jun</div>
+          <h4 class="move-head">Bain is 'vibe-coding' replicas of M&amp;A software targets</h4>
+          <p class="move-dek">Staff are building rough AI prototypes of acquisition targets during diligence to test whether a target's moat — its data and workflow depth — is actually real.</p>
+          <div class="src"><a href="https://startupfortune.com/bain-is-vibecoding-replicas-of-software-acquisition-targets-and-the-results-are-rewriting-ma/" target="_blank" rel="noopener">FT via Startup Fortune</a></div>
+        </article>
+        <article class="move" data-firm="mckinsey">
+          <div class="slug"><span class="firm-tag">McKinsey</span><span class="sep">·</span>Internal AI<span class="sep">·</span>01 May</div>
+          <h4 class="move-head">McKinsey to use AI agents to help staff client teams</h4>
+          <p class="move-dek">Agents will supplement the professional-development staff who have matched consultants to engagements for decades, as the firm scales internal AI across ~40,000 people.</p>
+          <div class="src"><a href="https://www.bloomberg.com/news/articles/2026-05-01/mckinsey-plans-to-use-ai-agents-to-help-choose-client-teams" target="_blank" rel="noopener">Bloomberg</a></div>
+        </article>
+        <article class="move" data-firm="accenture">
+          <div class="slug"><span class="firm-tag">Accenture</span><span class="sep">·</span>Research<span class="sep">·</span>11 Jun</div>
+          <h4 class="move-head">Accenture and Carnegie Mellon SEI ship an AI maturity model</h4>
+          <p class="move-dek">A research-validated framework scores AI readiness across eight dimensions, with a benchmarking tool to build adoption roadmaps.</p>
+          <div class="src"><a href="https://www.executivebiz.com/articles/accenture-carnegie-mellon-ai-adoption" target="_blank" rel="noopener">ExecutiveBiz</a></div>
+        </article>
+      </div>
+    </section>
+  </section>
+
+  <!-- =====================================================================
+       PAGE 2 · TECH PLATFORMS
+       ===================================================================== -->
+  <section class="page" data-page="2">
+    <div class="lead">
+      <div class="lead-eyebrow">The week in one line</div>
+      <div>
+        <h2>Tech Players</h2>
+        <p>The platform layer raced to make agents <span class="drop">production-grade and grounded</span> — AWS reloaded Bedrock AgentCore at its NY Summit, Microsoft's Work IQ APIs hit GA, Nvidia lit up European supercomputers — while the <span class="drop">control points hardened</span>: SAP fenced off its APIs, and Microsoft signalled it may even host China's DeepSeek to drive costs down.</p>
+      </div>
+    </div>
+
+    <div class="legend" role="group" aria-label="Filter stories by company">
+      <span class="legend-label">Filter</span>
+      <button class="chip chip-all" data-filter="all" aria-pressed="true">All players</button>
+      <button class="chip" data-filter="microsoft" aria-pressed="false"><span class="swatch" style="background:var(--microsoft)"></span>Microsoft</button>
+      <button class="chip" data-filter="nvidia" aria-pressed="false"><span class="swatch" style="background:var(--nvidia)"></span>Nvidia</button>
+      <button class="chip" data-filter="google" aria-pressed="false"><span class="swatch" style="background:var(--google)"></span>Google</button>
+      <button class="chip" data-filter="aws" aria-pressed="false"><span class="swatch" style="background:var(--aws)"></span>AWS</button>
+      <button class="chip" data-filter="sap" aria-pressed="false"><span class="swatch" style="background:var(--sap)"></span>SAP</button>
+      <button class="chip" data-filter="salesforce" aria-pressed="false"><span class="swatch" style="background:var(--salesforce)"></span>Salesforce</button>
+      <button class="chip" data-filter="servicenow" aria-pressed="false"><span class="swatch" style="background:var(--servicenow)"></span>ServiceNow</button>
+      <button class="chip" data-filter="optro" aria-pressed="false"><span class="swatch" style="background:var(--optro)"></span>Optro</button>
+    </div>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 01</span><h3 class="bucket-title">Model &amp; Product Launches</h3><span class="count">3 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="microsoft">
+          <div class="slug"><span class="firm-tag">Microsoft</span><span class="sep">·</span>Launch<span class="sep">·</span>16 Jun</div>
+          <h4 class="move-head">Microsoft's Work IQ APIs reach general availability</h4>
+          <p class="move-dek">The workplace-intelligence layer for agents — capturing how work happens across Microsoft 365 — opens programmatically so agents get real organisational context.</p>
+          <div class="src"><a href="https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/" target="_blank" rel="noopener">Microsoft</a></div>
+        </article>
+        <article class="move" data-firm="salesforce">
+          <div class="slug"><span class="firm-tag">Salesforce</span><span class="sep">·</span>Launch<span class="sep">·</span>29 Apr</div>
+          <h4 class="move-head">Salesforce ships Agentforce Operations for the back office</h4>
+          <p class="move-dek">Agents that complete back-office work end-to-end — verifying data, clearing compliance, chasing approvals — building on the Agentforce 3 command-centre release.</p>
+          <div class="src"><a href="https://www.salesforce.com/news/stories/agentforce-operations-announcement/" target="_blank" rel="noopener">Salesforce</a></div>
+        </article>
+        <article class="move" data-firm="servicenow">
+          <div class="slug"><span class="firm-tag">ServiceNow</span><span class="sep">·</span>Launch<span class="sep">·</span>05 May</div>
+          <h4 class="move-head">ServiceNow opens its system of action to any AI agent</h4>
+          <p class="move-dek">Action Fabric and a GA Model Context Protocol server let outside agents — Claude, Copilot or homegrown — trigger governed enterprise actions on the platform.</p>
+          <div class="src"><a href="https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-opens-its-full-system-of-action-to-every-AI-Agent-in-the-enterprise/default.aspx" target="_blank" rel="noopener">ServiceNow</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 02</span><h3 class="bucket-title">Partnerships &amp; Alliances</h3><span class="count">2 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="nvidia">
+          <div class="slug"><span class="firm-tag">Nvidia</span><span class="sep">·</span>Partnership<span class="sep">·</span>Jun</div>
+          <h4 class="move-head">Nvidia and LG to build an AI factory</h4>
+          <p class="move-dek">A joint AI factory will power LG's next wave of AI businesses spanning robotics, autonomous driving, data-centre tech and GPU cloud services.</p>
+          <div class="src"><a href="https://nvidianews.nvidia.com/news/latest" target="_blank" rel="noopener">NVIDIA Newsroom</a></div>
+        </article>
+        <article class="move" data-firm="aws">
+          <div class="slug"><span class="firm-tag">AWS</span><span class="sep">·</span>Partnership<span class="sep">·</span>18 Jun</div>
+          <h4 class="move-head">Southwest Airlines picks AWS as preferred cloud for AI</h4>
+          <p class="move-dek">The airline will move off-premises to an AI- and agent-enabled architecture by 2028; 2,700+ developers already build with AWS's Kiro coding agent.</p>
+          <div class="src"><a href="https://www.aboutamazon.com/news/aws/aws-summit-nyc-2026-ai-agents" target="_blank" rel="noopener">AWS</a></div>
+        </article>
+        <div class="seealso"><b>Cross-links →</b> Accenture × AWS and Deloitte × Google Cloud sit on Page 01; xAI's Grok 4.3 landing on Bedrock is on Page 03.</div>
+      </div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 03</span><h3 class="bucket-title">Infrastructure &amp; Compute</h3><span class="count">3 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="nvidia">
+          <div class="slug"><span class="firm-tag">Nvidia</span><span class="sep">·</span>Compute<span class="sep">·</span>16–18 Jun</div>
+          <h4 class="move-head">Nvidia: 35 AI supercomputers in development across Europe</h4>
+          <p class="move-dek">At ISC High Performance, Nvidia touted a record European HPC build-out and its Vera Rubin platform for science, blending FP64 with full-stack AI.</p>
+          <div class="src"><a href="https://nvidianews.nvidia.com/" target="_blank" rel="noopener">NVIDIA Newsroom</a></div>
+        </article>
+        <article class="move" data-firm="google">
+          <div class="slug"><span class="firm-tag">Google</span><span class="sep">·</span>Compute<span class="sep">·</span>Jun</div>
+          <h4 class="move-head">Google commits $1.5B to expand an Alabama data-center campus</h4>
+          <p class="move-dek">The 2026–27 investment grows Google's Jackson County footprint as it scales the infrastructure behind Gemini and its TPU roadmap.</p>
+          <div class="src"><a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank" rel="noopener">Google</a></div>
+        </article>
+        <article class="move" data-firm="aws">
+          <div class="slug"><span class="firm-tag">AWS</span><span class="sep">·</span>Compute<span class="sep">·</span>22 Jun</div>
+          <h4 class="move-head">AWS adds Blackwell-based EC2 G7s and cuts vector-search prices</h4>
+          <p class="move-dek">New NVIDIA RTX PRO 4500 Blackwell instances promise up to 4.6× inference gains, while S3 Vectors query charges fall up to 80% for large indexes.</p>
+          <div class="src"><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-ny-summit-recap-local-zone-in-hanoi-grok-4-3-in-bedrock-price-reductions-and-more-june-22-2026/" target="_blank" rel="noopener">AWS Weekly Roundup</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 04</span><h3 class="bucket-title">Deals, Funding &amp; M&amp;A</h3><span class="count">1 move</span></div>
+      <div class="moves">
+        <article class="move" data-firm="optro">
+          <div class="slug"><span class="firm-tag">Optro</span><span class="sep">·</span>Acquisition<span class="sep">·</span>06 May</div>
+          <h4 class="move-head">Optro acquires AI-native SOX automation startup Midship</h4>
+          <p class="move-dek">The GRC platform (formerly AuditBoard) folds in Y-Combinator-backed Midship to bring governed, agentic controls-testing into its system of action.</p>
+          <div class="src"><a href="https://www.prnewswire.com/news-releases/optro-leads-the-global-audit-transformation-with-the-acquisition-of-ai-native-midship-302763559.html" target="_blank" rel="noopener">Optro / PR Newswire</a></div>
+        </article>
+        <div class="seealso"><b>Watchlist →</b> No new platform-tier AI funding round or deal logged in the 16–23 Jun window. Add deals here as they break.</div>
+      </div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 05</span><h3 class="bucket-title">Other Areas of Interest</h3><span class="count">3 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="sap">
+          <div class="slug"><span class="firm-tag">SAP</span><span class="sep">·</span>Governance<span class="sep">·</span>09 Jun</div>
+          <h4 class="move-head">SAP starts enforcing limits on external AI agents</h4>
+          <p class="move-dek">A security patch begins blocking non-sanctioned API access, routing third-party agents through SAP's Joule layer — a contested bid to gatekeep enterprise AI.</p>
+          <div class="src"><a href="https://www.forrester.com/blogs/sap-is-attempting-to-become-the-gatekeeper-of-enterprise-ai-cios-should-push-back/" target="_blank" rel="noopener">Forrester</a></div>
+        </article>
+        <article class="move" data-firm="microsoft">
+          <div class="slug"><span class="firm-tag">Microsoft</span><span class="sep">·</span>Strategy<span class="sep">·</span>22 Jun</div>
+          <h4 class="move-head">Microsoft signals it may host China's DeepSeek</h4>
+          <p class="move-dek">Nadella framed a future of cheaper models and more user control, as Microsoft leans on low-cost options to push consumer AI prices down.</p>
+          <div class="src"><a href="https://cybernews.com/ai-news/microsoft-deepseek-china-ai-race-satya-nadella/" target="_blank" rel="noopener">Cybernews</a></div>
+        </article>
+        <article class="move" data-firm="aws">
+          <div class="slug"><span class="firm-tag">AWS</span><span class="sep">·</span>Security<span class="sep">·</span>18 Jun</div>
+          <h4 class="move-head">AWS launches Continuum, an AI-native security service</h4>
+          <p class="move-dek">It reasons, validates and acts across the code-vulnerability lifecycle at machine speed, with pull-request scanning and IDE integrations.</p>
+          <div class="src"><a href="https://www.aboutamazon.com/news/aws/aws-summit-nyc-2026-ai-agents" target="_blank" rel="noopener">AWS</a></div>
+        </article>
+      </div>
+    </section>
+  </section>
+
+  <!-- =====================================================================
+       PAGE 3 · AI-FIRST LABS
+       ===================================================================== -->
+  <section class="page" data-page="3">
+    <div class="lead">
+      <div class="lead-eyebrow">The week in one line</div>
+      <div>
+        <h2>AI-First Labs</h2>
+        <p>The frontier moved on two fronts: <span class="drop">an IPO wave</span> (OpenAI and Anthropic both in S-1 territory) and a <span class="drop">land-grab for distribution</span> — OpenAI's Partner Network and Getty deal, Anthropic opening Seoul, xAI's Grok landing on Bedrock — all under the shadow of an export-control order that froze Anthropic's most capable models.</p>
+      </div>
+    </div>
+
+    <div class="legend" role="group" aria-label="Filter stories by lab">
+      <span class="legend-label">Filter</span>
+      <button class="chip chip-all" data-filter="all" aria-pressed="true">All labs</button>
+      <button class="chip" data-filter="openai" aria-pressed="false"><span class="swatch" style="background:var(--openai)"></span>OpenAI</button>
+      <button class="chip" data-filter="anthropic" aria-pressed="false"><span class="swatch" style="background:var(--anthropic)"></span>Anthropic</button>
+      <button class="chip" data-filter="perplexity" aria-pressed="false"><span class="swatch" style="background:var(--perplexity)"></span>Perplexity</button>
+      <button class="chip" data-filter="mistral" aria-pressed="false"><span class="swatch" style="background:var(--mistral)"></span>Mistral AI</button>
+      <button class="chip" data-filter="deepseek" aria-pressed="false"><span class="swatch" style="background:var(--deepseek)"></span>DeepSeek</button>
+      <button class="chip" data-filter="cohere" aria-pressed="false"><span class="swatch" style="background:var(--cohere)"></span>Cohere</button>
+      <button class="chip" data-filter="xai" aria-pressed="false"><span class="swatch" style="background:var(--xai)"></span>xAI</button>
+      <button class="chip" data-filter="snorkel" aria-pressed="false"><span class="swatch" style="background:var(--snorkel)"></span>Snorkel AI</button>
+    </div>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 01</span><h3 class="bucket-title">New Models &amp; Releases</h3><span class="count">3 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="xai">
+          <div class="slug"><span class="firm-tag">xAI</span><span class="sep">·</span>Model<span class="sep">·</span>22 Jun</div>
+          <h4 class="move-head">xAI's Grok 4.3 lands on Amazon Bedrock</h4>
+          <p class="move-dek">Grok 4.3 arrives on a new Bedrock inference engine tuned for price-performance, with tool calling, structured output and streaming for enterprise workflows.</p>
+          <div class="src"><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-ny-summit-recap-local-zone-in-hanoi-grok-4-3-in-bedrock-price-reductions-and-more-june-22-2026/" target="_blank" rel="noopener">AWS</a></div>
+        </article>
+        <article class="move" data-firm="mistral">
+          <div class="slug"><span class="firm-tag">Mistral AI</span><span class="sep">·</span>Agent<span class="sep">·</span>Jun</div>
+          <h4 class="move-head">Mistral reframes Vibe as one long-horizon work-and-code agent</h4>
+          <p class="move-dek">At its AI Now Summit, Mistral unified Vibe for multi-step productivity and coding, added a Search Toolkit, and pushed physics AI with Airbus, BMW and ASML.</p>
+          <div class="src"><a href="https://mistral.ai/news/ai-now-summit-2026/" target="_blank" rel="noopener">Mistral AI</a></div>
+        </article>
+        <article class="move" data-firm="deepseek">
+          <div class="slug"><span class="firm-tag">DeepSeek</span><span class="sep">·</span>Model<span class="sep">·</span>24 Apr</div>
+          <h4 class="move-head">DeepSeek V4 raises the bar for open-weight models</h4>
+          <p class="move-dek">V4 Pro (1.6T params, 49B active) and V4 Flash ship with 1M-token context, trained on domestic Huawei and Cambricon silicon — still central to this week's debate.</p>
+          <div class="src"><a href="https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/" target="_blank" rel="noopener">TechCrunch</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 02</span><h3 class="bucket-title">Funding, IPOs &amp; Valuations</h3><span class="count">3 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="openai">
+          <div class="slug"><span class="firm-tag">OpenAI</span><span class="sep">·</span>IPO<span class="sep">·</span>10 Jun</div>
+          <h4 class="move-head">OpenAI confidentially files a draft S-1 with the SEC</h4>
+          <p class="move-dek">The filing kicks off a closely watched AI IPO wave, with OpenAI and Anthropic both moving toward public markets amid record demand for AI equity.</p>
+          <div class="src"><a href="https://openai.com/news/company-announcements/" target="_blank" rel="noopener">OpenAI</a></div>
+        </article>
+        <article class="move" data-firm="anthropic">
+          <div class="slug"><span class="firm-tag">Anthropic</span><span class="sep">·</span>IPO<span class="sep">·</span>Jun</div>
+          <h4 class="move-head">Anthropic prepares an IPO at a reported ~$965B valuation</h4>
+          <p class="move-dek">Reporting places Anthropic among a cluster of near-trillion-dollar AI listings, alongside its expanding enterprise and coding-agent franchise.</p>
+          <div class="src"><a href="https://cybernews.com/ai-news/microsoft-deepseek-china-ai-race-satya-nadella/" target="_blank" rel="noopener">Cybernews</a></div>
+        </article>
+        <article class="move" data-firm="snorkel">
+          <div class="slug"><span class="firm-tag">Snorkel AI</span><span class="sep">·</span>Context<span class="sep">·</span>—</div>
+          <h4 class="move-head">No new raise this week; the $1.3B 'data layer' keeps shipping</h4>
+          <p class="move-dek">The $1.3B unicorn data-development platform (backers include GV, BlackRock, Accenture Ventures, In-Q-Tel) had no fresh round in-window; its Evaluate and Expert-Data products remain the story.</p>
+          <div class="src"><a href="https://pitchbook.com/profiles/company/300289-33" target="_blank" rel="noopener">PitchBook</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 03</span><h3 class="bucket-title">Partnerships &amp; Enterprise Deals</h3><span class="count">3 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="openai">
+          <div class="slug"><span class="firm-tag">OpenAI</span><span class="sep">·</span>Ecosystem<span class="sep">·</span>16–21 Jun</div>
+          <h4 class="move-head">OpenAI launches a Partner Network and a Getty licensing deal</h4>
+          <p class="move-dek">A formal partner programme (Jun 16) lands alongside a multi-year Getty Images content agreement (Jun 21) and a firm-wide Samsung ChatGPT/Codex rollout.</p>
+          <div class="src"><a href="https://openai.com/news/" target="_blank" rel="noopener">OpenAI</a></div>
+        </article>
+        <article class="move" data-firm="anthropic">
+          <div class="slug"><span class="firm-tag">Anthropic</span><span class="sep">·</span>Expansion<span class="sep">·</span>17 Jun</div>
+          <h4 class="move-head">Anthropic opens a Seoul office and Korean partnerships</h4>
+          <p class="move-dek">The lab plants a flag in Korea's AI ecosystem, part of a fast enterprise push that also includes a multi-year DXC alliance to certify Claude engineers.</p>
+          <div class="src"><a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic</a></div>
+        </article>
+        <article class="move" data-firm="cohere">
+          <div class="slug"><span class="firm-tag">Cohere</span><span class="sep">·</span>Enterprise<span class="sep">·</span>—</div>
+          <h4 class="move-head">Quiet week; Cohere holds its enterprise &amp; sovereign lane</h4>
+          <p class="move-dek">No major standalone announcement in-window. Cohere's Command models remain available via Amazon Bedrock as it leans into secured, on-prem enterprise and government AI.</p>
+          <div class="src"><a href="https://aws.amazon.com/bedrock/" target="_blank" rel="noopener">AWS Bedrock</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 04</span><h3 class="bucket-title">Research, Safety &amp; Governance</h3><span class="count">3 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="anthropic">
+          <div class="slug"><span class="firm-tag">Anthropic</span><span class="sep">·</span>Policy<span class="sep">·</span>12 Jun</div>
+          <h4 class="move-head">Export-control directive suspends Anthropic's Mythos-class models</h4>
+          <p class="move-dek">Days after launching Fable 5 and Mythos 5, Anthropic says a US government order forces it to disable both for all customers; other Claude tiers are unaffected.</p>
+          <div class="src"><a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic</a></div>
+        </article>
+        <article class="move" data-firm="openai">
+          <div class="slug"><span class="firm-tag">OpenAI</span><span class="sep">·</span>Research<span class="sep">·</span>17 Jun</div>
+          <h4 class="move-head">OpenAI previews deployment-simulation safety work and LifeSciBench</h4>
+          <p class="move-dek">New research aims to predict model behaviour before release by simulating deployment, alongside a benchmark for life-sciences capabilities.</p>
+          <div class="src"><a href="https://openai.com/news/" target="_blank" rel="noopener">OpenAI</a></div>
+        </article>
+        <article class="move" data-firm="deepseek">
+          <div class="slug"><span class="firm-tag">DeepSeek</span><span class="sep">·</span>Geopolitics<span class="sep">·</span>22 Jun</div>
+          <h4 class="move-head">DeepSeek back in the spotlight amid 'distillation' scrutiny</h4>
+          <p class="move-dek">US officials allege industrial-scale model distillation by China-based entities; meanwhile Microsoft weighs hosting DeepSeek, underscoring its cost appeal.</p>
+          <div class="src"><a href="https://edition.cnn.com/2026/04/24/tech/chinas-ai-deepseek-v4-intl-hnk" target="_blank" rel="noopener">CNN</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bucket">
+      <div class="bucket-head"><span class="bucket-eyebrow">Bucket 05</span><h3 class="bucket-title">Product &amp; Platform Moves</h3><span class="count">3 moves</span></div>
+      <div class="moves">
+        <article class="move" data-firm="perplexity">
+          <div class="slug"><span class="firm-tag">Perplexity</span><span class="sep">·</span>Product<span class="sep">·</span>19 Jun</div>
+          <h4 class="move-head">Perplexity brings Deep Research into its Computer agent</h4>
+          <p class="move-dek">Deep Research gains faster command access, forking, inline actions, analytics APIs and custom credit limits — extending Computer's reach into Microsoft 365 apps.</p>
+          <div class="src"><a href="https://www.perplexity.ai/changelog" target="_blank" rel="noopener">Perplexity Changelog</a></div>
+        </article>
+        <article class="move" data-firm="openai">
+          <div class="slug"><span class="firm-tag">OpenAI</span><span class="sep">·</span>Product<span class="sep">·</span>18 Jun</div>
+          <h4 class="move-head">OpenAI ships a major ChatGPT memory upgrade</h4>
+          <p class="move-dek">A new memory system ("Dreaming") keeps preferences and context fresh across conversations, with added enterprise usage analytics and spend controls.</p>
+          <div class="src"><a href="https://openai.com/news/" target="_blank" rel="noopener">OpenAI</a></div>
+        </article>
+        <article class="move" data-firm="anthropic">
+          <div class="slug"><span class="firm-tag">Anthropic</span><span class="sep">·</span>Product<span class="sep">·</span>17 Jun</div>
+          <h4 class="move-head">Anthropic overhauls Claude Design into a brand-compliance layer</h4>
+          <p class="move-dek">The update adds design-system imports, code round-trips and direct canvas editing — and tackles the token-burn that limited the original research preview.</p>
+          <div class="src"><a href="https://venturebeat.com/technology/anthropic-ships-major-claude-design-overhaul-with-design-system-imports-code-round-trips-and-a-fix-for-its-token-burning-problem" target="_blank" rel="noopener">VentureBeat</a></div>
+        </article>
+      </div>
+    </section>
+  </section>
+
+  <!-- ===================  COLOPHON  =================== -->
+  <footer class="colophon">
+    <p class="note">
+      Coverage window: the trailing seven days to the date of issue, with the most significant moves led at the top of each bucket. Where a firm was otherwise quiet, a recent item may be included as context and is clearly date-stamped. "Optro" is the 2026 rebrand of AuditBoard. Each source line links to the primary release or the closest news coverage; summaries are paraphrased — follow the source for full detail.
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  (function(){
+    var pages = Array.prototype.slice.call(document.querySelectorAll('.page'));
+    var navbtns = Array.prototype.slice.call(document.querySelectorAll('.pagebtn'));
+
+    function filterPage(page, filter){
+      var moves = Array.prototype.slice.call(page.querySelectorAll('.move'));
+      var buckets = Array.prototype.slice.call(page.querySelectorAll('.bucket'));
+      moves.forEach(function(m){
+        var show = (filter === 'all') || (m.getAttribute('data-firm') === filter);
+        m.classList.toggle('is-hidden', !show);
+      });
+      buckets.forEach(function(b){
+        var visible = b.querySelectorAll('.move:not(.is-hidden)').length;
+        var hasRealEmpty = b.querySelector('.empty') && filter === 'all';
+        b.classList.toggle('is-empty', visible === 0 && !hasRealEmpty);
+      });
+      page.querySelectorAll('.chip').forEach(function(c){
+        var on = c.getAttribute('data-filter') === filter;
+        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+        c.classList.toggle('is-dim', !on && filter !== 'all');
+      });
+    }
+
+    // per-page filter chips
+    pages.forEach(function(page){
+      page.querySelectorAll('.chip').forEach(function(c){
+        c.addEventListener('click', function(){ filterPage(page, c.getAttribute('data-filter')); });
+      });
+    });
+
+    // page switching (resets that page's filter to 'all')
+    function showPage(n){
+      pages.forEach(function(p){ p.classList.toggle('is-active', p.getAttribute('data-page') === n); });
+      navbtns.forEach(function(b){ b.setAttribute('aria-selected', b.getAttribute('data-page') === n ? 'true' : 'false'); });
+      var active = pages.filter(function(p){ return p.getAttribute('data-page') === n; })[0];
+      if(active){ filterPage(active, 'all'); }
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+    navbtns.forEach(function(b){ b.addEventListener('click', function(){ showPage(b.getAttribute('data-page')); }); });
+  })();
+</script>

@@ -3,6 +3,8 @@ import cors from 'cors';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import * as cheerio from 'cheerio';
+import puppeteer from 'puppeteer';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1562,6 +1564,331 @@ CRITICAL rules:
 
 Return up to 4 distinct posts. Quality and accuracy are paramount.`;
 
+const CACHED_PDF_PATH = path.join(__dirname, 'db', 'cached-weekly-digest.pdf');
+
+function getFirmKey(firmName) {
+  if (!firmName) return null;
+  const lower = firmName.toLowerCase().trim();
+  if (lower.includes('deloitte')) return 'deloitte';
+  if (lower.includes('pwc')) return 'pwc';
+  if (lower.includes('ey') || lower === 'ernst & young' || lower === 'ernst young') return 'ey';
+  if (lower.includes('kpmg')) return 'kpmg';
+  if (lower.includes('accenture')) return 'accenture';
+  if (lower.includes('mckinsey')) return 'mckinsey';
+  if (lower.includes('bcg') || lower.includes('boston consulting')) return 'bcg';
+  if (lower.includes('bain')) return 'bain';
+  if (lower.includes('sap')) return 'sap';
+  if (lower.includes('microsoft')) return 'microsoft';
+  if (lower.includes('nvidia')) return 'nvidia';
+  if (lower.includes('servicenow')) return 'servicenow';
+  if (lower.includes('google')) return 'google';
+  if (lower.includes('aws') || lower.includes('amazon web services')) return 'aws';
+  if (lower.includes('optro') || lower.includes('auditboard')) return 'optro';
+  if (lower.includes('salesforce')) return 'salesforce';
+  if (lower.includes('openai')) return 'openai';
+  if (lower.includes('anthropic')) return 'anthropic';
+  if (lower.includes('perplexity')) return 'perplexity';
+  if (lower.includes('mistral')) return 'mistral';
+  if (lower.includes('deepseek')) return 'deepseek';
+  if (lower.includes('cohere')) return 'cohere';
+  if (lower.includes('xai') || lower === 'x.ai') return 'xai';
+  if (lower.includes('snorkel')) return 'snorkel';
+  return null;
+}
+
+function getFirmPage(firmKey) {
+  const page1 = ['deloitte', 'pwc', 'ey', 'kpmg', 'accenture', 'mckinsey', 'bcg', 'bain'];
+  const page2 = ['sap', 'microsoft', 'nvidia', 'servicenow', 'google', 'aws', 'optro', 'salesforce'];
+  const page3 = ['openai', 'anthropic', 'perplexity', 'mistral', 'deepseek', 'cohere', 'xai', 'snorkel'];
+  
+  if (page1.includes(firmKey)) return 1;
+  if (page2.includes(firmKey)) return 2;
+  if (page3.includes(firmKey)) return 3;
+  return null;
+}
+
+function getBucketIndex(page, s) {
+  const signal = (s.signal || '').toLowerCase();
+  const title = (s.title || '').toLowerCase();
+  const summary = (s.summary || '').toLowerCase();
+  const text = `${title} ${summary}`;
+
+  if (page === 1) {
+    if (signal === 'm&a' || text.includes('acquire') || text.includes('acquisition') || text.includes('purchase') || text.includes('merger')) {
+      return 1; // Bucket 02: Acquisitions
+    }
+    if (signal === 'leadership' || signal === 'restructure' || 
+        /\b(skill|train|talent|hire|hiring|layoff|lay-off|cut roles|jobs|labor|labour|people|upskill|academy|workforce|employee)\b/.test(text)) {
+      return 2; // Bucket 03: Upskilling of People
+    }
+    if (signal === 'partnership' || text.includes('alliance') || text.includes('partner') || text.includes('collaborate') || text.includes('tie-up')) {
+      return 0; // Bucket 01: Forging Partnerships
+    }
+    if (signal === 'ai pivot' || /\b(launch|studio|platform|product|open|announce|unveil|release|ship|deploy)\b/.test(text)) {
+      return 3; // Bucket 04: New Platform / Product Launches
+    }
+    return 4; // Bucket 05: Other Areas of Interest
+
+  } else if (page === 2) {
+    if (/\b(compute|gpu|tpu|blackwell|nvidia|data-center|data center|infrastructure|hpc|silicon|chip|semiconductor|hardware|cloud|supercomputer|server)\b/.test(text) || (signal === 'regulatory' && text.includes('chip'))) {
+      return 2; // Bucket 03: Infrastructure & Compute
+    }
+    if (signal === 'm&a' || /\b(acquire|acquisition|purchase|funding|funding round|invest|investment|million|billion|raise|vc)\b/.test(text)) {
+      return 3; // Bucket 04: Deals, Funding & M&A
+    }
+    if (signal === 'partnership' || text.includes('alliance') || text.includes('partner') || text.includes('collaborate') || text.includes('joint')) {
+      return 1; // Bucket 02: Partnerships & Alliances
+    }
+    if (signal === 'ai pivot' || /\b(launch|api|product|release|announce|ship|unveil|deploy|model|service|copilot|studio|agentforce|work iq)\b/.test(text)) {
+      return 0; // Bucket 01: Model & Product Launches
+    }
+    return 4; // Bucket 05: Other Areas of Interest
+
+  } else if (page === 3) {
+    if (signal === 'regulatory' || /\b(safety|governance|research|policy|regulation|government|trust|alignment|compliance|security|export-control|export control|scrutiny|benchmark)\b/.test(text)) {
+      return 3; // Bucket 04: Research, Safety & Governance
+    }
+    if (/\b(funding|ipo|valuation|raise|million|billion|s-1|sec|invest|equity|venture)\b/.test(text)) {
+      return 1; // Bucket 02: Funding, IPOs & Valuations
+    }
+    if (signal === 'partnership' || /\b(partner|alliance|licensing|deal|rollout|agreement|collaborate)\b/.test(text)) {
+      return 2; // Bucket 03: Partnerships & Enterprise Deals
+    }
+    if (/\b(model|grokv4|grok|deepseek v4|v4 pro|release|unveil|mistral v|claude 3\.5|openai o|gpt-5|gpt-4o)\b/.test(text)) {
+      return 0; // Bucket 01: New Models & Releases
+    }
+    if (signal === 'ai pivot' || /\b(product|platform|canvas|feature|upgrade|memory|dashboard|interface|client|tool)\b/.test(text)) {
+      return 4; // Bucket 05: Product & Platform Moves
+    }
+    return 0;
+  }
+  return 4;
+}
+
+function escapeHtml(text) {
+  if (!text) return '';
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function getWeekNumber(date) {
+  const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
+  const pastDaysOfYear = (date - firstDayOfYear) / 86400000;
+  return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+}
+
+function getWeekOfRange(endDateObj) {
+  const startDateObj = new Date(endDateObj);
+  startDateObj.setDate(startDateObj.getDate() - 7);
+  const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  const startDay = startDateObj.getDate();
+  const startMonth = months[startDateObj.getMonth()];
+  const startYear = startDateObj.getFullYear();
+  const endDay = endDateObj.getDate();
+  const endMonth = months[endDateObj.getMonth()];
+  const endYear = endDateObj.getFullYear();
+  if (startYear !== endYear) {
+    return `${startDay} ${startMonth} ${startYear} – ${endDay} ${endMonth} ${endYear}`;
+  }
+  if (startMonth !== endMonth) {
+    return `${startDay} ${startMonth} – ${endDay} ${endMonth} ${endYear}`;
+  }
+  return `${startDay}–${endDay} ${endMonth} ${endYear}`;
+}
+
+function getFiledDate(dateObj) {
+  const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+  const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  return `${days[dateObj.getDay()]} ${dateObj.getDate()} ${months[dateObj.getMonth()]}`;
+}
+
+async function buildPdfDigest() {
+  try {
+    await logActivity('AUTO-SCAN: Starting AI Weekly Digest PDF generation sweep...');
+    const db = await readDb();
+    const templatePath = path.join(__dirname, 'ai-moves-weekly-digest_2.html');
+    const templateHtml = await fs.readFile(templatePath, 'utf8');
+
+    let today = new Date();
+    const todayStr = today.toISOString().slice(0, 10);
+    const sevenDaysAgo = new Date(today);
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    const limitDateStr = sevenDaysAgo.toISOString().slice(0, 10);
+
+    const targetSignals = db.signals.filter(s => getFirmKey(s.firm) !== null);
+    let weeklySignals = targetSignals.filter(s => s.date >= limitDateStr && s.date <= todayStr);
+
+    if (weeklySignals.length === 0) {
+      try {
+        await fs.access(CACHED_PDF_PATH);
+        await logActivity('AUTO-SCAN: 0 signals found for the past 7 days, but cached PDF exists. Keeping existing cache.');
+        return;
+      } catch (err) {
+        await logActivity('AUTO-SCAN: 0 signals in the past 7 days and no cache found. Generating first PDF from latest available database logs.');
+        if (targetSignals.length > 0) {
+          const dates = targetSignals.map(s => s.date).filter(Boolean);
+          if (dates.length > 0) {
+            const maxDateStr = dates.reduce((max, d) => d > max ? d : max, dates[0]);
+            today = new Date(maxDateStr);
+            const refSevenDaysAgo = new Date(today);
+            refSevenDaysAgo.setDate(refSevenDaysAgo.getDate() - 7);
+            const refLimitDateStr = refSevenDaysAgo.toISOString().slice(0, 10);
+            const refTodayStr = today.toISOString().slice(0, 10);
+            weeklySignals = targetSignals.filter(s => s.date >= refLimitDateStr && s.date <= refTodayStr);
+            await logActivity(`AUTO-SCAN: Selected reference date ${maxDateStr} for PDF generation. Found ${weeklySignals.length} signals.`);
+          }
+        }
+      }
+    }
+
+    if (weeklySignals.length === 0) {
+      await logActivity('AUTO-SCAN: No signals found in database. PDF generation skipped.');
+      return;
+    }
+
+    const seenUrls = new Set();
+    const seenTitlesCleaned = new Set();
+    const uniqueSignals = [];
+
+    for (const s of weeklySignals) {
+      if (!s.url || !s.url.startsWith('http')) continue;
+      const urlLower = s.url.toLowerCase().trim();
+      if (seenUrls.has(urlLower)) continue;
+      
+      const titleCleaned = (s.title || '').toLowerCase().replace(/[^a-z0-9]/g, '').trim();
+      if (seenTitlesCleaned.has(titleCleaned)) continue;
+      
+      const titlePrefix = titleCleaned.slice(0, 30);
+      if (titlePrefix && seenTitlesCleaned.has(titlePrefix)) continue;
+
+      seenUrls.add(urlLower);
+      seenTitlesCleaned.add(titleCleaned);
+      if (titlePrefix) seenTitlesCleaned.add(titlePrefix);
+      uniqueSignals.push(s);
+    }
+
+    const pageBucketsSignals = {
+      1: { 0: [], 1: [], 2: [], 3: [], 4: [] },
+      2: { 0: [], 1: [], 2: [], 3: [], 4: [] },
+      3: { 0: [], 1: [], 2: [], 3: [], 4: [] }
+    };
+
+    for (const s of uniqueSignals) {
+      const firmKey = getFirmKey(s.firm);
+      const page = getFirmPage(firmKey);
+      if (!page) continue;
+      const bIdx = getBucketIndex(page, s);
+      pageBucketsSignals[page][bIdx].push(s);
+    }
+
+    const $ = cheerio.load(templateHtml);
+
+    const weekNum = getWeekNumber(today);
+    $('.issue-meta .row').eq(0).html(`ISSUE <b>№ ${String(weekNum).padStart(2, '0')}</b>`);
+    $('.issue-meta .row').eq(1).html(`WEEK OF <b>${getWeekOfRange(today)}</b>`);
+    $('.issue-meta .row').eq(3).html(`FILED <b>${getFiledDate(today)}</b>`);
+
+    const genericEmptyHtml = `
+      <div class="empty">
+        <div class="e-head">No qualifying moves logged this week</div>
+        <p class="e-sub">Watchlist: We are actively tracking updates for this category. New signals will appear here as they are verified.</p>
+      </div>
+    `;
+
+    for (let pNum = 1; pNum <= 3; pNum++) {
+      const pageSelector = `.page[data-page="${pNum}"]`;
+      const pageEl = $(pageSelector);
+      const bucketEls = pageEl.find('.bucket');
+
+      for (let bIdx = 0; bIdx < 5; bIdx++) {
+        const bucketEl = bucketEls.eq(bIdx);
+        const movesContainer = bucketEl.find('.moves');
+        const bucketSignals = pageBucketsSignals[pNum][bIdx] || [];
+
+        movesContainer.find('.move').remove();
+        
+        const countText = bucketSignals.length === 1 ? '1 move' : `${bucketSignals.length} moves`;
+        bucketEl.find('.count').text(countText);
+
+        if (bucketSignals.length > 0) {
+          bucketEl.find('.empty').remove();
+
+          for (const s of bucketSignals) {
+            const firmKey = getFirmKey(s.firm);
+            const escapedTitle = escapeHtml(s.title);
+            const escapedSummary = escapeHtml(s.summary || s.takeaway || '');
+            const escapedSource = escapeHtml(s.source || 'Source');
+            const escapedUrl = escapeHtml(s.url);
+
+            const dateObj = new Date(s.date);
+            const monthsShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const formattedDate = `${dateObj.getDate()} ${monthsShort[dateObj.getMonth()]}`;
+
+            const firmTag = s.firm;
+            const categoryTag = escapeHtml(s.signal || 'Signal');
+
+            const moveHtml = `
+              <article class="move" data-firm="${firmKey}">
+                <div class="slug"><span class="firm-tag">${firmTag}</span><span class="sep">·</span>${categoryTag}<span class="sep">·</span>${formattedDate}</div>
+                <h4 class="move-head">${escapedTitle}</h4>
+                <p class="move-dek">${escapedSummary}</p>
+                <div class="src"><a href="${escapedUrl}" target="_blank" rel="noopener">${escapedSource}</a></div>
+              </article>
+            `;
+
+            const seeAlsoEl = movesContainer.find('.seealso');
+            if (seeAlsoEl.length > 0) {
+              seeAlsoEl.before(moveHtml);
+            } else {
+              movesContainer.append(moveHtml);
+            }
+          }
+        } else {
+          if (bucketEl.find('.empty').length === 0) {
+            const seeAlsoEl = movesContainer.find('.seealso');
+            if (seeAlsoEl.length > 0) {
+              seeAlsoEl.before(genericEmptyHtml);
+            } else {
+              movesContainer.append(genericEmptyHtml);
+            }
+          }
+        }
+      }
+    }
+
+    const finalHtml = $.html();
+    const browser = await puppeteer.launch({
+      executablePath: 'C:\\Users\\Neha Kukreja\\.cache\\puppeteer\\chrome-headless-shell\\win64-150.0.7871.24\\chrome-headless-shell-win64\\chrome-headless-shell.exe',
+      headless: 'shell',
+      pipe: true,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu'
+      ]
+    });
+    const page = await browser.newPage();
+    await page.setContent(finalHtml, { waitUntil: 'networkidle0' });
+    
+    await fs.mkdir(path.dirname(CACHED_PDF_PATH), { recursive: true });
+    await page.pdf({
+      path: CACHED_PDF_PATH,
+      printBackground: true,
+      preferCSSPageSize: true
+    });
+    await browser.close();
+    
+    await logActivity(`AUTO-SCAN: AI Weekly Digest PDF successfully rebuilt and cached. Size: ${(await fs.stat(CACHED_PDF_PATH)).size} bytes.`);
+  } catch (err) {
+    await logActivity(`AUTO-SCAN ERROR building PDF digest: ${err.message}`);
+  }
+}
+
 const app = express();
 
 app.use(cors());
@@ -1665,6 +1992,29 @@ app.get('/api/signals', async (req, res) => {
   } catch (err) {
     await logActivity(`Error in GET /api/signals: ${err.message}`);
     return res.status(500).json({ error: err.message || 'Failed to fetch signals.' });
+  }
+});
+
+// GET /api/pdf-digest to download the AI Weekly Digest PDF
+app.get('/api/pdf-digest', async (req, res) => {
+  await logActivity('GET /api/pdf-digest hit.');
+  try {
+    await fs.access(CACHED_PDF_PATH);
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', 'attachment; filename="AI-Moves-Weekly-Digest.pdf"');
+    return res.sendFile(CACHED_PDF_PATH);
+  } catch (err) {
+    await logActivity(`Cached PDF not found. Attempting to trigger build on-demand...`);
+    try {
+      await buildPdfDigest();
+      await fs.access(CACHED_PDF_PATH);
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', 'attachment; filename="AI-Moves-Weekly-Digest.pdf"');
+      return res.sendFile(CACHED_PDF_PATH);
+    } catch (buildErr) {
+      await logActivity(`PDF DIGEST API FAILED: ${buildErr.message}`);
+      return res.status(500).json({ error: 'PDF digest is not available yet and on-demand generation failed.' });
+    }
   }
 });
 
@@ -3609,6 +3959,11 @@ async function runAutoScan() {
 setInterval(runAutoScan, AUTO_SCAN_INTERVAL);
 // Trigger initial scan shortly after boot
 setTimeout(runAutoScan, 1000);
+
+// Schedule daily PDF digest rebuilding (every 24 hours)
+setInterval(buildPdfDigest, 24 * 60 * 60 * 1000);
+// Trigger initial PDF digest build shortly after boot (e.g. 5 seconds)
+setTimeout(buildPdfDigest, 5000);
 
 // Catch-all route to serve the main HTML file
 app.get('*', (req, res, next) => {
