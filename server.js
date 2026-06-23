@@ -710,10 +710,10 @@ const DEFAULT_DEMO_FINANCIALS = [
       { year: "FY2025", revenue: 53.2, growth: 4.0 }
     ],
     serviceLines: [
-      { name: "Consulting", value: 22.9, pct: 43 },
-      { name: "Assurance", value: 15.4, pct: 29 },
-      { name: "Tax & Legal", value: 7.5, pct: 14 },
-      { name: "Operate / Managed Services", value: 7.4, pct: 14 }
+      { name: "Assurance", value: 17.9, pct: 33.6 },
+      { name: "Consulting", value: 16.4, pct: 30.8 },
+      { name: "Tax", value: 12.7, pct: 23.9 },
+      { name: "Strategy and Transactions", value: 6.2, pct: 11.7 }
     ],
     geography: [
       { name: "Americas", value: 26.1, pct: 49 },
