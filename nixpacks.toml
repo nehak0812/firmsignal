@@ -1,2 +1,5 @@
 [phases.setup]
 nixPkgs = ["...", "chromium"]
+
+[phases.build]
+cmds = ["...", "npx puppeteer browsers install chrome-headless-shell"]
