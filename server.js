@@ -699,10 +699,16 @@ const DEFAULT_DEMO_FINANCIALS = [
     revenue: 53.2,
     growth: 4.0,
     headcount: 406209,
+    headcountGrowth: 3.4,
     partners: 14800,
     aiRevenue: "Committed $1.4B pool for Client GAI infrastructure including EY Dell/NVIDIA AI Factory. GAI bookings hit $1.5B (30% increase).",
     aiBookings: null,
     managedServicesRev: "Est. $7.6B (14% of total via Operate / Managed Services)",
+    historicalRevenue: [
+      { year: "FY2023", revenue: 49.4, growth: null },
+      { year: "FY2024", revenue: 51.2, growth: 3.9 },
+      { year: "FY2025", revenue: 53.2, growth: 4.0 }
+    ],
     serviceLines: [
       { name: "Consulting", value: 22.9, pct: 43 },
       { name: "Assurance", value: 15.4, pct: 29 },
@@ -734,10 +740,16 @@ const DEFAULT_DEMO_FINANCIALS = [
     revenue: 70.5,
     growth: 4.8,
     headcount: 470000,
+    headcountGrowth: 0.0,
     partners: 15200,
     aiRevenue: "Co-committed $2B through 2030 to Agentic AI and ZoraAI integrations",
     aiBookings: null,
     managedServicesRev: "Est. $8.5B (12% of total via Operate / Managed Services)",
+    historicalRevenue: [
+      { year: "FY2023", revenue: 64.9, growth: null },
+      { year: "FY2024", revenue: 67.2, growth: 3.6 },
+      { year: "FY2025", revenue: 70.5, growth: 4.8 }
+    ],
     serviceLines: [
       { name: "Consulting & Advisory", value: 31.8, pct: 45 },
       { name: "Audit & Assurance", value: 19.5, pct: 28 },
@@ -769,10 +781,16 @@ const DEFAULT_DEMO_FINANCIALS = [
     revenue: 69.7,
     growth: 7.0,
     headcount: 779000,
+    headcountGrowth: 5.0,
     partners: 21500,
     aiRevenue: "GenAI new bookings hit $4.5B (35% of contract signings)",
     aiBookings: 4.5,
     managedServicesRev: "$34.8B (50% of total via Managed Services)",
+    historicalRevenue: [
+      { year: "FY2023", revenue: 64.1, growth: null },
+      { year: "FY2024", revenue: 64.9, growth: 1.2 },
+      { year: "FY2025", revenue: 69.7, growth: 7.0 }
+    ],
     serviceLines: [
       { name: "Technology Integration", value: 24.4, pct: 35 },
       { name: "Strategy & Consulting", value: 10.5, pct: 15 },
@@ -803,10 +821,16 @@ const DEFAULT_DEMO_FINANCIALS = [
     revenue: 56.9,
     growth: 2.7,
     headcount: 364782,
+    headcountGrowth: 0.2,
     partners: 13100,
     aiRevenue: "Committed $1.5B in internal GenAI tooling rollout and OpenAI alliance integration",
     aiBookings: null,
     managedServicesRev: "Est. $6.8B (12% of total via Operate / Managed Services)",
+    historicalRevenue: [
+      { year: "FY2023", revenue: 53.1, growth: null },
+      { year: "FY2024", revenue: 55.4, growth: 3.7 },
+      { year: "FY2025", revenue: 56.9, growth: 2.7 }
+    ],
     serviceLines: [
       { name: "Advisory & Deals", value: 23.9, pct: 42 },
       { name: "Assurance", value: 19.9, pct: 35 },
@@ -838,10 +862,16 @@ const DEFAULT_DEMO_FINANCIALS = [
     revenue: 39.8,
     growth: 5.1,
     headcount: 276030,
+    headcountGrowth: 1.8,
     partners: 10200,
     aiRevenue: "Committed $2B Microsoft-integrated AI practice investments through 2028",
     aiBookings: null,
     managedServicesRev: "Est. $4.8B (12% of total via Operate / Managed Services)",
+    historicalRevenue: [
+      { year: "FY2023", revenue: 36.0, growth: null },
+      { year: "FY2024", revenue: 36.4, growth: 3.0 },
+      { year: "FY2025", revenue: 39.8, growth: 5.1 }
+    ],
     serviceLines: [
       { name: "Advisory", value: 16.7, pct: 42 },
       { name: "Audit", value: 13.1, pct: 33 },

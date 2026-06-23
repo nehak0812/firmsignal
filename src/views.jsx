@@ -2816,6 +2816,11 @@ export function FinancialRoundupView({
     setIsScanning(false);
   };
 
+  const orderedFinancials = useMemo(() => {
+    const order = ['Deloitte', 'EY', 'PwC', 'KPMG', 'Accenture'];
+    return order.map(id => financials.find(f => f.id === id)).filter(Boolean);
+  }, [financials]);
+
   const selectedFirmData = useMemo(() => {
     return financials.find(f => f.id.toLowerCase() === activeSubTab.toLowerCase());
   }, [financials, activeSubTab]);
@@ -2959,7 +2964,7 @@ export function FinancialRoundupView({
                 </tr>
               </thead>
               <tbody>
-                {financials.map(f => (
+                {orderedFinancials.map(f => (
                   <tr key={f.id} style={{ borderBottom: '1px solid var(--line)', transition: 'background 0.2s' }} className="table-row-hover">
                     <td style={{ padding: '16px 8px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 8 }}>
                       <span style={{ width: 8, height: 8, background: getDotColor(f.id), borderRadius: '50%' }} />
@@ -3000,13 +3005,13 @@ export function FinancialRoundupView({
                 Global Revenue Comparison (USD Billions)
               </h4>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', height: 220, paddingBottom: 16, borderBottom: '1px solid var(--line)' }}>
-                {financials.map(f => {
-                  const maxRev = Math.max(...financials.map(x => x.revenue || 1));
+                {orderedFinancials.map(f => {
+                  const maxRev = Math.max(...orderedFinancials.map(x => x.revenue || 1));
                   const pctHeight = ((f.revenue || 0) / maxRev) * 100;
                   return (
                     <div key={f.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, gap: 8, height: '100%', justifyContent: 'flex-end' }}>
-                      <div style={{ fontFamily: 'var(--mono)', fontSize: 11, fontWeight: 700, color: 'var(--ink-2)' }}>
-                        ${f.revenue?.toFixed(1)}B
+                      <div style={{ fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 700, color: 'var(--ink-2)', textAlign: 'center', whiteSpace: 'nowrap' }}>
+                        ${f.revenue?.toFixed(1)}B <span style={{ color: f.growth >= 0 ? 'var(--pos)' : 'var(--crit)', fontSize: 8.5 }}>({f.growth >= 0 ? '+' : ''}{f.growth?.toFixed(1)}%)</span>
                       </div>
                       <div style={{ height: 140, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', width: '100%' }}>
                         <div 
@@ -3018,7 +3023,7 @@ export function FinancialRoundupView({
                             transition: 'height 0.8s ease',
                             cursor: 'help'
                           }}
-                          title={`${f.id}: $${f.revenue}B`}
+                          title={`${f.id}: $${f.revenue}B (+${f.growth}% growth)`}
                         />
                       </div>
                       <div style={{ fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 600, color: 'var(--ink)' }}>
@@ -3036,13 +3041,14 @@ export function FinancialRoundupView({
                 Global Headcount Comparison (Professionals)
               </h4>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', height: 220, paddingBottom: 16, borderBottom: '1px solid var(--line)' }}>
-                {financials.map(f => {
-                  const maxHeadcount = Math.max(...financials.map(x => x.headcount || 1));
+                {orderedFinancials.map(f => {
+                  const maxHeadcount = Math.max(...orderedFinancials.map(x => x.headcount || 1));
                   const pctHeight = ((f.headcount || 0) / maxHeadcount) * 100;
+                  const hcGrowth = f.headcountGrowth ?? 0;
                   return (
                     <div key={f.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, gap: 8, height: '100%', justifyContent: 'flex-end' }}>
-                      <div style={{ fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 700, color: 'var(--ink-2)' }}>
-                        {Math.round((f.headcount || 0) / 1000)}k
+                      <div style={{ fontFamily: 'var(--mono)', fontSize: 9, fontWeight: 700, color: 'var(--ink-2)', textAlign: 'center', whiteSpace: 'nowrap' }}>
+                        {Math.round((f.headcount || 0) / 1000)}k <span style={{ color: hcGrowth >= 0 ? 'var(--pos)' : 'var(--crit)', fontSize: 8 }}>({hcGrowth >= 0 ? '+' : ''}{hcGrowth.toFixed(1)}%)</span>
                       </div>
                       <div style={{ height: 140, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', width: '100%' }}>
                         <div 
@@ -3054,7 +3060,7 @@ export function FinancialRoundupView({
                             transition: 'height 0.8s ease',
                             cursor: 'help'
                           }}
-                          title={`${f.id}: ${f.headcount?.toLocaleString()} professionals`}
+                          title={`${f.id}: ${f.headcount?.toLocaleString()} professionals (+${hcGrowth}% growth)`}
                         />
                       </div>
                       <div style={{ fontFamily: 'var(--mono)', fontSize: 10, fontWeight: 600, color: 'var(--ink)' }}>
@@ -3064,6 +3070,158 @@ export function FinancialRoundupView({
                   );
                 })}
               </div>
+            </div>
+          </div>
+
+          {/* YoY Revenue Line Chart */}
+          <div style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 'var(--r-lg)', padding: 24 }}>
+            <h4 style={{ fontFamily: 'var(--serif-disp)', fontSize: 16, marginTop: 0, marginBottom: 8, color: 'var(--ink)' }}>
+              3-Year Global Revenue Trend &amp; YoY Growth
+            </h4>
+            <p style={{ margin: '0 0 20px 0', fontSize: 11.5, color: 'var(--ink-3)', lineHeight: 1.4 }}>
+              Sourced from prior annual reports (FY2023 – FY2025). Values display total revenue and local-currency growth rates.
+            </p>
+            
+            <div style={{ position: 'relative', width: '100%', overflowX: 'auto' }}>
+              <svg viewBox="0 0 650 320" width="100%" height="320" style={{ display: 'block', overflow: 'visible' }}>
+                {/* Grid Lines */}
+                {[30, 40, 50, 60, 70, 80].map((val) => {
+                  const y = 20 + 240 - ((val - 30) / (80 - 30)) * 240;
+                  return (
+                    <g key={val}>
+                      <line x1="50" y1={y} x2="520" y2={y} stroke="var(--line)" strokeDasharray="3 3" strokeWidth="1" />
+                      <text x="40" y={y + 4} textAnchor="end" style={{ fontFamily: 'var(--mono)', fontSize: 9.5, fill: 'var(--ink-3)' }}>
+                        ${val}B
+                      </text>
+                    </g>
+                  );
+                })}
+
+                {/* X Axis Labels */}
+                {[
+                  { year: 'FY2023', x: 50 },
+                  { year: 'FY2024', x: 285 },
+                  { year: 'FY2025', x: 520 }
+                ].map((axis) => (
+                  <g key={axis.year}>
+                    <line x1={axis.x} y1="20" x2={axis.x} y2="260" stroke="var(--line)" strokeWidth="0.5" />
+                    <text x={axis.x} y="282" textAnchor="middle" style={{ fontFamily: 'var(--mono)', fontSize: 10.5, fontWeight: 700, fill: 'var(--ink)' }}>
+                      {axis.year}
+                    </text>
+                  </g>
+                ))}
+
+                {/* Draw Paths and Nodes for each firm */}
+                {orderedFinancials.map((f) => {
+                  const points = (f.historicalRevenue || []).map((hist, idx) => {
+                    const x = idx === 0 ? 50 : idx === 1 ? 285 : 520;
+                    const y = 20 + 240 - ((hist.revenue - 30) / (80 - 30)) * 240;
+                    return { x, y, val: hist.revenue, yr: hist.year, gr: hist.growth };
+                  });
+
+                  if (points.length < 2) return null;
+
+                  const color = getDotColor(f.id);
+                  const pathD = `M ${points[0].x} ${points[0].y} L ${points[1].x} ${points[1].y} L ${points[2].x} ${points[2].y}`;
+
+                  // Shifting label offset to prevent overlaps
+                  const labelOffsets = {
+                    Deloitte: -6,
+                    Accenture: 12,
+                    PwC: -5,
+                    EY: 10,
+                    KPMG: 0
+                  };
+                  const offset = labelOffsets[f.id] || 0;
+                  const finalPt = points[2];
+                  const growthStr = f.growth >= 0 ? `+${f.growth?.toFixed(1)}%` : `${f.growth?.toFixed(1)}%`;
+
+                  return (
+                    <g key={f.id}>
+                      {/* Line Path */}
+                      <path
+                        d={pathD}
+                        fill="none"
+                        stroke={color}
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        style={{ transition: 'stroke-width 0.2s', cursor: 'pointer' }}
+                        title={`${f.id} revenue trend`}
+                      />
+
+                      {/* Segment Growth Callouts */}
+                      {points.map((pt, idx) => {
+                        if (idx === 0) return null;
+                        const prev = points[idx - 1];
+                        const midX = (prev.x + pt.x) / 2;
+                        const midY = (prev.y + pt.y) / 2;
+                        const segmentGrowth = pt.gr;
+                        if (segmentGrowth === null || segmentGrowth === undefined) return null;
+
+                        return (
+                          <g key={`${f.id}-grow-${idx}`} style={{ cursor: 'help' }}>
+                            <rect
+                              x={midX - 22}
+                              y={midY - 8}
+                              width="44"
+                              height="15"
+                              rx="3"
+                              fill="var(--bg)"
+                              stroke={color}
+                              strokeWidth="1"
+                            />
+                            <text
+                              x={midX}
+                              y={midY + 3}
+                              textAnchor="middle"
+                              style={{ fontFamily: 'var(--mono)', fontSize: 8.5, fontWeight: 700, fill: color }}
+                            >
+                              {segmentGrowth >= 0 ? '+' : ''}{segmentGrowth.toFixed(1)}%
+                            </text>
+                          </g>
+                        );
+                      })}
+
+                      {/* Node points */}
+                      {points.map((pt, idx) => (
+                        <g key={`${f.id}-node-${idx}`} style={{ cursor: 'help' }}>
+                          <circle
+                            cx={pt.x}
+                            cy={pt.y}
+                            r="5"
+                            fill={color}
+                            stroke="var(--bg-2)"
+                            strokeWidth="2"
+                          />
+                          <text
+                            x={pt.x}
+                            y={pt.y - 10}
+                            textAnchor="middle"
+                            style={{ fontFamily: 'var(--mono)', fontSize: 9.5, fontWeight: 700, fill: 'var(--ink)' }}
+                          >
+                            ${pt.val.toFixed(1)}B
+                          </text>
+                        </g>
+                      ))}
+
+                      {/* Right-aligned End Label */}
+                      <text
+                        x={finalPt.x + 12}
+                        y={finalPt.y + 4 + offset}
+                        style={{
+                          fill: color,
+                          fontFamily: 'var(--mono)',
+                          fontSize: 10.5,
+                          fontWeight: 700
+                        }}
+                      >
+                        {f.id} ({growthStr})
+                      </text>
+                    </g>
+                  );
+                })}
+              </svg>
             </div>
           </div>
 
@@ -3079,7 +3237,7 @@ export function FinancialRoundupView({
               </p>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingBottom: 16, borderBottom: '1px solid var(--line)' }}>
-                {financials.map(f => {
+                {orderedFinancials.map(f => {
                   const segments = {
                     'Consulting & Advisory': 0,
                     'Audit & Assurance': 0,
@@ -3174,7 +3332,7 @@ export function FinancialRoundupView({
               </p>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16, paddingBottom: 16, borderBottom: '1px solid var(--line)' }}>
-                {financials.map(f => {
+                {orderedFinancials.map(f => {
                   const segments = {
                     'Americas': 0,
                     'EMEA': 0,
