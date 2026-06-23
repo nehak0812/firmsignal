@@ -1861,8 +1861,11 @@ async function buildPdfDigest() {
     }
 
     const finalHtml = $.html();
+    const isProduction = process.env.NODE_ENV === 'production' || !!process.env.RAILWAY_STATIC_URL;
     const browser = await puppeteer.launch({
-      executablePath: 'C:\\Users\\Neha Kukreja\\.cache\\puppeteer\\chrome-headless-shell\\win64-150.0.7871.24\\chrome-headless-shell-win64\\chrome-headless-shell.exe',
+      executablePath: isProduction 
+        ? 'chromium' 
+        : 'C:\\Users\\Neha Kukreja\\.cache\\puppeteer\\chrome-headless-shell\\win64-150.0.7871.24\\chrome-headless-shell-win64\\chrome-headless-shell.exe',
       headless: 'shell',
       pipe: true,
       args: [
@@ -3968,7 +3971,7 @@ setTimeout(buildPdfDigest, 5000);
 // Catch-all route to serve the main HTML file
 app.get('*', (req, res, next) => {
   if (req.path.startsWith('/api/')) return next();
-  res.sendFile(path.join(__dirname, 'dist', 'FirmSignal.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 app.listen(PORT, async () => {
