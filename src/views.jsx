@@ -3453,6 +3453,54 @@ export function FinancialRoundupView({
             </div>
           </div>
 
+          {/* Cross-Firm Comparative Insights Card */}
+          <div style={{
+            background: 'var(--bg-2)',
+            border: '1px solid var(--line)',
+            borderRadius: 'var(--r-lg)',
+            padding: 24,
+            marginTop: 8
+          }}>
+            <div style={{ borderBottom: '1px solid var(--line)', paddingBottom: 12, marginBottom: 20 }}>
+              <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: 'var(--accent)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>EY Benchmarking Lab</span>
+              <h3 style={{ fontFamily: 'var(--serif-disp)', fontSize: 18, margin: '4px 0 0 0', color: 'var(--ink)' }}>
+                AI Synthesized Comparative Insights (FY2025)
+              </h3>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
+              {/* Insight 1: Growth Leadership */}
+              <div style={{ background: 'var(--bg)', padding: 16, borderRadius: 'var(--r-md)', border: '1px solid var(--line)' }}>
+                <h4 style={{ margin: '0 0 10px 0', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--teal)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                  🚀 Growth Leadership & Geo Trajectory
+                </h4>
+                <p style={{ margin: 0, fontSize: 12.5, color: 'var(--ink-2)', lineHeight: 1.5, fontFamily: 'var(--serif)' }}>
+                  <b>Accenture</b> leads the peer group in year-on-year revenue growth at <b>7.0%</b> (climbing to $69.7B), followed by <b>KPMG</b> at <b>5.1%</b> ($39.8B) and <b>Deloitte</b> at <b>4.8%</b> ($70.5B). Regionally, the <b>Americas</b> remain the primary revenue engine, representing <b>54%</b> of Deloitte's and <b>49%</b> of EY's total business. However, KPMG exhibits heavy exposure to <b>EMEA</b> at <b>45%</b> ($17.9B), exposing it to regional volatility in Western European advisory spend.
+                </p>
+              </div>
+
+              {/* Insight 2: Service Line Dominance & Managed Services Focus */}
+              <div style={{ background: 'var(--bg)', padding: 16, borderRadius: 'var(--r-md)', border: '1px solid var(--line)' }}>
+                <h4 style={{ margin: '0 0 10px 0', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--accent)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                  💼 Managed Services Integration & Focus
+                </h4>
+                <p style={{ margin: 0, fontSize: 12.5, color: 'var(--ink-2)', lineHeight: 1.5, fontFamily: 'var(--serif)' }}>
+                  <b>Accenture</b> maintains a massive structural focus on <b>Managed Services</b>, which comprises <b>47.1%</b> ($32.8B) of its business, protecting it from discretionary project pullbacks. Among the Big 4, <b>EY</b> has successfully integrated Operate and Managed Services to represent <b>14.0%</b> ($7.6B) of its mix. In contrast, <b>Deloitte</b> (63% Consulting/Advisory total), <b>PwC</b> (42.7% Advisory), and <b>KPMG</b> (41.2% Advisory) remain heavily dependent on project-based advisory work, exposing them to margin compression as corporate consulting cycles tighten.
+                </p>
+              </div>
+
+              {/* Insight 3: AI Bookings & Strategic Alliances */}
+              <div style={{ background: 'var(--bg)', padding: 16, borderRadius: 'var(--r-md)', border: '1px solid var(--line)' }}>
+                <h4 style={{ margin: '0 0 10px 0', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: 6 }}>
+                  🤖 Generative AI Commercialization
+                </h4>
+                <p style={{ margin: 0, fontSize: 12.5, color: 'var(--ink-2)', lineHeight: 1.5, fontFamily: 'var(--serif)' }}>
+                  <b>Accenture</b> is leading hard commercialization, with GenAI new bookings reaching <b>$4.5B</b> (representing 35% of total contracts signed in FY25). <b>EY</b> has committed a $1.4B pool for secure sovereign AI infrastructure, partnering with Dell and NVIDIA to launch on-premise AI Factories. <b>PwC</b> has completed the largest industry-wide roll-out of ChatPwC to all 200,000 employees globally and serves as OpenAI's primary enterprise reseller, while <b>Deloitte</b> has committed $2B to scale Agentic AI capabilities.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Methodology & Harmonization Notes Card */}
           <div style={{
             background: 'var(--bg-2)',

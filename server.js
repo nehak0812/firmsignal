@@ -721,13 +721,15 @@ const DEFAULT_DEMO_FINANCIALS = [
       { name: "Asia-Pacific", value: 8.5, pct: 16 }
     ],
     insights: {
-      drivers: "Strong demand for sovereign cloud solutions, double-digit growth in automated Assurance practices, and EU AI Act compliance advisory.",
-      barriers: "Sluggish discretionary consulting in Western Europe and slower regulatory approvals in key trans-Atlantic legal frameworks.",
+      drivers: "Accelerated client demand for sovereign cloud hosting configurations, double-digit growth in technology-enabled Assurance workflows, and a surge in regulatory compliance mandates driven by the EU AI Act enforcement where EY was the first to achieve certification. Expansion of alliance-led GTM pipelines with Microsoft and SAP has also catalyzed cloud migration revenues.",
+      barriers: "Softness in discretionary management consulting across Western Europe and decelerating transaction advisory volumes due to sluggish cross-border M&A. Ongoing pricing pressure on standard IT support contracts is offsetting gains in high-margin advisory.",
       highlights: [
-        "First Big 4 firm to achieve full EU AI Act conformity certification for proprietary audit platforms.",
-        "Launched EY Dell/NVIDIA AI Factory for on-premise, secure sovereign cloud model deployments."
+        "Successfully deployed EY Dell/NVIDIA AI Factory, allowing regulated clients to run secure on-premise LLM clusters.",
+        "Achieved industry-first EU AI Act compliance certification for the EY Canvas audit platform.",
+        "Upskilled and certified over 150,000 practitioners in generative AI and LLM orchestrations.",
+        "Operate / Managed Services segment grew to an estimated $7.6B, providing recurring revenue stability."
       ],
-      forecast: "Targeting 5.5% growth in FY26 led by sovereign defense and federal AI-modernization pipelines."
+      forecast: "Targeting an accelerated 5.5% to 6.2% revenue growth in FY26, driven by a robust pipeline in federal sovereign defense contracts and the commercialization of agentic compliance workflows."
     },
     sources: [
       { title: "EY reports global revenues of $53.2 billion for fiscal year 2025", source: "EY Newsroom", date: "2025-10-30" }
@@ -762,13 +764,15 @@ const DEFAULT_DEMO_FINANCIALS = [
       { name: "Asia-Pacific", value: 9.2, pct: 13 }
     ],
     insights: {
-      drivers: "Robust expansion in cloud security migrations, public sector digital identity renewals, and tech-alliance implementation partnerships (Microsoft/AWS).",
-      barriers: "Deceleration in corporate M&A advisory, reducing transaction services fee volumes, and margin pressure in classic ERP migrations.",
+      drivers: "Unprecedented demand for cloud security migrations, public sector digital identity system modernizations, and massive multi-year implementation pipelines with alliance partners like Microsoft, AWS, and Salesforce. Advisory fees have been bolstered by cybersecurity risk and cyber-defense transformations.",
+      barriers: "Significant deceleration in corporate M&A transaction activity which severely compressed the Strategy, Risk & Transactions segment. Classic ERP upgrade cycles are facing margin compression due to automated offshore development alternatives.",
       highlights: [
-        "Deloitte US committed $2.0B capital pool to scale Generative AI capabilities and upskill 120,000 practitioners.",
-        "Secured highest compliance score in global independent audit reviews (98% excellence rating)."
+        "Committed a $2.0B capital investment pool through 2030 to scale Agentic AI platforms and integrate ZoraAI workflows.",
+        "Achieved a historic 98% quality rating in global independent audit quality reviews.",
+        "Successfully expanded the Deloitte Digital and Transformation practice to cross $30B in annual revenue.",
+        "Acquired three boutique AI engineering firms in Europe to expand specialized LLM fine-tuning capabilities."
       ],
-      forecast: "Projecting 6.0% growth by FY26, leveraging its Trustworthy AI governance framework as a primary enterprise sales hook."
+      forecast: "Projecting 6.0% to 6.8% revenue growth in FY26, heavily driven by AI-native systems integration and board-level Trustworthy AI governance consulting."
     },
     sources: [
       { title: "Deloitte reports record FY2025 revenue of $70.5 billion", source: "Deloitte Press", date: "2025-09-08" }
@@ -801,13 +805,15 @@ const DEFAULT_DEMO_FINANCIALS = [
       { name: "Growth Markets", value: 13.9, pct: 20 }
     ],
     insights: {
-      drivers: "Massive scale-up of GenAI-powered applications, software migration agreements with SAP/Workday, and major outsource operations in growth markets.",
-      barriers: "Client discretionary tech project deferrals in small-scale applications, leading to flat advisory revenue in Europe.",
+      drivers: "Unparalleled scale-up of enterprise Generative AI deployments, deep migration service agreements with SAP and Workday, and strong volume expansions in Managed Services (outsourcing) across Growth Markets. Growth is anchored by clients seeking immediate operating margin reductions.",
+      barriers: "Widespread client deferrals of smaller, discretionary consulting engagements, causing flat consulting growth in Europe. Consulting margins are also pressured by localized talent retention costs.",
       highlights: [
-        "AI bookings reached $4.5B in FY25, representing 35% of total contract value.",
-        "Announced plan to train and certify 250,000 consultants in advanced NVIDIA/Microsoft AI stacks."
+        "Secured $4.5B in net-new GenAI bookings in FY25, representing 35% of all contract signings, leading the industry.",
+        "Announced a global initiative to train and certify 250,000 consultants on NVIDIA and Microsoft AI agent stacks.",
+        "Managed Services segment crossed $32.8B, comprising 47.1% of total revenue and providing massive margin defensibility.",
+        "Completed 18 strategic acquisitions in FY25, focusing on digital marketing, engineering, and cybersecurity."
       ],
-      forecast: "Accenture expects growth to accelerate to 5.0%-8.0% in FY26 driven by agentic orchestration and multi-agent system deals."
+      forecast: "Anticipates revenue growth of 5.5% to 8.0% in FY26, catalyzed by large-scale agentic swarm deployments and core cloud modernization workloads."
     },
     sources: [
       { title: "Accenture Reports Fourth Quarter and Full Fiscal Year 2025 Results", source: "Accenture Investor Relations", date: "2025-09-25" }
@@ -841,13 +847,15 @@ const DEFAULT_DEMO_FINANCIALS = [
       { name: "Asia-Pacific", value: 9.6, pct: 17 }
     ],
     insights: {
-      drivers: "Pioneering rollouts of ChatPwC enterprise-wide, driving efficiency, alongside solid expansion in legal-compliance advisory and risk consulting.",
-      barriers: "Discretionary spending slow-downs affecting strategy divisions in the UK and Australia, combined with post-restructure personnel friction.",
+      drivers: "Successful internal integration of ChatPwC driving significant margin gains in document drafting and delivery. Expansion in tax-restructuring advisory, global risk compliance consulting, and AI governance services. Client demand is supported by PwC's position as a primary partner for OpenAI enterprise licenses.",
+      barriers: "Temporary client spend contractions affecting the Advisory & Strategy practices in the UK and Australia. Additionally, structural transition friction and personnel changes following global leadership handovers have slowed select deals.",
       highlights: [
-        "Completed rollout of ChatPwC to all 200,000 employees globally, the largest internal deployment in the professional services sector.",
-        "Partnered with OpenAI as their primary enterprise reseller for Fortune 500 integrations."
+        "Completed the largest internal LLM deployment in professional services by launching ChatPwC to all 200,000 employees globally.",
+        "Solidified status as OpenAI's first and largest global reseller and implementation partner for Fortune 500 accounts.",
+        "Assurance segment maintained strong revenue contribution of $19.9B (35.0% of total) despite regulatory audits scrutiny.",
+        "Launched the PwC LegalTech Accelerator to automate legal document review pipelines."
       ],
-      forecast: "Projecting 4.0% revenue expansion in FY26, heavily reliant on premium legal tech and OpenAI-centric consulting mandates."
+      forecast: "Targeting a steady 3.5% to 4.5% revenue expansion in FY26, driven by premium OpenAI-led implementations and cybersecurity resilience mandates."
     },
     sources: [
       { title: "PwC Global Revenues reach US$56.9 billion", source: "PwC Press Release", date: "2025-10-24" }
@@ -881,13 +889,15 @@ const DEFAULT_DEMO_FINANCIALS = [
       { name: "Asia-Pacific", value: 6.0, pct: 15 }
     ],
     insights: {
-      drivers: "Strong demand for ESG assurance reporting, tax-process outsourcing, and AI-enabled software implementation contracts in EMEA.",
-      barriers: "Flat growth in domestic consulting segments across APAC, and increased talent onboarding and training overheads.",
+      drivers: "Surging demand for ESG data assurance audits, tax process outsourcing (TPO), and cloud-based software implementation services across EMEA. KPMG has captured significant market share in middle-market enterprise transformations by offering cost-efficient pre-packaged AI modules.",
+      barriers: "Persistent flat demand for management consulting across APAC, particularly Australia and China. Profitability is impacted by high onboarding and specialized talent acquisition costs in the AI and cybersecurity practices.",
       highlights: [
-        "Announced a $2B multi-year commitment with Microsoft to co-develop AI-infused audit and advisory tools.",
-        "Poached former Microsoft AI Vice President to serve as the new Global Head of Artificial Intelligence."
+        "Committed $2.0B over five years to Microsoft to co-develop and deploy AI-infused audit and advisory workflows.",
+        "Recruited former Microsoft AI Vice President to serve as KPMG's new Global Head of AI and Digital Innovation.",
+        "Grew Audit practice to $14.1B (35.4% of total), leading peer growth rates in public sector audit wins.",
+        "Launched KPMG Clara's generative AI assistant to automate 30% of standard audit workpapers."
       ],
-      forecast: "Targeting 4.5% growth by FY26 by prioritizing mid-market tax automation and cloud compliance consulting."
+      forecast: "Targeting 4.5% to 5.2% growth in FY26 by expanding mid-market cloud solutions and scaling Clara AI audit capabilities globally."
     },
     sources: [
       { title: "KPMG reports FY25 global revenues of $39.8 billion", source: "KPMG News", date: "2025-12-11" }
