@@ -20,3 +20,5 @@ lerna-debug.log*
 *.sln
 *.sw?
 db/backup_*.json
+.cache/
+
