@@ -2981,10 +2981,10 @@ export function FinancialRoundupView({
                   <th style={{ padding: '12px 8px' }}>Reporting Period</th>
                   <th style={{ padding: '12px 8px', textAlign: 'right' }}>Revenue (USD B)</th>
                   <th style={{ padding: '12px 8px', textAlign: 'right' }}>Growth</th>
-                  <th style={{ padding: '12px 8px' }}>Managed Services Cut</th>
                   <th style={{ padding: '12px 8px', textAlign: 'right' }}>Headcount</th>
                   <th style={{ padding: '12px 8px', textAlign: 'right' }}>Partners</th>
-                  <th style={{ padding: '12px 8px', maxWidth: 280 }}>AI Strategic Positioning</th>
+                  <th style={{ padding: '12px 8px' }}>Managed Services</th>
+                  <th style={{ padding: '12px 8px', maxWidth: 280 }}>AI</th>
                 </tr>
               </thead>
               <tbody>
@@ -3003,14 +3003,14 @@ export function FinancialRoundupView({
                     <td style={{ padding: '16px 8px', textAlign: 'right', color: f.growth >= 0 ? 'var(--pos)' : 'var(--crit)', fontWeight: 600, fontFamily: 'var(--mono)' }}>
                       {f.growth >= 0 ? '+' : ''}{f.growth?.toFixed(1)}%
                     </td>
-                    <td style={{ padding: '16px 8px', color: 'var(--ink-2)' }}>
-                      {f.managedServicesRev}
-                    </td>
                     <td style={{ padding: '16px 8px', textAlign: 'right', fontFamily: 'var(--mono)' }}>
                       {f.headcount?.toLocaleString()}
                     </td>
                     <td style={{ padding: '16px 8px', textAlign: 'right', fontFamily: 'var(--mono)' }}>
                       {f.partners?.toLocaleString()}
+                    </td>
+                    <td style={{ padding: '16px 8px', color: 'var(--ink-2)' }}>
+                      {f.managedServicesRev}
                     </td>
                     <td style={{ padding: '16px 8px', color: 'var(--ink-2)', fontSize: 12, lineHeight: 1.4, maxWidth: 280 }}>
                       {f.aiRevenue}
