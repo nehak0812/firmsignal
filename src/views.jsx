@@ -3008,7 +3008,7 @@ export function FinancialRoundupView({
               {/* Insight 3: AI Bookings & Strategic Alliances */}
               <div style={{ background: 'var(--bg)', padding: 16, borderRadius: 'var(--r-md)', border: '1px solid var(--line)' }}>
                 <h4 style={{ margin: '0 0 10px 0', fontFamily: 'var(--mono)', fontSize: 11.5, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: 6 }}>
-                  🤖 Generative AI &amp; Tech Investments
+                  🤖 AI &amp; Tech Investments
                 </h4>
                 <p style={{ margin: 0, fontSize: 12.5, color: 'var(--ink-2)', lineHeight: 1.5, fontFamily: 'var(--serif)' }}>
                   Firms are investing billions directly into AI engineering. <b>Accenture</b> is leading hard commercialization, with GenAI new bookings reaching <b>$4.5B</b> (representing 35% of total contracts signed in FY25). <b>EY</b> has committed a $1.4B pool for secure sovereign AI infrastructure, partnering with Dell and NVIDIA to launch on-premise AI Factories. <b>PwC</b> has completed the largest industry-wide roll-out of ChatPwC to all 200,000 employees globally and serves as OpenAI's primary enterprise reseller, while <b>Deloitte</b> has committed $2B to scale Agentic AI capabilities.
